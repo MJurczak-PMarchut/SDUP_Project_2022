@@ -1,3 +1,0 @@
-[submodule "FPGA_Code/Design_SRC/ToF_Drivers/I2C_Drivers/verilog-i2c"]
-	path = FPGA_Code/Design_SRC/ToF_Drivers/I2C_Drivers/verilog-i2c
-	url = git@github.com:alexforencich/verilog-i2c.git
