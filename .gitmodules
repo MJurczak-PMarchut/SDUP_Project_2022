@@ -1,0 +1,3 @@
+[submodule "MVC_BAW"]
+	path = MVC_BAW
+	url = git@github.com:MJurczak-PMarchut/MVC_BAW.git
