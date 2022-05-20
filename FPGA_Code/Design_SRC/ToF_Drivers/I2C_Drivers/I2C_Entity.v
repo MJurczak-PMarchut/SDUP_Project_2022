@@ -144,7 +144,10 @@ always @(negedge clock)
             SDA_out <= 1'b1;
             state_negedge_clk <= S1;
             ready <= 1'b1;
-            end  
+            end 
+        S7:begin
+            SDA_t <= 1'b1; // to be continued
+            end
         S11:begin
             SCL_out <= 1'b0;
             expected_ACK <= 1'b1;
@@ -155,7 +158,7 @@ always @(negedge clock)
             SCL_out <= 1'b0;
             expected_ACK <= 1'b1;
             SCL_t <= 1'b1;
-            state_negedge_clk <= S5;
+            state_negedge_clk <= (is_read == 1'b0)? S5:S7;
             end
         S13:begin
             SCL_out <= 1'b0;
