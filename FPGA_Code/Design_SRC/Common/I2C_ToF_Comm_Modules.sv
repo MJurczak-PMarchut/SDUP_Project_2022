@@ -26,7 +26,7 @@ module I2C_ToF_Comm_Modules(
     inout [0:7] ToF_SDA,
     input [7:0] data_out [7:0],
     input reset,
-    output [0:7] ToF_XShut,
+    input [0:7] ToF_INT,
     output [7:0] ready
     );
     

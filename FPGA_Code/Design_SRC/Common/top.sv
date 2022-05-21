@@ -24,7 +24,7 @@ module top(
     input clk,
     inout [0:7] ToF_SCL,
     inout [0:7] ToF_SDA,
-    output [0:7] ToF_XShut
+    input [0:7] ToF_INT
     );
     
 I2C_ToF_Comm_Modules I2C_Modules_entity
@@ -32,7 +32,7 @@ I2C_ToF_Comm_Modules I2C_Modules_entity
     .clk(clk),            
     .ToF_SCL(ToF_SCL),  
     .ToF_SDA(ToF_SDA),  
-    .ToF_XShut(ToF_XShut)
+    .ToF_INT(ToF_INT)
 );
     
 
