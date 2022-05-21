@@ -1,0 +1,4 @@
+/FPGA_Code/*.cache
+/FPGA_Code/*.hw
+/FPGA_Code/*.sim
+
