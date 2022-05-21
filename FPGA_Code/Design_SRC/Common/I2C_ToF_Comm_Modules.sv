@@ -24,10 +24,11 @@ module I2C_ToF_Comm_Modules(
     input clk,
     inout [0:7] ToF_SCL,
     inout [0:7] ToF_SDA,
-    input [7:0] data_out [7:0],
     input reset,
     input [0:7] ToF_INT,
-    output [7:0] ready
+    input [2:0] ToF_Index,
+    output [19:0] data_out,
+    output [7:0] ready_out
     );
     
 reg clock;
@@ -40,12 +41,25 @@ initial
     slave_adress = 7'h11;
     end
 
+reg [7:0] data_status;
+
 wire SCL_out [0:7], SCL_in [0:7], SCL_t [0:7], SDA_t [0:7], SDA_in [0:7], SDA_out [0:7];
 wire [7:0] reg_value [7:0];
 wire [15:0] register_address [7:0];
 wire [7:0] start;
 wire [7:0] read;
+wire [7:0] ready;
+wire [3:0] sensor_index [7:0];
+wire [15:0] distance_data [7:0];
 wire [9:0] nb_of_bytes [7:0];
+wire [7:0] data_ready;
+reg [7:0] reg_data_ready;
+
+
+initial
+    begin 
+        data_status <= 8'h00;
+    end
 
 genvar i;
  generate
@@ -81,13 +95,15 @@ genvar i;
         .reset(reset),
         .ready(ready[i]),
         .error_in(error_out[i]),
+        .ToF_INT(ToF_INT[i]),
         .i2c_data(reg_value[i]),
         .register_address(register_address[i]),
         .is_read(read[i]),
         .nb_of_bytes(nb_of_bytes[i]),
         .start(start[i]),
-        .distance_data(),
-        .sensor_index()
+        .distance_data(distance_data[i]),
+        .sensor_index(sensor_index[i]),
+        .data_ready(data_ready[i])
     );
     I2C_Entity i2c_entity(
         .data_in(reg_value[i]),
@@ -110,5 +126,18 @@ genvar i;
     end
  endgenerate
 
-    
+integer __dr_iter;
+always @(posedge clk)
+    begin
+        for(__dr_iter = 0; __dr_iter < 8; __dr_iter = __dr_iter + 1)
+            if(data_ready[__dr_iter])
+                reg_data_ready[__dr_iter] <= 1'b1;
+            else if(__dr_iter == ToF_Index)
+                reg_data_ready[__dr_iter] <= 1'b0;
+    end
+
+
+assign data_out = {sensor_index[ToF_Index], distance_data[ToF_Index]};
+assign ready_out = reg_data_ready;
+
 endmodule

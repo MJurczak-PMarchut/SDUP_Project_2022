@@ -25,6 +25,7 @@ module ToF_FSM(
     input reset,
     input ready,
     input error_in,
+    input ToF_INT,
     output [7:0] i2c_data,
 
 
@@ -33,7 +34,11 @@ module ToF_FSM(
     output [9:0] nb_of_bytes,
     output start,
     output [15:0] distance_data,
-    output [3:0] sensor_index 
+    output [3:0] sensor_index,
+    output data_ready
+
+
+
 
     );
     
