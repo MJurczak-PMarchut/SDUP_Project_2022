@@ -68,6 +68,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/Design_SRC/Common/I2C_ToF_Comm_Modules.sv">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/Design_SRC/Common/top.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
