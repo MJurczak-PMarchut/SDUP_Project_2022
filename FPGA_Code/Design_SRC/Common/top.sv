@@ -21,8 +21,10 @@
 
 
 module top(
-    input SCL_inout,
-    input SDA_inout
+    input clk,
+    inout ToF_SCL [0:7],
+    inout ToF_SDA [0:7],
+    output ToF_XShut [0:7]
     );
     
 reg clock, reset, start, read, SCL_in, SDA_in, SCL_out, SDA_out, SCL_t, SDA_t;
@@ -58,7 +60,7 @@ IOBUF #(
     .SLEW("SLOW") // Specify the output slew rate
 ) IOBUF_SCL (
     .O(SCL_out),     // Buffer output
-    .IO(SCL_inout),   // Buffer inout port (connect directly to top-level port)
+    .IO(ToF_SCL[0]),   // Buffer inout port (connect directly to top-level port)
     .I(SCL_in),     // Buffer input
     .T(SCL_t)      // 3-state enable input, high=input, low=output
 );   
