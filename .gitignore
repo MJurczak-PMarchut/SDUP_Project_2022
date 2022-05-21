@@ -2,3 +2,5 @@
 /FPGA_Code/*.hw
 /FPGA_Code/*.sim
 /FPGA_Code/*.runs
+/FPGA_Code/*.ip_user_files
+
