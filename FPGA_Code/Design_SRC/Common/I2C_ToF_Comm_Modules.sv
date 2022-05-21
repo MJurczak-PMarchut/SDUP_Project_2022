@@ -24,13 +24,8 @@ module I2C_ToF_Comm_Modules(
     input clk,
     inout [0:7] ToF_SCL,
     inout [0:7] ToF_SDA,
-    input [9:0] nb_of_bytes [7:0],
-    input [15:0] register_address [7:0],
-    input [7:0] reg_value [7:0],
     input [7:0] data_out [7:0],
     input reset,
-    input [7:0] start,
-    input [7:0] read,
     output [0:7] ToF_XShut,
     output [7:0] ready
     );
@@ -38,7 +33,7 @@ module I2C_ToF_Comm_Modules(
 reg clock;
 reg [6:0] slave_adress;
 
-wire error_out;
+wire [7:0] error_out;
 
 initial
     begin
@@ -46,7 +41,11 @@ initial
     end
 
 wire SCL_out [0:7], SCL_in [0:7], SCL_t [0:7], SDA_t [0:7], SDA_in [0:7], SDA_out [0:7];
-
+wire [7:0] reg_value [7:0];
+wire [15:0] register_address [7:0];
+wire [7:0] start;
+wire [7:0] read;
+wire [9:0] nb_of_bytes [7:0];
 
 genvar i;
  generate
@@ -76,6 +75,20 @@ genvar i;
     );   
   end
   for (i=0; i<8; i=i+1) begin : Entity_Identifier
+    ToF_FSM tof_fsm_entity
+    (
+        .clk(clk),
+        .reset(reset),
+        .ready(ready[i]),
+        .error_in(error_out[i]),
+        .i2c_data(reg_value[i]),
+        .register_address(register_address[i]),
+        .is_read(read[i]),
+        .nb_of_bytes(nb_of_bytes[i]),
+        .start(start[i]),
+        .distance_data(),
+        .sensor_index()
+    );
     I2C_Entity i2c_entity(
         .data_in(reg_value[i]),
         .clock(clock),
@@ -90,7 +103,7 @@ genvar i;
         .ready(ready[i]),
         .SCL_out(SCL_out[i]),
         .SDA_out(SDA_out[i]),
-        .error_out(error_out),
+        .error_out(error_out[i]),
         .SCL_t(SCL_t[i]),
         .SDA_t(SDA_t[i])
     );
