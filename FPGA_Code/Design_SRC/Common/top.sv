@@ -29,10 +29,11 @@ module top(
 
 reg reset;
 wire [2:0] ToF_Index;
-wire [20:0] ToF_Data;
+wire [21:0] ToF_Data;
 wire [7:0] dr_ToF;  
 wire [5 : 0] addrb;
 wire [15 : 0] doutb;
+wire wea;
 
 initial
 begin 
@@ -56,11 +57,19 @@ I2C_ToF_Comm_Modules I2C_Modules_entity
     .data_out(ToF_Data),
     .ready_out(dr_ToF)
 );
-    
+Mem_Write_FSM Mem_Write_cont
+(
+    .clk(clk),
+    .reset(reset),
+    .ToF_dr(dr_ToF),
+    .wea(wea),
+    .ToF_Index(ToF_Index)
+);
+
 ToF_BRAM ToF_Data_BRAM (
   .clka(clk),    // input wire clka
-  .wea(dr_ToF[ToF_Index]),      // input wire [0 : 0] wea
-  .addra({ToF_Index, ToF_Data[20:16]}),
+  .wea(wea),      // input wire [0 : 0] wea
+  .addra({ToF_Index, ToF_Data[21:16]}),
   .dina(ToF_Data[15:0]),    // input wire [15 : 0] dina
   .clkb(clk),    // input wire clkb
   .addrb(addrb),  // input wire [5 : 0] addrb

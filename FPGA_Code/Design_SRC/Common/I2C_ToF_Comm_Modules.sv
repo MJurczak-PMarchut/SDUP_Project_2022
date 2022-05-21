@@ -27,7 +27,7 @@ module I2C_ToF_Comm_Modules(
     input reset,
     input [0:7] ToF_INT,
     input [2:0] ToF_Index,
-    output [20:0] data_out,
+    output [21:0] data_out,
     output [7:0] ready_out
     );
     
@@ -49,7 +49,7 @@ wire [15:0] register_address [7:0];
 wire [7:0] start;
 wire [7:0] read;
 wire [7:0] ready;
-wire [4:0] sensor_index [7:0];
+wire [5:0] sensor_index [7:0];
 wire [15:0] distance_data [7:0];
 wire [9:0] nb_of_bytes [7:0];
 wire [7:0] data_ready;
