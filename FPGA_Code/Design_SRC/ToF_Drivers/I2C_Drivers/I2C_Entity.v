@@ -46,7 +46,7 @@ parameter S1 = 4'h01, S2 = 4'h02, S3 = 4'h03, S4 = 4'h04, S5 = 4'h05,
     S11 = 4'h0b, S12 = 4'h0c, S13 = 4'h0d;
 reg [3:0] state_negedge_clk, state_posedge_clk;
 
-reg send_in_progress, expected_ACK;
+reg send_in_progress, expected_ACK, t_expected_ACK;
 
 reg [9:0] counter;
 reg [23:0] temp;
@@ -57,10 +57,19 @@ initial
     SDA_out <= 1'b1;
     SCL_out <= 1'b1;
     expected_ACK <= 1'b0;
+    t_expected_ACK <= 1'b0;
     state_negedge_clk <= S1;
     error_out <= 1'b0;
     SCL_t <= 1'b0;
     SDA_t <= 1'b0;
+    end
+
+always @(negedge clock)
+    begin
+        if(t_expected_ACK)
+            expected_ACK <= 1'b1;
+        else if(SCL_in)
+            expected_ACK <= 1'b0;
     end
 
 // writing on SDA line
@@ -73,7 +82,7 @@ always @(negedge clock)
         end
     else if(expected_ACK == 1'b1)
         begin
-        expected_ACK = 1'b0; // temporary
+        t_expected_ACK = 1'b0; // temporary
         end
     else
         begin
@@ -109,6 +118,7 @@ always @(negedge clock)
             end
         S4:begin    // register address
 //            SCL_t <= 1'b0;
+            t_expected_ACK <= 1'b0;
             SCL_out <= 1'b0;
             SDA_out <= register_address[counter];
             if(counter == 10'h0) 
@@ -129,6 +139,7 @@ always @(negedge clock)
             end
         S5:begin
             SCL_out <= 1'b0;
+            t_expected_ACK <= 1'b0;
             SDA_out <= data_in[counter];
             if(counter == 10'h0) 
                 begin
@@ -142,27 +153,29 @@ always @(negedge clock)
             end
         S6:begin
             SDA_out <= 1'b1;
+            t_expected_ACK <= 1'b0;
             state_negedge_clk <= S1;
             ready <= 1'b1;
             end 
         S7:begin
+            t_expected_ACK <= 1'b0;
             SDA_t <= 1'b1; // to be continued
             end
         S11:begin
             SCL_out <= 1'b0;
-            expected_ACK <= 1'b1;
+            t_expected_ACK <= 1'b1;
             SCL_t <= 1'b1;
             state_negedge_clk <= S6;
             end
         S12:begin
             SCL_out <= 1'b0;
-            expected_ACK <= 1'b1;
+            t_expected_ACK <= 1'b1;
             SCL_t <= 1'b1;
             state_negedge_clk <= (is_read == 1'b0)? S5:S7;
             end
         S13:begin
             SCL_out <= 1'b0;
-            expected_ACK <= 1'b1;
+            t_expected_ACK <= 1'b1;
             SCL_t <= 1'b1;
             state_negedge_clk <= S4;
             end
@@ -183,17 +196,17 @@ always @(posedge clock)
         end
     end
 
-// get ack from slave
-always @(posedge SCL_in)
-    begin
-    if(expected_ACK == 1'b1)
-        begin
-        expected_ACK = 1'b0;
-        end
-    else
-        begin
-//        error_out <= 1'b1;
-        end
-    end
+//// get ack from slave
+//always @(posedge SCL_in)
+//    begin
+//    if(expected_ACK == 1'b1)
+//        begin
+//        t_expected_ACK = 1'b0;
+//        end
+//    else
+//        begin
+////        error_out <= 1'b1;
+//        end
+//    end
     
 endmodule
