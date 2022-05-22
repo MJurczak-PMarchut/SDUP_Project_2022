@@ -31,6 +31,7 @@ module I2C_Entity(
     input [9:0] nb_of_bytes,
     input start,
     input reset,
+    output reg [15:0] data_out,
     output reg ready,
     output reg SCL_out,
     output reg SDA_out,
@@ -46,7 +47,7 @@ parameter S1 = 4'h01, S2 = 4'h02, S3 = 4'h03, S4 = 4'h04, S5 = 4'h05,
     S11 = 4'h0b, S12 = 4'h0c, S13 = 4'h0d;
 reg [3:0] state_negedge_clk, state_posedge_clk;
 
-reg send_in_progress, expected_ACK, t_expected_ACK;
+reg receiving, expected_ACK, t_expected_ACK;
 
 reg [9:0] counter;
 reg [23:0] temp;
@@ -62,6 +63,7 @@ initial
     error_out <= 1'b0;
     SCL_t <= 1'b0;
     SDA_t <= 1'b0;
+    receiving <= 1'b0;
     end
 
 always @(negedge clock)
@@ -137,7 +139,7 @@ always @(negedge clock)
                 state_negedge_clk <= S4;
                 end
             end
-        S5:begin
+        S5:begin    // sending write data
             SCL_out <= 1'b0;
             t_expected_ACK <= 1'b0;
             SDA_out <= data_in[counter];
@@ -157,21 +159,23 @@ always @(negedge clock)
             state_negedge_clk <= S1;
             ready <= 1'b1;
             end 
-        S7:begin
-            t_expected_ACK <= 1'b0;
+        S7:begin    // start reading data
+            state_posedge_clk <= S2;
+            counter <= 10'h7;
+            data_out <= 15'h0;
             SDA_t <= 1'b1; // to be continued
             end
-        S11:begin
+        S11:begin   // expect ack from slave
             SCL_out <= 1'b0;
             t_expected_ACK <= 1'b1;
             SCL_t <= 1'b1;
             state_negedge_clk <= S6;
             end
-        S12:begin
+        S12:begin   // expect ack from slave
             SCL_out <= 1'b0;
             t_expected_ACK <= 1'b1;
             SCL_t <= 1'b1;
-            state_negedge_clk <= (is_read == 1'b0)? S5:S7;
+            state_negedge_clk <= (is_read == 1'b1)? S7:S5;
             end
         S13:begin
             SCL_out <= 1'b0;
@@ -193,6 +197,29 @@ always @(posedge clock)
         begin
         SCL_t <= 1'b0;
         SCL_out <= 1'b1;
+        case(state_posedge_clk)
+        S1: begin   // idle
+            state_posedge_clk <= S1;   
+            end
+        S2: begin   // receiving data from slave
+            data_out <= data_out << 1;
+            data_out[0] <= SDA_in;
+            if((counter == 10'h0) && (nb_of_bytes == 10'h2) && (data_out[15:8] == 8'h0))
+                begin
+                counter <= 10'h7;
+                state_posedge_clk <= S3;
+                end
+            else if(counter == 10'h0)
+                begin
+                state_posedge_clk <= S1;
+                ready <= 1'b1;
+                end
+            else counter <= counter - 1'h1;
+            end
+        S1: begin   // idle
+            state_posedge_clk <= S1;   
+            end
+        endcase
         end
     end
 
