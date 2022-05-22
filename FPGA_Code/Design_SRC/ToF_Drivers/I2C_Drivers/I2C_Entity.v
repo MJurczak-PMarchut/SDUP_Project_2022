@@ -167,22 +167,24 @@ always @(negedge clock)
             ready <= 1'b1;
             end 
         S7:begin    // start reading data
-            SDA_out <= 1'b1;
-            state_posedge_clk <= S2;
             SCL_out <= 1'b0;
-//            counter <= 10'h7;
             SDA_t <= 1'b1; // to be continued
             if((counter == 10'h0) && (nb_of_bytes == 10'h2) && (data_out[15:8] == 8'h0))
                 begin
-                counter <= 10'h7;
-//                state_posedge_clk <= S3;
+                counter <= 10'h8;
+                state_posedge_clk <= S1;
                 end
             else if(counter == 10'h0)
                 begin
-//                state_posedge_clk <= S1;
+                state_posedge_clk <= S1;
+                state_negedge_clk <= S1;
                 ready <= 1'b1;
                 end
-            else counter <= counter - 1'h1;
+            else 
+                begin
+                counter <= counter - 1'h1;
+                state_posedge_clk <= S2;
+                end
             end
         S11:begin   // expect ack from slave
             SCL_out <= 1'b0;
@@ -192,7 +194,8 @@ always @(negedge clock)
         S12:begin   // expect ack from slave
             SCL_out <= 1'b0;
             SCL_t <= 1'b1;
-            counter <= 10'h7;
+            SDA_out <= 1'b1;
+            counter <= 10'h8;
             state_negedge_clk <= (is_read == 1'b1)? S7:S5;
             end
         S13:begin   // expect ack from slave
@@ -219,15 +222,11 @@ always @(posedge clock)
         if(SCL_t) SCL_t <= 1'b0;
         else SCL_out <= 1'b1;
         case(state_posedge_clk)
-        S1: begin   // idle
-//            state_posedge_clk <= S1;   
+        S1: begin   // idle 
             end
         S2: begin   // receiving data from slave
             data_out <= data_out << 1;
             data_out[0] <= SDA_in;
-            end
-        S3: begin   // idle
-//            state_posedge_clk <= S1;   
             end
         endcase
         end

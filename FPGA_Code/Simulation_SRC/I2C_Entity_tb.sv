@@ -69,11 +69,15 @@ initial
     read <= 1'b1;
     SCL_in <= 1'b0;
     SDA_in <= 1'b0;
+    nb_of_bytes <= 10'h2;
     slave_adress <= 7'h29; // default I2C address of ToF Sensor
     register_address <= 16'hA6A6; //dummy register adress
     reg_value = 7'h2;
     #10 start <= 1'b1;
     #10 start <= 1'b0;
+    #345 SDA_in <= 1'b1;
+    #10 SDA_in <= 1'b0;
+    #20 SDA_in <= 1'b1;
     end
 
 
