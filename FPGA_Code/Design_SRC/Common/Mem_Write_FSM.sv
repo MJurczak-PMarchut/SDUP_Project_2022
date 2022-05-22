@@ -29,8 +29,8 @@ module Mem_Write_FSM(
     );
     
 reg [2:0] Data_Iter;
-reg [2:0] state;
-reg [2:0] nxt_state;
+reg [1:0] state;
+reg [1:0] nxt_state;
 reg [2:0] reg_ToF_Index;
 
 localparam IDLE = 2'h0;
