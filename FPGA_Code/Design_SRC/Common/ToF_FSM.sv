@@ -34,7 +34,7 @@ module ToF_FSM(
     output [9:0] nb_of_bytes,
     output start,
     output [15:0] distance_data,
-    output [5:0] sensor_index,
+    output [4:0] sensor_index,
     output data_ready
 
 
