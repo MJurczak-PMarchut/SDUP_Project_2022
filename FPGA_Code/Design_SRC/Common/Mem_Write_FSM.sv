@@ -38,14 +38,17 @@ localparam WRITE = 2'h1;
 localparam WRITE_WAIT = 2'h2;
 
 initial
-    Data_Iter <= 3'h0;
+    begin
+        Data_Iter <= 3'h0;
+        reg_ToF_Index <= 3'h0;
+    end
     
-always @(posedge clk)    
+always @*   
     case(state)
         IDLE:           nxt_state <= (ToF_dr[Data_Iter])?WRITE:IDLE;
         WRITE:          nxt_state <= WRITE_WAIT;
         WRITE_WAIT:     nxt_state <= IDLE;
-        default:        nxt_state<= IDLE;
+        default:        nxt_state <= IDLE;
     endcase 
 
 always @(posedge clk) 
