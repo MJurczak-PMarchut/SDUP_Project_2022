@@ -64,7 +64,7 @@ initial
 initial
     begin
     start <= 1'b0;
-    read <= 1'b1;
+    read <= 1'b0;
     slave_adress <= 7'h29; // default I2C address of ToF Sensor
     register_address <= 16'hA6A6; //dummy register adress
     reg_value = 7'h2;

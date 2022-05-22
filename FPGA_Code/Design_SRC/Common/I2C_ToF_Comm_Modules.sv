@@ -116,7 +116,7 @@ genvar i;
         .nb_of_bytes(nb_of_bytes[i]),
         .start(start[i]),
         .reset(reset),
-        .data_out(distance_data),
+        .data_out(distance_data[i]),
         .ready(ready[i]),
         .SCL_out(SCL_out[i]),
         .SDA_out(SDA_out[i]),
