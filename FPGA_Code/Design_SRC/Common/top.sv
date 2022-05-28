@@ -31,8 +31,11 @@ reg reset;
 wire [2:0] ToF_Index;
 wire [21:0] ToF_Data;
 wire [7:0] dr_ToF;  
-wire [5 : 0] addrb;
-wire [15 : 0] doutb;
+wire [8 : 0] addrb_ToF;
+wire [8 : 0] addrb_surf;
+wire [15 : 0] doutb, doutb_surf;
+wire surf_rdy;
+wire all_data_written_to_bram;
 wire wea;
 
 initial
@@ -63,7 +66,8 @@ Mem_Write_FSM Mem_Write_cont
     .reset(reset),
     .ToF_dr(dr_ToF),
     .wea(wea),
-    .ToF_Index(ToF_Index)
+    .ToF_Index(ToF_Index),
+    .all_data_written(all_data_written_to_bram)
 );
 
 ToF_BRAM ToF_Data_BRAM (
@@ -72,8 +76,35 @@ ToF_BRAM ToF_Data_BRAM (
   .addra({ToF_Index, ToF_Data[21:16]}),
   .dina(ToF_Data[15:0]),    // input wire [15 : 0] dina
   .clkb(clk),    // input wire clkb
-  .addrb(addrb),  // input wire [5 : 0] addrb
+  .addrb(addrb_ToF),  // input wire [5 : 0] addrb
   .doutb(doutb)  // output wire [15 : 0] doutb
 );
+
+ToF_BRAM ToF_Surf_Data_BRAM (
+  .clka(clk),    // input wire clka
+  .wea(wea),      // input wire [0 : 0] wea
+  .addra({ToF_Index, ToF_Data[21:16]}),
+  .dina(ToF_Data[15:0]),    // input wire [15 : 0] dina
+  .clkb(clk),    // input wire clkb
+  .addrb(addrb_surf),  // input wire [5 : 0] addrb
+  .doutb(doutb_surf)  // output wire [15 : 0] doutb
+);
+
+Read_Sens_Data_FSM Read_Sens_Data_cont(
+    .clk(clk),
+    .drdy(all_data_written_to_bram),
+    .rst(reset),
+    .surf_ready(surf_rdy),
+    .axi_read(),
+    .data_addr(addrb_ToF)
+    );
+    
+Sphere_To_Cart sph_calc(
+        .clk(clk),
+        .rst(reset),
+        .en(surf_rdy), 
+        .radius(doutb),
+        .rdy()
+    );
 
 endmodule
