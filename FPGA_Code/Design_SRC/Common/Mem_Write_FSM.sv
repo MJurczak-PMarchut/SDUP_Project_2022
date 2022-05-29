@@ -25,13 +25,15 @@ module Mem_Write_FSM(
     input reset,
     input [7:0] ToF_dr,
     output wea,
-    output [2:0] ToF_Index
+    output [2:0] ToF_Index,
+    output all_data_written
     );
     
 reg [2:0] Data_Iter;
 reg [1:0] state;
 reg [1:0] nxt_state;
 reg [2:0] reg_ToF_Index;
+reg [5:0] readings_written;
 
 localparam IDLE = 2'h0;
 localparam WRITE = 2'h1;
@@ -41,6 +43,7 @@ initial
     begin
         Data_Iter <= 3'h0;
         reg_ToF_Index <= 3'h0;
+        readings_written <= 6'h0;
     end
     
 always @*   
@@ -59,12 +62,18 @@ always @(posedge clk)
 
 always @(posedge clk)
     if(reset)
-        Data_Iter <= 3'h0;
+        begin
+            Data_Iter <= 3'h0;
+            readings_written <= 6'h0;
+        end
     else
         case(state)
             IDLE : 
               if(ToF_dr[Data_Iter])
-                reg_ToF_Index <= Data_Iter;
+                begin
+                    reg_ToF_Index <= Data_Iter;
+                    readings_written <= readings_written + 1;
+                end
               else
                 Data_Iter <= Data_Iter + 1;
         endcase
@@ -72,5 +81,6 @@ always @(posedge clk)
 assign wea =    (state == WRITE)? 1'h1:
                 (state == WRITE_WAIT)?1'h1:0;
                 
+assign all_data_written = (readings_written == 6'h3F)? 1'b1 : 1'b0;
 assign ToF_Index = reg_ToF_Index;
 endmodule
