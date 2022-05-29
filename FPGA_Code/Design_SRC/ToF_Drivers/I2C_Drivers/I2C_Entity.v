@@ -42,14 +42,14 @@ module I2C_Entity(
  
    
 //State machine
-parameter S1 = 4'h01, S2 = 4'h02, S3 = 4'h03, S4 = 4'h04, S5 = 4'h05, 
-    S6 = 4'h06, S7 = 4'h07, S8 = 4'h08, S9 = 4'h09, S10 = 4'h0a,
-    S11 = 4'h0b, S12 = 4'h0c, S13 = 4'h0d;
-reg [3:0] state_negedge_clk, state_posedge_clk;
+parameter IDLE = 4'h01, SEND_ADDR = 4'h02, READ_WRITE = 4'h03, EXPECTED_ACK = 4'h04, DATA_ADDR = 4'h05, 
+    WRITE_DATA = 4'h06, READ_DATA = 4'h07, END_TRANSMIT = 4'h08, SEND_ACK = 4'h09;
+parameter RISING_EDGE = 1'b1, FALLING_EDGE = 1'b0;
+reg [3:0] state_clk, nxt_state_clk;
 
-reg receiving, expected_ACK, t_expected_ACK;
+reg receiving, expected_ACK, nxt_SCL_t, edge_SCL;
 
-reg [9:0] counter;
+reg [9:0] counter, t_nb_of_bytes;
 reg [23:0] temp;
 reg [7:0] data_temp;
 
@@ -58,191 +58,192 @@ initial
     SDA_out <= 1'b1;
     SCL_out <= 1'b1;
     expected_ACK <= 1'b0;
-    t_expected_ACK <= 1'b0;
-    state_negedge_clk <= S1;
-    state_posedge_clk <= S1;
+    state_clk <= IDLE;
     error_out <= 1'b0;
     SCL_t <= 1'b0;
     SDA_t <= 1'b0;
     receiving <= 1'b0;
     data_out <= 15'hfaf5; //temp
+    edge_SCL <= 1'b1;
     end
 
-always @(negedge clock)
-    begin
-        if(t_expected_ACK)
-            expected_ACK <= 1'b1;
-        else// if(SCL_in)
-            expected_ACK <= 1'b0;
-    end
-
-// writing on SDA line
-always @(negedge clock)
+always @(posedge clock)
     begin
     if(reset == 1'b1)
         begin
         ready <= 1'b0;
-        state_negedge_clk <= S1;
-        end
-    else if(t_expected_ACK == 1'b1)
-        begin
-        SDA_out <= 1'b0;
-        SCL_out <= 1'b0;
-        SCL_t <= 1'b1;
-        t_expected_ACK = 1'b0; // temporary
+        state_clk <= IDLE;
         end
     else
         begin
-        case(state_negedge_clk)
-        S1: begin   // Start of transmition
+        case(state_clk)
+        IDLE: begin
             if(start == 1'b1)
                 begin
                 SDA_out <= 1'b0;
-                state_negedge_clk <= S2;
+                state_clk <= SEND_ADDR;
                 counter <= 10'h6;
                 ready <= 1'b0;
+                t_nb_of_bytes <= nb_of_bytes;
+                data_out = 16'h0;
+                edge_SCL <= FALLING_EDGE;
                 end
-            else state_negedge_clk <= S1;
+            else state_clk <= IDLE;
             end
-        S2:begin    // Sending address of the device
-            SCL_out <= 1'b0;
-            SDA_out <= slave_adress[counter];
-            if(counter == 10'h0) 
-                begin
-                state_negedge_clk <= S3;
+        SEND_ADDR:begin
+            SCL_out <= edge_SCL;
+            case(edge_SCL)
+            RISING_EDGE: begin
+                if(counter == 10'h0) 
+                    begin
+                    state_clk <= READ_WRITE;
+                    end
+                else 
+                    begin
+                    counter <= counter - 1;
+                    state_clk <= SEND_ADDR;
+                    end
                 end
-            else 
-                begin
-                counter <= counter - 1;
-                state_negedge_clk <= S2;
-                end
+            FALLING_EDGE: begin
+                SDA_out <= slave_adress[counter];
+                end    
+            endcase
+            edge_SCL <= ~edge_SCL;
             end
-        S3:begin    // write/read bit
-            SCL_out <= 1'b0;
-            SDA_out <= is_read;
-            counter <= 10'hF;
-            state_negedge_clk <= S13;
-            t_expected_ACK = 1'b1;
+        READ_WRITE:begin    
+            SCL_out <= edge_SCL;
+            case(edge_SCL)
+            RISING_EDGE: begin
+                counter <= 10'hF;
+                nxt_state_clk <= DATA_ADDR;
+                state_clk = EXPECTED_ACK;
+                end
+            FALLING_EDGE: begin
+                SDA_out <= is_read;
+                end    
+            endcase
+            edge_SCL <= ~edge_SCL;
             end
-        S4:begin    // register address
-            SCL_out <= 1'b0;
-            SDA_out <= register_address[counter];
-            if(counter == 10'h0) 
-                begin
-                counter <= 10'h7;
-                t_expected_ACK = 1'b1;
-                state_negedge_clk <= S12;
+        DATA_ADDR:begin  
+            SCL_t <= 1'b0;
+            SCL_out <= edge_SCL;
+            case(edge_SCL)
+            RISING_EDGE: begin
+                if(counter == 10'h0) 
+                    begin
+                    counter <= 10'h7;
+                    nxt_state_clk <= (is_read == 1'b1)? READ_DATA:WRITE_DATA;
+                    state_clk <= EXPECTED_ACK;
+                    end
+                else if(counter == 10'h8)
+                    begin
+                    counter <= counter - 1;
+                    nxt_state_clk <= DATA_ADDR;
+                    state_clk <= EXPECTED_ACK;
+                    end
+                else 
+                    begin
+                    counter <= counter - 1;
+                    end
                 end
-            else if(counter == 10'h8)
-                begin
-                counter <= counter - 1;
-                t_expected_ACK = 1'b1;
-                state_negedge_clk <= S13;
-                end
-            else 
-                begin
-                counter <= counter - 1;
-                state_negedge_clk <= S4;
-                end
+            FALLING_EDGE: begin
+                SDA_out <= register_address[counter];
+                end    
+            endcase
+            edge_SCL <= ~edge_SCL;
             end
-        S5:begin    // sending write data
-            SCL_out <= 1'b0;
-            t_expected_ACK <= 1'b0;
-            SDA_out <= data_in[counter];
-            if(counter == 10'h0) 
-                begin
-                t_expected_ACK <= 1'b1;
-                state_negedge_clk <= S11;
+        WRITE_DATA:begin 
+            SCL_t <= 1'b0;
+            SCL_out <= edge_SCL;  
+            case(edge_SCL)
+            RISING_EDGE: begin
+                if(counter == 10'h0) 
+                    begin
+                    state_clk <= EXPECTED_ACK;
+                    nxt_state_clk <= END_TRANSMIT;
+                    end
+                else 
+                    begin
+                    counter <= counter - 1;
+                    end
                 end
-            else 
-                begin
-                counter <= counter - 1;
-                state_negedge_clk <= S5;
-                end
+            FALLING_EDGE: begin
+                SDA_out <= data_in[counter];
+                end    
+            endcase
+            edge_SCL <= ~edge_SCL;
             end
-        S6:begin
-            SDA_out <= 1'b1;
-            t_expected_ACK <= 1'b0;
-            state_negedge_clk <= S1;
-            ready <= 1'b1;
-            end 
-        S7:begin    // start reading data
-            SCL_out <= 1'b0;
-            SDA_t <= 1'b1; // to be continued
-            if((counter == 10'h0) && (nb_of_bytes == 10'h2) && (data_out[15:8] == 8'h0))
-                begin
-                counter <= 10'h8;
-                state_posedge_clk <= S1;
-                end
-            else if(counter == 10'h0)
-                begin
-                state_posedge_clk <= S1;
-                state_negedge_clk <= S1;
+        END_TRANSMIT:begin
+            case(edge_SCL)
+            RISING_EDGE: begin
+                SDA_t <= 1'b0;
+                SCL_t <= 1'b0;
+                SDA_out <= 1'b1;
+                state_clk <= IDLE;
                 ready <= 1'b1;
+                SCL_out <= 1'b1;
                 end
-            else 
-                begin
-                counter <= counter - 1'h1;
-                state_posedge_clk <= S2;
+            FALLING_EDGE: begin
+                end    
+            endcase
+            edge_SCL <= ~edge_SCL;
+            end 
+        READ_DATA:begin
+            SCL_t <= 1'b0;
+            SCL_out <= edge_SCL;
+            SDA_t <= 1'b1;
+            SDA_out <= 1'b1; 
+            case(edge_SCL)
+            RISING_EDGE: begin
+                data_out <= data_out << 1;
+                data_out[0] <= SDA_in;
+                if((counter == 10'h0) && (t_nb_of_bytes == 10'h2)) // need to be changed
+                    begin
+                    counter <= 10'h7;
+                    t_nb_of_bytes <= t_nb_of_bytes - 1;
+                    nxt_state_clk <= READ_DATA;
+                    state_clk <= SEND_ACK;
+                    end
+                else if(counter == 10'h0)
+                    begin
+                    nxt_state_clk <= END_TRANSMIT;
+                    state_clk <= SEND_ACK;
+                    end
+                else 
+                    begin
+                    counter <= counter - 1'h1;
+                    end
                 end
+            FALLING_EDGE: begin
+                end    
+            endcase
+            edge_SCL <= ~edge_SCL;
             end
-        S11:begin   // expect ack from slave
-            SCL_out <= 1'b0;
-            SCL_t <= 1'b1;
-            state_negedge_clk <= S6;
+        EXPECTED_ACK:begin
+            case(edge_SCL)
+            RISING_EDGE: begin
+                state_clk <= nxt_state_clk;
+                end
+            FALLING_EDGE: begin
+                SCL_out <= 1'b0;
+                SCL_t <= 1'b1;
+                end    
+            endcase
+            edge_SCL <= ~edge_SCL;
             end
-        S12:begin   // expect ack from slave
-            SCL_out <= 1'b0;
-            SCL_t <= 1'b1;
-            SDA_out <= 1'b1;
-            counter <= 10'h8;
-            state_negedge_clk <= (is_read == 1'b1)? S7:S5;
-            end
-        S13:begin   // expect ack from slave
-            SCL_out <= 1'b0;
-            SCL_t <= 1'b1;
-            state_negedge_clk <= S4;
+        SEND_ACK:begin
+            SCL_out <= edge_SCL;
+            case(edge_SCL)
+            RISING_EDGE: begin
+                state_clk <= nxt_state_clk;
+                end
+            FALLING_EDGE: begin
+                end    
+            endcase
+            edge_SCL <= ~edge_SCL;
             end
         endcase
         end
     end
-
-// reading from SDA line
-always @(posedge clock)
-    begin
-    if(reset)
-        begin
-        data_out <= 15'h0;
-        end
-    else if(expected_ACK == 1'b1)
-        begin
-        end
-    else
-        begin
-        if(SCL_t) SCL_t <= 1'b0;
-        else SCL_out <= 1'b1;
-        case(state_posedge_clk)
-        S1: begin   // idle 
-            end
-        S2: begin   // receiving data from slave
-            data_out <= data_out << 1;
-            data_out[0] <= SDA_in;
-            end
-        endcase
-        end
-    end
-
-//// get ack from slave
-//always @(posedge SCL_in)
-//    begin
-//    if(expected_ACK == 1'b1)
-//        begin
-//        t_expected_ACK = 1'b0;
-//        end
-//    else
-//        begin
-////        error_out <= 1'b1;
-//        end
-//    end
-    
+  
 endmodule
