@@ -24,12 +24,15 @@ module delay_data_1cyl(
     input [15:0] data_in,
     input clk,
     input en,
+    input rst,
     output reg [15:0] data_out
     );
     
     
     always @(posedge clk)
-        if(en)
+        if(rst)
+            data_out <= 0;
+        else if(en)
             data_out <= data_in;
         else
             data_out <= data_out;
