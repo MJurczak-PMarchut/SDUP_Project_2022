@@ -38,3 +38,41 @@ module delay_data_1cyl(
             data_out <= data_out;
             
 endmodule
+
+module delay_data_1cyl_24b(
+    input [23:0] data_in,
+    input clk,
+    input en,
+    input rst,
+    output reg [23:0] data_out
+    );
+    
+    
+    always @(posedge clk)
+        if(rst)
+            data_out <= 0;
+        else if(en)
+            data_out <= data_in;
+        else
+            data_out <= data_out;
+            
+endmodule
+
+module delay_data_1cyl_32b(
+    input [31:0] data_in,
+    input clk,
+    input en,
+    input rst,
+    output reg [31:0] data_out
+    );
+    
+    
+    always @(posedge clk)
+        if(rst)
+            data_out <= 0;
+        else if(en)
+            data_out <= data_in;
+        else
+            data_out <= data_out;
+            
+endmodule

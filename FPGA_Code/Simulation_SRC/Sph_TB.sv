@@ -32,10 +32,10 @@ reg [25:0] area;
 initial
     begin
         clock <= 1'b1;   
-         rdata[0] <= 5000;
-         rdata[1] <= 5000;
-         rdata[2] <= 5000;
-         rdata[3] <= 5000;
+         rdata[0] <= 1000;
+         rdata[1] <= 1000;
+         rdata[2] <= 1000;
+         rdata[3] <= 1000;
          it <= 0;
     end
     

@@ -56,8 +56,8 @@
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 sin_mult_const your_instance_name (
   .CLK(CLK),  // input wire CLK
-  .A(A),      // input wire [17 : 0] A
-  .P(P)      // output wire [30 : 0] P
+  .A(A),      // input wire [23 : 0] A
+  .P(P)      // output wire [36 : 0] P
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 
