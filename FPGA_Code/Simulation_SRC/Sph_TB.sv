@@ -40,10 +40,10 @@ initial
          rdata[5] <= 2000;
          rdata[6] <= 2000;
          rdata[7] <= 2000;
-         rdata[8] <= 4000;
-         rdata[9] <= 4000;
-         rdata[10] <= 4000;
-         rdata[11] <= 4000;
+         rdata[8] <= 2500;
+         rdata[9] <= 2500;
+         rdata[10] <= 2500;
+         rdata[11] <= 2500;
          rdata[12] <= 250;
          rdata[13] <= 250;
          rdata[14] <= 250;

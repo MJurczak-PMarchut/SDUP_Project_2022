@@ -36,7 +36,9 @@ wire [8 : 0] addrb_surf;
 wire [15 : 0] doutb, doutb_surf;
 wire surf_rdy;
 wire all_data_written_to_bram;
-wire wea;
+wire wea, sph_drdy;
+wire [25:0] surf_data;
+wire [31:0] compl_surf;
 
 initial
 begin 
@@ -100,11 +102,19 @@ Read_Sens_Data_FSM Read_Sens_Data_cont(
     );
     
 Sphere_To_Cart sph_calc(
-        .clk(clk),
-        .rst(reset),
-        .en(surf_rdy), 
-        .radius(doutb),
-        .rdy()
-    );
+    .clk(clk),
+    .rst(reset),
+    .en(surf_rdy), 
+    .radius(doutb),
+    .rdy(sph_drdy),
+    .area(surf_data)
+);
+    
+sph_surf_acc surf_acc(
+    .clk(clk),
+    .en(sph_drdy),
+    .din(surf_data),
+    .dout(compl_surf)
+);
 
 endmodule
