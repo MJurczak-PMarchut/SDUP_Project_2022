@@ -27,22 +27,30 @@ module sph_surf_acc(
     output [31:0] dout
     );
     
-    reg [31:0] temp_data, out_data;
-    
-    initial
-        begin
-            temp_data <= 0;
-            out_data <= 0;
-        end
-    
-    
-    always @(posedge clk)
-        if(en)
-            temp_data <= temp_data + din;
-        else
+reg [31:0] temp_data, out_data;
+reg already_read;
+
+initial
+    begin
+        temp_data <= 0;
+        out_data <= 0;
+    end
+
+always @(posedge clk)
+    if(en)
+        temp_data <= temp_data + din;
+    else if(already_read)
+        temp_data <= 0;
+        
+always @(posedge clk)
+    if(en)
+        already_read <= 0;
+    else
+        if(!already_read)
             begin
-                temp_data <= 0;
-                out_data <= din;
+                out_data <= temp_data;
+                already_read <= 1;
             end
-    
+            
+assign dout = out_data;
 endmodule

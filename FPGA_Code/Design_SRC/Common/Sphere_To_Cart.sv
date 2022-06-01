@@ -184,3 +184,5 @@ sqrt_cordic your_instance_name (
 assign area = stage_3_data_out[24:1];
 
 endmodule
+
+

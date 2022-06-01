@@ -110,7 +110,7 @@ Sphere_To_Cart sph_calc(
     .area(surf_data)
 );
     
-sph_surf_acc surf_acc(
+sph_surf_acc sph_surf_acc(
     .clk(clk),
     .en(sph_drdy),
     .din(surf_data),
