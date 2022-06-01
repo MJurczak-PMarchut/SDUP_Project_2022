@@ -147,7 +147,7 @@ mult_n_sin mult_sin_3 (
   .P(stage_1_data_out[2])      // output wire [36 : 0] P
 );
 
-mult_sin mult_sin_4 (
+mult_gen_sin_sq mult_sin_4 (
   .CLK(clk),  // input wire CLK
   .A(r3r2[23:0]),      // input wire [22 : 0] A
   .P(stage_1_data_out[3])      // output wire [36 : 0] P

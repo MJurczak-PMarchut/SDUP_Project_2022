@@ -25,8 +25,8 @@ module Sph_TB(
     );
     
 reg clock, en, rdy;
-reg [1:0] it;
-reg [15:0] rdata [3:0];
+reg [3:0] it;
+reg [15:0] rdata [15:0];
 reg [25:0] area;
     
 initial
@@ -36,6 +36,18 @@ initial
          rdata[1] <= 1000;
          rdata[2] <= 1000;
          rdata[3] <= 1000;
+         rdata[4] <= 2000;
+         rdata[5] <= 2000;
+         rdata[6] <= 2000;
+         rdata[7] <= 2000;
+         rdata[8] <= 4000;
+         rdata[9] <= 4000;
+         rdata[10] <= 4000;
+         rdata[11] <= 4000;
+         rdata[12] <= 250;
+         rdata[13] <= 250;
+         rdata[14] <= 250;
+         rdata[15] <= 250;
          it <= 0;
     end
     
