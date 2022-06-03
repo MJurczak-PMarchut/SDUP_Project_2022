@@ -25,6 +25,7 @@ module Read_Sens_Data_FSM(
     input drdy,
     input rst,
     output surf_ready,
+    output plane_ready,
     output axi_read,
     output [8:0] data_addr
     );
