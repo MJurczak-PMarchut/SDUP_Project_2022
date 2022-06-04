@@ -33,6 +33,7 @@ wire [31:0] surf_wire;
 
 delay_data_1cyl_32b sync_dummy_0
     (
+        .rst(1'b0),
         .clk(clk),
         .en(en),
         .data_in(surf_wire),
@@ -41,6 +42,7 @@ delay_data_1cyl_32b sync_dummy_0
 
 delay_data_1cyl sync_dummy_1
     (
+        .rst(1'b0),
         .clk(clk),
         .en(en),
         .data_in(en),

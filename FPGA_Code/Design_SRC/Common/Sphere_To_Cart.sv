@@ -61,6 +61,7 @@ initial
 
 delay_data_1cyl sync_dummy_0
     (
+        .rst(1'b0),
         .clk(clk),
         .en(en),
         .data_in(radius),
@@ -72,6 +73,7 @@ genvar i;
   for (i=0; i<2; i=i+1) begin : Entity_Identifier_1
   delay_data_1cyl sync_dummy
     (
+        .rst(1'b0),
         .clk(clk),
         .en(en),
         .data_in(r[i]),

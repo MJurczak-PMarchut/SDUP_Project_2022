@@ -47,7 +47,8 @@ mult_sin_5625 mult_sin_1 (
 );
     
 delay_data_1cyl sync_dummy_0
-(
+(   
+    .rst(1'b0),
     .clk(clk),
     .en(1'b1),
     .data_in(en),
@@ -56,6 +57,7 @@ delay_data_1cyl sync_dummy_0
 
 delay_data_1cyl sync_dummy_1
 (
+    .rst(1'b0),
     .clk(clk),
     .en(1'b1),
     .data_in(valid1),
