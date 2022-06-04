@@ -40,7 +40,7 @@ always @(posedge clk)
         iter2 <= iter2+1;
         if(iter2 == 5)
             plane_rdy <= 1;
-        if(iter == 7)
+        if(iter2 == 70)
             plane_rdy <= 0;
         if(plane_rdy)
             iter <= iter + 1;

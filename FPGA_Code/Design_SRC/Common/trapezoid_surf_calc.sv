@@ -44,7 +44,7 @@ delay_data_1cyl sync_dummy_1
     (
         .rst(1'b0),
         .clk(clk),
-        .en(en),
+        .en(1'b1),
         .data_in(en),
         .data_out(valid)
     );

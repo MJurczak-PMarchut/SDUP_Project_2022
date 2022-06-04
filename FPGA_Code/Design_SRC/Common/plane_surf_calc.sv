@@ -34,7 +34,7 @@ module plane_surf_calc(
 reg [31:0] acc;
 reg [31:0] out_surf;
 reg [6:0] index;
-reg res;
+reg res, valid;
 
 wire [31:0] r1r2;
 wire [31:0] trap_surf;
@@ -52,6 +52,7 @@ initial
         out_surf <= 0;
         index <= 0;
         res <= 1;
+        valid <= 0;
     end
     
     
@@ -76,15 +77,21 @@ always @(posedge clk)
         
 always @(posedge clk)
     if(rst)
-        res <= 1;
-    else if(!(en_validity || surf_validity))
+        begin
+            res <= 1;
+            valid <= 0;
+        end
+    else if(!(en_validity || surf_validity) && !res)
         begin
             res <= 1;
             out_surf <= acc;
+            valid <= 1;
         end
     else if (en_validity)
-        res <= 0;
-
+        begin
+            valid <=0;
+            res <= 0;
+        end
 delay_data_1cyl sync_dummy_0
 (
     .rst(1'b0),
@@ -129,7 +136,7 @@ assign acc_int_surf_trap = (trap_valid)? trap_surf : 0;
 
 assign acc_int_surf = acc_int_surf_triag + acc_int_surf_trap;
 assign surf = out_surf;
-assign rdy = (index == 65)? 1 : 0 ;
+assign rdy = valid;
 assign surf_validity = trap_valid || triag_valid;
 assign en_validity = en || en_delay;
     
