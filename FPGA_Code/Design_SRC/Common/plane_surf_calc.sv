@@ -32,6 +32,7 @@ module plane_surf_calc(
 
 
 reg [31:0] acc;
+reg [31:0] out_surf;
 reg [6:0] index;
 reg res;
 
@@ -39,6 +40,8 @@ wire [31:0] r1r2;
 wire [31:0] trap_surf;
 wire [31:0] triag_surf;
 wire [31:0] acc_int_surf;
+wire [31:0] acc_int_surf_triag;
+wire [31:0] acc_int_surf_trap;
 wire [15:0] r [2:0];
 wire en_delay, en_triag, en_trap, trap_valid, triag_valid;
 
@@ -46,6 +49,7 @@ wire en_delay, en_triag, en_trap, trap_valid, triag_valid;
 initial
     begin
         acc <= 0;
+        out_surf <= 0;
         index <= 0;
         res <= 1;
     end
@@ -63,21 +67,22 @@ always @(posedge clk)
         
         
 always @(posedge clk)
-    if(rst)
+    if(rst || res)
         acc <= 0;
     else if(trap_valid || triag_valid)
         begin
             acc <= acc + acc_int_surf;
         end
-    else if(res)
-        acc <= 0;
         
 always @(posedge clk)
     if(rst)
         res <= 1;
     else if(!(en || en_delay))
-        res <= 1;
-    else
+        begin
+            res <= 1;
+            out_surf <= acc;
+        end
+    else if (en || en_delay)
         res <= 0;
 
 delay_data_1cyl sync_dummy_0
@@ -96,7 +101,7 @@ delay_data_1cyl sync_dummy_1
     .data_out(en_delay)
 );
 
-triag_surf_calc(
+triag_surf_calc triag_surf_ent(
     .clk(clk),
     .en(en_triag),
     .a(radius),
@@ -105,7 +110,7 @@ triag_surf_calc(
     .surf(triag_surf)
     );
     
-trapezoid_surf_calc(
+trapezoid_surf_calc trap_surf_ent(
     .clk(clk),
     .en(en_trap),
     .a(radius),
@@ -116,6 +121,10 @@ trapezoid_surf_calc(
     
 assign en_triag = (en_delay && en) && (index[2:0] != 3'b0);
 assign en_trap = (en_delay && en) && (index[2:0] == 3'b0);
-assign acc_int_surf = ((trap_valid)? trap_surf : 0) + ((triag_valid)? triag_surf : 0);
+assign acc_int_surf_triag = (triag_valid)? triag_surf : 0;
+assign acc_int_surf_trap = (trap_valid)? trap_surf : 0;
+
+assign acc_int_surf = acc_int_surf_triag + acc_int_surf_trap;
+assign surf = out_surf;
     
 endmodule
