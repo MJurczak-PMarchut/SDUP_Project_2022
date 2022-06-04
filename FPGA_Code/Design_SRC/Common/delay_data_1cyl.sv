@@ -28,6 +28,8 @@ module delay_data_1cyl(
     output reg [15:0] data_out
     );
     
+    initial
+        data_out <= 0;
     
     always @(posedge clk)
         if(rst)
@@ -47,6 +49,8 @@ module delay_data_1cyl_24b(
     output reg [23:0] data_out
     );
     
+    initial
+        data_out <= 0;
     
     always @(posedge clk)
         if(rst)
@@ -66,6 +70,8 @@ module delay_data_1cyl_32b(
     output reg [31:0] data_out
     );
     
+    initial
+        data_out <= 0;
     
     always @(posedge clk)
         if(rst)

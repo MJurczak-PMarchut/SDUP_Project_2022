@@ -125,8 +125,8 @@ BEGIN
       C_OUT_LOW => 0,
       C_MULT_TYPE => 2,
       C_CE_OVERRIDES_SCLR => 0,
-      C_CCM_IMP => 0,
-      C_B_VALUE => "1100100011000",
+      C_CCM_IMP => 2,
+      C_B_VALUE => "1110010101001",
       C_HAS_ZERO_DETECT => 0,
       C_ROUND_OUTPUT => 0,
       C_ROUND_PT => 0

@@ -62,6 +62,6 @@ delay_data_1cyl sync_dummy_1
     .data_out(valid)
 );
     
-assign surf = out >> 16;
+assign surf = out >> 17;
     
 endmodule

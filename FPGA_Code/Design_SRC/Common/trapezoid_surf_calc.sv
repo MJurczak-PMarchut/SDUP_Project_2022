@@ -29,12 +29,13 @@ module trapezoid_surf_calc(
     output valid
     );
     
-    
+wire [31:0] surf_wire;    
+
 delay_data_1cyl_32b sync_dummy_0
     (
         .clk(clk),
         .en(en),
-        .data_in((a+b) << 3),
+        .data_in(surf_wire),
         .data_out(surf)
     );
 
@@ -45,5 +46,7 @@ delay_data_1cyl sync_dummy_1
         .data_in(en),
         .data_out(valid)
     );
+    
+assign surf_wire = (a+b) << 3;
     
 endmodule
