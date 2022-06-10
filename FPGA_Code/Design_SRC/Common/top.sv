@@ -24,7 +24,9 @@ module top(
     input clk,
     inout [0:7] ToF_SCL,
     inout [0:7] ToF_SDA,
-    input [0:7] ToF_INT
+    input [0:7] ToF_INT,
+    input [3:0] ToF_CMD_in,
+    output [3:0] ToF_CMD_out
     );
 
 reg reset;
@@ -58,6 +60,8 @@ I2C_ToF_Comm_Modules I2C_Modules_entity
     .ToF_SCL(ToF_SCL),  
     .ToF_SDA(ToF_SDA),  
     .ToF_INT(ToF_INT),
+    .ToF_CMD_in(ToF_CMD_in),
+    .ToF_CMD_out(ToF_CMD_out),
     .ToF_Index(ToF_Index),
     .reset(reset),
     .data_out(ToF_Data),

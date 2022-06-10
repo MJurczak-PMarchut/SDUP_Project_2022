@@ -26,7 +26,9 @@ module I2C_ToF_Comm_Modules(
     inout [0:7] ToF_SDA,
     input reset,
     input [0:7] ToF_INT,
+    input [3:0] ToF_CMD_in,
     input [2:0] ToF_Index,
+    output [3:0] ToF_CMD_out,
     output [21:0] data_out,
     output [7:0] ready_out
     );
@@ -97,6 +99,8 @@ genvar i;
         .ready(ready[i]),
         .error_in(error_out[i]),
         .ToF_INT(ToF_INT[i]),
+        .ToF_CMD_in(ToF_CMD_in),
+        .ToF_CMD_out(ToF_CMD_out),
         .i2c_data(reg_value[i]),
         .i2c_data_in(i2c_data_out[i]),
         .register_address(register_address[i]),

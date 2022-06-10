@@ -26,10 +26,11 @@ module ToF_FSM(
     input ready,
     input error_in,
     input ToF_INT,
+    input [3:0] ToF_CMD_in,
     input [15:0] i2c_data_in,
-    output [7:0] i2c_data,
-
-
+    
+    output reg [7:0] i2c_data,
+    output reg [3:0] ToF_CMD_out,
     output reg [15:0] register_address,
     output reg is_read,
     output reg [9:0] nb_of_bytes,
@@ -40,11 +41,14 @@ module ToF_FSM(
 
     );
 
-parameter INIT = 5'h01, IDLE = 5'h02, DATA_ACQUISITION = 5'h03, WAIT_FOR_DATA = 5'h04, SAVE_DATA = 5'h5, READ_REG = 5'h6, WRITE_REG = 5'h7;
+parameter INIT = 5'h11, IDLE = 5'h12, DATA_ACQUISITION = 5'h13, WAIT_FOR_DATA_READY = 5'h14, SAVE_DATA = 5'h15, READ_REG = 5'h16, WRITE_REG = 5'h17;
+parameter DEFAULT = 4'h0, SW_REBOOT1 = 4'h1, SW_REBOOT2 = 4'h2, SW_REBOOT3 = 4'h3, ENABLE_FW_ACCESS = 4'h4, DOWNLOAD_FW = 4'h5, RESET_MCU = 4'h6, PROCESSING = 4'h7;
+parameter DONE = 4'hf;
 
-parameter NB_OF_MESSAGES = 20;
+parameter NB_OF_MESSAGES = 60;
 
 reg [3:0] state, nxt_state;    
+reg [7:0] msg_counter;
 
 reg [7:0] [7:0] [15:0] data_array;
 reg [5:0] data_index; // [5:3] hotizontal index, [2:0] vertical index
@@ -86,6 +90,7 @@ initial
     start <= 1'b0;
     sensor_index <= 6'h0;
     data_ready <= 1'b0;
+    msg_counter <= 8'h0;
     end
     
 always @(posedge clk)
@@ -97,26 +102,64 @@ always @(posedge clk)
         begin
         case(state)
         INIT: begin
+            state <= IDLE;
             end
         IDLE: begin
-            if(ToF_INT == 1'b1)
+            case(ToF_CMD_in)
+                SW_REBOOT1: begin
+                    msg_counter <= 8'h0;
+                    state <= SW_REBOOT1;
+                    ToF_CMD_out <= PROCESSING;
+                    end
+                SW_REBOOT2: begin
+                    state <= SW_REBOOT1;
+                    end
+                SW_REBOOT3: begin
+                    state <= SW_REBOOT1;
+                    end
+                ENABLE_FW_ACCESS: begin
+                    state <= SW_REBOOT1;
+                    end
+            endcase
+            end
+        SW_REBOOT1: begin
+            register_address <= InitMessagesAddr[msg_counter];
+            i2c_data <= InitMessagesVal[msg_counter];
+            start <= 1'b1;
+            state <= WAIT_FOR_DATA_READY;
+            if(msg_counter == 8'h4 || msg_counter == 8'h13  || msg_counter == 8'h18 || msg_counter == 8'h1A ||
+                msg_counter == 8'h2C)
+            //read reg value
                 begin
-                state <= DATA_ACQUISITION;
+                is_read <= 1'b1;
+                nxt_state <= SW_REBOOT1;
                 end
+            else if(msg_counter == 8'hE || msg_counter == 8'h11 || msg_counter == 8'h31)
+            //timeout
+                begin
+                is_read <= 1'b0;
+                ToF_CMD_out <= DONE;
+                nxt_state <= IDLE;
+                end
+            else
+            //set reg value
+                begin
+                is_read <= 1'b0;
+                nxt_state <= SW_REBOOT1;
+                end
+            msg_counter <= msg_counter + 8'h1;
             end
         DATA_ACQUISITION: begin
             start <= 1'b1;
             data_ready <= 1'b0;
             nb_of_bytes <= 9'h2;
             end
-        WAIT_FOR_DATA: begin
+        WAIT_FOR_DATA_READY: begin
             if(ready == 1'b1)
                 begin
                     start <= 1'b0;
                     distance_data <= i2c_data_in;
-                    sensor_index <= sensor_index + 1;
-                    data_ready <= 1'b1;
-                    state <= DATA_ACQUISITION;
+                    state <= nxt_state;
                 end
             end
         READ_REG: begin
@@ -133,6 +176,9 @@ always @(posedge clk)
                 start <= 1'b0;
                 state <= IDLE;
                 end
+            end
+        DEFAULT: begin
+            state <= IDLE;
             end
         endcase
         end

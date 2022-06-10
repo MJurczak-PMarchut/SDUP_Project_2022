@@ -1,0 +1,284 @@
+23:05:23 **** Build of project lidar_bsp ****
+make -k all 
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sph_ip_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/sph_ip_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v7_0/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling coresightps_dcc"
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/sph_ip_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/sph_ip_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling sph_ip..."
+sph_ip_selftest.c: In function 'SPH_IP_Reg_SelfTest':
+sph_ip_selftest.c:52:55: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+    if ( SPH_IP_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                       ^~
+sph_ip_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v7_0/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling standalone"
+In file included from usleep.c:56:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xil_sleeptimer.c:51:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xtime_l.c:49:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from sleep.c:53:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+23:05:57 **** Build of configuration Debug for project lidar ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_g.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_g.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_g.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_g.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_g.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_g.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_g.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_intr.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_intr.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_intr.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_intr.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_intr.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_intr.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_intr.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_selftest.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_selftest.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_selftest.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_selftest.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_selftest.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_selftest.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_selftest.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_sinit.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_sinit.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_sinit.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_sinit.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_sinit.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_sinit.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_3/src/xadcps_sinit.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_endpoint.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_endpoint.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_endpoint.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_endpoint.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_endpoint.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_endpoint.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_endpoint.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_g.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_g.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_g.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_g.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_g.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_g.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_g.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_hw.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_hw.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_hw.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_hw.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_hw.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_hw.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_hw.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_intr.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_intr.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_intr.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_intr.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_intr.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_intr.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_intr.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_sinit.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_sinit.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_sinit.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_sinit.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_sinit.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_sinit.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/usbps_v2_4/src/xusbps_sinit.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_g.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_g.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_g.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_g.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_g.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_g.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_g.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_hw.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_hw.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_hw.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_hw.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_hw.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_hw.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_hw.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_intr.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_intr.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_intr.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_intr.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_intr.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_intr.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_intr.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_options.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_options.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_options.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_options.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_options.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_options.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_options.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_selftest.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_selftest.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_selftest.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_selftest.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_selftest.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_selftest.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_selftest.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_sinit.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_sinit.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_sinit.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_sinit.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_sinit.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_sinit.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/uartps_v3_7/src/xuartps_sinit.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_g.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_g.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_g.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_g.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_g.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_g.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_g.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_options.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_options.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_options.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_options.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_options.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_options.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_options.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_selftest.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_selftest.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_selftest.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_selftest.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_selftest.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_selftest.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_selftest.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_sinit.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_sinit.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_sinit.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_sinit.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_sinit.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_sinit.c"
+'Finished building: ../lidar_bsp/ps7_cortexa9_0/libsrc/ttcps_v3_9/src/xttcps_sinit.c'
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.c"
+In file included from ../lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.c:30:
+../lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_timer_hw.h:84:10: fatal error: xintc_l.h: No such file or directory
+ #include "xintc_l.h"
+          ^~~~~~~~~~~
+compilation terminated.
+make: *** [lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/subdir.mk:48: lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.o] Error 1
+23:06:07 **** Auto Build of configuration Debug for project lidar ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.c"
+In file included from ../lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.c:30:
+../lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_timer_hw.h:84:10: fatal error: xintc_l.h: No such file or directory
+ #include "xintc_l.h"
+          ^~~~~~~~~~~
+compilation terminated.
+make: *** [lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/subdir.mk:48: lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.o] Error 1
+23:08:08 **** Auto Build of configuration Debug for project lidar ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.c"
+In file included from ../lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.c:30:
+../lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_timer_hw.h:84:10: fatal error: xintc_l.h: No such file or directory
+ #include "xintc_l.h"
+          ^~~~~~~~~~~
+compilation terminated.
+make: *** [lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/subdir.mk:48: lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.o] Error 1
+23:08:17 **** Auto Build of configuration Debug for project lidar ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/studia/Systemy_Dedykowane_w_Ukladach_Programowalnych/SDUP_Project_2022/FPGA_Code/SW/lidar_bsp/ps7_cortexa9_0/include -MMD -MP -MF"lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.d" -MT"lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.o" -o "lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.o" "../lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.c"
+In file included from ../lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.c:30:
+../lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_timer_hw.h:84:10: fatal error: xintc_l.h: No such file or directory
+ #include "xintc_l.h"
+          ^~~~~~~~~~~
+compilation terminated.
+make: *** [lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/subdir.mk:48: lidar_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/profile/_profile_clean.o] Error 1
