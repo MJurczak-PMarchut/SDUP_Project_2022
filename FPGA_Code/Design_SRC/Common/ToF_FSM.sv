@@ -49,6 +49,7 @@ parameter NB_OF_MESSAGES = 60;
 
 reg [3:0] state, nxt_state;    
 reg [7:0] msg_counter;
+reg [16:0] fw_counter;
 
 reg [7:0] [7:0] [15:0] data_array;
 reg [5:0] data_index; // [5:3] hotizontal index, [2:0] vertical index
@@ -80,7 +81,13 @@ reg [NB_OF_MESSAGES-1:0][7:0] InitMessagesVal = {8'h00, 8'h04, 8'h40, 8'h03, 8'h
                                                    8'h00, 8'h01, 8'h02
                                                    };
 
-
+fw_blk_mem_gen fw(
+    .addra(fw_counter),
+    .clka(clk),
+    .douta(),
+    .ena(),
+    .wea()
+);
 
 
 initial
@@ -91,6 +98,7 @@ initial
     sensor_index <= 6'h0;
     data_ready <= 1'b0;
     msg_counter <= 8'h0;
+    fw_counter <= 17'h0;
     end
     
 always @(posedge clk)
@@ -148,6 +156,8 @@ always @(posedge clk)
                 nxt_state <= SW_REBOOT1;
                 end
             msg_counter <= msg_counter + 8'h1;
+            end
+        DOWNLOAD_FW: begin
             end
         DATA_ACQUISITION: begin
             start <= 1'b1;
