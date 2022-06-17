@@ -3,4 +3,6 @@
 /FPGA_Code/*.sim
 /FPGA_Code/*.runs
 /FPGA_Code/*.ip_user_files
+/FPGA_Code/*.log
+/FPGA_Code/FPGA_Project.tmp
 
