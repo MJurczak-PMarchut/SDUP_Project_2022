@@ -26,12 +26,14 @@ module I2C_ToF_Comm_Modules(
     inout [0:7] ToF_SDA,
     input reset,
     input [0:7] ToF_INT,
-    input [3:0] ToF_CMD_in,
+    input [31:0] ToF_CMD_in,
     input [2:0] ToF_Index,
-    output [3:0] ToF_CMD_out,
+    output [15:0] ToF_CMD_out,
     output [21:0] data_out,
     output [7:0] ready_out
     );
+
+parameter NB_OF_SENSORS = 8;
     
 reg clock;
 reg [6:0] slave_adress;
@@ -66,7 +68,7 @@ initial
 
 genvar i;
  generate
-  for (i=0; i<8; i=i+1) begin
+  for (i=0; i<NB_OF_SENSORS; i=i+1) begin
     IOBUF #(
     .DRIVE(12), // Specify the output drive strength
     .IBUF_LOW_PWR("TRUE"),  // Low Power - "TRUE", High Performance = "FALSE" 
@@ -91,7 +93,7 @@ genvar i;
         .T(SDA_t[i])      // 3-state enable input, high=input, low=output
     );   
   end
-  for (i=0; i<8; i=i+1) begin : Entity_Identifier
+  for (i=0; i<NB_OF_SENSORS; i=i+1) begin : Entity_Identifier
     ToF_FSM tof_fsm_entity
     (
         .clk(clk),
@@ -99,8 +101,8 @@ genvar i;
         .ready(ready[i]),
         .error_in(error_out[i]),
         .ToF_INT(ToF_INT[i]),
-        .ToF_CMD_in(ToF_CMD_in),
-        .ToF_CMD_out(ToF_CMD_out),
+        .ToF_CMD_in(ToF_CMD_in[i*4+3:i*4]),
+        .ToF_CMD_out(ToF_CMD_out[i*2+1:i*2]),
         .i2c_data(reg_value[i]),
         .i2c_data_in(i2c_data_out[i]),
         .register_address(register_address[i]),

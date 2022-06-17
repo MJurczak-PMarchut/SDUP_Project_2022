@@ -25,10 +25,11 @@ module top(
     inout wire [0:7] ToF_SCL,
     inout wire [0:7] ToF_SDA,
     input wire [0:7] ToF_INT,
-    input wire [3:0] ToF_CMD_in,
-    output wire [3:0] ToF_CMD_out
+    input wire [31:0] ToF_CMD_in,
+    output wire [15:0] ToF_CMD_out
     );
 
+//wire [2:0] [1:0] ToF_CMD_out; //temp
 reg reset;
 wire [2:0] ToF_Index;
 wire [21:0] ToF_Data;

@@ -157,13 +157,21 @@ always @(posedge clock)
             SCL_out <= edge_SCL;  
             case(edge_SCL)
             RISING_EDGE: begin
-                if(counter == 10'h0) 
+                if(counter == 10'h0 && nb_of_bytes == 10'h0) 
                     begin
                     state_clk <= EXPECTED_ACK;
                     nxt_state_clk <= END_TRANSMIT;
                     end
+                else if(counter == 10'h0) 
+                    begin
+                    state_clk <= EXPECTED_ACK;
+                    nxt_state_clk <= WRITE_DATA;
+                    counter <= 10'h7;
+                    ready <= 1'b1;
+                    end
                 else 
                     begin
+                    ready <= 1'b0;
                     counter <= counter - 1;
                     end
                 end

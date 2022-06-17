@@ -48,12 +48,13 @@
 
 
 // IP VLNV: xilinx.com:user:sph_ip:1.0
-// IP Revision: 20
+// IP Revision: 24
 
 `timescale 1ns/1ps
 
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_plane_calc_sph_ip_0_1 (
+  ToF_clk,
   ToF_SCL,
   ToF_SDA,
   ToF_INT,
@@ -80,6 +81,9 @@ module design_plane_calc_sph_ip_0_1 (
   s00_axi_aresetn
 );
 
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 125000000, PHASE 0.000, CLK_DOMAIN design_plane_calc_clk, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
+input wire ToF_clk;
 inout wire [0 : 7] ToF_SCL;
 inout wire [0 : 7] ToF_SDA;
 input wire [0 : 7] ToF_INT;
@@ -134,6 +138,7 @@ input wire s00_axi_aresetn;
     .C_S00_AXI_DATA_WIDTH(32),  // Width of S_AXI data bus
     .C_S00_AXI_ADDR_WIDTH(4)  // Width of S_AXI address bus
   ) inst (
+    .ToF_clk(ToF_clk),
     .ToF_SCL(ToF_SCL),
     .ToF_SDA(ToF_SDA),
     .ToF_INT(ToF_INT),
