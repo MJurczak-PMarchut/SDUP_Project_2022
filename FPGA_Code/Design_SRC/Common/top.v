@@ -22,11 +22,13 @@
 
 module top(
     input wire clk,
+    input wire clk_i2c,
     inout wire [0:7] ToF_SCL,
     inout wire [0:7] ToF_SDA,
     input wire [0:7] ToF_INT,
     input wire [31:0] ToF_CMD_in,
-    output wire [15:0] ToF_CMD_out
+    output wire [15:0] ToF_CMD_out,
+    output wire [31:0] plane_data
     );
 
 //wire [2:0] [1:0] ToF_CMD_out; //temp
@@ -41,7 +43,6 @@ wire surf_rdy, plane_rdy, plane_calc_rdy;
 wire all_data_written_to_bram;
 wire wea, sph_drdy;
 wire [25:0] surf_data;
-wire [31:0] plane_data;
 wire [31:0] compl_surf;
 
 initial
@@ -57,7 +58,8 @@ end
 
 I2C_ToF_Comm_Modules I2C_Modules_entity
 (
-    .clk(clk),            
+    .clk(clk),
+    .clk_i2c(clk_i2c),            
     .ToF_SCL(ToF_SCL),  
     .ToF_SDA(ToF_SDA),  
     .ToF_INT(ToF_INT),

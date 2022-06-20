@@ -168,6 +168,57 @@ proc create_root_design { parentCell } {
    CONFIG.FREQ_HZ {125000000} \
  ] $clk
 
+  # Create instance: clk_wiz_0, and set properties
+  set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
+  set_property -dict [ list \
+   CONFIG.CLKIN1_JITTER_PS {80.0} \
+   CONFIG.CLKOUT1_DRIVES {BUFGCE} \
+   CONFIG.CLKOUT1_JITTER {124.615} \
+   CONFIG.CLKOUT1_PHASE_ERROR {96.948} \
+   CONFIG.CLKOUT2_DRIVES {BUFGCE} \
+   CONFIG.CLKOUT2_JITTER {80.925} \
+   CONFIG.CLKOUT2_PHASE_ERROR {96.948} \
+   CONFIG.CLKOUT2_USED {true} \
+   CONFIG.CLKOUT3_DRIVES {BUFGCE} \
+   CONFIG.CLKOUT3_JITTER {80.925} \
+   CONFIG.CLKOUT3_PHASE_ERROR {96.948} \
+   CONFIG.CLKOUT3_USED {true} \
+   CONFIG.CLKOUT4_DRIVES {BUFGCE} \
+   CONFIG.CLKOUT4_JITTER {80.925} \
+   CONFIG.CLKOUT4_PHASE_ERROR {96.948} \
+   CONFIG.CLKOUT4_USED {true} \
+   CONFIG.CLKOUT5_DRIVES {BUFGCE} \
+   CONFIG.CLKOUT5_JITTER {80.925} \
+   CONFIG.CLKOUT5_PHASE_ERROR {96.948} \
+   CONFIG.CLKOUT5_USED {true} \
+   CONFIG.CLKOUT6_DRIVES {BUFGCE} \
+   CONFIG.CLKOUT6_JITTER {80.925} \
+   CONFIG.CLKOUT6_PHASE_ERROR {96.948} \
+   CONFIG.CLKOUT6_USED {true} \
+   CONFIG.CLKOUT7_DRIVES {BUFGCE} \
+   CONFIG.CLKOUT7_JITTER {80.925} \
+   CONFIG.CLKOUT7_PHASE_ERROR {96.948} \
+   CONFIG.CLKOUT7_USED {true} \
+   CONFIG.CLK_IN1_BOARD_INTERFACE {sys_clock} \
+   CONFIG.CLK_OUT1_PORT {clk_main} \
+   CONFIG.CLK_OUT5_PORT {clk_i2c} \
+   CONFIG.FEEDBACK_SOURCE {FDBK_AUTO} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {8.000} \
+   CONFIG.MMCM_CLKIN1_PERIOD {8.000} \
+   CONFIG.MMCM_CLKOUT1_DIVIDE {10} \
+   CONFIG.MMCM_CLKOUT2_DIVIDE {10} \
+   CONFIG.MMCM_CLKOUT3_DIVIDE {10} \
+   CONFIG.MMCM_CLKOUT4_CASCADE {true} \
+   CONFIG.MMCM_CLKOUT4_DIVIDE {40} \
+   CONFIG.MMCM_CLKOUT5_DIVIDE {10} \
+   CONFIG.MMCM_CLKOUT6_DIVIDE {50} \
+   CONFIG.NUM_OUT_CLKS {7} \
+   CONFIG.OVERRIDE_MMCM {true} \
+   CONFIG.USE_LOCKED {false} \
+   CONFIG.USE_RESET {false} \
+   CONFIG.USE_SAFE_CLOCK_STARTUP {true} \
+ ] $clk_wiz_0
+
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
   set_property -dict [ list \
@@ -912,11 +963,14 @@ proc create_root_design { parentCell } {
   # Create port connections
   connect_bd_net -net Net [get_bd_ports ToF_SDA] [get_bd_pins sph_ip_0/ToF_SDA]
   connect_bd_net -net Net1 [get_bd_ports ToF_SCL] [get_bd_pins sph_ip_0/ToF_SCL]
+  connect_bd_net -net S00_ARESETN_1 [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn] [get_bd_pins sph_ip_0/s00_axi_aresetn]
   connect_bd_net -net ToF_INT_1 [get_bd_ports ToF_INT] [get_bd_pins sph_ip_0/ToF_INT]
-  connect_bd_net -net clk_1 [get_bd_ports clk] [get_bd_pins sph_ip_0/ToF_clk]
+  connect_bd_net -net clk_1 [get_bd_ports clk] [get_bd_pins clk_wiz_0/clk_in1]
+  connect_bd_net -net clk_wiz_0_clk_i2c [get_bd_pins clk_wiz_0/clk_i2c] [get_bd_pins sph_ip_0/clk_i2c]
+  connect_bd_net -net clk_wiz_0_clk_main [get_bd_pins clk_wiz_0/clk_main] [get_bd_pins sph_ip_0/clk]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk] [get_bd_pins sph_ip_0/s00_axi_aclk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn] [get_bd_pins sph_ip_0/s00_axi_aresetn]
+  connect_bd_net -net rst_ps7_0_100M_interconnect_aresetn [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins rst_ps7_0_100M/interconnect_aresetn]
 
   # Create address segments
   create_bd_addr_seg -range 0x00010000 -offset 0x43C00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs sph_ip_0/S00_AXI/S00_AXI_reg] SEG_sph_ip_0_S00_AXI_reg

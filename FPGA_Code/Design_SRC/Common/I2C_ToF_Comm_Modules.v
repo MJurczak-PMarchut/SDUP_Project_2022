@@ -22,6 +22,7 @@
 
 module I2C_ToF_Comm_Modules(
     input clk,
+    input clk_i2c,
     inout [0:7] ToF_SCL,
     inout [0:7] ToF_SDA,
     input reset,
@@ -35,14 +36,13 @@ module I2C_ToF_Comm_Modules(
 
 parameter NB_OF_SENSORS = 8;
     
-reg clock;
 reg [6:0] slave_adress;
 
 wire [7:0] error_out;
 
 initial
     begin
-    slave_adress = 7'h11;
+    slave_adress = 7'h29;
     end
 
 reg [7:0] data_status;
@@ -56,7 +56,7 @@ wire [7:0] read;
 wire [7:0] ready;
 wire [5:0] sensor_index [7:0];
 wire [15:0] distance_data [7:0];
-wire [9:0] nb_of_bytes [7:0];
+wire [16:0] nb_of_bytes [7:0];
 wire [7:0] data_ready;
 reg [7:0] reg_data_ready;
 
@@ -115,7 +115,7 @@ genvar i;
     );
     I2C_Entity i2c_entity(
         .data_in(reg_value[i]),
-        .clock(clock),
+        .clock(clk_i2c),
         .SCL_in(SCL_in[i]),
         .SDA_in(SDA_in[i]),
         .slave_adress(slave_adress),
@@ -145,6 +145,14 @@ always @(posedge clk)
                 reg_data_ready[__dr_iter] <= 1'b0;
     end
 
+//fw_blk_mem_gen fw(
+//    .addra(fw_counter),
+//    .clka(clk),
+//    .dina(dina),
+//    .douta(fw_data),
+//    .ena(ena),
+//    .wea(wea)
+//);
 
 assign data_out = {sensor_index[ToF_Index], distance_data[ToF_Index]};
 assign ready_out = reg_data_ready;

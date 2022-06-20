@@ -33,7 +33,7 @@ module ToF_FSM(
     output reg [1:0] ToF_CMD_out,
     output reg [15:0] register_address,
     output reg is_read,
-    output reg [9:0] nb_of_bytes,
+    output reg [16:0] nb_of_bytes,
     output reg start,
     output reg [15:0] distance_data,
     output reg [5:0] sensor_index,
@@ -41,24 +41,26 @@ module ToF_FSM(
 
     );
 
-parameter INIT = 5'h11, IDLE = 5'h12, DATA_ACQUISITION = 5'h13, WAIT_FOR_DATA_READY = 5'h14, SAVE_DATA = 5'h15, READ_REG = 5'h16, WRITE_REG = 5'h17;
+parameter INIT = 5'h11, IDLE = 5'h12, DATA_ACQUISITION = 5'h13, WAIT_FOR_DATA_READY = 5'h14, SAVE_DATA = 5'h15, 
+            READ_REG = 5'h16, WRITE_REG = 5'h17, WAIT_FOR_DATA_READY_DOWN = 5'h18;
 parameter DEFAULT = 4'h0, SW_REBOOT1 = 4'h1, SW_REBOOT2 = 4'h2, SW_REBOOT3 = 4'h3, ENABLE_FW_ACCESS = 4'h4, DOWNLOAD_FW = 4'h5,
         RESET_MCU = 4'h6, RESET_MCU2 = 4'h7, PROCESSING = 4'h8;
 parameter DONE = 2'b01, ACK = 2'b10;
 
-parameter NB_OF_MESSAGES = 60;
+parameter NB_OF_INIT_MESSAGES = 58;
 
-reg [15:0] dina;
 reg [4:0] state, nxt_state;    
 reg [7:0] msg_counter;
 reg [16:0] fw_counter;
-reg [15:0] fw_data;
+reg [15:0] dina;
 reg ena, wea;
+
+wire [15:0] fw_data;
 
 reg [7:0] [7:0] [15:0] data_array;
 reg [5:0] data_index; // [5:3] hotizontal index, [2:0] vertical index
 
-reg [NB_OF_MESSAGES-1:0] [15:0] InitMessagesAddr = {16'h7fff, 16'h0009, 16'h000F, 16'h000A, 16'h7FFF, 
+reg [NB_OF_INIT_MESSAGES-1:0] [15:0] InitMessagesAddr ={16'h7fff, 16'h0009, 16'h000F, 16'h000A, 16'h7FFF, 
                                                    16'h000C, 16'h0101, 16'h0102, 16'h010A, 16'h4002,
                                                    16'h4002, 16'h010A, 16'h0103, 16'h000C, 16'h000F, //here there is a 1 ms waiting
                                                    16'h000F, 16'h000A, 16'h7fff, 16'h0006, 16'h000E, 
@@ -71,7 +73,7 @@ reg [NB_OF_MESSAGES-1:0] [15:0] InitMessagesAddr = {16'h7fff, 16'h0009, 16'h000F
                                                    16'h0115, 16'h0116, 16'h0117, 16'h000B, 16'h7fff,
                                                    16'h000C, 16'h000B, 16'h7fff
                                                    };
-reg [NB_OF_MESSAGES-1:0][7:0] InitMessagesVal = {8'h00, 8'h04, 8'h40, 8'h03, 8'h00, 
+reg [NB_OF_INIT_MESSAGES-1:0][7:0] InitMessagesVal = {8'h00, 8'h04, 8'h40, 8'h03, 8'h00, 
                                                    8'h01, 8'h00, 8'h00, 8'h01, 8'h01,
                                                    8'h00, 8'h03, 8'h01, 8'h00, 8'h43,
                                                    8'h40, 8'h01, 8'h00, 8'h01, 8'h01, 
@@ -84,6 +86,8 @@ reg [NB_OF_MESSAGES-1:0][7:0] InitMessagesVal = {8'h00, 8'h04, 8'h40, 8'h03, 8'h
                                                    8'h00, 8'h42, 8'h00, 8'h00, 8'h00,
                                                    8'h00, 8'h01, 8'h02
                                                    };
+                                                   
+                                                   
 
 fw_blk_mem_gen fw(
     .addra(fw_counter),
@@ -103,12 +107,10 @@ initial
     sensor_index <= 6'h0;
     data_ready <= 1'b0;
     msg_counter <= 8'h0;
-    fw_counter <= 17'h0;
-    dina <= 16'h0;
-    ena <= 1'b0;
-    wea <= 1'b0;
-    nb_of_bytes <= 10'h0;
-    ToF_CMD_out <= 2'b01;//temp
+    fw_counter <= 17'h0_0000;
+    nb_of_bytes <= 17'h0;
+    ToF_CMD_out <= 2'b00;//temp
+    ena <= 1'b1;
     end
     
 always @(posedge clk)
@@ -121,19 +123,16 @@ always @(posedge clk)
         sensor_index <= 6'h0;
         data_ready <= 1'b0;
         msg_counter <= 8'h0;
-        fw_counter <= 17'h0;
-        dina <= 16'h0;
-        ena <= 1'b0;
-        wea <= 1'b0;
-        nb_of_bytes <= 10'h0;
-        ToF_CMD_out <= 2'b11;//temp
+        fw_counter <= 17'h0_0000;
+        nb_of_bytes <= 17'h0;
+        ToF_CMD_out <= 2'b00;//temp
         end
     else
         begin
         case(state)
         INIT: begin
             state <= IDLE;
-            ToF_CMD_out <= 2'b10;//temp
+            ToF_CMD_out <= 2'b00;//temp
             end
         IDLE: begin
             case(ToF_CMD_in)
@@ -157,6 +156,9 @@ always @(posedge clk)
                 DOWNLOAD_FW: begin
                     state <= DOWNLOAD_FW;
                     ToF_CMD_out <= ACK;
+//                    nb_of_bytes <= 17'h1_4FFF;
+                    nb_of_bytes <= 17'h0_0005;
+                    fw_counter <= 17'h0_0000;
                     end
                 RESET_MCU: begin
                     state <= SW_REBOOT1;
@@ -173,42 +175,47 @@ always @(posedge clk)
             endcase
             end
         SW_REBOOT1: begin
-            nb_of_bytes <= 10'h0;
-            register_address <= InitMessagesAddr[msg_counter];
-            i2c_data <= InitMessagesVal[msg_counter];
-            start <= 1'b1;
-            state <= WAIT_FOR_DATA_READY;
-            if(msg_counter == 8'h4 || msg_counter == 8'h13  || msg_counter == 8'h18 || msg_counter == 8'h1A ||
-                msg_counter == 8'h2C  || msg_counter == 8'h37)
-            //read reg value
+            if(ready == 1'b0)
                 begin
-                is_read <= 1'b1;
-                nxt_state <= SW_REBOOT1;
+                nb_of_bytes <= 17'h0;
+                register_address <= InitMessagesAddr[msg_counter];
+                i2c_data <= InitMessagesVal[msg_counter];
+                start <= 1'b1;
+                state <= WAIT_FOR_DATA_READY;
+                if(msg_counter == 8'h4 || msg_counter == 8'h13  || msg_counter == 8'h18 || msg_counter == 8'h1A ||
+                    msg_counter == 8'h2C  || msg_counter == 8'h37)
+                //read reg value
+                    begin
+                    is_read <= 1'b1;
+                    nxt_state <= SW_REBOOT1;
+                    end
+                else if(msg_counter == 8'hE || msg_counter == 8'h11 || msg_counter == 8'h31 || msg_counter == 8'h39)
+                //timeout
+                    begin
+                    is_read <= 1'b0;
+                    ToF_CMD_out <= DONE;
+                    nxt_state <= IDLE;
+                    end
+                else
+                //set reg value
+                    begin
+                    is_read <= 1'b0;
+                    nxt_state <= SW_REBOOT1;
+                    end
+                msg_counter <= msg_counter + 8'h1;
                 end
-            else if(msg_counter == 8'hE || msg_counter == 8'h11 || msg_counter == 8'h31 || msg_counter == 8'h39)
-            //timeout
-                begin
-                is_read <= 1'b0;
-                ToF_CMD_out <= DONE;
-                nxt_state <= IDLE;
-                end
-            else
-            //set reg value
-                begin
-                is_read <= 1'b0;
-                nxt_state <= SW_REBOOT1;
-                end
-            msg_counter <= msg_counter + 8'h1;
             end
         DOWNLOAD_FW: begin
-            if(fw_counter == 17'h0 || ready == 1'b1)
-                begin
-                start <= (fw_counter == 17'h0)? 1'b1:1'b0;
-                register_address <= fw_counter;
-                i2c_data <= fw_data;
-                fw_counter <= fw_counter + 1'b1;
-                end
-            if(fw_counter == 17'h1_5000 && ready == 1'b1)
+            is_read <= 1'b0;
+            i2c_data <= fw_data;
+            register_address <= fw_counter;
+            start <= (fw_counter == 17'h0)? 1'b1:1'b0;
+            nb_of_bytes <= nb_of_bytes - 17'h0_0001;
+            state <= WAIT_FOR_DATA_READY_DOWN;
+            nxt_state <= DOWNLOAD_FW;
+            fw_counter <= fw_counter + 1'b1;
+//            if(fw_counter == 17'h1_4FFF && ready == 1'b1)
+            if(fw_counter == 17'h0_0005 && ready == 1'b1)
                 begin
                 ToF_CMD_out <= DONE;
                 state <= IDLE;
@@ -217,15 +224,21 @@ always @(posedge clk)
         DATA_ACQUISITION: begin
             start <= 1'b1;
             data_ready <= 1'b0;
-            nb_of_bytes <= 10'h1;
+            nb_of_bytes <= 17'h1;
             end
         WAIT_FOR_DATA_READY: begin
             if(ready == 1'b1)
                 begin
                     start <= 1'b0;
-                    distance_data <= i2c_data_in;
+                    if(nxt_state != DOWNLOAD_FW)
+                        begin
+                        distance_data <= i2c_data_in;
+                        end
                     state <= nxt_state;
                 end
+            end
+        WAIT_FOR_DATA_READY_DOWN: begin
+            if(ready == 1'b0) state <= WAIT_FOR_DATA_READY;
             end
         READ_REG: begin
             register_address <= 1'b0; //temp
