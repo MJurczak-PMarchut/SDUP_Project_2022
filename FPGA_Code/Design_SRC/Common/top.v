@@ -28,7 +28,8 @@ module top(
     input wire [0:7] ToF_INT,
     input wire [31:0] ToF_CMD_in,
     output wire [15:0] ToF_CMD_out,
-    output wire [31:0] plane_data
+    output wire [31:0] plane_data,
+    output wire [511:0] [15:0] distance_mm
     );
 
 //wire [2:0] [1:0] ToF_CMD_out; //temp

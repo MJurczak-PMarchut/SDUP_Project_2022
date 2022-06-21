@@ -27,7 +27,7 @@ module ToF_FSM(
     input error_in,
     input ToF_INT,
     input [3:0] ToF_CMD_in,
-    input [15:0] i2c_data_in,
+    input [7:0] i2c_data_in,
     
     output reg [7:0] i2c_data,
     output reg [1:0] ToF_CMD_out,
@@ -40,20 +40,27 @@ module ToF_FSM(
     output reg data_ready
 
     );
+    
+// get distance
+// 0-27 data header
+// 28-155 distance in mm
+// 156-179 data footer
+
 
 parameter INIT = 5'h11, IDLE = 5'h12, DATA_ACQUISITION = 5'h13, WAIT_FOR_DATA_READY = 5'h14, SAVE_DATA = 5'h15, 
-            READ_REG = 5'h16, WRITE_REG = 5'h17, WAIT_FOR_DATA_READY_DOWN = 5'h18;
+            READ_REG = 5'h16, WRITE_REG = 5'h17, WAIT_FOR_DATA_READY_DOWN = 5'h18, WAIT_FOR_INTERRUPT = 5'h19;
 parameter DEFAULT = 4'h0, SW_REBOOT1 = 4'h1, SW_REBOOT2 = 4'h2, SW_REBOOT3 = 4'h3, ENABLE_FW_ACCESS = 4'h4, DOWNLOAD_FW = 4'h5,
-        RESET_MCU = 4'h6, RESET_MCU2 = 4'h7, PROCESSING = 4'h8;
+        RESET_MCU = 4'h6, RESET_MCU2 = 4'h7, PROCESSING = 4'h8, DCI_WRITE_DATA0 = 4'h9, DCI_WRITE_DATA1 = 4'hA, DCI_WRITE_DATA2 = 4'hB,
+        DCI_WRITE_DATA3 = 4'hC, START_RANGING = 4'hD;
 parameter DONE = 2'b01, ACK = 2'b10;
 
-parameter NB_OF_INIT_MESSAGES = 58;
+parameter NB_OF_INIT_MESSAGES = 84;
 
 reg [4:0] state, nxt_state;    
 reg [7:0] msg_counter;
 reg [16:0] fw_counter;
 reg [15:0] dina;
-reg ena, wea;
+reg ena, wea, MSB;
 
 wire [15:0] fw_data;
 
@@ -87,7 +94,41 @@ reg [NB_OF_INIT_MESSAGES-1:0][7:0] InitMessagesVal = {8'h00, 8'h04, 8'h40, 8'h03
                                                    8'h00, 8'h01, 8'h02
                                                    };
                                                    
+reg [NB_OF_INIT_MESSAGES-1:0] [15:0] StartMessagesAddr ={16'hCD78, 16'hCD60, 16'hCD68
+                                                   };
+reg [NB_OF_INIT_MESSAGES-1:0][7:0] StartMessagesVal = {8'h00, 8'h00, 8'h00, 8'h00, //header
+
+                                                   8'h00, 8'h00, 8'h00, 8'h0f, //footer
+                                                   8'h05, 8'h01, 8'h00, 8'h00,
                                                    
+                                                   8'h00, 8'h00, 8'h00, 8'h0D, //VL53L5CX_START_BH
+                                                   8'h54, 8'hB4, 8'h00, 8'hC0, //VL53L5CX_METADATA_BH
+                                                   8'h54, 8'hC0, 8'h00, 8'h40, //VL53L5CX_COMMONDATA_BH
+                                                   8'h54, 8'hD0, 8'h01, 8'h04, //VL53L5CX_AMBIENT_RATE_BH
+                                                   8'h55, 8'hD0, 8'h04, 8'h04, //VL53L5CX_SPAD_COUNT_BH
+                                                   8'hCF, 8'h7C, 8'h04, 8'h01, //VL53L5CX_NB_TARGET_DETECTED_BH
+                                                   8'hCF, 8'hBC, 8'h04, 8'h04, //VL53L5CX_SIGNAL_RATE_BH
+                                                   8'hD2, 8'hBC, 8'h04, 8'h02, //VL53L5CX_RANGE_SIGMA_MM_BH
+                                                   8'hD3, 8'h3C, 8'h04, 8'h02, //VL53L5CX_DISTANCE_BH
+                                                   8'hD4, 8'h3C, 8'h04, 8'h01, //VL53L5CX_REFLECTANCE_BH
+                                                   8'hD4, 8'h7C, 8'h04, 8'h01, //VL53L5CX_TARGET_STATUS_BH
+                                                   8'hCC, 8'h50, 8'h08, 8'hC0,  //VL53L5CX_MOTION_DETECT_BH
+                                                   
+                                                   8'h00, 8'h00, 8'h00, 8'hB4, //header_config
+                                                   8'h00, 8'h00, 8'h00, 8'h0D,
+                                                   
+                                                   8'h00, 8'h00, 8'h01, 8'h07, //output_bh_enable
+                                                   8'h00, 8'h00, 8'h00, 8'h00,
+                                                   8'h00, 8'h00, 8'h00, 8'h00,
+                                                   8'hC0, 8'h00, 8'h00, 8'h00
+                                                   };
+
+reg [6:0] [15:0] StartRangingMessagesAddr ={16'h7fff, 16'h0009, 16'h7FFF, 16'h2FFF, 16'h3000, 
+                                                   16'h3001, 16'h3002
+                                                   };
+reg [6:0][7:0] StartRangingMessagesVal = {8'h00, 8'h05, 8'h02, 8'h00, 8'h03, 
+                                                   8'h00, 8'h00
+                                                   };                                                    
 
 fw_blk_mem_gen fw(
     .addra(fw_counter),
@@ -109,8 +150,11 @@ initial
     msg_counter <= 8'h0;
     fw_counter <= 17'h0_0000;
     nb_of_bytes <= 17'h0;
-    ToF_CMD_out <= 2'b00;//temp
+    ToF_CMD_out <= 2'b00;
     ena <= 1'b1;
+    MSB <= 1'b1;
+    wea <= 1'b0;
+    dina <= 16'h0;
     end
     
 always @(posedge clk)
@@ -125,7 +169,8 @@ always @(posedge clk)
         msg_counter <= 8'h0;
         fw_counter <= 17'h0_0000;
         nb_of_bytes <= 17'h0;
-        ToF_CMD_out <= 2'b00;//temp
+        ToF_CMD_out <= 2'b00;
+        MSB <= 1'b1;
         end
     else
         begin
@@ -156,8 +201,7 @@ always @(posedge clk)
                 DOWNLOAD_FW: begin
                     state <= DOWNLOAD_FW;
                     ToF_CMD_out <= ACK;
-//                    nb_of_bytes <= 17'h1_4FFF;
-                    nb_of_bytes <= 17'h0_0005;
+                    nb_of_bytes <= 17'h1_4FFF;
                     fw_counter <= 17'h0_0000;
                     end
                 RESET_MCU: begin
@@ -167,6 +211,58 @@ always @(posedge clk)
                     end
                 RESET_MCU2: begin
                     state <= SW_REBOOT1;
+                    ToF_CMD_out <= ACK;
+                    end
+                DCI_WRITE_DATA0: begin
+                    state <= DCI_WRITE_DATA0;
+                    ToF_CMD_out <= ACK;
+                    nb_of_bytes <= 17'h0_003B;
+                    fw_counter <= 17'h0_0000;
+                    //data_size = 8'h30;
+                    StartMessagesVal[0] <= 8'hCD;
+                    StartMessagesVal[1] <= 8'h78;
+                    StartMessagesVal[2] <= 8'h03;
+                    StartMessagesVal[3] <= 8'h00;
+                    StartMessagesVal[10] <= 8'h00;
+                    StartMessagesVal[11] <= 8'h38;
+                    register_address <= StartMessagesAddr[0];
+                    end
+                DCI_WRITE_DATA1: begin
+                    state <= DCI_WRITE_DATA1;
+                    ToF_CMD_out <= ACK;
+                    nb_of_bytes <= 17'h0_0013;
+                    fw_counter <= 17'h0_0000;
+                    //data_size = 8'h08;
+                    StartMessagesVal[0] <= 8'hCD;
+                    StartMessagesVal[1] <= 8'h60;
+                    StartMessagesVal[2] <= 8'h00;
+                    StartMessagesVal[3] <= 8'h80;
+                    StartMessagesVal[10] <= 8'h00;
+                    StartMessagesVal[11] <= 8'h10;
+                    register_address <= StartMessagesAddr[1];
+                    end
+                DCI_WRITE_DATA2: begin
+                    state <= DCI_WRITE_DATA2;
+                    ToF_CMD_out <= ACK;
+                    nb_of_bytes <= 17'h0_001B;
+                    fw_counter <= 17'h0_0000;
+                    //data_size = 8'h10;
+                    StartMessagesVal[0] <= 8'hCD;
+                    StartMessagesVal[1] <= 8'h68;
+                    StartMessagesVal[2] <= 8'h01;
+                    StartMessagesVal[3] <= 8'h00;
+                    StartMessagesVal[10] <= 8'h00;
+                    StartMessagesVal[11] <= 8'h18;
+                    register_address <= StartMessagesAddr[2];
+                    end
+                START_RANGING: begin
+                    state <= START_RANGING;
+                    msg_counter <= 8'h00;
+                    ToF_CMD_out <= ACK;
+                    end
+                DATA_ACQUISITION: begin
+                    state <= WAIT_FOR_INTERRUPT;
+                    msg_counter <= 8'h0;
                     ToF_CMD_out <= ACK;
                     end
                 DEFAULT: begin
@@ -214,25 +310,40 @@ always @(posedge clk)
             state <= WAIT_FOR_DATA_READY_DOWN;
             nxt_state <= DOWNLOAD_FW;
             fw_counter <= fw_counter + 1'b1;
-//            if(fw_counter == 17'h1_4FFF && ready == 1'b1)
-            if(fw_counter == 17'h0_0005 && ready == 1'b1)
+            if(fw_counter == 17'h1_4FFF && ready == 1'b1)
                 begin
                 ToF_CMD_out <= DONE;
                 state <= IDLE;
                 end
             end
         DATA_ACQUISITION: begin
-            start <= 1'b1;
+            is_read <= 1'b1;
+            register_address <= 16'h0000;
+            start <= (msg_counter == 8'h0)? 1'b1:1'b0;
+            state <= WAIT_FOR_DATA_READY_DOWN;
+            nxt_state <= DATA_ACQUISITION;
             data_ready <= 1'b0;
-            nb_of_bytes <= 17'h1;
+            msg_counter <= msg_counter + 1'b1;
+            nb_of_bytes <= nb_of_bytes - 17'h0_0001;
+            if(msg_counter == 17'h0_00B3 && ready == 1'b1)
+                begin
+                ToF_CMD_out <= DONE;
+                state <= IDLE;
+                end
             end
         WAIT_FOR_DATA_READY: begin
             if(ready == 1'b1)
                 begin
                     start <= 1'b0;
-                    if(nxt_state != DOWNLOAD_FW)
+                    if(nxt_state == DATA_ACQUISITION && msg_counter > 17'h0_001B && msg_counter < 17'h0_009C)
                         begin
-                        distance_data <= i2c_data_in;
+                        if(MSB == 1'b1) distance_data[15:8] <= i2c_data_in;
+                        else 
+                            begin
+                            distance_data[7:0] <= i2c_data_in;
+                            data_ready <= 1'b1;
+                            end
+                        MSB = ~MSB;
                         end
                     state <= nxt_state;
                 end
@@ -253,6 +364,82 @@ always @(posedge clk)
                 begin
                 start <= 1'b0;
                 state <= IDLE;
+                end
+            end
+        DCI_WRITE_DATA0: begin
+            is_read <= 1'b0;
+            i2c_data <= StartMessagesVal[fw_counter];
+            register_address <= StartMessagesAddr[0];
+            start <= (fw_counter == 17'h0)? 1'b1:1'b0;
+            nb_of_bytes <= nb_of_bytes - 17'h0_0001;
+            state <= WAIT_FOR_DATA_READY_DOWN;
+            nxt_state <= DCI_WRITE_DATA0;
+            fw_counter <= (fw_counter == 17'h0_0003)? 17'h0_000C:
+                           (fw_counter == 17'h0_003B)? 17'h0_0004: fw_counter + 1'b1;
+            if(fw_counter == 17'h0_000B && ready == 1'b1)
+                begin
+                ToF_CMD_out <= DONE;
+                state <= IDLE;
+                end
+            end
+        DCI_WRITE_DATA1: begin
+            is_read <= 1'b0;
+            i2c_data <= StartMessagesVal[fw_counter];
+            register_address <= StartMessagesAddr[0];
+            start <= (fw_counter == 17'h0)? 1'b1:1'b0;
+            nb_of_bytes <= nb_of_bytes - 17'h0_0001;
+            state <= WAIT_FOR_DATA_READY_DOWN;
+            nxt_state <= DCI_WRITE_DATA1;
+            fw_counter <= (fw_counter == 17'h0_0003)? 17'h0_003C:
+                           (fw_counter == 17'h0_0043)? 17'h0_0004: fw_counter + 1'b1;
+            if(fw_counter == 17'h0_000B && ready == 1'b1)
+                begin
+                ToF_CMD_out <= DONE;
+                state <= IDLE;
+                end
+            end
+        DCI_WRITE_DATA2: begin
+            is_read <= 1'b0;
+            i2c_data <= StartMessagesVal[fw_counter];
+            register_address <= StartMessagesAddr[0];
+            start <= (fw_counter == 17'h0)? 1'b1:1'b0;
+            nb_of_bytes <= nb_of_bytes - 17'h0_0001;
+            state <= WAIT_FOR_DATA_READY_DOWN;
+            nxt_state <= DCI_WRITE_DATA2;
+            fw_counter <= (fw_counter == 17'h0_0003)? 17'h0_0044:
+                           (fw_counter == 17'h0_0053)? 17'h0_0004: fw_counter + 1'b1;
+            if(fw_counter == 17'h0_000B && ready == 1'b1)
+                begin
+                ToF_CMD_out <= DONE;
+                state <= IDLE;
+                end
+            end
+        START_RANGING: begin
+            if(ready == 1'b0)
+                begin
+                nb_of_bytes <= 17'h0;
+                register_address <= StartRangingMessagesAddr[msg_counter];
+                i2c_data <= StartRangingMessagesVal[msg_counter];
+                start <= 1'b1;
+                state <= WAIT_FOR_DATA_READY;
+                is_read <= 1'b0;
+                if(msg_counter == 8'h6)
+                    begin
+                    ToF_CMD_out <= DONE;
+                    nxt_state <= IDLE;
+                    end
+                else
+                    begin
+                    nxt_state <= START_RANGING;
+                    end
+                msg_counter <= msg_counter + 8'h1;
+                end
+            end
+        WAIT_FOR_INTERRUPT: begin
+            if(ToF_INT == 1'b1)
+                begin
+                state <= DATA_ACQUISITION;
+                nb_of_bytes <= 17'hB3;
                 end
             end
         DEFAULT: begin

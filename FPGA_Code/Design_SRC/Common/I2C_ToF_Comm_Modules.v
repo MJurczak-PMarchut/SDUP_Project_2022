@@ -50,7 +50,7 @@ reg [7:0] data_status;
 wire SCL_out [0:7], SCL_in [0:7], SCL_t [0:7], SDA_t [0:7], SDA_in [0:7], SDA_out [0:7];
 wire [7:0] reg_value [7:0];
 wire [15:0] register_address [7:0];
-wire [15:0] i2c_data_out [7:0];
+wire [7:0] i2c_data_out [7:0];
 wire [7:0] start;
 wire [7:0] read;
 wire [7:0] ready;

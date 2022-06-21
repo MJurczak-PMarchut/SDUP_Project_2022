@@ -31,7 +31,7 @@ module I2C_Entity(
     input [16:0] nb_of_bytes,
     input start,
     input reset,
-    output reg [15:0] data_out,
+    output reg [7:0] data_out,
     output reg ready,
     output reg SCL_out,
     output reg SDA_out,
@@ -50,7 +50,6 @@ reg [3:0] state_clk, nxt_state_clk;
 reg receiving, expected_ACK, nxt_SCL_t, edge_SCL;
 
 reg [9:0] counter;
-reg [16:0] t_nb_of_bytes;
 reg [23:0] temp;
 reg [7:0] data_to_send;
 
@@ -85,7 +84,6 @@ always @(posedge clock)
                 SDA_out <= 1'b0;
                 state_clk <= SEND_ADDR;
                 counter <= 10'h6;
-                t_nb_of_bytes <= nb_of_bytes;
                 data_out = 16'h0;
                 edge_SCL <= FALLING_EDGE;
                 end
@@ -210,12 +208,12 @@ always @(posedge clock)
             RISING_EDGE: begin
                 data_out <= data_out << 1;
                 data_out[0] <= SDA_in;
-                if((counter == 10'h0) && (t_nb_of_bytes == 17'h2)) // need to be changed
+                if((counter == 10'h0) && (nb_of_bytes > 17'h0)) // need to be changed
                     begin
                     counter <= 10'h7;
-                    t_nb_of_bytes <= t_nb_of_bytes - 1;
                     nxt_state_clk <= READ_DATA;
                     state_clk <= SEND_ACK;
+                    ready <= 1'b1;
                     end
                 else if(counter == 10'h0)
                     begin
@@ -228,6 +226,7 @@ always @(posedge clock)
                     end
                 end
             FALLING_EDGE: begin
+                ready <= 1'b0;
                 end    
             endcase
             edge_SCL <= ~edge_SCL;

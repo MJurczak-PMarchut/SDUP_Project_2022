@@ -15,11 +15,14 @@
 	)
 	(
 		// Users to add ports here
-		input wire clk,
-		input wire clk_i2c,
-        inout wire [0:7] ToF_SCL,
-        inout wire [0:7] ToF_SDA,
-        input wire [0:7] ToF_INT,
+//		input wire clk,
+//		input wire clk_i2c,
+//        inout wire [0:7] ToF_SCL,
+//        inout wire [0:7] ToF_SDA,
+//        input wire [0:7] ToF_INT,
+        input wire [31:0] plane_data,
+        input wire [15:0] ToF_CMD_out,
+        output wire [31:0] ToF_CMD_in,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -408,23 +411,27 @@
     
     always @( posedge S_AXI_ACLK )
     begin
-        slv_reg2 <= slv_wire2;
-        slv_reg3 <= slv_wire3;
+//        slv_reg2 <= slv_wire2;
+//        slv_reg3 <= slv_wire3;
+        slv_reg3[31:16] <= slv_wire3[31:16];
+        slv_reg2 <= plane_data;
+        slv_reg3[15:0] <= ToF_CMD_out;
     end
     //Assign zeros to unused bits
 //    assign slv_wire2[31:0] = 32'hF;
     assign slv_wire3[31:16] = 16'h0;
+    assign ToF_CMD_in = slv_reg0;
 
-    top top_module(
-        .clk(clk), //clock
-        .clk_i2c(clk_i2c),
-        .ToF_SCL(ToF_SCL), //reset
-        .ToF_SDA(ToF_SDA), //enable
-        .ToF_INT(ToF_INT), //radius
-        .ToF_CMD_in(slv_reg0), //data ready
-        .ToF_CMD_out(slv_wire3[15:0]), //area_out
-        .plane_data(slv_wire2)
-    );
+//    top top_module(
+//        .clk(clk), //clock
+//        .clk_i2c(clk_i2c),
+//        .ToF_SCL(ToF_SCL), 
+//        .ToF_SDA(ToF_SDA), 
+//        .ToF_INT(ToF_INT), 
+//        .ToF_CMD_in(slv_reg0), 
+//        .ToF_CMD_out(slv_wire3[15:0]), 
+//        .plane_data(slv_wire2)
+//    );
 
 	// User logic ends
 

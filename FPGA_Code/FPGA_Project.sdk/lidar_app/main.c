@@ -33,6 +33,7 @@
 #define ToF_7_CMD_IN 0x3 << 14
 
 
+
 void ToF_Init(char ToF_nb)
 {
 	u32 status = 0;
@@ -44,6 +45,11 @@ void ToF_Init(char ToF_nb)
 	SPH_IP_mWriteReg(SPH_IP_BASEADDR, SPH_IP_S00_AXI_SLV_REG0_OFFSET, SW_REBOOT1 << ToF_0_CMD_OUT);
 //	while( (SPH_IP_mReadReg(SPH_IP_BASEADDR, SPH_IP_S00_AXI_SLV_REG3_OFFSET) & ToF_0_CMD_IN) == 0);
 //	while( (SPH_IP_mReadReg(SPH_IP_BASEADDR, SPH_IP_S00_AXI_SLV_REG3_OFFSET)) == 0);
+	status = SPH_IP_mReadReg(SPH_IP_BASEADDR, SPH_IP_S00_AXI_SLV_REG2_OFFSET);
+	xil_printf("%d\n\r", status);
+	status = SPH_IP_mReadReg(SPH_IP_BASEADDR, SPH_IP_S00_AXI_SLV_REG3_OFFSET);
+	xil_printf("%d\n\r", status);
+	while( (SPH_IP_mReadReg(SPH_IP_BASEADDR, SPH_IP_S00_AXI_SLV_REG3_OFFSET)) == status);
 	status = SPH_IP_mReadReg(SPH_IP_BASEADDR, SPH_IP_S00_AXI_SLV_REG3_OFFSET);
 	xil_printf("%d\n\r", status);
 }

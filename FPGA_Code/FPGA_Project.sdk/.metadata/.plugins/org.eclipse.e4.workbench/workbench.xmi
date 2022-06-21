@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_nE7MMO3rEeyKdOPGvEzJXA" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_nE7MMe3rEeyKdOPGvEzJXA" bindingContexts="_nE8a9O3rEeyKdOPGvEzJXA">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;sph_ip.h&quot; tooltip=&quot;lidar_app_bsp/ps7_cortexa9_0/include/sph_ip.h&quot;>&#xD;&#xA;&lt;persistable path=&quot;/lidar_app_bsp/ps7_cortexa9_0/include/sph_ip.h&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;xstatus.h&quot; tooltip=&quot;lidar_app_bsp/ps7_cortexa9_0/include/xstatus.h&quot;>&#xD;&#xA;&lt;persistable path=&quot;/lidar_app_bsp/ps7_cortexa9_0/include/xstatus.h&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;xil_types.h&quot; tooltip=&quot;lidar_app_bsp/ps7_cortexa9_0/include/xil_types.h&quot;>&#xD;&#xA;&lt;persistable path=&quot;/lidar_app_bsp/ps7_cortexa9_0/include/xil_types.h&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;xil_io.h&quot; tooltip=&quot;lidar_app_bsp/ps7_cortexa9_0/include/xil_io.h&quot;>&#xD;&#xA;&lt;persistable path=&quot;/lidar_app_bsp/ps7_cortexa9_0/include/xil_io.h&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;main.c&quot; tooltip=&quot;lidar_app/main.c&quot;>&#xD;&#xA;&lt;persistable path=&quot;/lidar_app/main.c&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;xbasic_types.h&quot; tooltip=&quot;lidar_app_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/xbasic_types.h&quot;>&#xD;&#xA;&lt;persistable path=&quot;/lidar_app_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/xbasic_types.h&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;print.c&quot; tooltip=&quot;lidar_app_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/print.c&quot;>&#xD;&#xA;&lt;persistable path=&quot;/lidar_app_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/print.c&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;sph_ip.h&quot; tooltip=&quot;design_plane_calc_wrapper_hw_platform_0/drivers/sph_ip_v1_0/src/sph_ip.h&quot;>&#xD;&#xA;&lt;persistable path=&quot;/design_plane_calc_wrapper_hw_platform_0/drivers/sph_ip_v1_0/src/sph_ip.h&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.xilinx.sdk.sw.MSSEditor&quot; name=&quot;system.mss&quot; tooltip=&quot;lidar_app_bsp/system.mss&quot;>&#xD;&#xA;&lt;persistable path=&quot;/lidar_app_bsp/system.mss&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.xilinx.sdk.hw.ui.HwSpecXMLEditor&quot; name=&quot;system.hdf&quot; tooltip=&quot;design_plane_calc_wrapper_hw_platform_0/system.hdf&quot;>&#xD;&#xA;&lt;persistable path=&quot;/design_plane_calc_wrapper_hw_platform_0/system.hdf&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;main.c&quot; tooltip=&quot;lidar_app/main.c&quot;>&#xD;&#xA;&lt;persistable path=&quot;/lidar_app/main.c&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.xilinx.sdk.hw.ui.HwSpecXMLEditor&quot; name=&quot;system.hdf&quot; tooltip=&quot;design_plane_calc_wrapper_hw_platform_0/system.hdf&quot;>&#xD;&#xA;&lt;persistable path=&quot;/design_plane_calc_wrapper_hw_platform_0/system.hdf&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.xilinx.sdk.hw.ui.HwSpecXMLEditor&quot; name=&quot;system.hdf&quot; tooltip=&quot;design_plane_calc_wrapper_hw_platform_2/system.hdf&quot;>&#xD;&#xA;&lt;persistable path=&quot;/design_plane_calc_wrapper_hw_platform_2/system.hdf&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;print.c&quot; tooltip=&quot;lidar_app_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/print.c&quot;>&#xD;&#xA;&lt;persistable path=&quot;/lidar_app_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/print.c&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.xilinx.sdk.hw.ui.HwSpecXMLEditor&quot; name=&quot;system.hdf&quot; tooltip=&quot;design_plane_calc_wrapper_hw_platform_1/system.hdf&quot;>&#xD;&#xA;&lt;persistable path=&quot;/design_plane_calc_wrapper_hw_platform_1/system.hdf&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;sph_ip.h&quot; tooltip=&quot;lidar_app_bsp/ps7_cortexa9_0/include/sph_ip.h&quot;>&#xD;&#xA;&lt;persistable path=&quot;/lidar_app_bsp/ps7_cortexa9_0/include/sph_ip.h&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;xstatus.h&quot; tooltip=&quot;lidar_app_bsp/ps7_cortexa9_0/include/xstatus.h&quot;>&#xD;&#xA;&lt;persistable path=&quot;/lidar_app_bsp/ps7_cortexa9_0/include/xstatus.h&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;xil_types.h&quot; tooltip=&quot;lidar_app_bsp/ps7_cortexa9_0/include/xil_types.h&quot;>&#xD;&#xA;&lt;persistable path=&quot;/lidar_app_bsp/ps7_cortexa9_0/include/xil_types.h&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;xil_io.h&quot; tooltip=&quot;lidar_app_bsp/ps7_cortexa9_0/include/xil_io.h&quot;>&#xD;&#xA;&lt;persistable path=&quot;/lidar_app_bsp/ps7_cortexa9_0/include/xil_io.h&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;xbasic_types.h&quot; tooltip=&quot;lidar_app_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/xbasic_types.h&quot;>&#xD;&#xA;&lt;persistable path=&quot;/lidar_app_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/xbasic_types.h&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;sph_ip.h&quot; tooltip=&quot;design_plane_calc_wrapper_hw_platform_0/drivers/sph_ip_v1_0/src/sph_ip.h&quot;>&#xD;&#xA;&lt;persistable path=&quot;/design_plane_calc_wrapper_hw_platform_0/drivers/sph_ip_v1_0/src/sph_ip.h&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.xilinx.sdk.sw.MSSEditor&quot; name=&quot;system.mss&quot; tooltip=&quot;lidar_app_bsp/system.mss&quot;>&#xD;&#xA;&lt;persistable path=&quot;/lidar_app_bsp/system.mss&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_nE7MMe3rEeyKdOPGvEzJXA" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_nE7MMu3rEeyKdOPGvEzJXA" x="0" y="0" width="1024" height="768">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_nE7MMe3rEeyKdOPGvEzJXA" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_nE7MMu3rEeyKdOPGvEzJXA" x="709" y="-16" width="1024" height="768">
     <persistedState key="coolBarVisible" value="true"/>
     <persistedState key="perspectiveBarVisible" value="true"/>
     <persistedState key="isRestored" value="true"/>
@@ -67,6 +67,7 @@
           <children xsi:type="basic:PartSashContainer" xmi:id="_nE7MNe3rEeyKdOPGvEzJXA" selectedElement="_nE7MPu3rEeyKdOPGvEzJXA" horizontal="true">
             <children xsi:type="basic:PartSashContainer" xmi:id="_nE7MNu3rEeyKdOPGvEzJXA" containerData="2500" selectedElement="_nE7MN-3rEeyKdOPGvEzJXA">
               <children xsi:type="basic:PartStack" xmi:id="_nE7MN-3rEeyKdOPGvEzJXA" elementId="topLeft" containerData="7500" selectedElement="_nE7MOO3rEeyKdOPGvEzJXA">
+                <tags>active</tags>
                 <children xsi:type="advanced:Placeholder" xmi:id="_nE7MOO3rEeyKdOPGvEzJXA" elementId="org.eclipse.ui.navigator.ProjectExplorer" ref="_nE7z3u3rEeyKdOPGvEzJXA"/>
                 <children xsi:type="advanced:Placeholder" xmi:id="_nE7MOe3rEeyKdOPGvEzJXA" elementId="org.eclipse.cdt.ui.CView" toBeRendered="false" ref="_nE70K-3rEeyKdOPGvEzJXA"/>
                 <children xsi:type="advanced:Placeholder" xmi:id="_nE7MOu3rEeyKdOPGvEzJXA" elementId="org.eclipse.ui.views.ResourceNavigator" toBeRendered="false" ref="_nE70LO3rEeyKdOPGvEzJXA"/>
@@ -76,8 +77,8 @@
                 <children xsi:type="advanced:Placeholder" xmi:id="_nE7MPe3rEeyKdOPGvEzJXA" elementId="com.xilinx.sdk.targetmanager.ui.TargetManagementView" ref="_nE70le3rEeyKdOPGvEzJXA"/>
               </children>
             </children>
-            <children xsi:type="basic:PartSashContainer" xmi:id="_nE7MPu3rEeyKdOPGvEzJXA" containerData="7500" selectedElement="_nE7MP-3rEeyKdOPGvEzJXA">
-              <children xsi:type="basic:PartSashContainer" xmi:id="_nE7MP-3rEeyKdOPGvEzJXA" containerData="5967" selectedElement="_nE7MQO3rEeyKdOPGvEzJXA" horizontal="true">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_nE7MPu3rEeyKdOPGvEzJXA" containerData="7500" selectedElement="_nE7MRe3rEeyKdOPGvEzJXA">
+              <children xsi:type="basic:PartSashContainer" xmi:id="_nE7MP-3rEeyKdOPGvEzJXA" containerData="6909" selectedElement="_nE7MQO3rEeyKdOPGvEzJXA" horizontal="true">
                 <children xsi:type="advanced:Placeholder" xmi:id="_nE7MQO3rEeyKdOPGvEzJXA" elementId="org.eclipse.ui.editorss" containerData="7500" ref="_nE7NWu3rEeyKdOPGvEzJXA"/>
                 <children xsi:type="basic:PartStack" xmi:id="_nE7MQe3rEeyKdOPGvEzJXA" elementId="topRight" containerData="2500" selectedElement="_nE7MQu3rEeyKdOPGvEzJXA">
                   <children xsi:type="advanced:Placeholder" xmi:id="_nE7MQu3rEeyKdOPGvEzJXA" elementId="org.eclipse.ui.views.ContentOutline" ref="_nE70Y-3rEeyKdOPGvEzJXA"/>
@@ -85,15 +86,15 @@
                   <children xsi:type="advanced:Placeholder" xmi:id="_nE7MRO3rEeyKdOPGvEzJXA" elementId="org.eclipse.cdt.make.ui.views.MakeView" ref="_nE70ne3rEeyKdOPGvEzJXA"/>
                 </children>
               </children>
-              <children xsi:type="basic:PartSashContainer" xmi:id="_nE7MRe3rEeyKdOPGvEzJXA" containerData="4033" selectedElement="_nE7MRu3rEeyKdOPGvEzJXA" horizontal="true">
-                <children xsi:type="basic:PartStack" xmi:id="_nE7MRu3rEeyKdOPGvEzJXA" elementId="bottom" containerData="5000" selectedElement="_nE7MSe3rEeyKdOPGvEzJXA">
+              <children xsi:type="basic:PartSashContainer" xmi:id="_nE7MRe3rEeyKdOPGvEzJXA" containerData="3091" selectedElement="_nE7MRu3rEeyKdOPGvEzJXA" horizontal="true">
+                <children xsi:type="basic:PartStack" xmi:id="_nE7MRu3rEeyKdOPGvEzJXA" elementId="bottom" containerData="6877" selectedElement="_nE7MSe3rEeyKdOPGvEzJXA">
                   <children xsi:type="advanced:Placeholder" xmi:id="_nE7MR-3rEeyKdOPGvEzJXA" elementId="org.eclipse.ui.views.ProblemView" ref="_nE70Lu3rEeyKdOPGvEzJXA"/>
                   <children xsi:type="advanced:Placeholder" xmi:id="_nE7MSO3rEeyKdOPGvEzJXA" elementId="org.eclipse.ui.views.TaskList" ref="_nE70PO3rEeyKdOPGvEzJXA"/>
                   <children xsi:type="advanced:Placeholder" xmi:id="_nE7MSe3rEeyKdOPGvEzJXA" elementId="org.eclipse.ui.console.ConsoleView" ref="_nE70Pe3rEeyKdOPGvEzJXA"/>
                   <children xsi:type="advanced:Placeholder" xmi:id="_nE7MSu3rEeyKdOPGvEzJXA" elementId="org.eclipse.ui.views.PropertySheet" ref="_nE70Yu3rEeyKdOPGvEzJXA"/>
                   <children xsi:type="advanced:Placeholder" xmi:id="_nE7MS-3rEeyKdOPGvEzJXA" elementId="com.xilinx.sdk.terminal.sdkterminal" ref="_nE70m-3rEeyKdOPGvEzJXA"/>
                 </children>
-                <children xsi:type="basic:PartStack" xmi:id="_nE7MTO3rEeyKdOPGvEzJXA" elementId="com.xilinx.sdk.logger.SdkLogViewMStack" containerData="5000" selectedElement="_nE7MTe3rEeyKdOPGvEzJXA">
+                <children xsi:type="basic:PartStack" xmi:id="_nE7MTO3rEeyKdOPGvEzJXA" elementId="com.xilinx.sdk.logger.SdkLogViewMStack" containerData="3123" selectedElement="_nE7MTe3rEeyKdOPGvEzJXA">
                   <children xsi:type="advanced:Placeholder" xmi:id="_nE7MTe3rEeyKdOPGvEzJXA" elementId="com.xilinx.sdk.logger.SdkLogView" ref="_nE70kO3rEeyKdOPGvEzJXA"/>
                 </children>
               </children>
@@ -134,13 +135,6 @@
       <children xsi:type="basic:PartStack" xmi:id="_nE7NW-3rEeyKdOPGvEzJXA" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_nE7NYe3rEeyKdOPGvEzJXA">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
-        <tags>active</tags>
-        <children xsi:type="basic:Part" xmi:id="_nE7NXO3rEeyKdOPGvEzJXA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="system.hdf" iconURI="platform:/plugin/com.xilinx.sdk.hw/icons/hwspec_file_icon.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;com.xilinx.sdk.hw.ui.HwSpecXMLEditor&quot; name=&quot;system.hdf&quot; partName=&quot;system.hdf&quot; title=&quot;system.hdf&quot; tooltip=&quot;design_plane_calc_wrapper_hw_platform_0/system.hdf&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/design_plane_calc_wrapper_hw_platform_0/system.hdf&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>com.xilinx.sdk.hw.ui.HwSpecXMLEditor</tags>
-          <tags>removeOnHide</tags>
-        </children>
         <children xsi:type="basic:Part" xmi:id="_nE7NXe3rEeyKdOPGvEzJXA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="system.mss" iconURI="platform:/plugin/com.xilinx.sdk.sw.ui/icons/16x16/mss_file_icon.png" closeable="true">
           <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;com.xilinx.sdk.sw.MSSEditor&quot; name=&quot;system.mss&quot; partName=&quot;system.mss&quot; title=&quot;system.mss&quot; tooltip=&quot;lidar_app_bsp/system.mss&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/lidar_app_bsp/system.mss&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
@@ -164,12 +158,10 @@
           </menus>
         </children>
         <children xsi:type="basic:Part" xmi:id="_nE7NYe3rEeyKdOPGvEzJXA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="main.c" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;main.c&quot; partName=&quot;main.c&quot; title=&quot;main.c&quot; tooltip=&quot;lidar_app/main.c&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/lidar_app/main.c&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;30&quot; selectionOffset=&quot;943&quot; selectionTopPixel=&quot;290&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;main.c&quot; partName=&quot;main.c&quot; title=&quot;main.c&quot; tooltip=&quot;lidar_app/main.c&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/lidar_app/main.c&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;746&quot; selectionTopPixel=&quot;400&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
           <tags>removeOnHide</tags>
-          <tags>active</tags>
-          <tags>activeOnClose</tags>
           <menus xsi:type="menu:PopupMenu" xmi:id="_nE7NYu3rEeyKdOPGvEzJXA" elementId="#CEditorContext">
             <tags>menuContribution:popup</tags>
             <tags>popup:#CEditorContext</tags>
@@ -187,30 +179,8 @@
             <tags>popup:#OverviewRulerContext</tags>
           </menus>
         </children>
-        <children xsi:type="basic:Part" xmi:id="_nE7zd-3rEeyKdOPGvEzJXA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="sph_ip.h" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;sph_ip.h&quot; partName=&quot;sph_ip.h&quot; title=&quot;sph_ip.h&quot; tooltip=&quot;design_plane_calc_wrapper_hw_platform_0/drivers/sph_ip_v1_0/src/sph_ip.h&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/design_plane_calc_wrapper_hw_platform_0/drivers/sph_ip_v1_0/src/sph_ip.h&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;661&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
-          <tags>removeOnHide</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_nE7zeO3rEeyKdOPGvEzJXA" elementId="#CEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#CEditorContext</tags>
-            <tags>popup:org.eclipse.cdt.ui.editor.CEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_nE7zee3rEeyKdOPGvEzJXA" elementId="#CEditorRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#CEditorRulerContext</tags>
-            <tags>popup:org.eclipse.cdt.ui.editor.CEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_nE7zeu3rEeyKdOPGvEzJXA" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-        </children>
         <children xsi:type="basic:Part" xmi:id="_nE7ze-3rEeyKdOPGvEzJXA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="print.c" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;print.c&quot; partName=&quot;print.c&quot; title=&quot;print.c&quot; tooltip=&quot;lidar_app_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/print.c&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/lidar_app_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/print.c&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;23&quot; selectionOffset=&quot;754&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;print.c&quot; partName=&quot;print.c&quot; title=&quot;print.c&quot; tooltip=&quot;lidar_app_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/print.c&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/lidar_app_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/print.c&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;23&quot; selectionOffset=&quot;773&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
           <tags>removeOnHide</tags>
@@ -297,6 +267,12 @@
             <tags>popup:#OverviewRulerContext</tags>
           </menus>
         </children>
+        <children xsi:type="basic:Part" xmi:id="_run5gO8PEeyUqtJF2spOpQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="system.hdf" iconURI="platform:/plugin/com.xilinx.sdk.hw/icons/hwspec_file_icon.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;com.xilinx.sdk.hw.ui.HwSpecXMLEditor&quot; name=&quot;system.hdf&quot; partName=&quot;system.hdf&quot; title=&quot;system.hdf&quot; tooltip=&quot;design_plane_calc_wrapper_hw_platform_0/system.hdf&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/design_plane_calc_wrapper_hw_platform_0/system.hdf&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>com.xilinx.sdk.hw.ui.HwSpecXMLEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
       </children>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_nE7z3u3rEeyKdOPGvEzJXA" elementId="org.eclipse.ui.navigator.ProjectExplorer" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Project Explorer" iconURI="platform:/plugin/org.eclipse.ui.navigator.resources/icons/full/eview16/resource_persp.gif" tooltip="" closeable="true">
@@ -305,6 +281,8 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; org.eclipse.cdt.ui.cview.groupincludes=&quot;false&quot; org.eclipse.cdt.ui.cview.groupmacros=&quot;false&quot; org.eclipse.cdt.ui.editor.CUChildren=&quot;true&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;/>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_nE7z3-3rEeyKdOPGvEzJXA" elementId="org.eclipse.ui.navigator.ProjectExplorer">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -475,7 +453,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_nE70oe3rEeyKdOPGvEzJXA" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_IDuU0O52EeyuPvjehTymcw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_nE9Ed-3rEeyKdOPGvEzJXA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_1I0pcO8XEeyio-sF3MeUYQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_nE9Ed-3rEeyKdOPGvEzJXA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_nE70se3rEeyKdOPGvEzJXA" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -499,7 +477,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_nE706-3rEeyKdOPGvEzJXA" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_IDwxEO52EeyuPvjehTymcw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_nE9D8-3rEeyKdOPGvEzJXA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_1I3FsO8XEeyio-sF3MeUYQ" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_nE9D8-3rEeyKdOPGvEzJXA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_nE709u3rEeyKdOPGvEzJXA" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -2399,6 +2377,22 @@
   <addons xmi:id="_7HrtEe4xEey6hvZvOwtTlg" elementId="com.xilinx.sdk.targetmanager.ui.addon.view" contributionURI="bundleclass://com.xilinx.sdk.targetmanager.ui/com.xilinx.sdk.targetmanager.ui.ViewVisibilityAdapterAddon"/>
   <addons xmi:id="_gXydAe5zEeyOaIbacuwquw" elementId="com.xilinx.sdk.targetmanager.ui.addon.view" contributionURI="bundleclass://com.xilinx.sdk.targetmanager.ui/com.xilinx.sdk.targetmanager.ui.ViewVisibilityAdapterAddon"/>
   <addons xmi:id="_H085AO52EeyuPvjehTymcw" elementId="com.xilinx.sdk.targetmanager.ui.addon.view" contributionURI="bundleclass://com.xilinx.sdk.targetmanager.ui/com.xilinx.sdk.targetmanager.ui.ViewVisibilityAdapterAddon"/>
+  <addons xmi:id="_prYCEe6QEeyu2r4owjrUJA" elementId="com.xilinx.sdk.targetmanager.ui.addon.view" contributionURI="bundleclass://com.xilinx.sdk.targetmanager.ui/com.xilinx.sdk.targetmanager.ui.ViewVisibilityAdapterAddon"/>
+  <addons xmi:id="_V-HW0e6cEeyt-NDLWVbXkg" elementId="com.xilinx.sdk.targetmanager.ui.addon.view" contributionURI="bundleclass://com.xilinx.sdk.targetmanager.ui/com.xilinx.sdk.targetmanager.ui.ViewVisibilityAdapterAddon"/>
+  <addons xmi:id="_U4RhYe6iEey0wNa0Z54b4A" elementId="com.xilinx.sdk.targetmanager.ui.addon.view" contributionURI="bundleclass://com.xilinx.sdk.targetmanager.ui/com.xilinx.sdk.targetmanager.ui.ViewVisibilityAdapterAddon"/>
+  <addons xmi:id="_WjW2oe8EEeyEfPHg91IBOg" elementId="com.xilinx.sdk.targetmanager.ui.addon.view" contributionURI="bundleclass://com.xilinx.sdk.targetmanager.ui/com.xilinx.sdk.targetmanager.ui.ViewVisibilityAdapterAddon"/>
+  <addons xmi:id="_ji0Ewe8GEeyevfctTftDHw" elementId="com.xilinx.sdk.targetmanager.ui.addon.view" contributionURI="bundleclass://com.xilinx.sdk.targetmanager.ui/com.xilinx.sdk.targetmanager.ui.ViewVisibilityAdapterAddon"/>
+  <addons xmi:id="_fv1s8e8HEeylLbBTntIQxA" elementId="com.xilinx.sdk.targetmanager.ui.addon.view" contributionURI="bundleclass://com.xilinx.sdk.targetmanager.ui/com.xilinx.sdk.targetmanager.ui.ViewVisibilityAdapterAddon"/>
+  <addons xmi:id="__YWLwe8HEey86O1xCCmKqg" elementId="com.xilinx.sdk.targetmanager.ui.addon.view" contributionURI="bundleclass://com.xilinx.sdk.targetmanager.ui/com.xilinx.sdk.targetmanager.ui.ViewVisibilityAdapterAddon"/>
+  <addons xmi:id="_EJ5Zwe8JEeySMJoiaWkEkA" elementId="com.xilinx.sdk.targetmanager.ui.addon.view" contributionURI="bundleclass://com.xilinx.sdk.targetmanager.ui/com.xilinx.sdk.targetmanager.ui.ViewVisibilityAdapterAddon"/>
+  <addons xmi:id="_ZARWQe8KEeyaUtoT0D2T0g" elementId="com.xilinx.sdk.targetmanager.ui.addon.view" contributionURI="bundleclass://com.xilinx.sdk.targetmanager.ui/com.xilinx.sdk.targetmanager.ui.ViewVisibilityAdapterAddon"/>
+  <addons xmi:id="_jv9PQe8OEeyKk5bZXvlxtw" elementId="com.xilinx.sdk.targetmanager.ui.addon.view" contributionURI="bundleclass://com.xilinx.sdk.targetmanager.ui/com.xilinx.sdk.targetmanager.ui.ViewVisibilityAdapterAddon"/>
+  <addons xmi:id="_fIbOAO8PEeyQZs5v6ucTYA" elementId="com.xilinx.sdk.targetmanager.ui.addon.view" contributionURI="bundleclass://com.xilinx.sdk.targetmanager.ui/com.xilinx.sdk.targetmanager.ui.ViewVisibilityAdapterAddon"/>
+  <addons xmi:id="_pd2Jse8PEeyUqtJF2spOpQ" elementId="com.xilinx.sdk.targetmanager.ui.addon.view" contributionURI="bundleclass://com.xilinx.sdk.targetmanager.ui/com.xilinx.sdk.targetmanager.ui.ViewVisibilityAdapterAddon"/>
+  <addons xmi:id="_dF0yMe8REey0t7tMHRV1ig" elementId="com.xilinx.sdk.targetmanager.ui.addon.view" contributionURI="bundleclass://com.xilinx.sdk.targetmanager.ui/com.xilinx.sdk.targetmanager.ui.ViewVisibilityAdapterAddon"/>
+  <addons xmi:id="_-fHcse8SEeyYKrrb5IOJIw" elementId="com.xilinx.sdk.targetmanager.ui.addon.view" contributionURI="bundleclass://com.xilinx.sdk.targetmanager.ui/com.xilinx.sdk.targetmanager.ui.ViewVisibilityAdapterAddon"/>
+  <addons xmi:id="_hNqNce8VEeykG7MuwBZ3jg" elementId="com.xilinx.sdk.targetmanager.ui.addon.view" contributionURI="bundleclass://com.xilinx.sdk.targetmanager.ui/com.xilinx.sdk.targetmanager.ui.ViewVisibilityAdapterAddon"/>
+  <addons xmi:id="_05Inoe8XEeyio-sF3MeUYQ" elementId="com.xilinx.sdk.targetmanager.ui.addon.view" contributionURI="bundleclass://com.xilinx.sdk.targetmanager.ui/com.xilinx.sdk.targetmanager.ui.ViewVisibilityAdapterAddon"/>
   <categories xmi:id="_nE9opu3rEeyKdOPGvEzJXA" elementId="org.eclipse.team.ui.category.team" name="Team" description="Actions that apply when working with a Team"/>
   <categories xmi:id="_nE9op-3rEeyKdOPGvEzJXA" elementId="org.eclipse.ui.category.views" name="Views" description="Commands for opening views"/>
   <categories xmi:id="_nE9oqO3rEeyKdOPGvEzJXA" elementId="org.eclipse.ui.category.edit" name="Edit"/>

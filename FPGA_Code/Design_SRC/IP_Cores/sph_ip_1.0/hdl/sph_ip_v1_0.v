@@ -15,11 +15,14 @@
 	)
 	(
 		// Users to add ports here
-		input wire clk,
-		input wire clk_i2c,
-        inout wire [0:7] ToF_SCL,
-        inout wire [0:7] ToF_SDA,
-        input wire [0:7] ToF_INT,
+//		input wire clk,
+//		input wire clk_i2c,
+//        inout wire [0:7] ToF_SCL,
+//        inout wire [0:7] ToF_SDA,
+//        input wire [0:7] ToF_INT,
+        input wire [31:0] plane_data,
+        input wire [15:0] ToF_CMD_out,
+        output wire [31:0] ToF_CMD_in,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -52,11 +55,15 @@
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
 		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
 	) sph_ip_v1_0_S00_AXI_inst (
-	    .clk(clk),
-	    .clk_i2c(clk_i2c),
-	    .ToF_SCL(ToF_SCL),
-	    .ToF_SDA(ToF_SDA),
-	    .ToF_INT(ToF_INT),
+//	    .clk(clk),
+//	    .clk_i2c(clk_i2c),
+//	    .ToF_SCL(ToF_SCL),
+//	    .ToF_SDA(ToF_SDA),
+//	    .ToF_INT(ToF_INT),
+        .plane_data(plane_data),
+        .ToF_CMD_out(ToF_CMD_out),
+        .ToF_CMD_in(ToF_CMD_in),
+        //
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
 		.S_AXI_AWADDR(s00_axi_awaddr),
