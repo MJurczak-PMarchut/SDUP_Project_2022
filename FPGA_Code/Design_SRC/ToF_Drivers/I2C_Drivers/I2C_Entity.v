@@ -43,8 +43,8 @@ module I2C_Entity(
  
    
 //State machine
-parameter IDLE = 4'h01, SEND_ADDR = 4'h02, READ_WRITE = 4'h03, EXPECTED_ACK = 4'h04, DATA_ADDR = 4'h05, 
-    WRITE_DATA = 4'h06, READ_DATA = 4'h07, END_TRANSMIT = 4'h08, SEND_ACK = 4'h09, START_TRANSMISSION = 4'h0A;
+parameter IDLE = 4'h1, SEND_ADDR = 4'h2, READ_WRITE = 4'h3, EXPECTED_ACK = 4'h4, DATA_ADDR = 4'h5, 
+    WRITE_DATA = 4'h6, READ_DATA = 4'h7, END_TRANSMIT = 4'h8, SEND_ACK = 4'h9, START_TRANSMISSION = 4'hA, SKIP_SCL = 4'hB;
 parameter RISING_EDGE = 1'b1, FALLING_EDGE = 1'b0;
 reg [3:0] state_clk, nxt_state_clk;
 
@@ -65,7 +65,6 @@ initial
     SCL_en <= 1'b0;
     SCL_skip <= 1'b0;
     SDA_out <= 1'b1;
-    SCL_out <= 1'b1;
     end
 
 always @(posedge clock)
@@ -210,6 +209,9 @@ always @(posedge clock)
             SCL_skip <= 1'b0;
             state_clk <= nxt_state_clk;
             SDA_t <= 1'b1;
+            end
+        SKIP_SCL: begin
+            
             end
         SEND_ACK:begin
             SCL_en <= 1'b1;

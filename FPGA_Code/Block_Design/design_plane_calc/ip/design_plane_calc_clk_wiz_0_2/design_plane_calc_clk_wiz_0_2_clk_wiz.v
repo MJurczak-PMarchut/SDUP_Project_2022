@@ -56,13 +56,13 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// clk_main___100.000______0.000______50.0______124.615_____96.948
-// clk_out2___100.000______0.000______50.0______124.615_____96.948
-// clk_out3___100.000______0.000______50.0______124.615_____96.948
-// clk_out4___100.000______0.000______50.0______124.615_____96.948
-// _clk_i2c____50.000______0.000______50.0______143.688_____96.948
-// clk_out6___100.000______0.000______50.0______124.615_____96.948
-// clk_out7____20.000______0.000______50.0______172.798_____96.948
+// clk_main____62.500______0.000______50.0______150.695____122.096
+// clk_out2____62.500______0.000______50.0______150.695____122.096
+// clk_out3____62.500______0.000______50.0______150.695____122.096
+// clk_out4____62.500______0.000______50.0______150.695____122.096
+// _i2c_scl____78.125______0.000______30.0______143.982____122.096
+// clk_out6_____5.000______0.000______50.0______249.501____122.096
+// _clk_i2c_____5.000______0.000______50.0______249.501____122.096
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -79,9 +79,9 @@ module design_plane_calc_clk_wiz_0_2_clk_wiz
   output        clk_out2,
   output        clk_out3,
   output        clk_out4,
-  output        clk_i2c,
+  output        i2c_scl,
   output        clk_out6,
-  output        clk_out7,
+  output        clk_i2c,
   input         clk_in1
  );
   // Input buffering
@@ -106,9 +106,9 @@ wire clk_in2_design_plane_calc_clk_wiz_0_2;
   wire        clk_out2_design_plane_calc_clk_wiz_0_2;
   wire        clk_out3_design_plane_calc_clk_wiz_0_2;
   wire        clk_out4_design_plane_calc_clk_wiz_0_2;
-  wire        clk_i2c_design_plane_calc_clk_wiz_0_2;
+  wire        i2c_scl_design_plane_calc_clk_wiz_0_2;
   wire        clk_out6_design_plane_calc_clk_wiz_0_2;
-  wire        clk_out7_design_plane_calc_clk_wiz_0_2;
+  wire        clk_i2c_design_plane_calc_clk_wiz_0_2;
 
   wire [15:0] do_unused;
   wire        drdy_unused;
@@ -149,9 +149,9 @@ wire clk_in2_design_plane_calc_clk_wiz_0_2;
   #(.BANDWIDTH            ("OPTIMIZED"),
     .CLKOUT4_CASCADE      ("TRUE"),
     .COMPENSATION         ("ZHOLD"),
-    .STARTUP_WAIT         ("FALSE"),
+    .STARTUP_WAIT         ("TRUE"),
     .DIVCLK_DIVIDE        (1),
-    .CLKFBOUT_MULT_F      (8.000),
+    .CLKFBOUT_MULT_F      (5.000),
     .CLKFBOUT_PHASE       (0.000),
     .CLKFBOUT_USE_FINE_PS ("FALSE"),
     .CLKOUT0_DIVIDE_F     (10.000),
@@ -170,15 +170,15 @@ wire clk_in2_design_plane_calc_clk_wiz_0_2;
     .CLKOUT3_PHASE        (0.000),
     .CLKOUT3_DUTY_CYCLE   (0.500),
     .CLKOUT3_USE_FINE_PS  ("FALSE"),
-    .CLKOUT4_DIVIDE       (20),
+    .CLKOUT4_DIVIDE       (8),
     .CLKOUT4_PHASE        (0.000),
-    .CLKOUT4_DUTY_CYCLE   (0.500),
+    .CLKOUT4_DUTY_CYCLE   (0.300),
     .CLKOUT4_USE_FINE_PS  ("FALSE"),
-    .CLKOUT5_DIVIDE       (10),
+    .CLKOUT5_DIVIDE       (125),
     .CLKOUT5_PHASE        (0.000),
     .CLKOUT5_DUTY_CYCLE   (0.500),
     .CLKOUT5_USE_FINE_PS  ("FALSE"),
-    .CLKOUT6_DIVIDE       (50),
+    .CLKOUT6_DIVIDE       (125),
     .CLKOUT6_PHASE        (0.000),
     .CLKOUT6_DUTY_CYCLE   (0.500),
     .CLKOUT6_USE_FINE_PS  ("FALSE"),
@@ -196,9 +196,9 @@ wire clk_in2_design_plane_calc_clk_wiz_0_2;
     .CLKOUT2B            (clkout2b_unused),
     .CLKOUT3             (clk_out4_design_plane_calc_clk_wiz_0_2),
     .CLKOUT3B            (clkout3b_unused),
-    .CLKOUT4             (clk_i2c_design_plane_calc_clk_wiz_0_2),
+    .CLKOUT4             (i2c_scl_design_plane_calc_clk_wiz_0_2),
     .CLKOUT5             (clk_out6_design_plane_calc_clk_wiz_0_2),
-    .CLKOUT6             (clk_out7_design_plane_calc_clk_wiz_0_2),
+    .CLKOUT6             (clk_i2c_design_plane_calc_clk_wiz_0_2),
      // Input clock control
     .CLKFBIN             (clkfbout_buf_design_plane_calc_clk_wiz_0_2),
     .CLKIN1              (clk_in1_design_plane_calc_clk_wiz_0_2),
@@ -292,15 +292,15 @@ wire clk_in2_design_plane_calc_clk_wiz_0_2;
 
 
   BUFGCE clkout5_buf
-   (.O   (clk_i2c),
+   (.O   (i2c_scl),
     .CE  (seq_reg5[7]),
-    .I   (clk_i2c_design_plane_calc_clk_wiz_0_2));
+    .I   (i2c_scl_design_plane_calc_clk_wiz_0_2));
  
   BUFH clkout5_buf_en
-   (.O   (clk_i2c_design_plane_calc_clk_wiz_0_2_en_clk),
-    .I   (clk_i2c_design_plane_calc_clk_wiz_0_2));
+   (.O   (i2c_scl_design_plane_calc_clk_wiz_0_2_en_clk),
+    .I   (i2c_scl_design_plane_calc_clk_wiz_0_2));
  
-  always @(posedge clk_i2c_design_plane_calc_clk_wiz_0_2_en_clk)
+  always @(posedge i2c_scl_design_plane_calc_clk_wiz_0_2_en_clk)
         seq_reg5 <= {seq_reg5[6:0],locked_int};
 
 
@@ -318,15 +318,15 @@ wire clk_in2_design_plane_calc_clk_wiz_0_2;
 
 
   BUFGCE clkout7_buf
-   (.O   (clk_out7),
+   (.O   (clk_i2c),
     .CE  (seq_reg7[7]),
-    .I   (clk_out7_design_plane_calc_clk_wiz_0_2));
+    .I   (clk_i2c_design_plane_calc_clk_wiz_0_2));
  
   BUFH clkout7_buf_en
-   (.O   (clk_out7_design_plane_calc_clk_wiz_0_2_en_clk),
-    .I   (clk_out7_design_plane_calc_clk_wiz_0_2));
+   (.O   (clk_i2c_design_plane_calc_clk_wiz_0_2_en_clk),
+    .I   (clk_i2c_design_plane_calc_clk_wiz_0_2));
  
-  always @(posedge clk_out7_design_plane_calc_clk_wiz_0_2_en_clk)
+  always @(posedge clk_i2c_design_plane_calc_clk_wiz_0_2_en_clk)
         seq_reg7 <= {seq_reg7[6:0],locked_int};
 
 

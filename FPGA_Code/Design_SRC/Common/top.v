@@ -22,8 +22,8 @@
 
 module top(
     input wire clk,
-    input wire clk_i2c_t8,
-    input wire clk_i2c_scl,
+    input wire i2c_t8_clk,
+    input wire i2c_scl_clk,
     inout wire [0:7] ToF_SCL,
     inout wire [0:7] ToF_SDA,
     input wire [0:7] ToF_INT,
@@ -59,13 +59,13 @@ begin
     ce_delay <= 0;
 end
 
-always @(posedge clk_i2c_t8)
+always @(posedge i2c_t8_clk)
     begin
-        if(clk_i2c_scl)
+        if(i2c_scl_clk)
             scl_ce <=1;
         if(scl_ce)
             ce_delay <= ce_delay + 1;
-        if(ce_delay == 5)
+        if(ce_delay == 4)
             i2c_ce <= 1;
     end
 
@@ -82,7 +82,7 @@ BUFR_inst_0 (
   .O(clk_i2c),     // 1-bit output: Clock output port
   .CE(i2c_ce),   // 1-bit input: Active high, clock enable (Divided modes only)
   .CLR(!i2c_ce), // 1-bit input: Active high, asynchronous clear (Divided modes only)
-  .I(clk_i2c_t8)      // 1-bit input: Clock buffer input driven by an IBUF, MMCM or local interconnect
+  .I(i2c_t8_clk)      // 1-bit input: Clock buffer input driven by an IBUF, MMCM or local interconnect
 );
 
 
@@ -90,7 +90,7 @@ I2C_ToF_Comm_Modules I2C_Modules_entity
 (
     .clk(clk),
     .clk_i2c(clk_i2c),
-    .clk_i2c_scl(clk_i2c_scl),           
+    .clk_i2c_scl(i2c_scl_clk),           
     .ToF_SCL(ToF_SCL),  
     .ToF_SDA(ToF_SDA),  
     .ToF_INT(ToF_INT),
