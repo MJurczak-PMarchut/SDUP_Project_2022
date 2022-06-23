@@ -31,6 +31,17 @@
  
  
 /******************************************************************/
+/* Definitions for driver DATA_IP */
+#define XPAR_DATA_IP_NUM_INSTANCES 1
+
+/* Definitions for peripheral DATA_IP_0 */
+#define XPAR_DATA_IP_0_DEVICE_ID 0
+#define XPAR_DATA_IP_0_S00_AXI_BASEADDR 0x43C00000
+#define XPAR_DATA_IP_0_S00_AXI_HIGHADDR 0x43C0FFFF
+
+
+/******************************************************************/
+
 
 /* Definitions for peripheral PS7_DDR_0 */
 #define XPAR_PS7_DDR_0_S_AXI_BASEADDR 0x00100000
@@ -352,17 +363,6 @@
 #define XPAR_XSDPS_0_MIO_BANK 0
 #define XPAR_XSDPS_0_HAS_EMIO 0
 #define XPAR_XSDPS_0_IS_CACHE_COHERENT 0
-
-
-/******************************************************************/
-
-/* Definitions for driver SPH_IP */
-#define XPAR_SPH_IP_NUM_INSTANCES 1
-
-/* Definitions for peripheral SPH_IP_0 */
-#define XPAR_SPH_IP_0_DEVICE_ID 0
-#define XPAR_SPH_IP_0_S00_AXI_BASEADDR 0x43C00000
-#define XPAR_SPH_IP_0_S00_AXI_HIGHADDR 0x43C0FFFF
 
 
 /******************************************************************/
