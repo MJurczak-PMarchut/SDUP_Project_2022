@@ -23,6 +23,7 @@
 module I2C_ToF_Comm_Modules(
     input clk,
     input clk_i2c,
+    input clk_i2c_scl,
     inout [0:7] ToF_SCL,
     inout [0:7] ToF_SDA,
     input reset,
@@ -59,11 +60,15 @@ wire [15:0] distance_data [7:0];
 wire [16:0] nb_of_bytes [7:0];
 wire [7:0] data_ready;
 reg [7:0] reg_data_ready;
-
+reg ena, wea;
+wire [7:0]  fw_counter [16:0];
+wire [15:0] fw_data, dina;
 
 initial
     begin 
         data_status <= 8'h00;
+        ena <= 1'b1;
+        wea <= 1'b0;
     end
 
 genvar i;
@@ -105,19 +110,22 @@ genvar i;
         .ToF_CMD_out(ToF_CMD_out[i*2+1:i*2]),
         .i2c_data(reg_value[i]),
         .i2c_data_in(i2c_data_out[i]),
+        .fw_data(fw_data),
         .register_address(register_address[i]),
         .is_read(read[i]),
         .nb_of_bytes(nb_of_bytes[i]),
         .start(start[i]),
         .distance_data(distance_data[i]),
         .sensor_index(sensor_index[i]),
-        .data_ready(data_ready[i])
+        .data_ready(data_ready[i]),
+        .fw_counter(fw_counter[i])
     );
     I2C_Entity i2c_entity(
         .data_in(reg_value[i]),
         .clock(clk_i2c),
-        .SCL_in(SCL_in[i]),
-        .SDA_in(SDA_in[i]),
+        .clk_i2c_scl(clk_i2c_scl),
+        .SCL_in(SCL_out[i]),
+        .SDA_in(SDA_out[i]),
         .slave_adress(slave_adress),
         .register_address(register_address[i]),
         .is_read(read[i]),
@@ -126,8 +134,8 @@ genvar i;
         .reset(reset),
         .data_out(i2c_data_out[i]),
         .ready(ready[i]),
-        .SCL_out(SCL_out[i]),
-        .SDA_out(SDA_out[i]),
+        .SCL_out(SCL_in[i]),
+        .SDA_out(SDA_in[i]),
         .error_out(error_out[i]),
         .SCL_t(SCL_t[i]),
         .SDA_t(SDA_t[i])
@@ -145,16 +153,18 @@ always @(posedge clk)
                 reg_data_ready[__dr_iter] <= 1'b0;
     end
 
-//fw_blk_mem_gen fw(
-//    .addra(fw_counter),
-//    .clka(clk),
-//    .dina(dina),
-//    .douta(fw_data),
-//    .ena(ena),
-//    .wea(wea)
-//);
+fw_blk_mem_gen fw(
+    .addra(fw_counter[0] || fw_counter[1] || fw_counter[2] || fw_counter[3]
+        || fw_counter[4] || fw_counter[5] || fw_counter[6] || fw_counter[7]),
+    .clka(clk),
+    .dina(dina),
+    .douta(fw_data),
+    .ena(ena),
+    .wea(wea)
+);
 
 assign data_out = {sensor_index[ToF_Index], distance_data[ToF_Index]};
 assign ready_out = reg_data_ready;
+assign dina = 16'b0;
 
 endmodule

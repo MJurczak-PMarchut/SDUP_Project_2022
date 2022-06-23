@@ -22,7 +22,8 @@
 
 module top(
     input wire clk,
-    input wire clk_i2c,
+    input wire clk_i2c_t8,
+    input wire clk_i2c_scl,
     inout wire [0:7] ToF_SCL,
     inout wire [0:7] ToF_SDA,
     input wire [0:7] ToF_INT,
@@ -45,22 +46,51 @@ wire all_data_written_to_bram;
 wire wea, sph_drdy;
 wire [25:0] surf_data;
 wire [31:0] compl_surf;
+wire clk_i2c, clk_i2c_scl_rd;
+reg scl_ce, i2c_ce;
+reg [2:0] ce_delay;
+
 
 initial
 begin 
     reset <= 1'h1;
+    scl_ce <= 0;
+    i2c_ce <= 0;
+    ce_delay <= 0;
 end
 
+always @(posedge clk_i2c_t8)
+    begin
+        if(clk_i2c_scl)
+            scl_ce <=1;
+        if(scl_ce)
+            ce_delay <= ce_delay + 1;
+        if(ce_delay == 5)
+            i2c_ce <= 1;
+    end
 
 always @(posedge clk)
 begin
     reset <= 1'h0; 
 end
 
+BUFR #(
+  .BUFR_DIVIDE("8"),   // Values: "BYPASS, 1, 2, 3, 4, 5, 6, 7, 8" 
+  .SIM_DEVICE("7SERIES")  // Must be set to "7SERIES" 
+)
+BUFR_inst_0 (
+  .O(clk_i2c),     // 1-bit output: Clock output port
+  .CE(i2c_ce),   // 1-bit input: Active high, clock enable (Divided modes only)
+  .CLR(!i2c_ce), // 1-bit input: Active high, asynchronous clear (Divided modes only)
+  .I(clk_i2c_t8)      // 1-bit input: Clock buffer input driven by an IBUF, MMCM or local interconnect
+);
+
+
 I2C_ToF_Comm_Modules I2C_Modules_entity
 (
     .clk(clk),
-    .clk_i2c(clk_i2c),            
+    .clk_i2c(clk_i2c),
+    .clk_i2c_scl(clk_i2c_scl),           
     .ToF_SCL(ToF_SCL),  
     .ToF_SDA(ToF_SDA),  
     .ToF_INT(ToF_INT),

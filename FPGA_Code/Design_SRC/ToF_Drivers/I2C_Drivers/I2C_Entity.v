@@ -23,6 +23,7 @@
 module I2C_Entity(
     input [7:0] data_in,
     input clock,
+    input clk_i2c_scl,
     input SCL_in,
     input SDA_in,
     input [6:0] slave_adress,
@@ -55,16 +56,16 @@ reg [7:0] data_to_send;
 
 initial
     begin
-    SDA_out <= 1'b1;
-    SCL_out <= 1'b1;
+    SCL_t <= 1'b0;
+    SDA_t <= 1'b0;
     expected_ACK <= 1'b0;
     state_clk <= IDLE;
     error_out <= 1'b0;
-    SCL_t <= 1'b0;
-    SDA_t <= 1'b0;
     receiving <= 1'b0;
-    data_out <= 15'hfaf5; //temp
+    data_out <= 15'h0000; //temp
     edge_SCL <= 1'b1;
+    SDA_out <= 1'b1;
+    SCL_out <= 1'b1;
     end
 
 always @(posedge clock)
@@ -91,6 +92,7 @@ always @(posedge clock)
             end
         SEND_ADDR:begin
             SCL_out <= edge_SCL;
+            SDA_t <= 1'b0;
             case(edge_SCL)
             RISING_EDGE: begin
                 if(counter == 10'h0) 
@@ -109,7 +111,8 @@ always @(posedge clock)
             endcase
             edge_SCL <= ~edge_SCL;
             end
-        READ_WRITE:begin    
+        READ_WRITE:begin 
+            SDA_t <= 1'b0;   
             SCL_out <= edge_SCL;
             case(edge_SCL)
             RISING_EDGE: begin
@@ -126,6 +129,7 @@ always @(posedge clock)
         DATA_ADDR:begin  
             SCL_t <= 1'b0;
             SCL_out <= edge_SCL;
+            SDA_t <= 1'b0;
             case(edge_SCL)
             RISING_EDGE: begin
                 if(counter == 10'h0) 
@@ -153,7 +157,8 @@ always @(posedge clock)
             end
         WRITE_DATA:begin 
             SCL_t <= 1'b0;
-            SCL_out <= edge_SCL;  
+            SCL_out <= edge_SCL;
+            SDA_t <= 1'b0;  
             case(edge_SCL)
             RISING_EDGE: begin
                 if(counter == 10'h0 && nb_of_bytes == 17'h0) 
@@ -232,13 +237,15 @@ always @(posedge clock)
             edge_SCL <= ~edge_SCL;
             end
         EXPECTED_ACK:begin
+            SCL_out <= edge_SCL;
             case(edge_SCL)
             RISING_EDGE: begin
                 state_clk <= nxt_state_clk;
                 end
             FALLING_EDGE: begin
-                SCL_out <= 1'b0;
-                SCL_t <= 1'b1;
+//                SCL_out <= 1'b0;
+                SDA_t <= 1'b1;
+//                SCL_t <= 1'b1;
                 end    
             endcase
             edge_SCL <= ~edge_SCL;
@@ -248,8 +255,12 @@ always @(posedge clock)
             case(edge_SCL)
             RISING_EDGE: begin
                 state_clk <= nxt_state_clk;
+                SDA_out <= 1'b1;
+                SDA_t <= 1'b1;
                 end
             FALLING_EDGE: begin
+                SDA_t <= 1'b0;
+                SDA_out <= 1'b0;
                 end    
             endcase
             edge_SCL <= ~edge_SCL;

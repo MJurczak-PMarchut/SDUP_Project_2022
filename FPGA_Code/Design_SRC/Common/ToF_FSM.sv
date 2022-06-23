@@ -28,6 +28,7 @@ module ToF_FSM(
     input ToF_INT,
     input [3:0] ToF_CMD_in,
     input [7:0] i2c_data_in,
+    input [15:0] fw_data,
     
     output reg [7:0] i2c_data,
     output reg [1:0] ToF_CMD_out,
@@ -37,7 +38,8 @@ module ToF_FSM(
     output reg start,
     output reg [15:0] distance_data,
     output reg [5:0] sensor_index,
-    output reg data_ready
+    output reg data_ready,
+    output reg [16:0] fw_counter
 
     );
     
@@ -52,17 +54,18 @@ parameter INIT = 5'h11, IDLE = 5'h12, DATA_ACQUISITION = 5'h13, WAIT_FOR_DATA_RE
 parameter DEFAULT = 4'h0, SW_REBOOT1 = 4'h1, SW_REBOOT2 = 4'h2, SW_REBOOT3 = 4'h3, ENABLE_FW_ACCESS = 4'h4, DOWNLOAD_FW = 4'h5,
         RESET_MCU = 4'h6, RESET_MCU2 = 4'h7, PROCESSING = 4'h8, DCI_WRITE_DATA0 = 4'h9, DCI_WRITE_DATA1 = 4'hA, DCI_WRITE_DATA2 = 4'hB,
         DCI_WRITE_DATA3 = 4'hC, START_RANGING = 4'hD;
-parameter DONE = 2'b01, ACK = 2'b10;
+parameter NONE = 2'b00, DONE = 2'b01, ACK = 2'b10;
 
 parameter NB_OF_INIT_MESSAGES = 84;
 
 reg [4:0] state, nxt_state;    
 reg [7:0] msg_counter;
-reg [16:0] fw_counter;
-reg [15:0] dina;
-reg ena, wea, MSB;
+//reg [16:0] fw_counter;
+//reg [15:0] dina;
+//reg ena, wea; 
+reg MSB;
 
-wire [15:0] fw_data;
+//wire [15:0] fw_data;
 
 reg [7:0] [7:0] [15:0] data_array;
 reg [5:0] data_index; // [5:3] hotizontal index, [2:0] vertical index
@@ -130,14 +133,14 @@ reg [6:0][7:0] StartRangingMessagesVal = {8'h00, 8'h05, 8'h02, 8'h00, 8'h03,
                                                    8'h00, 8'h00
                                                    };                                                    
 
-fw_blk_mem_gen fw(
-    .addra(fw_counter),
-    .clka(clk),
-    .dina(dina),
-    .douta(fw_data),
-    .ena(ena),
-    .wea(wea)
-);
+//fw_blk_mem_gen fw(
+//    .addra(fw_counter),
+//    .clka(clk),
+//    .dina(dina),
+//    .douta(fw_data),
+//    .ena(ena),
+//    .wea(wea)
+//);
 
 
 initial
@@ -151,10 +154,10 @@ initial
     fw_counter <= 17'h0_0000;
     nb_of_bytes <= 17'h0;
     ToF_CMD_out <= 2'b00;
-    ena <= 1'b1;
+//    ena <= 1'b1;
     MSB <= 1'b1;
-    wea <= 1'b0;
-    dina <= 16'h0;
+//    wea <= 1'b0;
+//    dina <= 16'h0;
     end
     
 always @(posedge clk)
@@ -169,7 +172,7 @@ always @(posedge clk)
         msg_counter <= 8'h0;
         fw_counter <= 17'h0_0000;
         nb_of_bytes <= 17'h0;
-        ToF_CMD_out <= 2'b00;
+        ToF_CMD_out <= NONE;
         MSB <= 1'b1;
         end
     else
@@ -177,7 +180,7 @@ always @(posedge clk)
         case(state)
         INIT: begin
             state <= IDLE;
-            ToF_CMD_out <= 2'b00;//temp
+            ToF_CMD_out <= NONE;//temp
             end
         IDLE: begin
             case(ToF_CMD_in)
@@ -256,6 +259,7 @@ always @(posedge clk)
                     register_address <= StartMessagesAddr[2];
                     end
                 START_RANGING: begin
+                    fw_counter <= 17'h0_0000;
                     state <= START_RANGING;
                     msg_counter <= 8'h00;
                     ToF_CMD_out <= ACK;
@@ -264,9 +268,12 @@ always @(posedge clk)
                     state <= WAIT_FOR_INTERRUPT;
                     msg_counter <= 8'h0;
                     ToF_CMD_out <= ACK;
+                    fw_counter <= 17'h0_0000;
                     end
                 DEFAULT: begin
+                    ToF_CMD_out <= NONE;
                     state <= IDLE;
+                    fw_counter <= 17'h0_0000;
                     end
             endcase
             end
@@ -314,6 +321,7 @@ always @(posedge clk)
                 begin
                 ToF_CMD_out <= DONE;
                 state <= IDLE;
+                fw_counter <= 17'h0_0000;
                 end
             end
         DATA_ACQUISITION: begin
@@ -341,6 +349,7 @@ always @(posedge clk)
                         else 
                             begin
                             distance_data[7:0] <= i2c_data_in;
+                            sensor_index <= (msg_counter[7:0] - 17'h0_001B) >> 1 ;
                             data_ready <= 1'b1;
                             end
                         MSB = ~MSB;

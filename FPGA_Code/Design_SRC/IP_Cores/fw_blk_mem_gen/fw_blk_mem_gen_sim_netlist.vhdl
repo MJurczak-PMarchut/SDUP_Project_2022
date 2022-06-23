@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
--- Date        : Fri Jun 10 11:01:31 2022
+-- Date        : Wed Jun 22 19:29:01 2022
 -- Host        : Joker running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top fw_blk_mem_gen -prefix
---               fw_blk_mem_gen_ fw_blk_mem_gen_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               C:/repo/SDUP_Project_2022/FPGA_Code/Design_SRC/IP_Cores/fw_blk_mem_gen/fw_blk_mem_gen_sim_netlist.vhdl
 -- Design      : fw_blk_mem_gen
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -87,6 +87,8 @@ entity fw_blk_mem_gen_blk_mem_gen_mux is
     \douta[0]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \douta[0]_1\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of fw_blk_mem_gen_blk_mem_gen_mux : entity is "blk_mem_gen_mux";
 end fw_blk_mem_gen_blk_mem_gen_mux;
 
 architecture STRUCTURE of fw_blk_mem_gen_blk_mem_gen_mux is
@@ -1608,6 +1610,8 @@ entity fw_blk_mem_gen_blk_mem_gen_prim_wrapper_init is
     dina : in STD_LOGIC_VECTOR ( 0 to 0 );
     wea : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of fw_blk_mem_gen_blk_mem_gen_prim_wrapper_init : entity is "blk_mem_gen_prim_wrapper_init";
 end fw_blk_mem_gen_blk_mem_gen_prim_wrapper_init;
 
 architecture STRUCTURE of fw_blk_mem_gen_blk_mem_gen_prim_wrapper_init is
@@ -13834,6 +13838,8 @@ entity fw_blk_mem_gen_blk_mem_gen_prim_width is
     dina : in STD_LOGIC_VECTOR ( 0 to 0 );
     wea : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of fw_blk_mem_gen_blk_mem_gen_prim_width : entity is "blk_mem_gen_prim_width";
 end fw_blk_mem_gen_blk_mem_gen_prim_width;
 
 architecture STRUCTURE of fw_blk_mem_gen_blk_mem_gen_prim_width is
@@ -15133,6 +15139,8 @@ entity fw_blk_mem_gen_blk_mem_gen_generic_cstr is
     dina : in STD_LOGIC_VECTOR ( 15 downto 0 );
     wea : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of fw_blk_mem_gen_blk_mem_gen_generic_cstr : entity is "blk_mem_gen_generic_cstr";
 end fw_blk_mem_gen_blk_mem_gen_generic_cstr;
 
 architecture STRUCTURE of fw_blk_mem_gen_blk_mem_gen_generic_cstr is
@@ -16227,6 +16235,8 @@ entity fw_blk_mem_gen_blk_mem_gen_top is
     dina : in STD_LOGIC_VECTOR ( 15 downto 0 );
     wea : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of fw_blk_mem_gen_blk_mem_gen_top : entity is "blk_mem_gen_top";
 end fw_blk_mem_gen_blk_mem_gen_top;
 
 architecture STRUCTURE of fw_blk_mem_gen_blk_mem_gen_top is
@@ -16254,6 +16264,8 @@ entity fw_blk_mem_gen_blk_mem_gen_v8_4_3_synth is
     dina : in STD_LOGIC_VECTOR ( 15 downto 0 );
     wea : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of fw_blk_mem_gen_blk_mem_gen_v8_4_3_synth : entity is "blk_mem_gen_v8_4_3_synth";
 end fw_blk_mem_gen_blk_mem_gen_v8_4_3_synth;
 
 architecture STRUCTURE of fw_blk_mem_gen_blk_mem_gen_v8_4_3_synth is
@@ -16488,6 +16500,8 @@ entity fw_blk_mem_gen_blk_mem_gen_v8_4_3 is
   attribute C_WRITE_WIDTH_B of fw_blk_mem_gen_blk_mem_gen_v8_4_3 : entity is 16;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of fw_blk_mem_gen_blk_mem_gen_v8_4_3 : entity is "zynq";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of fw_blk_mem_gen_blk_mem_gen_v8_4_3 : entity is "blk_mem_gen_v8_4_3";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of fw_blk_mem_gen_blk_mem_gen_v8_4_3 : entity is "yes";
 end fw_blk_mem_gen_blk_mem_gen_v8_4_3;

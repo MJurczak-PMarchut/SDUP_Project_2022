@@ -3743,7 +3743,7 @@
     end
 
     assign slv_wire259[31:16] = 16'h0;
-    assign ToF_CMD_in = slv_reg0;
+    assign ToF_CMD_in = slv_reg257;
 
 	// User logic ends
 

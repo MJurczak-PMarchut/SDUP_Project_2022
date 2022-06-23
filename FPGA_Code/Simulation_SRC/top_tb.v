@@ -23,7 +23,7 @@
 module top_tb(
     );
  
-reg clock, clock_i2c;
+reg clock, clk_i2c_t8, clk_i2c_scl, clk_main, clk, locked;
 reg [7:0] ToF_INT; 
 reg [31:0] slv_reg0;
 reg [1:0] state;
@@ -31,9 +31,19 @@ reg [1:0] state;
 wire [7:0] ToF_SCL, ToF_SDA; 
 wire [31:0] slv_wire2, slv_wire3;
     
+clk_i2c_s clk_wiz_0
+(
+    .clk_in1(clock),
+    .clk_main(clk),
+    .clk_i2c(clk_i2c_t8),
+    .i2c_scl(clk_i2c_scl),
+    .locked(locked)
+);
+    
 top top_module(
-    .clk(clock), //clock
-    .clk_i2c(clock_i2c), //clock for I2C
+    .clk(clk), //clock
+    .clk_i2c_t8(clk_i2c_t8), //clock for I2C
+    .clk_i2c_scl(clk_i2c_scl),
     .ToF_SCL(ToF_SCL), // I2C_SCL
     .ToF_SDA(ToF_SDA), // I2C_SDA
     .ToF_INT(ToF_INT), // sensor interrupt pins
@@ -49,10 +59,6 @@ always
     #5 clock <= ~clock;
 
 // clock I2C signal    
-initial
-    clock_i2c <= 1'b1;    
-always
-    #20 clock_i2c <= ~clock_i2c;
 
 //////////////////////////////////////////////////////////////
 // test0
