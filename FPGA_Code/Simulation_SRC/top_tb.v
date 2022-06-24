@@ -90,7 +90,7 @@ initial
     #200 state <= slv_wire3[1:0];
     $display("initial status: %d", state);
     slv_reg0[3:0] <= 4'h5;
-    #20 state <= slv_wire3[1:0];
+    #40 state <= slv_wire3[1:0];
     $display("starting sending firmware: %d", state);
     #20 slv_reg0[3:0] <= (state == 2'b10)? 4'b0000:4'b0001;
     end

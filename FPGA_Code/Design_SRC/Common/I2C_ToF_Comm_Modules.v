@@ -154,13 +154,11 @@ always @(posedge clk)
     end
 
 fw_blk_mem_gen fw(
-    .addra(fw_counter[0] || fw_counter[1] || fw_counter[2] || fw_counter[3]
-        || fw_counter[4] || fw_counter[5] || fw_counter[6] || fw_counter[7]),
+    .addra(fw_counter[0] | fw_counter[1] | fw_counter[2] | fw_counter[3]
+        | fw_counter[4] | fw_counter[5] | fw_counter[6] | fw_counter[7]),
     .clka(clk),
-    .dina(dina),
     .douta(fw_data),
-    .ena(ena),
-    .wea(wea)
+    .ena(ena)
 );
 
 assign data_out = {sensor_index[ToF_Index], distance_data[ToF_Index]};

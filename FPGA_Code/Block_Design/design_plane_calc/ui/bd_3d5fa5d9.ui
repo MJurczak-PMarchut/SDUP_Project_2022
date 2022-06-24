@@ -11,29 +11,29 @@ preplace portBus ToF_INT -pg 1 -lvl 0 -x -160 -y 20 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 2 -x 330 -y 410 -defaultsOSRD
 preplace inst clk_wiz_0 -pg 1 -lvl 3 -x 670 -y 20 -defaultsOSRD
 preplace inst ps7_0_axi_periph -pg 1 -lvl 5 -x 1340 -y 140 -defaultsOSRD
-preplace inst rst_ps7_0_100M -pg 1 -lvl 4 -x 950 -y 450 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 4 -x 960 -y 450 -defaultsOSRD
 preplace inst data_ip_0 -pg 1 -lvl 2 -x 330 -y 60 -defaultsOSRD
 preplace inst top_0 -pg 1 -lvl 5 -x 1340 -y -60 -defaultsOSRD
-preplace netloc processing_system7_0_FCLK_CLK0 1 1 4 50 560 560 410 770 230 1150
-preplace netloc clk_1 1 0 3 NJ -20 30 170 560J
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 4 50 560 550 410 770 230 1160
+preplace netloc clk_1 1 0 3 NJ -20 30 170 550J
 preplace netloc clk_wiz_0_clk_main 1 3 2 760 -100 NJ
-preplace netloc ToF_INT_1 1 0 5 -140J -110 N -110 NJ -110 N -110 1130
-preplace netloc Net 1 0 6 NJ 50 20 230 560J 250 N 250 1130J 270 1550
-preplace netloc Net1 1 0 6 NJ 80 10 240 550J 280 N 280 NJ 280 1540
-preplace netloc data_ip_0_ToF_CMD_in 1 2 3 580J 140 N 140 1130
-preplace netloc top_0_ToF_CMD_out 1 1 5 60 -170 NJ -170 N -170 NJ -170 1530
-preplace netloc top_0_plane_data 1 1 5 70 -160 NJ -160 N -160 NJ -160 1520
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 2 2 580 430 N
-preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 4 70 220 580J 240 N 240 1160
-preplace netloc top_0_distance_mm 1 1 5 60 250 540J 290 N 290 NJ 290 1530
-preplace netloc clk_wiz_0_i2c_scl 1 3 2 N 40 1120
+preplace netloc ToF_INT_1 1 0 5 -140J -110 N -110 NJ -110 N -110 1140
+preplace netloc Net 1 0 6 NJ 50 20 230 550J 250 N 250 1140J 270 1540
+preplace netloc Net1 1 0 6 NJ 80 10 240 540J 280 N 280 NJ 280 1530
+preplace netloc data_ip_0_ToF_CMD_in 1 2 3 570J 140 N 140 1140
+preplace netloc top_0_ToF_CMD_out 1 1 5 60 -170 NJ -170 N -170 NJ -170 1520
+preplace netloc top_0_plane_data 1 1 5 70 -160 NJ -160 N -160 NJ -160 1510
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 2 2 570 430 N
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 4 70 220 570J 240 N 240 1170
+preplace netloc top_0_distance_mm 1 1 5 60 250 530J 290 N 290 NJ 290 1520
+preplace netloc clk_wiz_0_i2c_scl 1 3 2 N 40 1130
 preplace netloc clk_wiz_0_clk_i2c 1 3 2 770 -80 N
-preplace netloc ps7_0_axi_periph_M00_AXI 1 1 5 40 260 NJ 260 N 260 NJ 260 1520
-preplace netloc processing_system7_0_M_AXI_GP0 1 2 3 570J 230 760 150 1140
-preplace netloc processing_system7_0_FIXED_IO 1 2 4 NJ 340 760 350 NJ 350 1540J
+preplace netloc ps7_0_axi_periph_M00_AXI 1 1 5 40 260 NJ 260 N 260 NJ 260 1510
+preplace netloc processing_system7_0_M_AXI_GP0 1 2 3 560J 230 760 150 1150
+preplace netloc processing_system7_0_FIXED_IO 1 2 4 NJ 340 760 350 NJ 350 1530J
 preplace netloc processing_system7_0_DDR 1 2 4 NJ 320 780 310 NJ 310 NJ
-levelinfo -pg 1 -160 -10 330 670 950 1340 1570
-pagesize -pg 1 -db -bbox -sgen -310 -360 1690 950
+levelinfo -pg 1 -160 -10 330 670 960 1340 1570
+pagesize -pg 1 -db -bbox -sgen -300 -360 1680 950
 "
 }
 {

@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="16599000000fs"></ZoomStartTime>
-      <ZoomEndTime time="22059000001fs"></ZoomEndTime>
-      <Cursor1Time time="20540000000fs"></Cursor1Time>
+      <ZoomStartTime time="66541799999fs"></ZoomStartTime>
+      <ZoomEndTime time="208441800000fs"></ZoomEndTime>
+      <Cursor1Time time="110549100000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="139"></NameColumnWidth>
-      <ValueColumnWidth column_width="77"></ValueColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="18" />
+   <WVObjectSize size="21" />
    <wvobject fp_name="/top_tb/clock" type="logic">
       <obj_property name="ElementShortName">clock</obj_property>
       <obj_property name="ObjectShortName">clock</obj_property>
@@ -76,10 +76,6 @@
       <obj_property name="ElementShortName">clk_i2c</obj_property>
       <obj_property name="ObjectShortName">clk_i2c</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_tb/top_module/clk_i2c_scl" type="logic">
-      <obj_property name="ElementShortName">clk_i2c_scl</obj_property>
-      <obj_property name="ObjectShortName">clk_i2c_scl</obj_property>
-   </wvobject>
    <wvobject fp_name="/top_tb/top_module/ce_delay" type="array">
       <obj_property name="ElementShortName">ce_delay[2:0]</obj_property>
       <obj_property name="ObjectShortName">ce_delay[2:0]</obj_property>
@@ -91,5 +87,21 @@
    <wvobject fp_name="/top_tb/top_module/i2c_ce" type="logic">
       <obj_property name="ElementShortName">i2c_ce</obj_property>
       <obj_property name="ObjectShortName">i2c_ce</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/top_module/I2C_Modules_entity/\Entity_Identifier[0].tof_fsm_entity /fw_counter" type="array">
+      <obj_property name="ElementShortName">fw_counter[16:0]</obj_property>
+      <obj_property name="ObjectShortName">fw_counter[16:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/top_module/I2C_Modules_entity/\Entity_Identifier[0].tof_fsm_entity /i2c_data_in" type="array">
+      <obj_property name="ElementShortName">i2c_data_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i2c_data_in[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/top_module/I2C_Modules_entity/\Entity_Identifier[0].i2c_entity /SCL_out" type="logic">
+      <obj_property name="ElementShortName">SCL_out</obj_property>
+      <obj_property name="ObjectShortName">SCL_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/top_module/I2C_Modules_entity/\Entity_Identifier[0].i2c_entity /SDA_out" type="logic">
+      <obj_property name="ElementShortName">SDA_out</obj_property>
+      <obj_property name="ObjectShortName">SDA_out</obj_property>
    </wvobject>
 </wave_config>

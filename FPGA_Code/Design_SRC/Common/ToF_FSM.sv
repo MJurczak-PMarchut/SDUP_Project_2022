@@ -285,14 +285,14 @@ always @(posedge clk)
                 i2c_data <= InitMessagesVal[msg_counter];
                 start <= 1'b1;
                 state <= WAIT_FOR_DATA_READY;
-                if(msg_counter == 8'h4 || msg_counter == 8'h13  || msg_counter == 8'h18 || msg_counter == 8'h1A ||
-                    msg_counter == 8'h2C  || msg_counter == 8'h37)
+                if(msg_counter == 8'h4 || msg_counter == 8'h12  || msg_counter == 8'h17 || msg_counter == 8'h19 ||
+                    msg_counter == 8'h2B  || msg_counter == 8'h36)
                 //read reg value
                     begin
                     is_read <= 1'b1;
                     nxt_state <= SW_REBOOT1;
                     end
-                else if(msg_counter == 8'h0D || msg_counter == 8'h0F || msg_counter == 8'h2F || msg_counter == 8'h37)
+                else if(msg_counter == 8'h0D || msg_counter == 8'h10 || msg_counter == 8'h2E || msg_counter == 8'h36)
                 //timeout
                     begin
                     is_read <= 1'b0;
