@@ -56,16 +56,10 @@ parameter DEFAULT = 4'h0, SW_REBOOT1 = 4'h1, SW_REBOOT2 = 4'h2, SW_REBOOT3 = 4'h
         DCI_WRITE_DATA3 = 4'hC, START_RANGING = 4'hD;
 parameter NONE = 2'b00, DONE = 2'b01, ACK = 2'b10;
 
-//parameter NB_OF_INIT_MESSAGES = 84;
-
 reg [4:0] state, nxt_state;    
 reg [7:0] msg_counter;
-//reg [16:0] fw_counter;
-//reg [15:0] dina;
-//reg ena, wea; 
 reg MSB;
 
-//wire [15:0] fw_data;
 
 reg [7:0] [7:0] [15:0] data_array;
 reg [5:0] data_index; // [5:3] hotizontal index, [2:0] vertical index
@@ -133,15 +127,6 @@ reg [0:6][7:0] StartRangingMessagesVal = {8'h00, 8'h05, 8'h02, 8'h00, 8'h03,
                                                    8'h00, 8'h00
                                                    };                                                    
 
-//fw_blk_mem_gen fw(
-//    .addra(fw_counter),
-//    .clka(clk),
-//    .dina(dina),
-//    .douta(fw_data),
-//    .ena(ena),
-//    .wea(wea)
-//);
-
 
 initial
     begin
@@ -154,10 +139,7 @@ initial
     fw_counter <= 17'h0_0000;
     nb_of_bytes <= 17'h0;
     ToF_CMD_out <= 2'b00;
-//    ena <= 1'b1;
     MSB <= 1'b1;
-//    wea <= 1'b0;
-//    dina <= 16'h0;
     end
     
 always @(posedge clk)
@@ -180,7 +162,7 @@ always @(posedge clk)
         case(state)
         INIT: begin
             state <= IDLE;
-            ToF_CMD_out <= NONE;//temp
+            ToF_CMD_out <= NONE;
             end
         IDLE: begin
             case(ToF_CMD_in)

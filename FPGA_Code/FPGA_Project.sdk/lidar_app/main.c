@@ -55,68 +55,25 @@
 #define ToF_6_CMD_IN				0x3 << 12
 #define ToF_7_CMD_IN				0x3 << 14
 
+#define ToF_0						0
+#define ToF_1						1
+#define ToF_2						2
+#define ToF_3						3
+#define ToF_4						4
+#define ToF_5						5
+#define ToF_6						6
+#define ToF_7						7
 
 
-void ToF_Init1(char ToF_nb)
+void SendCommandToSensor(u8 Command, char ToF_nb)
 {
 	u32 status = 0;
 
 
-	xil_printf("Initiating Sensor %d\n\r", ToF_nb);
+	xil_printf("Sending Command %d to  Sensor %d\n\r", Command, ToF_nb);
 
-	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, SW_REBOOT1 << (ToF_CMD_OUT_SHIFT * ToF_nb));
-	xil_printf("Init stage: %d\n\r", SW_REBOOT1);
-	if((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_nb)))!= 0)
-	{
-		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, 0);
-	}
-	while(DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_nb))){}
-	status = DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_nb));
-	xil_printf("%d\n\r", status);
-
-
-	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, SW_REBOOT2 << (ToF_CMD_OUT_SHIFT * ToF_nb));
-	xil_printf("Init stage: %d\n\r", SW_REBOOT2 << (ToF_CMD_OUT_SHIFT * ToF_nb));
-	if((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_nb)))!= 0)
-	{
-		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, 0);
-	}
-	while(DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_nb))){}
-	status = DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_nb));
-	xil_printf("%d\n\r", status);
-
-
-}
-
-void ToF_Init2(char ToF_nb)
-{
-	u32 status = 0;
-
-
-	xil_printf("Second part initiating Sensor %d\n\r", ToF_nb);
-
-	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, SW_REBOOT3 << (ToF_CMD_OUT_SHIFT * ToF_nb));
-	xil_printf("Init stage: %d\n\r", SW_REBOOT3);
-	if((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_nb)))!= 0)
-	{
-		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, 0);
-	}
-	while(DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_nb))){}
-	status = DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_nb));
-	xil_printf("%d\n\r", status);
-
-
-}
-
-void ToF_DownloadFW(char ToF_nb)
-{
-	u32 status = 0;
-
-
-	xil_printf("Second part initiating Sensor %d\n\r", ToF_nb);
-
-	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, DOWNLOAD_FW << (ToF_CMD_OUT_SHIFT * ToF_nb));
-	xil_printf("Init stage: %d\n\r", DOWNLOAD_FW);
+	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, Command << (ToF_CMD_OUT_SHIFT * ToF_nb));
+	xil_printf("Init stage: %d\n\r", Command);
 	if((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_nb)))!= 0)
 	{
 		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, 0);
@@ -130,12 +87,12 @@ void ToF_DownloadFW(char ToF_nb)
 
 int main(void)
 {
-
-	ToF_Init1(0);
+	SendCommandToSensor(SW_REBOOT1, ToF_0);
+	SendCommandToSensor(SW_REBOOT2, ToF_0);
 	usleep(100000);
-	ToF_Init2(0);
+	SendCommandToSensor(SW_REBOOT3, ToF_0);
 	usleep(100);
-	ToF_DownloadFW(0);
+	SendCommandToSensor(DOWNLOAD_FW, ToF_0);
 
 	while(1)
 	{
