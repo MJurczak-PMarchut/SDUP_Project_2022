@@ -292,7 +292,7 @@ always @(posedge clk)
                     is_read <= 1'b1;
                     nxt_state <= SW_REBOOT1;
                     end
-                else if(msg_counter == 8'hE || msg_counter == 8'h11 || msg_counter == 8'h31 || msg_counter == 8'h39)
+                else if(msg_counter == 8'h0D || msg_counter == 8'h0F || msg_counter == 8'h2F || msg_counter == 8'h37)
                 //timeout
                     begin
                     is_read <= 1'b0;
