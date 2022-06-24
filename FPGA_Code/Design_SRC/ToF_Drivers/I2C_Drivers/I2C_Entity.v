@@ -126,16 +126,17 @@ always @(posedge clock)
             SDA_t <= 1'b0;   
             SCL_en <= 1'b1;
             SCL_skip <= 1'b0;
-            counter <= 10'hF;
             if(is_read_flag == 1'b0)
                 begin
                 SDA_out <= 1'b0;
                 nxt_state_clk <= DATA_ADDR;
+                counter <= 10'hF;
                 end
             else
                 begin
                 SDA_out <= is_read_flag;
                 nxt_state_clk <= READ_DATA;
+                counter <= 10'h7;
                 end
             state_clk <= EXPECTED_ACK;
             end
@@ -233,7 +234,7 @@ always @(posedge clock)
                 end
             else if(counter == 10'h0)
                 begin
-                counter = counter;
+                counter <= counter;
                 nxt_state_clk <= END_TRANSMIT;
                 state_clk <= SEND_ACK;
                 ready <= 1'b0;
