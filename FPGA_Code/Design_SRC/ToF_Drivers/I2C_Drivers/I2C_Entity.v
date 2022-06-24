@@ -44,11 +44,11 @@ module I2C_Entity(
    
 //State machine
 parameter IDLE = 4'h1, SEND_ADDR = 4'h2, READ_WRITE = 4'h3, EXPECTED_ACK = 4'h4, DATA_ADDR = 4'h5, 
-    WRITE_DATA = 4'h6, READ_DATA = 4'h7, END_TRANSMIT = 4'h8, SEND_ACK = 4'h9, START_TRANSMISSION = 4'hA, SKIP_SCL = 4'hB;
+    WRITE_DATA = 4'h6, READ_DATA = 4'h7, END_TRANSMIT = 4'h8, SEND_ACK = 4'h9, START_TRANSMISSION = 4'hA, SKIP_SCL = 4'hB, STOP1 = 4'hC, STOP2 = 4'hD;
 parameter RISING_EDGE = 1'b1, FALLING_EDGE = 1'b0;
 reg [3:0] state_clk, nxt_state_clk;
 
-reg receiving, expected_ACK, SCL_en, SCL_skip;
+reg receiving, expected_ACK, SCL_en, SCL_skip, is_read_flag;
 
 reg [9:0] counter;
 reg [23:0] temp;
@@ -65,6 +65,7 @@ initial
     SCL_en <= 1'b0;
     SCL_skip <= 1'b0;
     SDA_out <= 1'b1;
+    is_read_flag <= 1'b0;
     end
 
 always @(posedge clock)
@@ -75,6 +76,7 @@ always @(posedge clock)
         state_clk <= IDLE;
         SCL_en <= 1'b0;
         SCL_skip <= 1'b0;
+        is_read_flag <= 1'b0;
         end
     else
         begin
@@ -125,9 +127,17 @@ always @(posedge clock)
             SCL_en <= 1'b1;
             SCL_skip <= 1'b0;
             counter <= 10'hF;
-            nxt_state_clk <= DATA_ADDR;
-            state_clk = EXPECTED_ACK;
-            SDA_out <= is_read;
+            if(is_read_flag == 1'b0)
+                begin
+                SDA_out <= 1'b0;
+                nxt_state_clk <= DATA_ADDR;
+                end
+            else
+                begin
+                SDA_out <= is_read_flag;
+                nxt_state_clk <= READ_DATA;
+                end
+            state_clk <= EXPECTED_ACK;
             end
         DATA_ADDR:begin  
             SCL_en <= 1'b1;
@@ -136,7 +146,9 @@ always @(posedge clock)
             if(counter == 10'h0) 
                 begin
                 counter <= 10'h7;
-                nxt_state_clk <= (is_read == 1'b1)? READ_DATA:WRITE_DATA;
+//                nxt_state_clk <= (is_read == 1'b1)? SEND_ADDR:WRITE_DATA;
+                nxt_state_clk <= (is_read == 1'b1)? END_TRANSMIT:WRITE_DATA;
+                is_read_flag  <= is_read;
                 state_clk <= EXPECTED_ACK;
                 end
             else if(counter == 10'h8)
@@ -154,7 +166,8 @@ always @(posedge clock)
         WRITE_DATA:begin 
             SCL_en <= 1'b1;
             SCL_skip <= 1'b0;
-            SDA_t <= 1'b0;  
+            SDA_t <= 1'b0; 
+            is_read_flag <= 1'b0; 
             if(counter == 10'h0 && nb_of_bytes == 17'h0) 
                 begin
                 data_to_send <= data_in; //
@@ -179,11 +192,30 @@ always @(posedge clock)
             SDA_out <= data_in[counter];
             end
         END_TRANSMIT:begin
-            state_clk <= IDLE;
-            ready <= 1'b1;
+//            state_clk <= IDLE;
+            state_clk <= STOP1;
+            ready <= ~is_read_flag;
+            SCL_en <= 1'b0;
+            SCL_skip <= 1'b1;
+            SDA_t <= 1'b0;
+            SDA_out <= 1'b0;
+            end
+        STOP1: begin
+            state_clk <= STOP2;
+            ready <= ~is_read_flag;
             SCL_en <= 1'b0;
             SCL_skip <= 1'b0;
-            end 
+            SDA_t <= 1'b0;
+            SDA_out <= 1'b0;
+            end
+        STOP2: begin
+            state_clk <= IDLE;
+            ready <= ~is_read_flag;
+            SCL_en <= 1'b0;
+            SCL_skip <= 1'b0;
+            SDA_t <= 1'b1;
+            SDA_out <= 1'b1;
+            end
         READ_DATA:begin
             SCL_en <= 1'b1;
             SCL_skip <= 1'b0;
@@ -191,6 +223,7 @@ always @(posedge clock)
             SDA_out <= 1'b1; 
             data_out <= data_out << 1;
             data_out[0] <= SDA_in;
+            is_read_flag <= 1'b0;
             if((counter == 10'h0) && (nb_of_bytes > 17'h0))
                 begin
                 counter <= 10'h7;
@@ -214,10 +247,16 @@ always @(posedge clock)
         EXPECTED_ACK:begin
             SCL_en <= 1'b1;
             SCL_skip <= 1'b0;
-            state_clk <= nxt_state_clk;
+//            state_clk <= nxt_state_clk;
+            state_clk <= SKIP_SCL;
             SDA_t <= 1'b1;
             end
         SKIP_SCL: begin
+            SCL_en <= 1'b1;
+            SCL_skip <= 1'b1;
+            SDA_t <= 1'b1;
+            SDA_out <= 1'b1;
+            state_clk <= nxt_state_clk;
             end
         SEND_ACK:begin
             SDA_t <= 1'b0;

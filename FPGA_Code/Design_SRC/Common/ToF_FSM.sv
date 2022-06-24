@@ -56,7 +56,7 @@ parameter DEFAULT = 4'h0, SW_REBOOT1 = 4'h1, SW_REBOOT2 = 4'h2, SW_REBOOT3 = 4'h
         DCI_WRITE_DATA3 = 4'hC, START_RANGING = 4'hD;
 parameter NONE = 2'b00, DONE = 2'b01, ACK = 2'b10;
 
-parameter NB_OF_INIT_MESSAGES = 84;
+//parameter NB_OF_INIT_MESSAGES = 84;
 
 reg [4:0] state, nxt_state;    
 reg [7:0] msg_counter;
@@ -70,7 +70,7 @@ reg MSB;
 reg [7:0] [7:0] [15:0] data_array;
 reg [5:0] data_index; // [5:3] hotizontal index, [2:0] vertical index
 
-reg [NB_OF_INIT_MESSAGES-1:0] [15:0] InitMessagesAddr ={16'h7fff, 16'h0009, 16'h000F, 16'h000A, 16'h7FFF, 
+reg [0:57] [15:0] InitMessagesAddr =              {16'h7fff, 16'h0009, 16'h000F, 16'h000A, 16'h7FFF, 
                                                    16'h000C, 16'h0101, 16'h0102, 16'h010A, 16'h4002,
                                                    16'h4002, 16'h010A, 16'h0103, 16'h000C, 16'h000F, //here there is a 1 ms waiting
                                                    16'h000F, 16'h000A, 16'h7fff, 16'h0006, 16'h000E, 
@@ -83,23 +83,23 @@ reg [NB_OF_INIT_MESSAGES-1:0] [15:0] InitMessagesAddr ={16'h7fff, 16'h0009, 16'h
                                                    16'h0115, 16'h0116, 16'h0117, 16'h000B, 16'h7fff,
                                                    16'h000C, 16'h000B, 16'h7fff
                                                    };
-reg [NB_OF_INIT_MESSAGES-1:0][7:0] InitMessagesVal = {8'h00, 8'h04, 8'h40, 8'h03, 8'h00, 
+reg [0:57][7:0] InitMessagesVal =                 {8'h00, 8'h04, 8'h40, 8'h03, 8'h00, 
                                                    8'h01, 8'h00, 8'h00, 8'h01, 8'h01,
                                                    8'h00, 8'h03, 8'h01, 8'h00, 8'h43,
                                                    8'h40, 8'h01, 8'h00, 8'h01, 8'h01, 
                                                    8'h02, 8'h0D, 8'h01, 8'h10, 8'h00, 
                                                    8'h00, 8'h01, 8'h00, 8'h00, 8'h00,
                                                    8'h01, 8'h01, 8'h00, 8'h03, 8'h01,
-                                                   8'h00, 8'h43, 8'h03, 8'h01, 86'h00,
+                                                   8'h00, 8'h43, 8'h03, 8'h01, 8'h00,
                                                    8'h00, 8'h00, 8'h00, 8'h00, 8'h00,
                                                    8'h01, 8'h07, 8'h06, 8'h00, 8'h00,
                                                    8'h00, 8'h42, 8'h00, 8'h00, 8'h00,
                                                    8'h00, 8'h01, 8'h02
                                                    };
                                                    
-reg [NB_OF_INIT_MESSAGES-1:0] [15:0] StartMessagesAddr ={16'hCD78, 16'hCD60, 16'hCD68
+reg [0:2] [15:0] StartMessagesAddr =               {16'hCD78, 16'hCD60, 16'hCD68
                                                    };
-reg [NB_OF_INIT_MESSAGES-1:0][7:0] StartMessagesVal = {8'h00, 8'h00, 8'h00, 8'h00, //header
+reg [0:83][7:0] StartMessagesVal =                  {8'h00, 8'h00, 8'h00, 8'h00, //header
 
                                                    8'h00, 8'h00, 8'h00, 8'h0f, //footer
                                                    8'h05, 8'h01, 8'h00, 8'h00,
@@ -126,10 +126,10 @@ reg [NB_OF_INIT_MESSAGES-1:0][7:0] StartMessagesVal = {8'h00, 8'h00, 8'h00, 8'h0
                                                    8'hC0, 8'h00, 8'h00, 8'h00
                                                    };
 
-reg [6:0] [15:0] StartRangingMessagesAddr ={16'h7fff, 16'h0009, 16'h7FFF, 16'h2FFF, 16'h3000, 
+reg [0:6] [15:0] StartRangingMessagesAddr ={16'h7fff, 16'h0009, 16'h7FFF, 16'h2FFF, 16'h3000, 
                                                    16'h3001, 16'h3002
                                                    };
-reg [6:0][7:0] StartRangingMessagesVal = {8'h00, 8'h05, 8'h02, 8'h00, 8'h03, 
+reg [0:6][7:0] StartRangingMessagesVal = {8'h00, 8'h05, 8'h02, 8'h00, 8'h03, 
                                                    8'h00, 8'h00
                                                    };                                                    
 
