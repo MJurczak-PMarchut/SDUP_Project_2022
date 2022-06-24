@@ -59,6 +59,7 @@ module ToF_BRAM (
   addra,
   dina,
   clkb,
+  enb,
   addrb,
   doutb
 );
@@ -74,6 +75,8 @@ input wire [8 : 0] addra;
 input wire [15 : 0] dina;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB CLK" *)
 input wire clkb;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB EN" *)
+input wire enb;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB ADDR" *)
 input wire [8 : 0] addrb;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_PORTB, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 1" *)
@@ -109,7 +112,7 @@ output wire [15 : 0] doutb;
     .C_HAS_REGCEA(0),
     .C_USE_BYTE_WEA(0),
     .C_WEA_WIDTH(1),
-    .C_WRITE_MODE_A("WRITE_FIRST"),
+    .C_WRITE_MODE_A("NO_CHANGE"),
     .C_WRITE_WIDTH_A(16),
     .C_READ_WIDTH_A(16),
     .C_WRITE_DEPTH_A(512),
@@ -119,7 +122,7 @@ output wire [15 : 0] doutb;
     .C_RST_PRIORITY_B("CE"),
     .C_RSTRAM_B(0),
     .C_INITB_VAL("0"),
-    .C_HAS_ENB(0),
+    .C_HAS_ENB(1),
     .C_HAS_REGCEB(0),
     .C_USE_BYTE_WEB(0),
     .C_WEB_WIDTH(1),
@@ -167,7 +170,7 @@ output wire [15 : 0] doutb;
     .douta(),
     .clkb(clkb),
     .rstb(1'D0),
-    .enb(1'D0),
+    .enb(enb),
     .regceb(1'D0),
     .web(1'B0),
     .addrb(addrb),

@@ -59,6 +59,7 @@ COMPONENT ToF_BRAM
     addra : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
     dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     clkb : IN STD_LOGIC;
+    enb : IN STD_LOGIC;
     addrb : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
     doutb : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
   );
@@ -76,6 +77,7 @@ your_instance_name : ToF_BRAM
     addra => addra,
     dina => dina,
     clkb => clkb,
+    enb => enb,
     addrb => addrb,
     doutb => doutb
   );

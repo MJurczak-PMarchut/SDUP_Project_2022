@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
--- Date        : Thu Jun 23 03:44:23 2022
+-- Date        : Fri Jun 24 00:49:57 2022
 -- Host        : Joker running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               C:/repo/SDUP_Project_2022/FPGA_Code/Design_SRC/IP_Cores/clk_i2c_s/clk_i2c_s_stub.vhdl

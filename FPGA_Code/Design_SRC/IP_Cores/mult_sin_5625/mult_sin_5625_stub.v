@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
 // Date        : Wed Jun 22 19:25:34 2022
 // Host        : Joker running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               C:/repo/SDUP_Project_2022/FPGA_Code/Design_SRC/IP_Cores/mult_sin_5625/mult_sin_5625_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top mult_sin_5625 -prefix
+//               mult_sin_5625_ mult_sin_5625_stub.v
 // Design      : mult_sin_5625
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1

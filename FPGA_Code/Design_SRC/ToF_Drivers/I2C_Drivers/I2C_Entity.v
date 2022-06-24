@@ -93,7 +93,11 @@ always @(posedge clock)
                 counter <= 10'h6;
                 data_out = 16'h0;
                 end
-            else state_clk <= IDLE;
+            else 
+                begin 
+                state_clk <= IDLE;
+                counter = counter;
+                end
             end
         START_TRANSMISSION: begin
             SCL_en <= 1'b0;
@@ -107,6 +111,7 @@ always @(posedge clock)
             if(counter == 10'h0) 
                 begin
                 state_clk <= READ_WRITE;
+                counter = counter;
                 end
             else 
                 begin
@@ -156,6 +161,7 @@ always @(posedge clock)
                 state_clk <= EXPECTED_ACK;
                 nxt_state_clk <= END_TRANSMIT;
                 ready <= 1'b1;
+                counter = counter;
                 end
             else if(counter == 10'h0) 
                 begin
@@ -194,6 +200,7 @@ always @(posedge clock)
                 end
             else if(counter == 10'h0)
                 begin
+                counter = counter;
                 nxt_state_clk <= END_TRANSMIT;
                 state_clk <= SEND_ACK;
                 ready <= 1'b0;
@@ -211,14 +218,13 @@ always @(posedge clock)
             SDA_t <= 1'b1;
             end
         SKIP_SCL: begin
-            
             end
         SEND_ACK:begin
+            SDA_t <= 1'b0;
             SCL_en <= 1'b1;
             SCL_skip <= 1'b0;
             state_clk <= nxt_state_clk;
-            SDA_out <= 1'b1;
-            SDA_t <= 1'b1;
+            SDA_out <= 1'b0;
             end
         endcase
         end
