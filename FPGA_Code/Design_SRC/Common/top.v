@@ -32,7 +32,8 @@ module top(
     input wire [31:0] ToF_CMD_in,
     output wire [15:0] ToF_CMD_out,
     output wire [31:0] plane_data,
-    output wire [511:0] [15:0] distance_mm
+    output wire [511:0] [15:0] distance_mm,
+    output wire [7:0] i2c_data_read
     );
 
 //wire [2:0] [1:0] ToF_CMD_out; //temp
@@ -103,7 +104,8 @@ I2C_ToF_Comm_Modules I2C_Modules_entity
     .ToF_Index(ToF_Index),
     .reset(reset),
     .data_out(ToF_Data),
-    .ready_out(dr_ToF)
+    .ready_out(dr_ToF),
+    .i2c_data_read(i2c_data_read)
 );
 Mem_Write_FSM Mem_Write_cont
 (

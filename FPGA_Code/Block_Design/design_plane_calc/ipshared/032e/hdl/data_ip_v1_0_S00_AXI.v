@@ -17,8 +17,11 @@
 		// Users to add ports here
         input wire [31:0] plane_data,
         input wire [15:0] ToF_CMD_out,
+        input wire [7:0] i2c_data_read,
         input wire [511:0] [15:0] distance_mm,
         output wire [31:0] ToF_CMD_in,
+        output wire [15:0] register_address_in,
+        output wire [7:0] i2c_data_to_send,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -3739,11 +3742,14 @@
 
         slv_reg258 <= plane_data;
         slv_reg259[15:0] <= ToF_CMD_out;
-        slv_reg259[31:16] <= slv_wire259[31:16];
+        slv_reg259[31:24] <= slv_wire259[31:16];
+        slv_reg259[23:16] <= i2c_data_read;
     end
 
-    assign slv_wire259[31:16] = 16'h0;
+    assign slv_wire259[31:24] = 8'h0;
     assign ToF_CMD_in = slv_reg257;
+    assign register_address_in = slv_reg256[15:0];
+    assign i2c_data_to_send = slv_reg256[23:16];
 
 	// User logic ends
 

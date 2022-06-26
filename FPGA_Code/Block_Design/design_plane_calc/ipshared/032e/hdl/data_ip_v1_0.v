@@ -17,8 +17,11 @@
 		// Users to add ports here
         input wire [31:0] plane_data,
         input wire [15:0] ToF_CMD_out,
+        input wire [7:0] i2c_data_read,
         input wire [511:0] [15:0] distance_mm,
         output wire [31:0] ToF_CMD_in,
+        output wire [15:0] register_address_in,
+        output wire [7:0] i2c_data_to_send,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -53,8 +56,11 @@
 	) data_ip_v1_0_S00_AXI_inst (
 	    .plane_data(plane_data),
 	    .ToF_CMD_out(ToF_CMD_out),
+	    .i2c_data_read(i2c_data_read),
 	    .distance_mm(distance_mm),
 	    .ToF_CMD_in(ToF_CMD_in),
+        .register_address_in(register_address_in),
+        .i2c_data_to_send(i2c_data_to_send),
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
 		.S_AXI_AWADDR(s00_axi_awaddr),
