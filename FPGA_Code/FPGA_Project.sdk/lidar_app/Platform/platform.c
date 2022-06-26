@@ -102,20 +102,42 @@ uint8_t WrMulti(
 {
 	uint32_t msg_iter = 0;
 	if(size == 0) return 0; //no message
-	DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, RegisterAdress | (p_values[0] << 16));
-	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, SEND_MULT_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
-	while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
-	while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
-	for(msg_iter = 1; msg_iter < size; msg_iter++)
+	else if(size == 1)
 	{
-		DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, (p_values[msg_iter] << 16));
-		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, SEND_MULT_CONT << (ToF_CMD_OUT_SHIFT * ToF_no));
+		WrByte(0, RegisterAdress, p_values[0]);
+		return 0;
+	}
+	else if(size == 2)
+	{
+		DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, RegisterAdress | (p_values[0] << 16));
+		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, SEND_MULT_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
 		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
 		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
+
+		DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, (p_values[1] << 16));
+		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, END_MULT_SEND << (ToF_CMD_OUT_SHIFT * ToF_no));
+		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
+		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
+
 	}
-	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, END_MULT_SEND << (ToF_CMD_OUT_SHIFT * ToF_no));
-	while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
-	while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
+	else{
+		DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, RegisterAdress | (p_values[0] << 16));
+		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, SEND_MULT_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
+		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
+		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
+		for(msg_iter = 1; msg_iter < size - 1; msg_iter++)
+		{
+			DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, (p_values[msg_iter] << 16));
+			DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, SEND_MULT_CONT << (ToF_CMD_OUT_SHIFT * ToF_no));
+			while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
+			while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
+		}
+		DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, (p_values[size - 1] << 16));
+		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, END_MULT_SEND << (ToF_CMD_OUT_SHIFT * ToF_no));
+		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
+		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
+		return 0;
+	}
 	return 0;
 }
 
@@ -127,12 +149,30 @@ uint8_t RdMulti(
 {
 	uint32_t msg_iter = 0;
 	if(size == 0) return 0;
+	if(size == 1)
+	{
+		RdByte(0, RegisterAdress, p_values);
+	}
+	if(size == 2)
+	{
+		DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, RegisterAdress);
+		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
+		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
+		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
+		p_values[0] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
+
+		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_END << (ToF_CMD_OUT_SHIFT * ToF_no));
+		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
+		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
+		p_values[1] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
+
+	}
 	DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, RegisterAdress);
 	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
 	while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
 	while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
 	p_values[0] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
-	for(msg_iter = 1; msg_iter < size; msg_iter++)
+	for(msg_iter = 1; msg_iter < size - 1; msg_iter++)
 	{
 		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_CONT << (ToF_CMD_OUT_SHIFT * ToF_no));
 		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
@@ -142,6 +182,7 @@ uint8_t RdMulti(
 	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_END << (ToF_CMD_OUT_SHIFT * ToF_no));
 	while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
 	while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
+	p_values[size - 1] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
 	
 	return 0;
 }
