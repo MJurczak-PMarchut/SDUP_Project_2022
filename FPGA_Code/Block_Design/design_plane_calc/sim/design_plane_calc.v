@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-//Date        : Fri Jun 24 23:12:27 2022
+//Date        : Sat Jun 25 20:46:36 2022
 //Host        : Joker running 64-bit major release  (build 9200)
 //Command     : generate_target design_plane_calc.bd
 //Design      : design_plane_calc
@@ -67,7 +67,6 @@ module design_plane_calc
   wire [0:7]ToF_INT_1;
   wire clk_1;
   wire clk_wiz_0_clk_i2c;
-  wire clk_wiz_0_clk_main;
   wire clk_wiz_0_i2c_scl;
   wire [31:0]data_ip_0_ToF_CMD_in;
   wire [14:0]processing_system7_0_DDR_ADDR;
@@ -160,7 +159,6 @@ module design_plane_calc
   design_plane_calc_clk_wiz_0_2 clk_wiz_0
        (.clk_i2c(clk_wiz_0_clk_i2c),
         .clk_in1(clk_1),
-        .clk_main(clk_wiz_0_clk_main),
         .i2c_scl(clk_wiz_0_i2c_scl));
   design_plane_calc_data_ip_0_0 data_ip_0
        (.ToF_CMD_in(data_ip_0_ToF_CMD_in),
@@ -330,7 +328,7 @@ module design_plane_calc
         .ToF_INT(ToF_INT_1),
         .ToF_SCL(ToF_SCL[0:7]),
         .ToF_SDA(ToF_SDA[0:7]),
-        .clk(clk_wiz_0_clk_main),
+        .clk(processing_system7_0_FCLK_CLK0),
         .distance_mm(top_0_distance_mm),
         .i2c_scl_clk(clk_wiz_0_i2c_scl),
         .i2c_t8_clk(clk_wiz_0_clk_i2c),

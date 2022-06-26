@@ -236,7 +236,8 @@ always @(posedge clock)
                 begin
                 counter <= counter;
                 nxt_state_clk <= END_TRANSMIT;
-                state_clk <= SEND_ACK;
+//                state_clk <= SEND_ACK;
+                state_clk <= EXPECTED_ACK;
                 ready <= 1'b0;
                 end
             else 

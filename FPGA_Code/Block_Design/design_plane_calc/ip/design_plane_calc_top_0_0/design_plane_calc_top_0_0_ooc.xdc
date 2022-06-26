@@ -52,7 +52,7 @@
 # #########################################################
 
 
-create_clock -period 16 -name clk [get_ports clk]
+create_clock -period 10 -name clk [get_ports clk]
 
 create_clock -period 12.800 -name i2c_scl_clk [get_ports i2c_scl_clk]
 

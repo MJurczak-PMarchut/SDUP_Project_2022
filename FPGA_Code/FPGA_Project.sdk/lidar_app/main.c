@@ -18,7 +18,7 @@
 #define SW_REBOOT1					0x01
 #define SW_REBOOT2					0x02
 #define SW_REBOOT3					0x03
-#define ENABLE_FW_ACCESS			0x04
+#define DOWNLOAD_DATA				0x04
 #define DOWNLOAD_FW					0x05
 #define RESET_MCU					0x06
 #define RESET_MCU2					0x07
@@ -65,7 +65,7 @@
 #define ToF_7						7
 
 
-void SendCommandToSensor(u8 Command, char ToF_nb)
+void SendCommandToSensor(u8 Command, u8 ToF_nb)
 {
 	u32 status = 0;
 
@@ -87,12 +87,32 @@ void SendCommandToSensor(u8 Command, char ToF_nb)
 
 int main(void)
 {
+	// init seq
 	SendCommandToSensor(SW_REBOOT1, ToF_0);
+	usleep(1000);
 	SendCommandToSensor(SW_REBOOT2, ToF_0);
 	usleep(100000);
 	SendCommandToSensor(SW_REBOOT3, ToF_0);
-	usleep(100);
+	usleep(1000);
 	SendCommandToSensor(DOWNLOAD_FW, ToF_0);
+	usleep(1000);
+	SendCommandToSensor(RESET_MCU, ToF_0);
+	usleep(1000);
+
+	// start seq
+	SendCommandToSensor(DCI_WRITE_DATA0, ToF_0);
+	usleep(1000);
+	SendCommandToSensor(DCI_WRITE_DATA1, ToF_0);
+	usleep(1000);
+	SendCommandToSensor(DCI_WRITE_DATA2, ToF_0);
+	usleep(1000);
+	SendCommandToSensor(DCI_WRITE_DATA3, ToF_0);
+	usleep(1000);
+	SendCommandToSensor(START_RANGING, ToF_0);
+//	usleep(1000);
+	SendCommandToSensor(DOWNLOAD_DATA, ToF_0);
+//	SendCommandToSensor(START_RANGING, ToF_0);
+
 
 	while(1)
 	{
