@@ -62,6 +62,7 @@
 
 
 #include "platform.h"
+#include "sleep.h"
 
 uint8_t RdByte(
 		VL53L5CX_Platform *p_platform,
@@ -156,9 +157,9 @@ uint8_t WaitMs(
 		VL53L5CX_Platform *p_platform,
 		uint32_t TimeMs)
 {
-	uint8_t status = 255;
 
 	/* Need to be implemented by customer. This function returns 0 if OK */
-	
-	return status;
+	usleep(1000*TimeMs);
+
+	return 0;
 }
