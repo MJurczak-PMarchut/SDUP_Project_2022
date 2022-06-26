@@ -29,8 +29,11 @@ module ToF_FSM(
     input [3:0] ToF_CMD_in,
     input [7:0] i2c_data_in,
     input [15:0] fw_data,
+    input [15:0] register_address_in,
+    input [7:0] i2c_data_to_send,
     
     output reg [7:0] i2c_data,
+    output reg [7:0] i2c_data_out,
     output reg [1:0] ToF_CMD_out,
     output reg [15:0] register_address,
     output reg is_read,
@@ -373,19 +376,23 @@ always @(posedge clk)
             if(ready == 1'b0) state <= WAIT_FOR_DATA_READY;
             end
         READ_REG: begin
-            register_address <= 1'b0; //temp
+            nb_of_bytes <= 17'h0;
+            register_address <= register_address_in;
             is_read <= 1'b1;
             start <= 1'b1;
+            state <= WAIT_FOR_DATA_READY;
+            nxt_state <= IDLE;
+            ToF_CMD_out <= DONE;
             end
         WRITE_REG: begin
-            register_address <= 1'b0; //temp
+            nb_of_bytes <= 17'h0;
+            register_address <= register_address_in;
             is_read <= 1'b0;
             start <= 1'b1;
-            if(ready == 1'b1)
-                begin
-                start <= 1'b0;
-                state <= IDLE;
-                end
+            i2c_data <= i2c_data_to_send;
+            state <= WAIT_FOR_DATA_READY;
+            nxt_state <= IDLE;
+            ToF_CMD_out <= DONE;
             end
         DCI_WRITE_DATA0: begin
             is_read <= 1'b0;
