@@ -67,6 +67,46 @@
 #include <stdint.h>
 #include <string.h>
 
+#define INIT_SENSOR					0x01
+#define INIT_FINISHED				0x02
+#define SEND_BYTE					0x03
+#define SEND_MULT_BYTE				0x04
+#define RECV_BYTE					0x05
+#define RECV_MULT_BYTE				0x06
+#define SEND_MULT_CONT				0x07
+#define END_MULT_SEND				0x09
+#define RECV_MULT_CONT				0x0A
+#define RECV_MULT_END				0x0B
+#define DCI_WRITE_DATA3				0x0C
+#define START_RANGING				0x0D
+
+#define CMD_REG						DATA_IP_S00_AXI_SLV_REG257_OFFSET
+#define FSM_MSG_REG					DATA_IP_S00_AXI_SLV_REG259_OFFSET
+#define DATA_IP_BASEADDR			XPAR_DATA_IP_0_S00_AXI_BASEADDR
+#define ADDR_REG					DATA_IP_S00_AXI_SLV_REG256_OFFSET
+
+#define ToF_CMD_IN_MASK				0x00000003
+#define ToF_CMD_IN_SHIFT			2
+#define ToF_0_CMD_IN				0x3 << 0
+#define ToF_1_CMD_IN				0x3 << 2
+#define ToF_2_CMD_IN				0x3 << 4
+#define ToF_3_CMD_IN				0x3 << 6
+#define ToF_4_CMD_IN				0x3 << 8
+#define ToF_5_CMD_IN				0x3 << 10
+#define ToF_6_CMD_IN				0x3 << 12
+#define ToF_7_CMD_IN				0x3 << 14
+
+#define ToF_CMD_OUT_MASK			0x0000000F
+#define ToF_CMD_OUT_SHIFT			4
+#define ToF_0_CMD_OUT				0
+#define ToF_1_CMD_OUT				4
+#define ToF_2_CMD_OUT				8
+#define ToF_3_CMD_OUT				12
+#define ToF_4_CMD_OUT				16
+#define ToF_5_CMD_OUT				20
+#define ToF_6_CMD_OUT				24
+#define ToF_7_CMD_OUT				28
+
 /**
  * @brief Structure VL53L5CX_Platform needs to be filled by the customer,
  * depending on his platform. At least, it contains the VL53L5CX I2C address.
