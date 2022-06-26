@@ -11,6 +11,7 @@
 #include "xil_io.h"
 #include "xparameters.h"
 #include "sleep.h"
+#include "vl53l5cx_api.h"
 
 //#define SPH_IP_BASEADDR XPAR_SPH_IP_0_S00_AXI_BASEADDR
 
@@ -27,6 +28,8 @@
 #define DCI_WRITE_DATA2				0x0B
 #define DCI_WRITE_DATA3				0x0C
 #define START_RANGING				0x0D
+#define INIT_SENSOR					0x11
+#define INIT_FINISHED				0x12
 
 
 #define CMD_REG						DATA_IP_S00_AXI_SLV_REG257_OFFSET
@@ -65,6 +68,9 @@
 #define ToF_7						7
 
 
+VL53L5CX_Configuration 	Dev;
+
+
 void SendCommandToSensor(u8 Command, u8 ToF_nb)
 {
 	u32 status = 0;
@@ -87,31 +93,24 @@ void SendCommandToSensor(u8 Command, u8 ToF_nb)
 
 int main(void)
 {
-	// init seq
-	SendCommandToSensor(SW_REBOOT1, ToF_0);
-	usleep(1000);
-	SendCommandToSensor(SW_REBOOT2, ToF_0);
-	usleep(100000);
-	SendCommandToSensor(SW_REBOOT3, ToF_0);
-	usleep(1000);
-	SendCommandToSensor(DOWNLOAD_FW, ToF_0);
-	usleep(1000);
-	SendCommandToSensor(RESET_MCU, ToF_0);
-	usleep(1000);
+	uint8_t isAlive;
+	Dev.platform.address = VL53L5CX_DEFAULT_I2C_ADDRESS;
+	for(uint8_t sensor = ToF_0; sensor <= ToF_7; sensor++)
+	{
+		SendCommandToSensor(INIT_SENSOR, sensor);
+		vl53l5cx_is_alive(&Dev, &isAlive);
+		if(!isAlive)
+		{
+			xil_printf("VL53L5CXV0 @index %d not detected\n", sensor);
+			return 255;
+		}
+		vl53l5cx_init(&Dev);
+		vl53l5cx_set_ranging_frequency_hz(&Dev, 15);				// Set 2Hz ranging frequency
+		vl53l5cx_set_ranging_mode(&Dev, VL53L5CX_RANGING_MODE_CONTINUOUS);  // Set mode continuous
+		vl53l5cx_start_ranging(&Dev);
+		SendCommandToSensor(INIT_FINISHED, sensor);
+	}
 
-	// start seq
-	SendCommandToSensor(DCI_WRITE_DATA0, ToF_0);
-	usleep(1000);
-	SendCommandToSensor(DCI_WRITE_DATA1, ToF_0);
-	usleep(1000);
-	SendCommandToSensor(DCI_WRITE_DATA2, ToF_0);
-	usleep(1000);
-	SendCommandToSensor(DCI_WRITE_DATA3, ToF_0);
-	usleep(1000);
-	SendCommandToSensor(START_RANGING, ToF_0);
-//	usleep(1000);
-	SendCommandToSensor(DOWNLOAD_DATA, ToF_0);
-//	SendCommandToSensor(START_RANGING, ToF_0);
 
 
 	while(1)

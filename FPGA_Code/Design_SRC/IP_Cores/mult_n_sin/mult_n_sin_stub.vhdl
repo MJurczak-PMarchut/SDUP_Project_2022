@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
--- Date        : Wed Jun 22 19:24:33 2022
--- Host        : Joker running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub -rename_top mult_n_sin -prefix
---               mult_n_sin_ mult_n_sin_stub.vhdl
+-- Date        : Sun Jun 26 06:30:12 2022
+-- Host        : DESKTOP-4KM8KMN running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode synth_stub
+--               D:/SDUP_Project/SDUP_Project_2022/FPGA_Code/Design_SRC/IP_Cores/mult_n_sin/mult_n_sin_stub.vhdl
 -- Design      : mult_n_sin
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z010clg400-1

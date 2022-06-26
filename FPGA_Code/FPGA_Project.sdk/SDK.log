@@ -5933,3 +5933,9 @@ con
 ----------------End of Script----------------
 
 05:57:33 INFO  : Disconnected from the channel tcfchan#19.
+06:24:35 INFO  : Registering command handlers for SDK TCF services
+06:24:36 INFO  : Launching XSCT server: xsct.bat -interactive D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\temp_xsdb_launch_script.tcl
+06:24:39 INFO  : XSCT server has started successfully.
+06:24:39 INFO  : Successfully done setting XSCT server connection channel  
+06:24:42 INFO  : Successfully done setting SDK workspace  
+06:24:42 INFO  : Processing command line option -hwspec D:/SDUP_Project/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper.hdf.

@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-// Date        : Wed Jun 22 19:24:01 2022
-// Host        : Joker running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top sqrt_cordic -prefix
-//               sqrt_cordic_ sqrt_cordic_stub.v
+// Date        : Sun Jun 26 06:30:36 2022
+// Host        : DESKTOP-4KM8KMN running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode synth_stub
+//               D:/SDUP_Project/SDUP_Project_2022/FPGA_Code/Design_SRC/IP_Cores/sqrt_cordic/sqrt_cordic_stub.v
 // Design      : sqrt_cordic
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1

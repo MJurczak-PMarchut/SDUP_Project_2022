@@ -9406,3 +9406,1021 @@ make -j4 pre-build main-build
 a9-linaro-pre-build-step
 make: Nothing to be done for 'main-build'.
 ' '
+06:43:03 **** Build of project lidar_app_bsp ****
+make all 
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/data_ip_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/data_ip_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v7_0/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling coresightps_dcc"
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/data_ip_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/data_ip_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling data_ip..."
+data_ip_selftest.c: In function 'DATA_IP_Reg_SelfTest':
+data_ip_selftest.c:52:56: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+    if ( DATA_IP_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                        ^~
+data_ip_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v7_0/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling standalone"
+In file included from usleep.c:56:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from sleep.c:53:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xil_sleeptimer.c:51:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xtime_l.c:49:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+06:43:27 **** Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../lidar_app_bsp/ps7_cortexa9_0/include -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30060	   1544	  23256	  54860	   d64c	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+06:45:12 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_api.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../lidar_app_bsp/ps7_cortexa9_0/include -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_api.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_api.o" "../VL53L5CX_ULD_API/src/vl53l5cx_api.c"
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c'
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../lidar_app_bsp/ps7_cortexa9_0/include -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../lidar_app_bsp/ps7_cortexa9_0/include -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c"
+../VL53L5CX_ULD_API/src/vl53l5cx_api.c:65:10: fatal error: vl53l5cx_api.h: No such file or directory
+ #include "vl53l5cx_api.h"
+          ^~~~~~~~~~~~~~~~
+compilation terminated.
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c'
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:28: VL53L5CX_ULD_API/src/vl53l5cx_api.o] Error 1
+make: *** Waiting for unfinished jobs....
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../lidar_app_bsp/ps7_cortexa9_0/include -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c"
+../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c:63:10: fatal error: vl53l5cx_plugin_detection_thresholds.h: No such file or directory
+ #include "vl53l5cx_plugin_detection_thresholds.h"
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:29: VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o] Error 1
+../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c:64:10: fatal error: vl53l5cx_plugin_motion_indicator.h: No such file or directory
+ #include "vl53l5cx_plugin_motion_indicator.h"
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:29: VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o] Error 1
+../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c:63:10: fatal error: vl53l5cx_plugin_xtalk.h: No such file or directory
+ #include "vl53l5cx_plugin_xtalk.h"
+          ^~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:29: VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o] Error 1
+06:46:46 **** Clean-only build of configuration Debug for project lidar_app ****
+make -j8 clean 
+rm -rf  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./main.o  ./VL53L5CX_ULD_API/src/vl53l5cx_api.d ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.d ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.d ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.d  ./main.d  lidar_app.elf.size  lidar_app.elf
+' '
+06:46:47 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_api.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_api.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_api.o" "../VL53L5CX_ULD_API/src/vl53l5cx_api.c"
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c'
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c"
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c'
+In file included from ../VL53L5CX_ULD_API/src/vl53l5cx_api.c:65:
+D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_api.h:72:10: fatal error: platform.h: No such file or directory
+ #include "platform.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+'Building file: ../main.c'
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:28: VL53L5CX_ULD_API/src/vl53l5cx_api.o] Error 1
+make: *** Waiting for unfinished jobs....
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c"
+'Invoking: ARM v7 gcc compiler'
+In file included from D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_plugin_detection_thresholds.h:66,
+                 from ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c:63:
+D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_api.h:72:10: fatal error: platform.h: No such file or directory
+ #include "platform.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:29: VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o] Error 1
+In file included from D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_plugin_motion_indicator.h:66,
+                 from ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c:64:
+D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_api.h:72:10: fatal error: platform.h: No such file or directory
+ #include "platform.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:29: VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o] Error 1
+In file included from D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_plugin_xtalk.h:66,
+                 from ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c:63:
+D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_api.h:72:10: fatal error: platform.h: No such file or directory
+ #include "platform.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:29: VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o] Error 1
+'Finished building: ../main.c'
+' '
+06:46:55 **** Clean-only build of configuration Debug for project lidar_app ****
+make -j8 clean 
+rm -rf  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./main.o  ./VL53L5CX_ULD_API/src/vl53l5cx_api.d ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.d ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.d ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.d  ./main.d  lidar_app.elf.size  lidar_app.elf
+' '
+06:46:55 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_api.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_api.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_api.o" "../VL53L5CX_ULD_API/src/vl53l5cx_api.c"
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c'
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c"
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c'
+In file included from ../VL53L5CX_ULD_API/src/vl53l5cx_api.c:65:
+D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_api.h:72:10: fatal error: platform.h: No such file or directory
+ #include "platform.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+'Building file: ../main.c'
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:28: VL53L5CX_ULD_API/src/vl53l5cx_api.o] Error 1
+make: *** Waiting for unfinished jobs....
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c"
+In file included from D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_plugin_detection_thresholds.h:66,
+                 from ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c:63:
+D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_api.h:72:10: fatal error: platform.h: No such file or directory
+ #include "platform.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:29: VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o] Error 1
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_plugin_motion_indicator.h:66,
+                 from ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c:64:
+D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_api.h:72:10: fatal error: platform.h: No such file or directory
+ #include "platform.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:29: VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o] Error 1
+In file included from D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_plugin_xtalk.h:66,
+                 from ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c:63:
+D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_api.h:72:10: fatal error: platform.h: No such file or directory
+ #include "platform.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:29: VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o] Error 1
+'Finished building: ../main.c'
+' '
+06:47:32 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_api.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_api.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_api.o" "../VL53L5CX_ULD_API/src/vl53l5cx_api.c"
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c'
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c"
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c'
+In file included from ../VL53L5CX_ULD_API/src/vl53l5cx_api.c:65:
+D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_api.h:72:10: fatal error: platform.h: No such file or directory
+ #include "platform.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:28: VL53L5CX_ULD_API/src/vl53l5cx_api.o] Error 1
+make: *** Waiting for unfinished jobs....
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c"
+In file included from D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_plugin_detection_thresholds.h:66,
+                 from ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c:63:
+D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_api.h:72:10: fatal error: platform.h: No such file or directory
+ #include "platform.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:29: VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o] Error 1
+In file included from D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_plugin_motion_indicator.h:66,
+                 from ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c:64:
+D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_api.h:72:10: fatal error: platform.h: No such file or directory
+ #include "platform.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:29: VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o] Error 1
+In file included from D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_plugin_xtalk.h:66,
+                 from ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c:63:
+D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_api.h:72:10: fatal error: platform.h: No such file or directory
+ #include "platform.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:29: VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o] Error 1
+06:47:44 **** Clean-only build of configuration Debug for project lidar_app ****
+make -j8 clean 
+rm -rf  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./main.o  ./VL53L5CX_ULD_API/src/vl53l5cx_api.d ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.d ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.d ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.d  ./main.d  lidar_app.elf.size  lidar_app.elf
+' '
+06:47:44 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30060	   1544	  23256	  54860	   d64c	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+06:47:45 **** Clean-only build of configuration Debug for project lidar_app ****
+make -j8 clean 
+rm -rf  ./main.o  ./main.d  lidar_app.elf.size  lidar_app.elf
+' '
+06:47:45 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30060	   1544	  23256	  54860	   d64c	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+06:47:56 **** Clean-only build of configuration Debug for project lidar_app ****
+make -j8 clean 
+rm -rf  ./main.o  ./main.d  lidar_app.elf.size  lidar_app.elf
+' '
+06:47:56 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_api.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_api.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_api.o" "../VL53L5CX_ULD_API/src/vl53l5cx_api.c"
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c'
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c"
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c'
+In file included from ../VL53L5CX_ULD_API/src/vl53l5cx_api.c:65:
+D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_api.h:72:10: fatal error: platform.h: No such file or directory
+ #include "platform.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+'Building file: ../main.c'
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:28: VL53L5CX_ULD_API/src/vl53l5cx_api.o] Error 1
+make: *** Waiting for unfinished jobs....
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c"
+In file included from D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_plugin_detection_thresholds.h:66,
+                 from ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c:63:
+D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_api.h:72:10: fatal error: platform.h: No such file or directory
+ #include "platform.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+'Invoking: ARM v7 gcc compiler'
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:29: VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o] Error 1
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_plugin_motion_indicator.h:66,
+                 from ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c:64:
+D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_api.h:72:10: fatal error: platform.h: No such file or directory
+ #include "platform.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:29: VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o] Error 1
+In file included from D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_plugin_xtalk.h:66,
+                 from ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c:63:
+D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_api.h:72:10: fatal error: platform.h: No such file or directory
+ #include "platform.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:29: VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o] Error 1
+'Finished building: ../main.c'
+' '
+06:48:23 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_api.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_api.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_api.o" "../VL53L5CX_ULD_API/src/vl53l5cx_api.c"
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c'
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c"
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c'
+In file included from ../VL53L5CX_ULD_API/src/vl53l5cx_api.c:65:
+D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_api.h:72:10: fatal error: platform.h: No such file or directory
+ #include "platform.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:29: VL53L5CX_ULD_API/src/vl53l5cx_api.o] Error 1
+make: *** Waiting for unfinished jobs....
+'Building file: ../Platform/platform.c'
+In file included from D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_plugin_detection_thresholds.h:66,
+                 from ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c:63:
+D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_api.h:72:10: fatal error: platform.h: No such file or directory
+ #include "platform.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+'Invoking: ARM v7 gcc compiler'
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:28: VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o] Error 1
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+In file included from D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_plugin_motion_indicator.h:66,
+                 from ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c:64:
+D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_api.h:72:10: fatal error: platform.h: No such file or directory
+ #include "platform.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:29: VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o] Error 1
+In file included from D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_plugin_xtalk.h:66,
+                 from ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c:63:
+D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc/vl53l5cx_api.h:72:10: fatal error: platform.h: No such file or directory
+ #include "platform.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [VL53L5CX_ULD_API/src/subdir.mk:29: VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o] Error 1
+'Finished building: ../Platform/platform.c'
+' '
+06:48:47 **** Clean-only build of configuration Debug for project lidar_app ****
+make -j8 clean 
+rm -rf  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o  ./VL53L5CX_ULD_API/src/vl53l5cx_api.d ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.d ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.d ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.d  ./Platform/platform.d  ./main.d  lidar_app.elf.size  lidar_app.elf
+' '
+06:48:48 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_api.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_api.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_api.o" "../VL53L5CX_ULD_API/src/vl53l5cx_api.c"
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c'
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c"
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c'
+'Building file: ../Platform/platform.c'
+'Invoking: ARM v7 gcc compiler'
+'Building file: ../main.c'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c'
+'Finished building: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c'
+' '
+' '
+'Finished building: ../Platform/platform.c'
+'Finished building: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c'
+'Finished building: ../main.c'
+' '
+' '
+' '
+'Finished building: ../VL53L5CX_ULD_API/src/vl53l5cx_api.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -L../../lidar_app_bsp/ps7_cortexa9_0/lib -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -l-Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+d:/xilinx/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: cannot find -l-Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:42: lidar_app.elf] Error 1
+06:48:51 **** Clean-only build of configuration Debug for project lidar_app ****
+make -j8 clean 
+rm -rf  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o  ./VL53L5CX_ULD_API/src/vl53l5cx_api.d ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.d ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.d ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.d  ./Platform/platform.d  ./main.d  lidar_app.elf.size  lidar_app.elf
+' '
+06:48:51 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_api.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_api.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_api.o" "../VL53L5CX_ULD_API/src/vl53l5cx_api.c"
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c'
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c"
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c'
+'Building file: ../Platform/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c"
+'Building file: ../main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c'
+'Finished building: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c'
+' '
+' '
+'Finished building: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c'
+'Finished building: ../Platform/platform.c'
+' '
+' '
+'Finished building: ../main.c'
+' '
+'Finished building: ../VL53L5CX_ULD_API/src/vl53l5cx_api.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 144164	   1544	  23256	 168964	  29404	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+06:54:54 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:91:22: error: 'INIT' undeclared (first use in this function); did you mean 'INTPTR'?
+  SendCommandToSensor(INIT, ToF_0);
+                      ^~~~
+                      INTPTR
+../main.c:91:22: note: each undeclared identifier is reported only once for each function it appears in
+../main.c:93:22: error: 'STOP_INIT' undeclared (first use in this function)
+  SendCommandToSensor(STOP_INIT, ToF_0);
+                      ^~~~~~~~~
+make: *** [subdir.mk:20: main.o] Error 1
+06:54:59 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 144164	   1544	  23256	 168964	  29404	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+06:56:37 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 144164	   1544	  23256	 168964	  29404	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+06:57:01 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 144164	   1544	  25992	 171700	  29eb4	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+06:57:55 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:95:2: error: 'status' undeclared (first use in this function); did you mean 'XStatus'?
+  status = vl53l5cx_is_alive(&Dev, &isAlive)
+  ^~~~~~
+  XStatus
+../main.c:95:2: note: each undeclared identifier is reported only once for each function it appears in
+../main.c:95:36: error: 'isAlive' undeclared (first use in this function)
+  status = vl53l5cx_is_alive(&Dev, &isAlive)
+                                    ^~~~~~~
+../main.c:95:44: error: expected ';' before 'SendCommandToSensor'
+  status = vl53l5cx_is_alive(&Dev, &isAlive)
+                                            ^
+                                            ;
+../main.c:97:2:
+  SendCommandToSensor(SW_REBOOT1, ToF_0);
+  ~~~~~~~~~~~~~~~~~~~                        
+make: *** [subdir.mk:20: main.o] Error 1
+06:58:03 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:95:2: error: 'status' undeclared (first use in this function); did you mean 'XStatus'?
+  status = vl53l5cx_is_alive(&Dev, &isAlive);
+  ^~~~~~
+  XStatus
+../main.c:95:2: note: each undeclared identifier is reported only once for each function it appears in
+../main.c:95:36: error: 'isAlive' undeclared (first use in this function)
+  status = vl53l5cx_is_alive(&Dev, &isAlive);
+                                    ^~~~~~~
+make: *** [subdir.mk:20: main.o] Error 1
+06:58:31 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:96:2: error: 'status' undeclared (first use in this function); did you mean 'XStatus'?
+  status = vl53l5cx_is_alive(&Dev, &isAlive);
+  ^~~~~~
+  XStatus
+../main.c:96:2: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [subdir.mk:20: main.o] Error 1
+06:59:40 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:94:6: warning: variable 'status' set but not used [-Wunused-but-set-variable]
+  int status;
+      ^~~~~~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 144164	   1544	  25992	 171700	  29eb4	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+07:00:10 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:94:6: warning: variable 'status' set but not used [-Wunused-but-set-variable]
+  int status;
+      ^~~~~~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 171388	   2584	  26048	 200020	  30d54	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+07:00:22 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:94:6: warning: variable 'status' set but not used [-Wunused-but-set-variable]
+  int status;
+      ^~~~~~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 144284	   1544	  25992	 171820	  29f2c	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+07:00:45 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 144284	   1544	  25992	 171820	  29f2c	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+07:01:24 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:106:2: error: 'status' undeclared (first use in this function); did you mean 'XStatus'?
+  status = vl53l5cx_start_ranging(&Dev);
+  ^~~~~~
+  XStatus
+../main.c:106:2: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [subdir.mk:20: main.o] Error 1
+07:01:30 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 152008	   2584	  26056	 180648	  2c1a8	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+07:01:36 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 152008	   2584	  26056	 180648	  2c1a8	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+07:01:39 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 152008	   2584	  26056	 180648	  2c1a8	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+07:02:22 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:102:2: error: 'status' undeclared (first use in this function); did you mean 'XStatus'?
+  status = vl53l5cx_init(&Dev);
+  ^~~~~~
+  XStatus
+../main.c:102:2: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [subdir.mk:20: main.o] Error 1
+07:03:35 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 144412	   1544	  25992	 171948	  29fac	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+07:04:26 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 144392	   1544	  25992	 171928	  29f98	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+07:04:48 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 144392	   1544	  25992	 171928	  29f98	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+07:04:58 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 144392	   1544	  25992	 171928	  29f98	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+07:05:47 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 144392	   1544	  25992	 171928	  29f98	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+07:06:04 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 144392	   1544	  25992	 171928	  29f98	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+07:06:16 **** Auto Build of configuration Debug for project lidar_app ****
+make -j8 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"D:\SDUP_Project\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 144072	   1544	  25992	 171608	  29e58	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
