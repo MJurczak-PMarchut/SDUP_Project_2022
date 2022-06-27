@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<item value="" key="design_plane_calc_wrapper_hw_platform_0-bmmFile"/>
 	<item value="Local" key="design_plane_calc_wrapper_hw_platform_0-target"/>
-	<item value="design_plane_calc_wrapper_hw_platform_2" key="programfpga.hwplatform"/>
+	<item value="design_plane_calc_wrapper_hw_platform_0" key="programfpga.hwplatform"/>
 	<item value="Local" key="design_plane_calc_wrapper_hw_platform_2-target"/>
 	<item value="Auto Detect" key="design_plane_calc_wrapper_hw_platform_2-device"/>
 	<item value="Auto Detect" key="design_plane_calc_wrapper_hw_platform_0-device"/>

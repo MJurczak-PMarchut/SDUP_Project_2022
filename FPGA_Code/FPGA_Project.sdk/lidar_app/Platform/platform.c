@@ -69,6 +69,7 @@ extern uint8_t ToF_no;
 
 void __wait_and_clr()
 {
+	usleep(1);
 	while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
 	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, 0);
 	while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
@@ -81,6 +82,7 @@ uint8_t RdByte(
 {
 	DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, RegisterAdress);
 	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
+
 	__wait_and_clr();
 //	xil_printf("rd : 0x%X\n\r", DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET));
 	*p_value = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;

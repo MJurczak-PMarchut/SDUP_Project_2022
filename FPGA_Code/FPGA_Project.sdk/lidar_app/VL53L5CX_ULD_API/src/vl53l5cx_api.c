@@ -301,14 +301,14 @@ uint8_t vl53l5cx_init(
 	p_dev->default_configuration = (uint8_t*)VL53L5CX_DEFAULT_CONFIGURATION;
 
 	/* SW reboot sequence */
-	xil_printf("Start reboot sequence1\n\r");
+//	xil_printf("Start reboot sequ/ence1\n\r");
 	status |= WrByte(&(p_dev->platform), 0x7fff, 0x00);
 	status |= WrByte(&(p_dev->platform), 0x0009, 0x04);
 	status |= WrByte(&(p_dev->platform), 0x000F, 0x40);
 	status |= WrByte(&(p_dev->platform), 0x000A, 0x03);
 	status |= RdByte(&(p_dev->platform), 0x7FFF, &tmp);
 	status |= WrByte(&(p_dev->platform), 0x000C, 0x01);
-	xil_printf("Start reboot sequence 2\n\r");
+//	xil_printf("Start reboot sequence 2\n\r");
 	status |= WrByte(&(p_dev->platform), 0x0101, 0x00);
 	status |= WrByte(&(p_dev->platform), 0x0102, 0x00);
 	status |= WrByte(&(p_dev->platform), 0x010A, 0x01);
@@ -319,7 +319,7 @@ uint8_t vl53l5cx_init(
 	status |= WrByte(&(p_dev->platform), 0x000C, 0x00);
 	status |= WrByte(&(p_dev->platform), 0x000F, 0x43);
 	status |= WaitMs(&(p_dev->platform), 1);
-	xil_printf("Start reboot sequence 3\n\r");
+//	xil_printf("Start reboot sequence 3\n\r");
 	status |= WrByte(&(p_dev->platform), 0x000F, 0x40);
 	status |= WrByte(&(p_dev->platform), 0x000A, 0x01);
 	status |= WaitMs(&(p_dev->platform), 100);
@@ -334,17 +334,17 @@ uint8_t vl53l5cx_init(
 
 	status |= WrByte(&(p_dev->platform), 0x000E, 0x01);
 	status |= WrByte(&(p_dev->platform), 0x7fff, 0x02);
-	xil_printf("Enable FW access\n\r");
+//	xil_printf("Enable FW access\n\r");
 	/* Enable FW access */
 	status |= WrByte(&(p_dev->platform), 0x03, 0x0D);
 	status |= WrByte(&(p_dev->platform), 0x7fff, 0x01);
 	status |= _vl53l5cx_poll_for_answer(p_dev, 1, 0, 0x21, 0x10, 0x10);
 	status |= WrByte(&(p_dev->platform), 0x7fff, 0x00);
-	xil_printf("Enable host access to GO1\n\r");
+//	xil_printf("Enable host access to GO1\n\r");
 	/* Enable host access to GO1 */
 	status |= RdByte(&(p_dev->platform), 0x7fff, &tmp);
 	status |= WrByte(&(p_dev->platform), 0x0C, 0x01);
-	xil_printf("Power ON status\n\r");
+//	xil_printf("Power ON status\n\r");
 	/* Power ON status */
 	status |= WrByte(&(p_dev->platform), 0x7fff, 0x00);
 	status |= WrByte(&(p_dev->platform), 0x101, 0x00);
@@ -361,7 +361,7 @@ uint8_t vl53l5cx_init(
 	status |= WrByte(&(p_dev->platform), 0x21A, 0x00);
 	status |= WrByte(&(p_dev->platform), 0x219, 0x00);
 	status |= WrByte(&(p_dev->platform), 0x21B, 0x00);
-	xil_printf(" Wake up MCU \n\r");
+//	xil_printf(" Wake up MCU \n\r");
 	/* Wake up MCU */
 	status |= WrByte(&(p_dev->platform), 0x7fff, 0x00);
 	status |= RdByte(&(p_dev->platform), 0x7fff, &tmp);
@@ -375,7 +375,7 @@ uint8_t vl53l5cx_init(
 	status |= WrMulti(&(p_dev->platform),0,
 		(uint8_t*)&VL53L5CX_FIRMWARE[0],0x8000);
 	usleep(10000);
-	xil_printf("Download FW into VL53L5 seq 2 \n\r");
+//	xil_printf("Download FW into VL53L5 seq 2 \n\r");
 	status |= WrByte(&(p_dev->platform), 0x7fff, 0x0a);
 	status |= WrMulti(&(p_dev->platform),0,
 		(uint8_t*)&VL53L5CX_FIRMWARE[0x8000],0x8000);
@@ -384,7 +384,7 @@ uint8_t vl53l5cx_init(
 	status |= WrMulti(&(p_dev->platform),0,
 		(uint8_t*)&VL53L5CX_FIRMWARE[0x10000],0x5000);
 	usleep(10000);
-	xil_printf("Download FW into VL53L5 seq 3 \n\r");
+//	xil_printf("Download FW into VL53L5 seq 3 \n\r");
 	status |= WrByte(&(p_dev->platform), 0x7fff, 0x01);
 	xil_printf("Check if FW correctly downloaded \n\r");
 	/* Check if FW correctly downloaded */
@@ -400,7 +400,7 @@ uint8_t vl53l5cx_init(
 	status |= WrByte(&(p_dev->platform), 0x7fff, 0x00);
 	status |= RdByte(&(p_dev->platform), 0x7fff, &tmp);
 	status |= WrByte(&(p_dev->platform), 0x0C, 0x01);
-	xil_printf("Reset MCU and wait boot \n\r");
+//	xil_printf("Reset MCU and wait boot \n\r");
 	/* Reset MCU and wait boot */
 	status |= WrByte(&(p_dev->platform), 0x7FFF, 0x00);
 	status |= WrByte(&(p_dev->platform), 0x114, 0x00);
@@ -418,29 +418,29 @@ uint8_t vl53l5cx_init(
 	}
 
 	status |= WrByte(&(p_dev->platform), 0x7fff, 0x02);
-	xil_printf("Get offset NVM data and store them into the offset buffer \n\r");
+//	xil_printf("Get offset NVM data and store them into the offset buffer \n\r");
 	/* Get offset NVM data and store them into the offset buffer */
 	status |= WrMulti(&(p_dev->platform), 0x2fd8,
 		(uint8_t*)VL53L5CX_GET_NVM_CMD, sizeof(VL53L5CX_GET_NVM_CMD));
 
 
-	xil_printf("Get offset NVM data and store them into the offset buffer seq0 \n\r");
+//	xil_printf("Get offset NVM data and store them into the offset buffer seq0 \n\r");
 
 	status |= _vl53l5cx_poll_for_answer(p_dev, 4, 0,
 		VL53L5CX_UI_CMD_STATUS, 0xff, 2);
-	xil_printf("Get offset NVM data and store them into the offset buffer seq1 \n\r");
+//	xil_printf("Get offset NVM data and store them into the offset buffer seq1 \n\r");
 	status |= RdMulti(&(p_dev->platform), VL53L5CX_UI_CMD_START,
 		p_dev->temp_buffer, VL53L5CX_NVM_DATA_SIZE);
-	xil_printf("Get offset NVM data and store them into the offset buffer seq2 \n\r");
+//	xil_printf("Get offset NVM data and store them into the offset buffer seq2 \n\r");
 	(void)memcpy(p_dev->offset_data, p_dev->temp_buffer,
 		VL53L5CX_OFFSET_BUFFER_SIZE);
 	status |= _vl53l5cx_send_offset_data(p_dev, VL53L5CX_RESOLUTION_4X4);
-	xil_printf("Set default Xtalk shape. Send Xtalk to sensor \n\r");
+//	xil_printf("Set default Xtalk shape. Send Xtalk to sensor \n\r");
 	/* Set default Xtalk shape. Send Xtalk to sensor */
 	(void)memcpy(p_dev->xtalk_data, (uint8_t*)VL53L5CX_DEFAULT_XTALK,
 		VL53L5CX_XTALK_BUFFER_SIZE);
 	status |= _vl53l5cx_send_xtalk_data(p_dev, VL53L5CX_RESOLUTION_4X4);
-	xil_printf("Send default configuration to VL53L5CX firmware \n\r");
+//	xil_printf("Send default configuration to VL53L5CX firmware \n\r");
 	/* Send default configuration to VL53L5CX firmware */
 	status |= WrMulti(&(p_dev->platform), 0x2c34,
 		p_dev->default_configuration,
