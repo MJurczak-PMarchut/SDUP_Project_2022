@@ -172,14 +172,22 @@ fw_blk_mem_gen fw(
 assign data_out = {sensor_index[ToF_Index], distance_data[ToF_Index]};
 assign ready_out = reg_data_ready;
 assign dina = 16'b0;
-assign i2c_data_read = (ToF_CMD_in & (32'h0F << 0) == INIT_SENSOR)? i2c_data_read_from_sensor[0]:
-                       (ToF_CMD_in & (32'h0F << 4) == INIT_SENSOR)? i2c_data_read_from_sensor[1]:
-                       (ToF_CMD_in & (32'h0F << 8) == INIT_SENSOR)? i2c_data_read_from_sensor[2]:
-                       (ToF_CMD_in & (32'h0F << 12) == INIT_SENSOR)? i2c_data_read_from_sensor[3]:
-                       (ToF_CMD_in & (32'h0F << 16) == INIT_SENSOR)? i2c_data_read_from_sensor[4]:
-                       (ToF_CMD_in & (32'h0F << 20) == INIT_SENSOR)? i2c_data_read_from_sensor[5]:
-                       (ToF_CMD_in & (32'h0F << 24) == INIT_SENSOR)? i2c_data_read_from_sensor[6]:
-                       (ToF_CMD_in & (32'h0F << 28) == INIT_SENSOR)? i2c_data_read_from_sensor[7]:
-                        32'h0;
+//assign i2c_data_read = (ToF_CMD_in & (32'h0F << 0) == INIT_SENSOR)? i2c_data_read_from_sensor[0]:
+//                       (ToF_CMD_in & (32'h0F << 4) == INIT_SENSOR)? i2c_data_read_from_sensor[1]:
+//                       (ToF_CMD_in & (32'h0F << 8) == INIT_SENSOR)? i2c_data_read_from_sensor[2]:
+//                       (ToF_CMD_in & (32'h0F << 12) == INIT_SENSOR)? i2c_data_read_from_sensor[3]:
+//                       (ToF_CMD_in & (32'h0F << 16) == INIT_SENSOR)? i2c_data_read_from_sensor[4]:
+//                       (ToF_CMD_in & (32'h0F << 20) == INIT_SENSOR)? i2c_data_read_from_sensor[5]:
+//                       (ToF_CMD_in & (32'h0F << 24) == INIT_SENSOR)? i2c_data_read_from_sensor[6]:
+//                       (ToF_CMD_in & (32'h0F << 28) == INIT_SENSOR)? i2c_data_read_from_sensor[7]:
+//                        32'h0;
+assign i2c_data_read = i2c_data_read_from_sensor[0] |
+                       i2c_data_read_from_sensor[1] |
+                       i2c_data_read_from_sensor[2] |
+                       i2c_data_read_from_sensor[3] |
+                       i2c_data_read_from_sensor[4] |
+                       i2c_data_read_from_sensor[5] |
+                       i2c_data_read_from_sensor[6] |
+                       i2c_data_read_from_sensor[7];
 
 endmodule

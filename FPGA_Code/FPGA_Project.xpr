@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="40" Path="D:/SDUP_Project/SDUP_Project_2022/FPGA_Code/FPGA_Project.xpr">
+<Project Version="7" Minor="40" Path="C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="435a2447d83646a2b7c91a2889b7f569"/>
@@ -34,20 +34,20 @@
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSABoardId" Val="zybo"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="185"/>
+    <Option Name="WTXSimLaunchSim" Val="186"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="51"/>
-    <Option Name="WTModelSimExportSim" Val="51"/>
-    <Option Name="WTQuestaExportSim" Val="51"/>
-    <Option Name="WTIesExportSim" Val="51"/>
-    <Option Name="WTVcsExportSim" Val="51"/>
-    <Option Name="WTRivieraExportSim" Val="51"/>
-    <Option Name="WTActivehdlExportSim" Val="51"/>
+    <Option Name="WTXSimExportSim" Val="54"/>
+    <Option Name="WTModelSimExportSim" Val="54"/>
+    <Option Name="WTQuestaExportSim" Val="54"/>
+    <Option Name="WTIesExportSim" Val="54"/>
+    <Option Name="WTVcsExportSim" Val="54"/>
+    <Option Name="WTRivieraExportSim" Val="54"/>
+    <Option Name="WTActivehdlExportSim" Val="54"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -63,6 +63,13 @@
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
       <File Path="$PPRDIR/Design_SRC/IP_Cores/ToF_BRAM/ToF_BRAM.xci">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/ip/ila_0/ila_0.xci">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>

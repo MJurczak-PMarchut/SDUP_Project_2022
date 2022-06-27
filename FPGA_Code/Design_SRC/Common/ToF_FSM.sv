@@ -52,11 +52,11 @@ module ToF_FSM(
 // 156-179 data footer
 
 
-parameter INIT = 5'h11, IDLE = 5'h12, DATA_ACQUISITION = 5'h13, WAIT_FOR_DATA_READY = 5'h14, SAVE_DATA = 5'h15, 
+parameter WAIT_FOR_DATA_READY = 5'h14, SAVE_DATA = 5'h15, 
             READ_REG = 5'h16, WRITE_REG = 5'h17, WAIT_FOR_DATA_READY_DOWN = 5'h18, WAIT_FOR_INTERRUPT = 5'h19;
 parameter DEFAULT = 4'h0, INIT_SENSOR = 4'h1, INIT_FINISHED = 4'h2, SEND_BYTE = 4'h3, SEND_MULT_BYTE = 4'h4, RECV_BYTE = 4'h5,
-        RECV_MULT_BYTE = 4'h6, SEND_MULT_CONT = 4'h7, SEND_TO_7FFF = 4'h8, END_MULT_SEND = 4'h9, RECV_MULT_CONT = 4'hA, RECV_MULT_END = 4'hB,
-        DOWNLOAD_DATA = 4'hC, START_RANGING = 4'hD;
+        RECV_MULT_BYTE = 4'h6, SEND_MULT_CONT = 4'h7, INIT = 4'h8, END_MULT_SEND = 4'h9, RECV_MULT_CONT = 4'hA, RECV_MULT_END = 4'hB,
+        DOWNLOAD_DATA = 4'hC, START_RANGING = 4'hD, IDLE = 4'hE, DATA_ACQUISITION = 4'hF;
 parameter NONE = 2'b00, DONE = 2'b01, ACK = 2'b10;
 
 reg [4:0] state, nxt_state;
@@ -67,6 +67,17 @@ reg MSB;
 
 reg [7:0] [7:0] [15:0] data_array;
 reg [5:0] data_index; // [5:3] hotizontal index, [2:0] vertical index
+         
+         
+ ila_0 your_instance_name (
+	.clk(clk), // input wire clk
+
+
+	.probe0(state), // input wire [4:0]  probe0  
+	.probe1(ToF_CMD_in), // input wire [3:0]  probe1 
+	.probe6(start), // input wire [0:0]  probe6 
+	.probe7(ready) // input wire [0:0]  probe7
+);
                                                     
 initial
     begin
@@ -81,6 +92,7 @@ initial
     ToF_CMD_out <= 2'b00;
     MSB <= 1'b1;
     prev_cmd <= INIT;
+    i2c_data_read <= 8'h0;
     end
     
 always @(posedge clk)
@@ -97,6 +109,7 @@ always @(posedge clk)
         nb_of_bytes <= 17'h0;
         ToF_CMD_out <= NONE;
         MSB <= 1'b1;
+        i2c_data_read <= 8'h0;
         end
     else
         begin
@@ -113,14 +126,9 @@ always @(posedge clk)
                         state <= INIT_SENSOR;
                         ToF_CMD_out <= ACK;
                         end
-                    INIT_FINISHED: begin
-                        state <= DATA_ACQUISITION;
-                        ToF_CMD_out <= ACK;
-                        end
                     DEFAULT: begin
                         ToF_CMD_out <= NONE;
                         state <= IDLE;
-                        fw_counter <= 17'h0_0000;
                         end
                 endcase
                 prev_cmd <= ToF_CMD_in;
@@ -129,64 +137,90 @@ always @(posedge clk)
         INIT_SENSOR: begin
             case(ToF_CMD_in)
                 SEND_BYTE: begin
-                    register_address <= register_address_in;
-                    nb_of_bytes <= 17'h0;
-                    is_read <= 1'b0;
-                    start <= 1'b1;
-                    i2c_data <= i2c_data_to_send;
-                    state <= WAIT_FOR_DATA_READY;
-                    ToF_CMD_out <= ACK;
-                    nxt_state <= INIT_SENSOR;
+                    if(ready == 1'b0)
+                        begin
+                        register_address <= register_address_in;
+                        nb_of_bytes <= 17'h0;
+                        is_read <= 1'b0;
+                        start <= 1'b1;
+                        i2c_data <= i2c_data_to_send;
+                        state <= WAIT_FOR_DATA_READY;
+                        ToF_CMD_out <= ACK;
+                        nxt_state <= INIT_SENSOR;
+                        end
                     end
                 RECV_BYTE: begin
-                    register_address <= register_address_in;
-                    nb_of_bytes <= 17'h0;
-                    is_read <= 1'b1;
-                    start <= 1'b1;
-                    state <= WAIT_FOR_DATA_READY;
-                    ToF_CMD_out <= ACK;
-                    nxt_state <= INIT_SENSOR;
+                    if(ready == 1'b0)
+                        begin
+                        register_address <= register_address_in;
+                        nb_of_bytes <= 17'h0;
+                        is_read <= 1'b1;
+                        start <= 1'b1;
+                        state <= WAIT_FOR_DATA_READY;
+                        ToF_CMD_out <= ACK;
+                        nxt_state <= INIT_SENSOR;
+                        end
                     end
                 RECV_MULT_BYTE: begin
-                    register_address <= register_address_in;
-                    nb_of_bytes <= 17'h1;
-                    is_read <= 1'b1;
-                    start <= 1'b1;
-                    state <= WAIT_FOR_DATA_READY;
-                    ToF_CMD_out <= ACK;
-                    nxt_state <= INIT_SENSOR;
+//                    if(ready == 1'b0 || nb_of_bytes > 17'h0)
+                    if(ready == 1'b0)
+                        begin
+                        register_address <= register_address_in;
+                        nb_of_bytes <= 17'h1;
+                        is_read <= 1'b1;
+                        start <= 1'b1;
+                        state <= WAIT_FOR_DATA_READY_DOWN;
+                        ToF_CMD_out <= ACK;
+                        nxt_state <= INIT_SENSOR;
+                        end
                     end
                 RECV_MULT_END: begin
-                    register_address <= register_address_in;
-                    nb_of_bytes <= 17'h0;
-                    is_read <= 1'b1;
-                    start <= 1'b0;
-                    state <= WAIT_FOR_DATA_READY;
-                    ToF_CMD_out <= ACK;
-                    nxt_state <= INIT_SENSOR;
+//                    if(ready == 1'b0 || nb_of_bytes > 17'h0)
+                    if(ready == 1'b0)
+                        begin
+                        register_address <= register_address_in;
+                        nb_of_bytes <= 17'h0;
+                        is_read <= 1'b1;
+                        start <= 1'b0;
+                        state <= WAIT_FOR_DATA_READY_DOWN;
+                        ToF_CMD_out <= ACK;
+                        nxt_state <= INIT_SENSOR;
+                        end
                     end
                 SEND_MULT_BYTE: begin
-                    register_address <= register_address_in;
-                    nb_of_bytes <= 17'h1;
-                    is_read <= 1'b0;
-                    start <= 1'b1;
-                    i2c_data <= i2c_data_to_send;
-                    state <= WAIT_FOR_DATA_READY_DOWN;
-                    ToF_CMD_out <= ACK;
-                    nxt_state <= INIT_SENSOR;
+//                    if(ready == 1'b0 || nb_of_bytes > 17'h0)
+                    if(ready == 1'b0)                        begin
+                        register_address <= register_address_in;
+                        nb_of_bytes <= 17'h1;
+                        is_read <= 1'b0;
+                        start <= 1'b1;
+                        i2c_data <= i2c_data_to_send;
+                        state <= WAIT_FOR_DATA_READY_DOWN;
+                        ToF_CMD_out <= ACK;
+                        nxt_state <= INIT_SENSOR;
+                        end
                     end
                 END_MULT_SEND: begin
-                    register_address <= register_address_in;
-                    nb_of_bytes <= 17'h0;
-                    is_read <= 1'b0;
-                    start <= 1'b0;
-                    i2c_data <= i2c_data_to_send;
-                    state <= WAIT_FOR_DATA_READY_DOWN;
+//                    if(ready == 1'b0 || nb_of_bytes > 17'h0)
+                    if(ready == 1'b0)                        begin
+                        register_address <= register_address_in;
+                        nb_of_bytes <= 17'h0;
+                        is_read <= 1'b0;
+                        start <= 1'b0;
+                        i2c_data <= i2c_data_to_send;
+                        state <= WAIT_FOR_DATA_READY_DOWN;
+                        ToF_CMD_out <= ACK;
+                        nxt_state <= INIT_SENSOR;
+                        end
+                    end
+                INIT_FINISHED: begin
+                    state <= IDLE;
                     ToF_CMD_out <= ACK;
-                    nxt_state <= INIT_SENSOR;
+                    i2c_data_read <= 8'h0;
                     end
                 DEFAULT: begin
                     ToF_CMD_out <= NONE;
+                    state <= INIT_SENSOR;
                     end
             endcase
             end
