@@ -30,6 +30,11 @@
 
 VL53L5CX_Configuration 	Dev;
 uint8_t ToF_no;
+VL53L5CX_ResultsData 	Results;
+volatile int IntCount;
+uint8_t p_data_ready;
+uint8_t resolution;
+int status;
 
 extern const uint8_t VL53L5CX_FIRMWARE[];
 
@@ -54,6 +59,47 @@ void SendCommandToSensor(u8 Command, u8 ToF_nb)
 
 }
 
+void get_data_by_polling(VL53L5CX_Configuration *p_dev){
+	do
+	{
+		status = vl53l5cx_check_data_ready(&Dev, &p_data_ready);
+		if(p_data_ready){
+			status = vl53l5cx_get_resolution(p_dev, &resolution);
+			status = vl53l5cx_get_ranging_data(p_dev, &Results);
+
+			for(int i = 0; i < 8;i++){
+				for(int j = 0; j < 8;j++){
+				/* Print per zone results */
+//				xil_printf("Zone : %2d, Nb targets : %2u, Ambient : %4lu Kcps/spads, ",
+//						i,
+//						Results.nb_target_detected[i],
+//						Results.ambient_per_spad[i]);
+
+				/* Print per target results */
+
+					xil_printf("%4d ", Results.distance_mm[VL53L5CX_NB_TARGET_PER_ZONE * (i * 8) + j]);
+//					xil_printf("Target status : 255, Distance : No target\n\r");
+				}
+				xil_printf("\n\r");
+			}
+			xil_printf("\n\r");
+			xil_printf("\n\r");
+			xil_printf("\n\r");
+			xil_printf("\n\r");
+			xil_printf("\n\r");
+			xil_printf("\n\r");
+			xil_printf("\n\r");
+			xil_printf("\n\r");
+			xil_printf("\n\r");
+
+//			xil_printf("\n");
+		}else{
+			usleep(500000);
+		}
+	}
+	while(1);
+}
+
 int main(void)
 {
 	uint8_t isAlive;
@@ -61,33 +107,41 @@ int main(void)
 	uint8_t bt[4] = {0};
 	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, 0);
 	Dev.platform.address = VL53L5CX_DEFAULT_I2C_ADDRESS;
-	ToF_no = ToF_0;
-	SendCommandToSensor(INIT_SENSOR, ToF_0);
-	WrByte(0, 0x7fff, 1);
-//	usleep(10000);
-	WrMulti(0, 0x0, as, 4);
-	RdMulti(0, 0 , bt, 4);
-	WrMulti(0, 0x0, as, 4);
-	SendCommandToSensor(INIT_FINISHED, ToF_0);
+//	ToF_no = ToF_0;
+//	SendCommandToSensor(INIT_SENSOR, ToF_0);
+//	WrByte(0, 0x7fff, 1);
+////	usleep(10000);
+//	WrMulti(0, 0x0, as, 4);
+//	RdMulti(0, 0 , bt, 4);
+//	xil_printf("0x%X\n\r",bt[0]);
+//	xil_printf("0x%X\n\r",bt[1]);
+//	xil_printf("0x%X\n\r",bt[2]);
+//	xil_printf("0x%X\n\r",bt[3]);
+//	RdByte(0, 0, &bt[0]);
+//	xil_printf("0x%X\n\r",bt[0]);
+//	WrMulti(0, 0x0, as, 4);
+//	SendCommandToSensor(INIT_FINISHED, ToF_0);
 
-//	for(uint8_t sensor = ToF_0; sensor <= ToF_7; sensor++)
-//	{
-//		ToF_no = sensor;
-////		SendCommandToSensor(INIT_FINISHED, sensor);
-//		SendCommandToSensor(INIT_SENSOR, sensor);
-//		vl53l5cx_is_alive(&Dev, &isAlive);
-//		if(!isAlive)
-//		{
-//			xil_printf("VL53L5CXV0 @index %d not detected\n", sensor);
-//			return 255;
-//		}
-//		xil_printf("sensor @index %d is alive\n\r", sensor);
-//		vl53l5cx_init(&Dev);
-//		vl53l5cx_set_ranging_frequency_hz(&Dev, 15);				// Set 2Hz ranging frequency
-//		vl53l5cx_set_ranging_mode(&Dev, VL53L5CX_RANGING_MODE_CONTINUOUS);  // Set mode continuous
-//		vl53l5cx_start_ranging(&Dev);
+	for(uint8_t sensor = ToF_0; sensor <= ToF_7; sensor++)
+	{
+	    uint8_t sensor = ToF_0;
+		ToF_no = sensor;
 //		SendCommandToSensor(INIT_FINISHED, sensor);
-//	}
+		SendCommandToSensor(INIT_SENSOR, sensor);
+		vl53l5cx_is_alive(&Dev, &isAlive);
+		if(!isAlive)
+		{
+			xil_printf("VL53L5CXV0 @index %d not detected\n", sensor);
+			return 255;
+		}
+		xil_printf("sensor @index %d is alive\n\r", sensor);
+		vl53l5cx_init(&Dev);
+		vl53l5cx_set_ranging_frequency_hz(&Dev, 15);				// Set 2Hz ranging frequency
+		vl53l5cx_set_ranging_mode(&Dev, VL53L5CX_RANGING_MODE_CONTINUOUS);
+		vl53l5cx_set_resolution(&Dev,VL53L5CX_RESOLUTION_8X8);// Set mode continuous
+		vl53l5cx_start_ranging(&Dev);
+		SendCommandToSensor(INIT_FINISHED, sensor);
+	}
 
 
 //	ToF_no = ToF_0;
@@ -102,6 +156,7 @@ int main(void)
 
 	while(1)
 	{
+//		get_data_by_polling(&Dev);
 	}
 }
 

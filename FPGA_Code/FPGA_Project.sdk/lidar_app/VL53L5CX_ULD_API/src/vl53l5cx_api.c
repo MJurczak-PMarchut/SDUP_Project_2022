@@ -374,13 +374,16 @@ uint8_t vl53l5cx_init(
 	status |= WrByte(&(p_dev->platform), 0x7fff, 0x09);
 	status |= WrMulti(&(p_dev->platform),0,
 		(uint8_t*)&VL53L5CX_FIRMWARE[0],0x8000);
+	usleep(10000);
 	xil_printf("Download FW into VL53L5 seq 2 \n\r");
 	status |= WrByte(&(p_dev->platform), 0x7fff, 0x0a);
 	status |= WrMulti(&(p_dev->platform),0,
 		(uint8_t*)&VL53L5CX_FIRMWARE[0x8000],0x8000);
+	usleep(10000);
 	status |= WrByte(&(p_dev->platform), 0x7fff, 0x0b);
 	status |= WrMulti(&(p_dev->platform),0,
 		(uint8_t*)&VL53L5CX_FIRMWARE[0x10000],0x5000);
+	usleep(10000);
 	xil_printf("Download FW into VL53L5 seq 3 \n\r");
 	status |= WrByte(&(p_dev->platform), 0x7fff, 0x01);
 	xil_printf("Check if FW correctly downloaded \n\r");
@@ -420,8 +423,6 @@ uint8_t vl53l5cx_init(
 	status |= WrMulti(&(p_dev->platform), 0x2fd8,
 		(uint8_t*)VL53L5CX_GET_NVM_CMD, sizeof(VL53L5CX_GET_NVM_CMD));
 
-	status |= WrByte(&(p_dev->platform), 0x7fff, 0x01);
-
 
 	xil_printf("Get offset NVM data and store them into the offset buffer seq0 \n\r");
 
@@ -455,7 +456,7 @@ uint8_t vl53l5cx_init(
 		VL53L5CX_DCI_FW_NB_TARGET, 16,
 	(uint8_t*)&tmp, 1, 0x0C);
 #endif
-
+	xil_printf("Single Range \n\r");
 	status |= vl53l5cx_dci_write_data(p_dev, (uint8_t*)&single_range,
 			VL53L5CX_DCI_SINGLE_RANGE,
 			(uint16_t)sizeof(single_range));

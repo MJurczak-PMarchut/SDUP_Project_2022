@@ -167,24 +167,25 @@ uint8_t RdMulti(
 	}
 	else{
 
-		DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, RegisterAdress);
-		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
-		__wait_and_clr();
-		p_values[0] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
-//		xil_printf("first byte 0x%X\n\r", p_values[0]);
-		for(msg_iter = 1; msg_iter < size - 1; msg_iter++)
-		{
-//			xil_printf("weeee");
-			DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
-			__wait_and_clr();
-			p_values[msg_iter] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
-//			xil_printf("%d byte 0x%X\n\r", msg_iter, p_values[msg_iter]);
-		}
-		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_END << (ToF_CMD_OUT_SHIFT * ToF_no));
-		__wait_and_clr();
-		p_values[size - 1] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
-//		xil_printf("%d byte 0x%X\n\r", msg_iter, p_values[msg_iter]);
+//		DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, RegisterAdress);
+//		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
+//		__wait_and_clr();
+//		p_values[0] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
+//		for(msg_iter = 1; msg_iter < size - 1; msg_iter++)
+//		{
+//			DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
+//			__wait_and_clr();
+//			p_values[msg_iter] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
+//		}
+//		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_END << (ToF_CMD_OUT_SHIFT * ToF_no));
+//		__wait_and_clr();
+//		p_values[size - 1] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
+//
 
+		for(msg_iter = 0; msg_iter < size; msg_iter++)
+		{
+			RdByte(0, RegisterAdress + msg_iter, &p_values[msg_iter]);
+		}
 	}
 	return 0;
 }
