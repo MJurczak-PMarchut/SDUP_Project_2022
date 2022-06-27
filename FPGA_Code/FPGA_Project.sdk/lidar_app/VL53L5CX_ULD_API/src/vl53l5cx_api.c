@@ -84,19 +84,18 @@ static uint8_t _vl53l5cx_poll_for_answer(
 	do {
 		status |= RdMulti(&(p_dev->platform), address,
 				p_dev->temp_buffer, size);
-		xil_printf("Poll Wait");
 		status |= WaitMs(&(p_dev->platform), 10);
 
 		if(timeout >= (uint8_t)200)	/* 2s timeout */
 		{
 			status |= (uint8_t)VL53L5CX_STATUS_TIMEOUT_ERROR;
-			xil_printf("Poll VL53L5CX_STATUS_TIMEOUT_ERROR");
+			xil_printf("Poll VL53L5CX_STATUS_TIMEOUT_ERROR\n\r");
 			break;
 		}else if((size >= (uint8_t)4) 
                          && (p_dev->temp_buffer[2] >= (uint8_t)0x7f))
 		{
 			status |= VL53L5CX_MCU_ERROR;
-			xil_printf("Poll VL53L5CX_MCU_ERROR");
+			xil_printf("Poll VL53L5CX_MCU_ERROR\n\r");
 			break;
 		}
 		else

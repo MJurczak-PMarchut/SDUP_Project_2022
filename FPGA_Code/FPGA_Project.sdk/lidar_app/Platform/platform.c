@@ -67,6 +67,13 @@
 
 extern uint8_t ToF_no;
 
+void __wait_and_clr()
+{
+	while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
+	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, 0);
+	while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
+}
+
 uint8_t RdByte(
 		VL53L5CX_Platform *p_platform,
 		uint16_t RegisterAdress,
@@ -74,9 +81,7 @@ uint8_t RdByte(
 {
 	DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, RegisterAdress);
 	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
-	while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
-	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, 0);
-	while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
+	__wait_and_clr();
 //	xil_printf("rd : 0x%X\n\r", DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET));
 	*p_value = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
 
@@ -90,11 +95,7 @@ uint8_t WrByte(
 {
 	DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, RegisterAdress | (value << 16));
 	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, SEND_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
-	while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
-//	xil_printf("DUPA1\n\r");
-	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, 0);
-	while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
-//	xil_printf("DUPA2\n\r");
+	__wait_and_clr();
 	return 0;
 }
 
@@ -115,33 +116,26 @@ uint8_t WrMulti(
 	{
 		DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, RegisterAdress | (p_values[0] << 16));
 		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, SEND_MULT_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
-		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
-		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
+		__wait_and_clr();
 
 		DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, (p_values[1] << 16));
 		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, END_MULT_SEND << (ToF_CMD_OUT_SHIFT * ToF_no));
-		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
-		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
-
+		__wait_and_clr();
 	}
 	else{
 		DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, RegisterAdress | (p_values[0] << 16));
 		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, SEND_MULT_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
-		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
-		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
+		__wait_and_clr();
 		for(msg_iter = 1; msg_iter < size - 1; msg_iter++)
 		{
 			DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, (p_values[msg_iter] << 16));
 			DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, SEND_MULT_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
-			while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
-			while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
+			__wait_and_clr();
 		}
 		DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, (p_values[size - 1] << 16));
 		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, END_MULT_SEND << (ToF_CMD_OUT_SHIFT * ToF_no));
-		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
-		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
-//		xil_printf("End send mult\n\r");
-		return 0;
+		__wait_and_clr();
+
 	}
 	return 0;
 }
@@ -164,44 +158,33 @@ uint8_t RdMulti(
 //		xil_printf("rd mult 2\n\r");
 		DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, RegisterAdress);
 		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
-		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
-		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
-		p_values[0] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
+		__wait_and_clr();		p_values[0] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
 
 		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_END << (ToF_CMD_OUT_SHIFT * ToF_no));
-		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
-		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
+		__wait_and_clr();
 		p_values[1] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
 
 	}
 	else{
-//		xil_printf("rd mult 3\n\r");
 
 		DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, RegisterAdress);
 		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
-//		xil_printf("rd mult wait for ack\n\r");
-		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
-		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
+		__wait_and_clr();
 		p_values[0] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
-		xil_printf("first byte 0x%X\n\r", p_values[0]);
+//		xil_printf("first byte 0x%X\n\r", p_values[0]);
 		for(msg_iter = 1; msg_iter < size - 1; msg_iter++)
 		{
+//			xil_printf("weeee");
 			DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
-			while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
-			while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
+			__wait_and_clr();
 			p_values[msg_iter] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
-			xil_printf("%d byte 0x%X\n\r", msg_iter, p_values[0]);
+//			xil_printf("%d byte 0x%X\n\r", msg_iter, p_values[msg_iter]);
 		}
 		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_END << (ToF_CMD_OUT_SHIFT * ToF_no));
-		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
-		while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
+		__wait_and_clr();
 		p_values[size - 1] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
-		xil_printf("last 0x%X\n\r", p_values[0]);
+//		xil_printf("%d byte 0x%X\n\r", msg_iter, p_values[msg_iter]);
 
-//		for(msg_iter = 0; msg_iter < size; msg_iter++)
-//		{
-//			RdByte(0, RegisterAdress + msg_iter, &p_values[msg_iter]);
-//		}
 	}
 	return 0;
 }

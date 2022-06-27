@@ -73,9 +73,7 @@
 #define SEND_MULT_BYTE				0x04
 #define RECV_BYTE					0x05
 #define RECV_MULT_BYTE				0x06
-#define SEND_MULT_CONT				0x07
 #define END_MULT_SEND				0x09
-#define RECV_MULT_CONT				0x0A
 #define RECV_MULT_END				0x0B
 #define DCI_WRITE_DATA3				0x0C
 #define START_RANGING				0x0D

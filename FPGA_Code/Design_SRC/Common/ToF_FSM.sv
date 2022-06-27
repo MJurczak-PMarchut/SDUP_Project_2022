@@ -162,8 +162,8 @@ always @(posedge clk)
                         end
                     end
                 RECV_MULT_BYTE: begin
-//                    if(ready == 1'b0 || nb_of_bytes > 17'h0)
-                    if(ready == 1'b0)
+                    if((ready == 1'b0) || ((nb_of_bytes > 17'h0) && (ready == 1'b1)))
+//                    if(ready == 1'b0)
                         begin
                         register_address <= register_address_in;
                         nb_of_bytes <= 17'h1;
@@ -175,8 +175,8 @@ always @(posedge clk)
                         end
                     end
                 RECV_MULT_END: begin
-//                    if(ready == 1'b0 || nb_of_bytes > 17'h0)
-                    if(ready == 1'b0)
+                    if((ready == 1'b0) || ((nb_of_bytes > 17'h0) && (ready == 1'b1)))
+//                    if(ready == 1'b0)
                         begin
                         register_address <= register_address_in;
                         nb_of_bytes <= 17'h0;
@@ -188,8 +188,9 @@ always @(posedge clk)
                         end
                     end
                 SEND_MULT_BYTE: begin
-//                    if(ready == 1'b0 || nb_of_bytes > 17'h0)
-                    if(ready == 1'b0)                        begin
+                    if((ready == 1'b0) || ((nb_of_bytes > 17'h0) && (ready == 1'b1)))
+//                    if(ready == 1'b0)
+                        begin
                         register_address <= register_address_in;
                         nb_of_bytes <= 17'h1;
                         is_read <= 1'b0;
@@ -201,8 +202,9 @@ always @(posedge clk)
                         end
                     end
                 END_MULT_SEND: begin
-//                    if(ready == 1'b0 || nb_of_bytes > 17'h0)
-                    if(ready == 1'b0)                        begin
+                    if((ready == 1'b0) || ((nb_of_bytes > 17'h0) && (ready == 1'b1)))
+//                    if(ready == 1'b0)
+                        begin
                         register_address <= register_address_in;
                         nb_of_bytes <= 17'h0;
                         is_read <= 1'b0;

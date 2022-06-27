@@ -12,6 +12,7 @@
 #include "xparameters.h"
 #include "sleep.h"
 #include "vl53l5cx_api.h"
+//#include "vl53l5cx_buffers.h"
 
 //#define SPH_IP_BASEADDR XPAR_SPH_IP_0_S00_AXI_BASEADDR
 
@@ -29,6 +30,8 @@
 
 VL53L5CX_Configuration 	Dev;
 uint8_t ToF_no;
+
+extern const uint8_t VL53L5CX_FIRMWARE[];
 
 void SendCommandToSensor(u8 Command, u8 ToF_nb)
 {
@@ -54,7 +57,7 @@ void SendCommandToSensor(u8 Command, u8 ToF_nb)
 int main(void)
 {
 	uint8_t isAlive;
-	uint8_t as[] = {0,1,2,3};
+	uint8_t as[] = {0xE0,0,0xF0,0};
 	uint8_t bt[4] = {0};
 	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, 0);
 	Dev.platform.address = VL53L5CX_DEFAULT_I2C_ADDRESS;
@@ -66,6 +69,7 @@ int main(void)
 	RdMulti(0, 0 , bt, 4);
 	WrMulti(0, 0x0, as, 4);
 	SendCommandToSensor(INIT_FINISHED, ToF_0);
+
 //	for(uint8_t sensor = ToF_0; sensor <= ToF_7; sensor++)
 //	{
 //		ToF_no = sensor;
@@ -84,6 +88,16 @@ int main(void)
 //		vl53l5cx_start_ranging(&Dev);
 //		SendCommandToSensor(INIT_FINISHED, sensor);
 //	}
+
+
+//	ToF_no = ToF_0;
+//	SendCommandToSensor(INIT_SENSOR, ToF_0);
+//	WrMulti(0,0,(uint8_t*)&VL53L5CX_FIRMWARE[0],0x8000);
+//	for(uint8_t i=0; i<16;i++)
+//	{
+//		xil_printf("0x%X\n\r", VL53L5CX_FIRMWARE[i]);
+//	}
+//	xil_printf("Download FW into VL53L5 seq 2 \n\r");
 
 
 	while(1)

@@ -31,9 +31,9 @@ preplace netloc data_ip_0_register_address_in 1 2 3 610 -110 NJ -110 1270J
 preplace netloc data_ip_0_i2c_data_to_send 1 2 3 620 -100 830J -40 NJ
 preplace netloc top_0_i2c_data_read 1 1 5 30 260 610J 290 NJ 290 NJ 290 1670
 preplace netloc processing_system7_0_DDR 1 2 4 NJ 320 880 310 NJ 310 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 2 4 NJ 340 840 350 NJ 350 1690J
 preplace netloc ps7_0_axi_periph_M00_AXI 1 1 5 50 -200 NJ -200 N -200 NJ -200 1710
 preplace netloc processing_system7_0_M_AXI_GP0 1 2 3 630J 220 N 220 1270
-preplace netloc processing_system7_0_FIXED_IO 1 2 4 NJ 340 840 350 NJ 350 1690J
 levelinfo -pg 1 -190 -10 410 740 1070 1480 1740
 pagesize -pg 1 -db -bbox -sgen -330 -360 1850 950
 "
