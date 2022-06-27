@@ -59,6 +59,8 @@ parameter DEFAULT = 4'h0, INIT_SENSOR = 4'h1, INIT_FINISHED = 4'h2, SEND_BYTE = 
         DOWNLOAD_DATA = 4'hC, START_RANGING = 4'hD, IDLE = 4'hE, DATA_ACQUISITION = 4'hF;
 parameter NONE = 2'b00, DONE = 2'b01, ACK = 2'b10;
 
+parameter DATA_START_ADDR = 16'h400;
+
 reg [4:0] state, nxt_state;
 reg [3:0] prev_cmd;    
 reg [7:0] msg_counter;
@@ -125,6 +127,17 @@ always @(posedge clk)
                     INIT_SENSOR: begin
                         state <= INIT_SENSOR;
                         ToF_CMD_out <= ACK;
+                        end
+                    INIT_FINISHED: begin
+                        state <= IDLE;
+                        ToF_CMD_out <= ACK;
+                        i2c_data_read <= 8'h0;
+                        end
+                    DATA_ACQUISITION: begin
+                        state <= IDLE;
+                        ToF_CMD_out <= ACK;
+                        i2c_data_read <= 8'h0;
+                        msg_counter <= 8'h0;
                         end
                     DEFAULT: begin
                         ToF_CMD_out <= NONE;
@@ -215,6 +228,19 @@ always @(posedge clk)
                         nxt_state <= INIT_SENSOR;
                         end
                     end
+                DATA_ACQUISITION: begin
+                    if(ready == 1'b0)
+                        begin
+                        register_address <= DATA_START_ADDR + msg_counter;
+                        nb_of_bytes <= 17'h0;
+                        is_read <= 1'b1;
+                        start <= 1'b1;
+                        state <= WAIT_FOR_DATA_READY;
+                        ToF_CMD_out <= ACK;
+                        nxt_state <= INIT_SENSOR;
+                        msg_counter <= (msg_counter == 8'h7F)? 8'h00:msg_counter+1'b1;
+                        end
+                    end
                 INIT_FINISHED: begin
                     state <= IDLE;
                     ToF_CMD_out <= ACK;
@@ -226,36 +252,40 @@ always @(posedge clk)
                     end
             endcase
             end
-        DATA_ACQUISITION: begin
-            is_read <= 1'b1;
-            register_address <= 16'h0000;
-            start <= (msg_counter == 8'h0)? 1'b1:1'b0;
-            nxt_state <= DATA_ACQUISITION;
-            data_ready <= 1'b0;
-            msg_counter <= msg_counter + 1'b1;
-            nb_of_bytes <= nb_of_bytes - 17'h0_0001;
-            if(nb_of_bytes == 17'h0_0000 && ready == 1'b1)
-                begin
-                ToF_CMD_out <= DONE;
-                state <= WAIT_FOR_INTERRUPT;
-                end
-            else
-                begin
-                state <= WAIT_FOR_DATA_READY_DOWN;
-                end
-            end
+//        DATA_ACQUISITION: begin
+//            is_read <= 1'b1;
+//            register_address <= 16'h0000;
+//            start <= (msg_counter == 8'h0)? 1'b1:1'b0;
+//            nxt_state <= DATA_ACQUISITION;
+//            data_ready <= 1'b0;
+//            msg_counter <= msg_counter + 1'b1;
+//            nb_of_bytes <= nb_of_bytes - 17'h0_0001;
+//            if(nb_of_bytes == 17'h0_0000 && ready == 1'b1)
+//                begin
+//                ToF_CMD_out <= DONE;
+//                state <= WAIT_FOR_INTERRUPT;
+//                end
+//            else
+//                begin
+//                state <= WAIT_FOR_DATA_READY_DOWN;
+//                end
+//            end
         WAIT_FOR_DATA_READY: begin
             if(ready == 1'b1)
                 begin
                 ToF_CMD_out <= NONE;
                 start <= 1'b0;
-                if(nxt_state == DATA_ACQUISITION && msg_counter > 17'h0_001B && msg_counter < 17'h0_009C)
+                if(nxt_state == DATA_ACQUISITION)
                     begin
-                    if(MSB == 1'b1) distance_data[15:8] <= i2c_data_in;
+                    if(msg_counter[0] == 1'b0)
+                        begin
+                        data_ready <= 1'b0;
+                        distance_data[13:6] <= i2c_data_in;
+                        end
                     else 
                         begin
-                        distance_data[7:0] <= i2c_data_in;
-                        sensor_index <= (msg_counter[7:0] - 17'h0_001B) >> 1 ;
+                        distance_data[5:0] <= i2c_data_in[7:2];
+                        sensor_index <= msg_counter[6:1];
                         data_ready <= 1'b1;
                         end
                     MSB = ~MSB;
