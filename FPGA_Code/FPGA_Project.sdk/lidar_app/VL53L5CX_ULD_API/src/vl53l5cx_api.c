@@ -837,6 +837,7 @@ uint8_t vl53l5cx_get_ranging_data(
 			case VL53L5CX_DISTANCE_IDX:
 				(void)memcpy(p_results->distance_mm,
 				&(p_dev->temp_buffer[i + (uint32_t)4]), msize);
+				xil_printf("Attempting read @address 0x%X of %d bytes\n\r", 16+i+4, msize);
 				break;
 #endif
 #ifndef VL53L5CX_DISABLE_REFLECTANCE_PERCENT
