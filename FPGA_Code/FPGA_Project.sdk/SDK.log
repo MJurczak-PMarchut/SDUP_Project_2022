@@ -17963,3 +17963,2545 @@ con
 ----------------End of Script----------------
 
 00:59:10 INFO  : Disconnected from the channel tcfchan#112.
+01:27:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:27:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:27:12 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+01:28:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:28:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:28:16 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+01:28:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:28:51 INFO  : 'fpga -state' command is executed.
+01:28:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:28:52 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+01:28:52 INFO  : 'jtag frequency' command is executed.
+01:28:52 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+01:28:52 INFO  : Context for 'APU' is selected.
+01:28:52 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+01:28:52 INFO  : 'configparams force-mem-access 1' command is executed.
+01:28:52 INFO  : Context for 'APU' is selected.
+01:28:52 INFO  : 'stop' command is executed.
+01:28:52 INFO  : 'ps7_init' command is executed.
+01:28:52 INFO  : 'ps7_post_config' command is executed.
+01:28:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:28:52 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:28:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:28:53 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:28:53 INFO  : 'configparams force-mem-access 0' command is executed.
+01:28:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:28:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:28:53 INFO  : 'con' command is executed.
+01:28:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+01:28:53 INFO  : Disconnected from the channel tcfchan#113.
+01:29:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:29:38 INFO  : 'fpga -state' command is executed.
+01:29:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:29:38 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+01:29:38 INFO  : 'jtag frequency' command is executed.
+01:29:38 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+01:29:38 INFO  : Context for 'APU' is selected.
+01:29:38 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+01:29:38 INFO  : 'configparams force-mem-access 1' command is executed.
+01:29:38 INFO  : Context for 'APU' is selected.
+01:29:38 INFO  : 'stop' command is executed.
+01:29:39 INFO  : 'ps7_init' command is executed.
+01:29:39 INFO  : 'ps7_post_config' command is executed.
+01:29:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:29:39 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:29:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:29:39 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:29:39 INFO  : 'configparams force-mem-access 0' command is executed.
+01:29:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:29:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:29:39 INFO  : 'con' command is executed.
+01:29:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+01:29:39 INFO  : Disconnected from the channel tcfchan#114.
+01:30:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:30:51 INFO  : 'fpga -state' command is executed.
+01:30:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:30:51 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+01:30:51 INFO  : 'jtag frequency' command is executed.
+01:30:51 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+01:30:51 INFO  : Context for 'APU' is selected.
+01:30:51 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+01:30:51 INFO  : 'configparams force-mem-access 1' command is executed.
+01:30:51 INFO  : Context for 'APU' is selected.
+01:30:51 INFO  : 'stop' command is executed.
+01:30:52 INFO  : 'ps7_init' command is executed.
+01:30:52 INFO  : 'ps7_post_config' command is executed.
+01:30:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:30:52 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:30:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:30:52 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:30:52 INFO  : 'configparams force-mem-access 0' command is executed.
+01:30:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:30:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:30:52 INFO  : 'con' command is executed.
+01:30:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+01:30:52 INFO  : Disconnected from the channel tcfchan#115.
+01:31:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:31:35 INFO  : 'fpga -state' command is executed.
+01:31:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:31:35 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+01:31:35 INFO  : 'jtag frequency' command is executed.
+01:31:35 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+01:31:35 INFO  : Context for 'APU' is selected.
+01:31:35 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+01:31:35 INFO  : 'configparams force-mem-access 1' command is executed.
+01:31:35 INFO  : Context for 'APU' is selected.
+01:31:35 INFO  : 'stop' command is executed.
+01:31:35 INFO  : 'ps7_init' command is executed.
+01:31:35 INFO  : 'ps7_post_config' command is executed.
+01:31:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:31:36 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:31:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:31:36 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:31:36 INFO  : 'configparams force-mem-access 0' command is executed.
+01:31:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:31:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:31:36 INFO  : 'con' command is executed.
+01:31:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+01:31:36 INFO  : Disconnected from the channel tcfchan#116.
+01:32:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:32:31 INFO  : 'fpga -state' command is executed.
+01:32:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:32:32 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+01:32:32 INFO  : 'jtag frequency' command is executed.
+01:32:32 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+01:32:32 INFO  : Context for 'APU' is selected.
+01:32:32 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+01:32:32 INFO  : 'configparams force-mem-access 1' command is executed.
+01:32:32 INFO  : Context for 'APU' is selected.
+01:32:32 INFO  : 'stop' command is executed.
+01:32:32 INFO  : 'ps7_init' command is executed.
+01:32:32 INFO  : 'ps7_post_config' command is executed.
+01:32:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:32:32 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:32:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:32:33 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:32:33 INFO  : 'configparams force-mem-access 0' command is executed.
+01:32:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:32:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:32:33 INFO  : 'con' command is executed.
+01:32:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+01:32:33 INFO  : Disconnected from the channel tcfchan#117.
+01:33:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:33:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:33:11 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+01:33:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:33:52 INFO  : 'fpga -state' command is executed.
+01:33:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:33:52 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+01:33:52 INFO  : 'jtag frequency' command is executed.
+01:33:52 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+01:33:52 INFO  : Context for 'APU' is selected.
+01:33:52 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+01:33:52 INFO  : 'configparams force-mem-access 1' command is executed.
+01:33:52 INFO  : Context for 'APU' is selected.
+01:33:52 INFO  : 'stop' command is executed.
+01:33:53 INFO  : 'ps7_init' command is executed.
+01:33:53 INFO  : 'ps7_post_config' command is executed.
+01:33:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:33:53 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:33:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:33:53 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:33:53 INFO  : 'configparams force-mem-access 0' command is executed.
+01:33:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:33:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:33:53 INFO  : 'con' command is executed.
+01:33:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+01:33:53 INFO  : Disconnected from the channel tcfchan#118.
+01:37:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:37:19 INFO  : 'fpga -state' command is executed.
+01:37:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:37:20 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+01:37:20 INFO  : 'jtag frequency' command is executed.
+01:37:20 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+01:37:20 INFO  : Context for 'APU' is selected.
+01:37:20 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+01:37:20 INFO  : 'configparams force-mem-access 1' command is executed.
+01:37:20 INFO  : Context for 'APU' is selected.
+01:37:20 INFO  : 'stop' command is executed.
+01:37:20 INFO  : 'ps7_init' command is executed.
+01:37:20 INFO  : 'ps7_post_config' command is executed.
+01:37:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:37:20 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:37:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:37:21 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:37:21 INFO  : 'configparams force-mem-access 0' command is executed.
+01:37:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:37:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:37:21 INFO  : 'con' command is executed.
+01:37:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+01:37:21 INFO  : Disconnected from the channel tcfchan#119.
+01:37:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:37:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:37:49 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+01:38:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:38:14 INFO  : 'fpga -state' command is executed.
+01:38:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:38:14 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+01:38:14 INFO  : 'jtag frequency' command is executed.
+01:38:14 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+01:38:14 INFO  : Context for 'APU' is selected.
+01:38:14 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+01:38:14 INFO  : 'configparams force-mem-access 1' command is executed.
+01:38:15 INFO  : Context for 'APU' is selected.
+01:38:15 INFO  : 'stop' command is executed.
+01:38:15 INFO  : 'ps7_init' command is executed.
+01:38:15 INFO  : 'ps7_post_config' command is executed.
+01:38:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:38:15 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:38:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:38:15 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:38:15 INFO  : 'configparams force-mem-access 0' command is executed.
+01:38:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:38:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:38:16 INFO  : 'con' command is executed.
+01:38:16 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+01:38:16 INFO  : Disconnected from the channel tcfchan#120.
+01:42:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:42:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:42:24 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+01:42:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:42:31 INFO  : 'fpga -state' command is executed.
+01:42:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:42:32 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+01:42:32 INFO  : 'jtag frequency' command is executed.
+01:42:32 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+01:42:32 INFO  : Context for 'APU' is selected.
+01:42:32 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+01:42:32 INFO  : 'configparams force-mem-access 1' command is executed.
+01:42:32 INFO  : Context for 'APU' is selected.
+01:42:32 INFO  : 'stop' command is executed.
+01:42:32 INFO  : 'ps7_init' command is executed.
+01:42:32 INFO  : 'ps7_post_config' command is executed.
+01:42:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:42:32 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:42:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:42:33 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:42:33 INFO  : 'configparams force-mem-access 0' command is executed.
+01:42:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:42:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:42:33 INFO  : 'con' command is executed.
+01:42:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+01:42:33 INFO  : Disconnected from the channel tcfchan#121.
+01:42:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:42:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:42:59 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+01:43:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:43:03 INFO  : 'fpga -state' command is executed.
+01:43:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:43:03 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+01:43:03 INFO  : 'jtag frequency' command is executed.
+01:43:03 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+01:43:03 INFO  : Context for 'APU' is selected.
+01:43:03 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+01:43:03 INFO  : 'configparams force-mem-access 1' command is executed.
+01:43:03 INFO  : Context for 'APU' is selected.
+01:43:03 INFO  : 'stop' command is executed.
+01:43:04 INFO  : 'ps7_init' command is executed.
+01:43:04 INFO  : 'ps7_post_config' command is executed.
+01:43:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:43:04 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:43:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:43:04 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:43:04 INFO  : 'configparams force-mem-access 0' command is executed.
+01:43:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:43:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:43:04 INFO  : 'con' command is executed.
+01:43:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+01:43:04 INFO  : Disconnected from the channel tcfchan#122.
+01:44:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:44:02 INFO  : 'fpga -state' command is executed.
+01:44:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:44:02 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+01:44:02 INFO  : 'jtag frequency' command is executed.
+01:44:02 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+01:44:02 INFO  : Context for 'APU' is selected.
+01:44:02 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+01:44:02 INFO  : 'configparams force-mem-access 1' command is executed.
+01:44:02 INFO  : Context for 'APU' is selected.
+01:44:02 INFO  : 'stop' command is executed.
+01:44:03 INFO  : 'ps7_init' command is executed.
+01:44:03 INFO  : 'ps7_post_config' command is executed.
+01:44:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:44:03 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:44:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:44:03 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:44:03 INFO  : 'configparams force-mem-access 0' command is executed.
+01:44:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:44:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:44:03 INFO  : 'con' command is executed.
+01:44:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+01:44:03 INFO  : Disconnected from the channel tcfchan#123.
+01:44:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:44:26 INFO  : 'fpga -state' command is executed.
+01:44:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:44:26 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+01:44:26 INFO  : 'jtag frequency' command is executed.
+01:44:26 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+01:44:26 INFO  : Context for 'APU' is selected.
+01:44:26 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+01:44:26 INFO  : 'configparams force-mem-access 1' command is executed.
+01:44:26 INFO  : Context for 'APU' is selected.
+01:44:26 INFO  : 'stop' command is executed.
+01:44:26 INFO  : 'ps7_init' command is executed.
+01:44:26 INFO  : 'ps7_post_config' command is executed.
+01:44:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:44:27 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:44:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:44:27 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:44:27 INFO  : 'configparams force-mem-access 0' command is executed.
+01:44:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:44:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:44:27 INFO  : 'con' command is executed.
+01:44:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+01:44:27 INFO  : Disconnected from the channel tcfchan#124.
+01:44:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:44:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:44:39 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+01:44:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:44:52 INFO  : 'fpga -state' command is executed.
+01:44:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:44:52 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+01:44:52 INFO  : 'jtag frequency' command is executed.
+01:44:52 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+01:44:52 INFO  : Context for 'APU' is selected.
+01:44:52 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+01:44:52 INFO  : 'configparams force-mem-access 1' command is executed.
+01:44:52 INFO  : Context for 'APU' is selected.
+01:44:52 INFO  : 'stop' command is executed.
+01:44:53 INFO  : 'ps7_init' command is executed.
+01:44:53 INFO  : 'ps7_post_config' command is executed.
+01:44:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:44:53 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:44:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:44:53 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:44:53 INFO  : 'configparams force-mem-access 0' command is executed.
+01:44:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:44:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:44:54 INFO  : 'con' command is executed.
+01:44:54 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+01:44:54 INFO  : Disconnected from the channel tcfchan#125.
+01:46:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:46:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:46:15 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+01:46:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:46:39 INFO  : 'fpga -state' command is executed.
+01:46:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:46:39 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+01:46:39 INFO  : 'jtag frequency' command is executed.
+01:46:39 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+01:46:39 INFO  : Context for 'APU' is selected.
+01:46:39 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+01:46:39 INFO  : 'configparams force-mem-access 1' command is executed.
+01:46:39 INFO  : Context for 'APU' is selected.
+01:46:39 INFO  : 'stop' command is executed.
+01:46:39 INFO  : 'ps7_init' command is executed.
+01:46:39 INFO  : 'ps7_post_config' command is executed.
+01:46:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:46:40 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:46:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:46:40 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:46:40 INFO  : 'configparams force-mem-access 0' command is executed.
+01:46:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:46:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:46:40 INFO  : 'con' command is executed.
+01:46:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+01:46:40 INFO  : Disconnected from the channel tcfchan#126.
+01:50:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:50:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:50:30 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+01:50:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:50:43 INFO  : 'fpga -state' command is executed.
+01:50:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:50:43 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+01:50:43 INFO  : 'jtag frequency' command is executed.
+01:50:43 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+01:50:43 INFO  : Context for 'APU' is selected.
+01:50:43 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+01:50:43 INFO  : 'configparams force-mem-access 1' command is executed.
+01:50:43 INFO  : Context for 'APU' is selected.
+01:50:44 INFO  : 'stop' command is executed.
+01:50:44 INFO  : 'ps7_init' command is executed.
+01:50:44 INFO  : 'ps7_post_config' command is executed.
+01:50:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:50:44 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:50:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:50:45 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:50:45 INFO  : 'configparams force-mem-access 0' command is executed.
+01:50:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:50:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:50:45 INFO  : 'con' command is executed.
+01:50:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+01:50:45 INFO  : Disconnected from the channel tcfchan#127.
+01:54:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:54:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:54:57 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+01:55:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:55:02 INFO  : 'fpga -state' command is executed.
+01:55:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:55:02 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+01:55:02 INFO  : 'jtag frequency' command is executed.
+01:55:02 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+01:55:02 INFO  : Context for 'APU' is selected.
+01:55:02 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+01:55:02 INFO  : 'configparams force-mem-access 1' command is executed.
+01:55:02 INFO  : Context for 'APU' is selected.
+01:55:02 INFO  : 'stop' command is executed.
+01:55:02 INFO  : 'ps7_init' command is executed.
+01:55:02 INFO  : 'ps7_post_config' command is executed.
+01:55:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:55:03 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:55:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:55:03 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:55:03 INFO  : 'configparams force-mem-access 0' command is executed.
+01:55:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:55:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:55:03 INFO  : 'con' command is executed.
+01:55:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+01:55:03 INFO  : Disconnected from the channel tcfchan#128.
+01:57:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:57:00 INFO  : 'fpga -state' command is executed.
+01:57:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:57:00 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+01:57:00 INFO  : 'jtag frequency' command is executed.
+01:57:00 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+01:57:00 INFO  : Context for 'APU' is selected.
+01:57:00 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+01:57:00 INFO  : 'configparams force-mem-access 1' command is executed.
+01:57:00 INFO  : Context for 'APU' is selected.
+01:57:00 INFO  : 'stop' command is executed.
+01:57:00 INFO  : 'ps7_init' command is executed.
+01:57:00 INFO  : 'ps7_post_config' command is executed.
+01:57:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:57:01 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:57:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:57:01 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:57:01 INFO  : 'configparams force-mem-access 0' command is executed.
+01:57:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:57:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:57:01 INFO  : 'con' command is executed.
+01:57:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+01:57:01 INFO  : Disconnected from the channel tcfchan#129.
+01:57:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:57:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:57:24 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+01:57:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:57:49 INFO  : 'fpga -state' command is executed.
+01:57:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:57:50 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+01:57:50 INFO  : 'jtag frequency' command is executed.
+01:57:50 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+01:57:50 INFO  : Context for 'APU' is selected.
+01:57:50 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+01:57:50 INFO  : 'configparams force-mem-access 1' command is executed.
+01:57:50 INFO  : Context for 'APU' is selected.
+01:57:50 INFO  : 'stop' command is executed.
+01:57:50 INFO  : 'ps7_init' command is executed.
+01:57:50 INFO  : 'ps7_post_config' command is executed.
+01:57:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:57:50 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:57:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:57:51 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:57:51 INFO  : 'configparams force-mem-access 0' command is executed.
+01:57:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:57:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:57:51 INFO  : 'con' command is executed.
+01:57:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+01:57:51 INFO  : Disconnected from the channel tcfchan#130.
+01:58:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+01:58:13 INFO  : 'fpga -state' command is executed.
+01:58:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:58:13 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+01:58:13 INFO  : 'jtag frequency' command is executed.
+01:58:13 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+01:58:13 INFO  : Context for 'APU' is selected.
+01:58:13 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+01:58:13 INFO  : 'configparams force-mem-access 1' command is executed.
+01:58:13 INFO  : Context for 'APU' is selected.
+01:58:13 INFO  : 'stop' command is executed.
+01:58:14 INFO  : 'ps7_init' command is executed.
+01:58:14 INFO  : 'ps7_post_config' command is executed.
+01:58:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:58:14 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:58:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:58:14 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:58:14 INFO  : 'configparams force-mem-access 0' command is executed.
+01:58:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:58:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:58:14 INFO  : 'con' command is executed.
+01:58:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+01:58:14 INFO  : Disconnected from the channel tcfchan#131.
+02:02:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:02:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:02:40 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+02:02:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:02:49 INFO  : 'fpga -state' command is executed.
+02:02:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:02:49 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+02:02:49 INFO  : 'jtag frequency' command is executed.
+02:02:49 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+02:02:49 INFO  : Context for 'APU' is selected.
+02:02:49 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+02:02:49 INFO  : 'configparams force-mem-access 1' command is executed.
+02:02:49 INFO  : Context for 'APU' is selected.
+02:02:49 INFO  : 'stop' command is executed.
+02:02:50 INFO  : 'ps7_init' command is executed.
+02:02:50 INFO  : 'ps7_post_config' command is executed.
+02:02:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:02:50 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+02:02:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:02:50 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:02:50 INFO  : 'configparams force-mem-access 0' command is executed.
+02:02:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:02:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:02:50 INFO  : 'con' command is executed.
+02:02:50 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+02:02:51 INFO  : Disconnected from the channel tcfchan#132.
+02:03:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:03:10 INFO  : 'fpga -state' command is executed.
+02:03:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:03:11 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+02:03:11 INFO  : 'jtag frequency' command is executed.
+02:03:11 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+02:03:11 INFO  : Context for 'APU' is selected.
+02:03:11 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+02:03:11 INFO  : 'configparams force-mem-access 1' command is executed.
+02:03:11 INFO  : Context for 'APU' is selected.
+02:03:11 INFO  : 'stop' command is executed.
+02:03:11 INFO  : 'ps7_init' command is executed.
+02:03:11 INFO  : 'ps7_post_config' command is executed.
+02:03:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:03:11 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+02:03:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:03:12 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:03:12 INFO  : 'configparams force-mem-access 0' command is executed.
+02:03:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:03:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:03:12 INFO  : 'con' command is executed.
+02:03:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+02:03:12 INFO  : Disconnected from the channel tcfchan#133.
+02:03:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:03:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:03:23 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+02:03:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:03:36 INFO  : 'fpga -state' command is executed.
+02:03:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:03:36 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+02:03:36 INFO  : 'jtag frequency' command is executed.
+02:03:36 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+02:03:36 INFO  : Context for 'APU' is selected.
+02:03:36 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+02:03:36 INFO  : 'configparams force-mem-access 1' command is executed.
+02:03:36 INFO  : Context for 'APU' is selected.
+02:03:36 INFO  : 'stop' command is executed.
+02:03:37 INFO  : 'ps7_init' command is executed.
+02:03:37 INFO  : 'ps7_post_config' command is executed.
+02:03:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:03:37 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+02:03:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:03:37 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:03:37 INFO  : 'configparams force-mem-access 0' command is executed.
+02:03:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:03:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:03:37 INFO  : 'con' command is executed.
+02:03:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+02:03:37 INFO  : Disconnected from the channel tcfchan#134.
+02:08:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:08:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:08:53 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+02:08:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:08:59 INFO  : 'fpga -state' command is executed.
+02:08:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:09:00 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+02:09:00 INFO  : 'jtag frequency' command is executed.
+02:09:00 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+02:09:00 INFO  : Context for 'APU' is selected.
+02:09:00 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+02:09:00 INFO  : 'configparams force-mem-access 1' command is executed.
+02:09:00 INFO  : Context for 'APU' is selected.
+02:09:00 INFO  : 'stop' command is executed.
+02:09:00 INFO  : 'ps7_init' command is executed.
+02:09:00 INFO  : 'ps7_post_config' command is executed.
+02:09:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:09:00 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+02:09:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:09:01 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:09:01 INFO  : 'configparams force-mem-access 0' command is executed.
+02:09:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:09:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:09:01 INFO  : 'con' command is executed.
+02:09:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+02:09:01 INFO  : Disconnected from the channel tcfchan#135.
+02:10:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:10:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:10:25 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+02:10:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:10:37 INFO  : 'fpga -state' command is executed.
+02:10:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:10:37 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+02:10:37 INFO  : 'jtag frequency' command is executed.
+02:10:37 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+02:10:37 INFO  : Context for 'APU' is selected.
+02:10:37 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+02:10:37 INFO  : 'configparams force-mem-access 1' command is executed.
+02:10:38 INFO  : Context for 'APU' is selected.
+02:10:38 INFO  : 'stop' command is executed.
+02:10:38 INFO  : 'ps7_init' command is executed.
+02:10:38 INFO  : 'ps7_post_config' command is executed.
+02:10:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:10:38 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+02:10:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:10:39 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:10:39 INFO  : 'configparams force-mem-access 0' command is executed.
+02:10:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:10:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:10:39 INFO  : 'con' command is executed.
+02:10:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+02:10:39 INFO  : Disconnected from the channel tcfchan#136.
+02:14:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:14:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:14:51 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+02:14:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:14:55 INFO  : 'fpga -state' command is executed.
+02:14:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:14:56 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+02:14:56 INFO  : 'jtag frequency' command is executed.
+02:14:56 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+02:14:56 INFO  : Context for 'APU' is selected.
+02:14:56 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+02:14:56 INFO  : 'configparams force-mem-access 1' command is executed.
+02:14:56 INFO  : Context for 'APU' is selected.
+02:14:56 INFO  : 'stop' command is executed.
+02:14:56 INFO  : 'ps7_init' command is executed.
+02:14:56 INFO  : 'ps7_post_config' command is executed.
+02:14:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:14:57 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+02:14:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:14:57 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:14:57 INFO  : 'configparams force-mem-access 0' command is executed.
+02:14:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:14:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:14:57 INFO  : 'con' command is executed.
+02:14:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+02:14:57 INFO  : Disconnected from the channel tcfchan#137.
+02:41:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:41:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:41:18 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+02:41:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:41:23 INFO  : 'fpga -state' command is executed.
+02:41:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:41:23 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+02:41:24 INFO  : 'jtag frequency' command is executed.
+02:41:24 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+02:41:24 INFO  : Context for 'APU' is selected.
+02:41:24 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+02:41:24 INFO  : 'configparams force-mem-access 1' command is executed.
+02:41:24 INFO  : Context for 'APU' is selected.
+02:41:24 INFO  : 'stop' command is executed.
+02:41:24 INFO  : 'ps7_init' command is executed.
+02:41:24 INFO  : 'ps7_post_config' command is executed.
+02:41:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:41:24 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+02:41:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:41:25 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:41:25 INFO  : 'configparams force-mem-access 0' command is executed.
+02:41:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:41:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:41:25 INFO  : 'con' command is executed.
+02:41:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+02:41:25 INFO  : Disconnected from the channel tcfchan#138.
+02:41:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:41:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:41:49 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+02:42:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:42:15 INFO  : 'fpga -state' command is executed.
+02:42:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:42:16 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+02:42:16 INFO  : 'jtag frequency' command is executed.
+02:42:16 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+02:42:16 INFO  : Context for 'APU' is selected.
+02:42:16 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+02:42:16 INFO  : 'configparams force-mem-access 1' command is executed.
+02:42:16 INFO  : Context for 'APU' is selected.
+02:42:16 INFO  : 'stop' command is executed.
+02:42:16 INFO  : 'ps7_init' command is executed.
+02:42:16 INFO  : 'ps7_post_config' command is executed.
+02:42:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:42:16 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+02:42:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:42:17 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:42:17 INFO  : 'configparams force-mem-access 0' command is executed.
+02:42:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:42:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:42:17 INFO  : 'con' command is executed.
+02:42:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+02:42:17 INFO  : Disconnected from the channel tcfchan#139.
+02:44:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:44:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:44:02 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+02:44:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:44:10 INFO  : 'fpga -state' command is executed.
+02:44:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:44:10 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+02:44:10 INFO  : 'jtag frequency' command is executed.
+02:44:10 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+02:44:10 INFO  : Context for 'APU' is selected.
+02:44:10 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+02:44:10 INFO  : 'configparams force-mem-access 1' command is executed.
+02:44:10 INFO  : Context for 'APU' is selected.
+02:44:10 INFO  : 'stop' command is executed.
+02:44:10 INFO  : 'ps7_init' command is executed.
+02:44:10 INFO  : 'ps7_post_config' command is executed.
+02:44:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:44:11 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+02:44:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:44:11 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:44:11 INFO  : 'configparams force-mem-access 0' command is executed.
+02:44:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:44:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:44:11 INFO  : 'con' command is executed.
+02:44:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+02:44:11 INFO  : Disconnected from the channel tcfchan#140.
+02:44:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:44:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:44:52 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+02:45:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:45:00 INFO  : 'fpga -state' command is executed.
+02:45:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:45:00 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+02:45:00 INFO  : 'jtag frequency' command is executed.
+02:45:00 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+02:45:00 INFO  : Context for 'APU' is selected.
+02:45:00 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+02:45:00 INFO  : 'configparams force-mem-access 1' command is executed.
+02:45:00 INFO  : Context for 'APU' is selected.
+02:45:00 INFO  : 'stop' command is executed.
+02:45:00 INFO  : 'ps7_init' command is executed.
+02:45:00 INFO  : 'ps7_post_config' command is executed.
+02:45:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:45:01 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+02:45:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:45:01 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:45:01 INFO  : 'configparams force-mem-access 0' command is executed.
+02:45:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:45:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:45:01 INFO  : 'con' command is executed.
+02:45:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+02:45:01 INFO  : Disconnected from the channel tcfchan#141.
+02:45:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:45:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:45:53 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+02:46:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:46:00 INFO  : 'fpga -state' command is executed.
+02:46:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:46:00 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+02:46:00 INFO  : 'jtag frequency' command is executed.
+02:46:00 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+02:46:00 INFO  : Context for 'APU' is selected.
+02:46:00 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+02:46:00 INFO  : 'configparams force-mem-access 1' command is executed.
+02:46:00 INFO  : Context for 'APU' is selected.
+02:46:00 INFO  : 'stop' command is executed.
+02:46:00 INFO  : 'ps7_init' command is executed.
+02:46:00 INFO  : 'ps7_post_config' command is executed.
+02:46:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:46:01 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+02:46:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:46:01 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:46:01 INFO  : 'configparams force-mem-access 0' command is executed.
+02:46:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:46:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:46:01 INFO  : 'con' command is executed.
+02:46:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+02:46:01 INFO  : Disconnected from the channel tcfchan#142.
+02:46:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:46:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:46:21 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+02:46:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:46:32 INFO  : 'fpga -state' command is executed.
+02:46:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:46:32 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+02:46:32 INFO  : 'jtag frequency' command is executed.
+02:46:32 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+02:46:32 INFO  : Context for 'APU' is selected.
+02:46:32 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+02:46:32 INFO  : 'configparams force-mem-access 1' command is executed.
+02:46:32 INFO  : Context for 'APU' is selected.
+02:46:32 INFO  : 'stop' command is executed.
+02:46:32 INFO  : 'ps7_init' command is executed.
+02:46:32 INFO  : 'ps7_post_config' command is executed.
+02:46:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:46:33 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+02:46:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:46:33 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:46:33 INFO  : 'configparams force-mem-access 0' command is executed.
+02:46:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:46:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:46:33 INFO  : 'con' command is executed.
+02:46:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+02:46:33 INFO  : Disconnected from the channel tcfchan#143.
+02:47:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:47:02 INFO  : 'fpga -state' command is executed.
+02:47:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:47:02 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+02:47:02 INFO  : 'jtag frequency' command is executed.
+02:47:02 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+02:47:02 INFO  : Context for 'APU' is selected.
+02:47:02 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+02:47:02 INFO  : 'configparams force-mem-access 1' command is executed.
+02:47:02 INFO  : Context for 'APU' is selected.
+02:47:02 INFO  : 'stop' command is executed.
+02:47:03 INFO  : 'ps7_init' command is executed.
+02:47:03 INFO  : 'ps7_post_config' command is executed.
+02:47:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:47:03 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+02:47:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:47:03 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:47:03 INFO  : 'configparams force-mem-access 0' command is executed.
+02:47:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:47:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:47:03 INFO  : 'con' command is executed.
+02:47:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+02:47:03 INFO  : Disconnected from the channel tcfchan#144.
+02:47:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:47:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:47:35 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+02:47:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:47:42 INFO  : 'fpga -state' command is executed.
+02:47:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:47:42 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+02:47:42 INFO  : 'jtag frequency' command is executed.
+02:47:42 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+02:47:42 INFO  : Context for 'APU' is selected.
+02:47:42 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+02:47:42 INFO  : 'configparams force-mem-access 1' command is executed.
+02:47:42 INFO  : Context for 'APU' is selected.
+02:47:42 INFO  : 'stop' command is executed.
+02:47:43 INFO  : 'ps7_init' command is executed.
+02:47:43 INFO  : 'ps7_post_config' command is executed.
+02:47:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:47:43 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+02:47:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:47:43 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:47:43 INFO  : 'configparams force-mem-access 0' command is executed.
+02:47:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:47:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:47:43 INFO  : 'con' command is executed.
+02:47:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+02:47:43 INFO  : Disconnected from the channel tcfchan#145.
+02:48:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:49:06 ERROR : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' is cancelled.
+02:49:06 INFO  : Issued abort command to xsdb.
+02:49:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:49:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:49:17 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+02:49:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:49:23 INFO  : 'fpga -state' command is executed.
+02:49:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:49:23 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+02:49:23 INFO  : 'jtag frequency' command is executed.
+02:49:23 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+02:49:23 INFO  : Context for 'APU' is selected.
+02:49:23 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+02:49:23 INFO  : 'configparams force-mem-access 1' command is executed.
+02:49:23 INFO  : Context for 'APU' is selected.
+02:49:23 INFO  : 'stop' command is executed.
+02:49:24 INFO  : 'ps7_init' command is executed.
+02:49:24 INFO  : 'ps7_post_config' command is executed.
+02:49:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:49:24 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+02:49:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:49:24 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:49:24 INFO  : 'configparams force-mem-access 0' command is executed.
+02:49:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:49:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:49:24 INFO  : 'con' command is executed.
+02:49:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+02:49:24 INFO  : Disconnected from the channel tcfchan#146.
+02:49:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:49:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:49:50 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+02:49:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+02:49:55 INFO  : 'fpga -state' command is executed.
+02:49:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:49:56 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+02:49:56 INFO  : 'jtag frequency' command is executed.
+02:49:56 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+02:49:56 INFO  : Context for 'APU' is selected.
+02:49:56 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+02:49:56 INFO  : 'configparams force-mem-access 1' command is executed.
+02:49:56 INFO  : Context for 'APU' is selected.
+02:49:56 INFO  : 'stop' command is executed.
+02:49:56 INFO  : 'ps7_init' command is executed.
+02:49:56 INFO  : 'ps7_post_config' command is executed.
+02:49:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:49:56 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+02:49:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:49:57 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:49:57 INFO  : 'configparams force-mem-access 0' command is executed.
+02:49:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:49:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:49:57 INFO  : 'con' command is executed.
+02:49:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+02:49:57 INFO  : Disconnected from the channel tcfchan#147.
+03:22:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:22:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:22:02 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+03:22:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:22:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:22:19 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+03:22:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:22:30 INFO  : 'fpga -state' command is executed.
+03:22:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:22:30 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+03:22:30 INFO  : 'jtag frequency' command is executed.
+03:22:30 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:22:30 INFO  : Context for 'APU' is selected.
+03:22:30 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+03:22:30 INFO  : 'configparams force-mem-access 1' command is executed.
+03:22:30 INFO  : Context for 'APU' is selected.
+03:22:30 INFO  : 'stop' command is executed.
+03:22:31 INFO  : 'ps7_init' command is executed.
+03:22:31 INFO  : 'ps7_post_config' command is executed.
+03:22:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:22:31 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:22:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:22:32 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:22:32 INFO  : 'configparams force-mem-access 0' command is executed.
+03:22:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:22:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:22:32 INFO  : 'con' command is executed.
+03:22:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+03:22:32 INFO  : Disconnected from the channel tcfchan#148.
+03:22:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:22:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:22:57 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+03:23:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:23:05 INFO  : 'fpga -state' command is executed.
+03:23:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:23:06 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+03:23:06 INFO  : 'jtag frequency' command is executed.
+03:23:06 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:23:06 INFO  : Context for 'APU' is selected.
+03:23:06 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+03:23:06 INFO  : 'configparams force-mem-access 1' command is executed.
+03:23:06 INFO  : Context for 'APU' is selected.
+03:23:06 INFO  : 'stop' command is executed.
+03:23:06 INFO  : 'ps7_init' command is executed.
+03:23:06 INFO  : 'ps7_post_config' command is executed.
+03:23:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:23:06 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:23:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:23:07 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:23:07 INFO  : 'configparams force-mem-access 0' command is executed.
+03:23:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:23:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:23:07 INFO  : 'con' command is executed.
+03:23:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+03:23:07 INFO  : Disconnected from the channel tcfchan#149.
+03:23:49 ERROR : Failed to connect to hardware server on host '127.0.0.1' and port '3121'.
+Reason: 'connect -url tcp:127.0.0.1:3121' is cancelled.
+03:23:49 INFO  : Issued abort command to xsdb.
+03:24:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:24:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:24:42 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+03:24:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:24:50 INFO  : 'fpga -state' command is executed.
+03:24:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:24:50 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+03:24:50 INFO  : 'jtag frequency' command is executed.
+03:24:50 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:24:50 INFO  : Context for 'APU' is selected.
+03:24:50 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+03:24:50 INFO  : 'configparams force-mem-access 1' command is executed.
+03:24:50 INFO  : Context for 'APU' is selected.
+03:24:50 INFO  : 'stop' command is executed.
+03:24:50 INFO  : 'ps7_init' command is executed.
+03:24:50 INFO  : 'ps7_post_config' command is executed.
+03:24:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:24:50 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:24:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:24:51 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:24:51 INFO  : 'configparams force-mem-access 0' command is executed.
+03:24:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:24:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:24:51 INFO  : 'con' command is executed.
+03:24:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+03:24:51 INFO  : Disconnected from the channel tcfchan#150.
+03:25:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:25:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:25:31 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+03:25:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:25:40 INFO  : 'fpga -state' command is executed.
+03:25:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:25:40 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+03:25:40 INFO  : 'jtag frequency' command is executed.
+03:25:40 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:25:40 INFO  : Context for 'APU' is selected.
+03:25:40 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+03:25:40 INFO  : 'configparams force-mem-access 1' command is executed.
+03:25:40 INFO  : Context for 'APU' is selected.
+03:25:40 INFO  : 'stop' command is executed.
+03:25:41 INFO  : 'ps7_init' command is executed.
+03:25:41 INFO  : 'ps7_post_config' command is executed.
+03:25:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:25:41 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:25:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:25:41 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:25:41 INFO  : 'configparams force-mem-access 0' command is executed.
+03:25:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:25:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:25:41 INFO  : 'con' command is executed.
+03:25:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+03:25:41 INFO  : Disconnected from the channel tcfchan#151.
+03:30:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:30:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:30:25 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+03:30:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:30:43 INFO  : 'fpga -state' command is executed.
+03:30:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:30:43 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+03:30:43 INFO  : 'jtag frequency' command is executed.
+03:30:43 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:30:43 INFO  : Context for 'APU' is selected.
+03:30:43 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+03:30:43 INFO  : 'configparams force-mem-access 1' command is executed.
+03:30:43 INFO  : Context for 'APU' is selected.
+03:30:43 INFO  : 'stop' command is executed.
+03:30:44 INFO  : 'ps7_init' command is executed.
+03:30:44 INFO  : 'ps7_post_config' command is executed.
+03:30:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:30:44 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:30:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:30:44 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:30:44 INFO  : 'configparams force-mem-access 0' command is executed.
+03:30:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:30:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:30:44 INFO  : 'con' command is executed.
+03:30:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+03:30:45 INFO  : Disconnected from the channel tcfchan#152.
+03:35:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:35:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:35:30 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+03:35:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:35:40 INFO  : 'fpga -state' command is executed.
+03:35:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:35:41 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+03:35:41 INFO  : 'jtag frequency' command is executed.
+03:35:41 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:35:41 INFO  : Context for 'APU' is selected.
+03:35:41 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+03:35:41 INFO  : 'configparams force-mem-access 1' command is executed.
+03:35:41 INFO  : Context for 'APU' is selected.
+03:35:41 INFO  : 'stop' command is executed.
+03:35:41 INFO  : 'ps7_init' command is executed.
+03:35:41 INFO  : 'ps7_post_config' command is executed.
+03:35:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:35:41 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:35:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:35:42 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:35:42 INFO  : 'configparams force-mem-access 0' command is executed.
+03:35:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:35:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:35:42 INFO  : 'con' command is executed.
+03:35:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+03:35:42 INFO  : Disconnected from the channel tcfchan#153.
+03:36:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:36:13 INFO  : 'fpga -state' command is executed.
+03:36:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:36:13 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+03:36:13 INFO  : 'jtag frequency' command is executed.
+03:36:13 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:36:13 INFO  : Context for 'APU' is selected.
+03:36:13 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+03:36:13 INFO  : 'configparams force-mem-access 1' command is executed.
+03:36:13 INFO  : Context for 'APU' is selected.
+03:36:14 INFO  : 'stop' command is executed.
+03:36:14 INFO  : 'ps7_init' command is executed.
+03:36:14 INFO  : 'ps7_post_config' command is executed.
+03:36:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:36:14 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:36:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:36:15 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:36:15 INFO  : 'configparams force-mem-access 0' command is executed.
+03:36:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:36:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:36:15 INFO  : 'con' command is executed.
+03:36:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+03:36:15 INFO  : Disconnected from the channel tcfchan#154.
+03:36:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:36:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:36:34 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+03:36:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:36:43 INFO  : 'fpga -state' command is executed.
+03:36:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:36:43 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+03:36:43 INFO  : 'jtag frequency' command is executed.
+03:36:43 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:36:43 INFO  : Context for 'APU' is selected.
+03:36:43 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+03:36:43 INFO  : 'configparams force-mem-access 1' command is executed.
+03:36:43 INFO  : Context for 'APU' is selected.
+03:36:43 INFO  : 'stop' command is executed.
+03:36:43 INFO  : 'ps7_init' command is executed.
+03:36:43 INFO  : 'ps7_post_config' command is executed.
+03:36:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:36:44 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:36:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:36:44 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:36:44 INFO  : 'configparams force-mem-access 0' command is executed.
+03:36:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:36:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:36:44 INFO  : 'con' command is executed.
+03:36:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+03:36:44 INFO  : Disconnected from the channel tcfchan#155.
+03:41:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:41:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:41:45 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+03:41:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:41:52 INFO  : 'fpga -state' command is executed.
+03:41:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:41:52 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+03:41:52 INFO  : 'jtag frequency' command is executed.
+03:41:52 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:41:52 INFO  : Context for 'APU' is selected.
+03:41:52 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+03:41:52 INFO  : 'configparams force-mem-access 1' command is executed.
+03:41:52 INFO  : Context for 'APU' is selected.
+03:41:52 INFO  : 'stop' command is executed.
+03:41:53 INFO  : 'ps7_init' command is executed.
+03:41:53 INFO  : 'ps7_post_config' command is executed.
+03:41:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:41:53 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:41:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:41:54 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:41:54 INFO  : 'configparams force-mem-access 0' command is executed.
+03:41:54 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:41:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:41:54 INFO  : 'con' command is executed.
+03:41:54 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+03:41:54 INFO  : Disconnected from the channel tcfchan#156.
+03:42:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:42:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:42:41 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+03:42:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:42:54 INFO  : 'fpga -state' command is executed.
+03:42:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:42:54 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+03:42:54 INFO  : 'jtag frequency' command is executed.
+03:42:54 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:42:54 INFO  : Context for 'APU' is selected.
+03:42:54 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+03:42:54 INFO  : 'configparams force-mem-access 1' command is executed.
+03:42:54 INFO  : Context for 'APU' is selected.
+03:42:54 INFO  : 'stop' command is executed.
+03:42:55 INFO  : 'ps7_init' command is executed.
+03:42:55 INFO  : 'ps7_post_config' command is executed.
+03:42:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:42:55 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:42:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:42:55 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:42:55 INFO  : 'configparams force-mem-access 0' command is executed.
+03:42:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:42:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:42:55 INFO  : 'con' command is executed.
+03:42:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+03:42:55 INFO  : Disconnected from the channel tcfchan#157.
+03:44:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:44:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:44:58 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+03:45:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:45:08 INFO  : 'fpga -state' command is executed.
+03:45:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:45:08 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+03:45:08 INFO  : 'jtag frequency' command is executed.
+03:45:08 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:45:08 INFO  : Context for 'APU' is selected.
+03:45:08 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+03:45:08 INFO  : 'configparams force-mem-access 1' command is executed.
+03:45:08 INFO  : Context for 'APU' is selected.
+03:45:08 INFO  : 'stop' command is executed.
+03:45:09 INFO  : 'ps7_init' command is executed.
+03:45:09 INFO  : 'ps7_post_config' command is executed.
+03:45:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:45:09 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:45:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:45:09 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:45:09 INFO  : 'configparams force-mem-access 0' command is executed.
+03:45:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:45:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:45:09 INFO  : 'con' command is executed.
+03:45:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+03:45:09 INFO  : Disconnected from the channel tcfchan#158.
+03:45:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:45:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:45:46 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+03:45:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:45:58 INFO  : 'fpga -state' command is executed.
+03:45:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:45:59 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+03:45:59 INFO  : 'jtag frequency' command is executed.
+03:45:59 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:45:59 INFO  : Context for 'APU' is selected.
+03:45:59 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+03:45:59 INFO  : 'configparams force-mem-access 1' command is executed.
+03:45:59 INFO  : Context for 'APU' is selected.
+03:45:59 INFO  : 'stop' command is executed.
+03:45:59 INFO  : 'ps7_init' command is executed.
+03:45:59 INFO  : 'ps7_post_config' command is executed.
+03:45:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:45:59 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:46:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:46:00 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:46:00 INFO  : 'configparams force-mem-access 0' command is executed.
+03:46:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:46:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:46:00 INFO  : 'con' command is executed.
+03:46:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+03:46:00 INFO  : Disconnected from the channel tcfchan#159.
+03:46:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:46:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:46:54 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+03:47:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:47:11 INFO  : 'fpga -state' command is executed.
+03:47:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:47:11 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+03:47:11 INFO  : 'jtag frequency' command is executed.
+03:47:11 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:47:11 INFO  : Context for 'APU' is selected.
+03:47:11 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+03:47:11 INFO  : 'configparams force-mem-access 1' command is executed.
+03:47:11 INFO  : Context for 'APU' is selected.
+03:47:12 INFO  : 'stop' command is executed.
+03:47:12 INFO  : 'ps7_init' command is executed.
+03:47:12 INFO  : 'ps7_post_config' command is executed.
+03:47:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:47:12 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:47:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:47:13 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:47:13 INFO  : 'configparams force-mem-access 0' command is executed.
+03:47:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:47:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:47:13 INFO  : 'con' command is executed.
+03:47:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+03:47:13 INFO  : Disconnected from the channel tcfchan#160.
+03:47:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:47:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:47:42 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+03:47:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:47:48 INFO  : 'fpga -state' command is executed.
+03:47:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:47:48 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+03:47:48 INFO  : 'jtag frequency' command is executed.
+03:47:48 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:47:48 INFO  : Context for 'APU' is selected.
+03:47:48 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+03:47:48 INFO  : 'configparams force-mem-access 1' command is executed.
+03:47:48 INFO  : Context for 'APU' is selected.
+03:47:49 INFO  : 'stop' command is executed.
+03:47:50 INFO  : 'ps7_init' command is executed.
+03:47:50 INFO  : 'ps7_post_config' command is executed.
+03:47:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:47:51 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:47:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:47:53 ERROR : Memory write error at 0x100000. AP transaction timeout
+03:47:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+----------------End of Script----------------
+
+03:48:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:48:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:48:16 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+03:48:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:48:27 INFO  : 'fpga -state' command is executed.
+03:48:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:48:27 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+03:48:27 INFO  : 'jtag frequency' command is executed.
+03:48:27 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:48:27 INFO  : Context for 'APU' is selected.
+03:48:27 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+03:48:27 INFO  : 'configparams force-mem-access 1' command is executed.
+03:48:27 INFO  : Context for 'APU' is selected.
+03:48:27 INFO  : 'stop' command is executed.
+03:48:28 INFO  : 'ps7_init' command is executed.
+03:48:28 INFO  : 'ps7_post_config' command is executed.
+03:48:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:48:28 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:48:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:48:28 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:48:28 INFO  : 'configparams force-mem-access 0' command is executed.
+03:48:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:48:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:48:28 INFO  : 'con' command is executed.
+03:48:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+03:48:28 INFO  : Disconnected from the channel tcfchan#161.
+03:49:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:49:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:49:31 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+03:49:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:49:37 INFO  : 'fpga -state' command is executed.
+03:49:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:49:38 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+03:49:38 INFO  : 'jtag frequency' command is executed.
+03:49:38 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:49:38 INFO  : Context for 'APU' is selected.
+03:49:38 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+03:49:38 INFO  : 'configparams force-mem-access 1' command is executed.
+03:49:38 INFO  : Context for 'APU' is selected.
+03:49:38 INFO  : 'stop' command is executed.
+03:49:38 INFO  : 'ps7_init' command is executed.
+03:49:38 INFO  : 'ps7_post_config' command is executed.
+03:49:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:49:38 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:49:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:49:39 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:49:39 INFO  : 'configparams force-mem-access 0' command is executed.
+03:49:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:49:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:49:39 INFO  : 'con' command is executed.
+03:49:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+03:49:39 INFO  : Disconnected from the channel tcfchan#162.
+03:50:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:50:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:50:12 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+03:50:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:50:22 INFO  : 'fpga -state' command is executed.
+03:50:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:50:22 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+03:50:22 INFO  : 'jtag frequency' command is executed.
+03:50:22 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:50:22 INFO  : Context for 'APU' is selected.
+03:50:22 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+03:50:22 INFO  : 'configparams force-mem-access 1' command is executed.
+03:50:22 INFO  : Context for 'APU' is selected.
+03:50:22 INFO  : 'stop' command is executed.
+03:50:23 INFO  : 'ps7_init' command is executed.
+03:50:23 INFO  : 'ps7_post_config' command is executed.
+03:50:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:50:23 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:50:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:50:23 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:50:23 INFO  : 'configparams force-mem-access 0' command is executed.
+03:50:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:50:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:50:23 INFO  : 'con' command is executed.
+03:50:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+03:50:23 INFO  : Disconnected from the channel tcfchan#163.
+03:51:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:51:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:51:11 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+03:51:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:51:22 INFO  : 'fpga -state' command is executed.
+03:51:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:51:22 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+03:51:22 INFO  : 'jtag frequency' command is executed.
+03:51:22 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:51:22 INFO  : Context for 'APU' is selected.
+03:51:22 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+03:51:22 INFO  : 'configparams force-mem-access 1' command is executed.
+03:51:22 INFO  : Context for 'APU' is selected.
+03:51:22 INFO  : 'stop' command is executed.
+03:51:22 INFO  : 'ps7_init' command is executed.
+03:51:23 INFO  : 'ps7_post_config' command is executed.
+03:51:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:51:23 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:51:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:51:23 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:51:23 INFO  : 'configparams force-mem-access 0' command is executed.
+03:51:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:51:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:51:23 INFO  : 'con' command is executed.
+03:51:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+03:51:23 INFO  : Disconnected from the channel tcfchan#164.
+03:52:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:52:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:52:12 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+03:52:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+03:52:24 INFO  : 'fpga -state' command is executed.
+03:52:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:52:24 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+03:52:24 INFO  : 'jtag frequency' command is executed.
+03:52:24 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:52:24 INFO  : Context for 'APU' is selected.
+03:52:24 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+03:52:24 INFO  : 'configparams force-mem-access 1' command is executed.
+03:52:24 INFO  : Context for 'APU' is selected.
+03:52:24 INFO  : 'stop' command is executed.
+03:52:25 INFO  : 'ps7_init' command is executed.
+03:52:25 INFO  : 'ps7_post_config' command is executed.
+03:52:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:52:25 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:52:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:52:25 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:52:25 INFO  : 'configparams force-mem-access 0' command is executed.
+03:52:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:52:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:52:25 INFO  : 'con' command is executed.
+03:52:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+03:52:25 INFO  : Disconnected from the channel tcfchan#165.
+04:25:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:25:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+04:25:59 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+04:26:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+04:26:23 INFO  : 'fpga -state' command is executed.
+04:26:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:26:23 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+04:26:23 INFO  : 'jtag frequency' command is executed.
+04:26:23 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+04:26:23 INFO  : Context for 'APU' is selected.
+04:26:23 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+04:26:23 INFO  : 'configparams force-mem-access 1' command is executed.
+04:26:23 INFO  : Context for 'APU' is selected.
+04:26:23 INFO  : 'stop' command is executed.
+04:26:24 INFO  : 'ps7_init' command is executed.
+04:26:24 INFO  : 'ps7_post_config' command is executed.
+04:26:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:26:24 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+04:26:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:26:24 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+04:26:24 INFO  : 'configparams force-mem-access 0' command is executed.
+04:26:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+04:26:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:26:24 INFO  : 'con' command is executed.
+04:26:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+04:26:24 INFO  : Disconnected from the channel tcfchan#166.
+04:27:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:27:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+04:27:06 INFO  : FPGA configured successfully with bitstream "C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/design_plane_calc_wrapper.bit"
+04:27:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A430DDA" && level==0} -index 1' command is executed.
+04:27:15 INFO  : 'fpga -state' command is executed.
+04:27:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:27:15 INFO  : Jtag cable 'Digilent Zybo 210279A430DDA' is selected.
+04:27:15 INFO  : 'jtag frequency' command is executed.
+04:27:15 INFO  : Sourcing of 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl' is done.
+04:27:15 INFO  : Context for 'APU' is selected.
+04:27:15 INFO  : Hardware design information is loaded from 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf'.
+04:27:15 INFO  : 'configparams force-mem-access 1' command is executed.
+04:27:15 INFO  : Context for 'APU' is selected.
+04:27:15 INFO  : 'stop' command is executed.
+04:27:16 INFO  : 'ps7_init' command is executed.
+04:27:16 INFO  : 'ps7_post_config' command is executed.
+04:27:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:27:16 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+04:27:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:27:16 INFO  : The application 'C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+04:27:16 INFO  : 'configparams force-mem-access 0' command is executed.
+04:27:16 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+loadhw -hw C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/design_plane_calc_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+dow C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/lidar_app/Debug/lidar_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+04:27:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+04:27:16 INFO  : 'con' command is executed.
+04:27:16 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A430DDA"} -index 0
+con
+----------------End of Script----------------
+
+04:27:16 INFO  : Disconnected from the channel tcfchan#167.

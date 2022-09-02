@@ -31,6 +31,8 @@ uint8_t p_data_ready;
 uint8_t resolution;
 int status;
 
+u16 visual[8][64];
+
 extern const uint8_t VL53L5CX_FIRMWARE[];
 
 void SendCommandToSensor(u8 Command, u8 ToF_nb)
@@ -38,7 +40,7 @@ void SendCommandToSensor(u8 Command, u8 ToF_nb)
 	u32 status = 0;
 
 
-	xil_printf("Sending Command 0x%X to  Sensor %d\n\r", Command << (ToF_CMD_OUT_SHIFT * ToF_nb), ToF_nb);
+//	xil_printf("Sending Command 0x%X to  Sensor %d\n\r", Command << (ToF_CMD_OUT_SHIFT * ToF_nb), ToF_nb);
 
 	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, Command << (ToF_CMD_OUT_SHIFT * ToF_nb));
 	usleep(10);
@@ -57,7 +59,8 @@ void get_data_by_polling(VL53L5CX_Configuration *p_dev){
 			for(int i = 0; i < 8;i++){
 				for(int j = 0; j < 8;j++){
 
-					xil_printf("%4d ", Results.distance_mm[VL53L5CX_NB_TARGET_PER_ZONE * (i * 8) + j]);
+//					xil_printf("%4d ", Results.distance_mm[VL53L5CX_NB_TARGET_PER_ZONE * (i * 8) + j]);
+					visual[i][j+ToF_no*8] = Results.distance_mm[VL53L5CX_NB_TARGET_PER_ZONE * (i * 8) + j];
 				}
 				xil_printf("\n\r");
 			}
@@ -75,13 +78,14 @@ void get_data_by_polling(VL53L5CX_Configuration *p_dev){
 			usleep(500000);
 		}
 	}
-	while(1);
+	while(0);
 }
 
 void get_data_by_addr(VL53L5CX_Configuration *p_dev){
 	do
 	{
 		u8 result1, result2;
+		u16 res;
 		status = vl53l5cx_check_data_ready(&Dev, &p_data_ready);
 		if(p_data_ready){
 			status = vl53l5cx_get_resolution(p_dev, &resolution);
@@ -91,27 +95,28 @@ void get_data_by_addr(VL53L5CX_Configuration *p_dev){
 				for(int j = 0; j < 8;j++){
 					status = RdByte(&(p_dev->platform), 0x400 + VL53L5CX_NB_TARGET_PER_ZONE * ((i * 8) + j) * 2, &result1);
 					status = RdByte(&(p_dev->platform), 0x400 + VL53L5CX_NB_TARGET_PER_ZONE * ((i * 8) + j) * 2 + 1, &result2);
-					Results.distance_mm[VL53L5CX_NB_TARGET_PER_ZONE * (i * 8) + j] =
-							((((u16)result1 << 8) & 0xFF00) + (u16)result2) / 4;
-					xil_printf("%4d ", Results.distance_mm[VL53L5CX_NB_TARGET_PER_ZONE * (i * 8) + j]);
+					res = ((((u16)result1 << 8) & 0xFF00) + (u16)result2) / 4;
+					Results.distance_mm[VL53L5CX_NB_TARGET_PER_ZONE * (i * 8) + j] = res;
+//					xil_printf("%4d ", res);
+					visual[i][j+ToF_no*8] = res;
 				}
-				xil_printf("\n\r");
+//				xil_printf("\n\r");
 			}
-			xil_printf("\n\r");
-			xil_printf("\n\r");
-			xil_printf("\n\r");
-			xil_printf("\n\r");
-			xil_printf("\n\r");
-			xil_printf("\n\r");
-			xil_printf("\n\r");
-			xil_printf("\n\r");
-			xil_printf("\n\r");
+//			xil_printf("\n\r");
+//			xil_printf("\n\r");
+//			xil_printf("\n\r");
+//			xil_printf("\n\r");
+//			xil_printf("\n\r");
+//			xil_printf("\n\r");
+//			xil_printf("\n\r");
+//			xil_printf("\n\r");
+//			xil_printf("\n\r");
 
 		}else{
 			usleep(500000);
 		}
 	}
-	while(1);
+	while(0);
 }
 
 int main(void)
@@ -144,19 +149,57 @@ int main(void)
 			vl53l5cx_set_resolution(&Dev,VL53L5CX_RESOLUTION_8X8);// Set mode continuous
 			vl53l5cx_start_ranging(&Dev);
 		}
-
+//		get_data_by_addr(&Dev);
 		SendCommandToSensor(INIT_FINISHED, sensor);
+
 		usleep(100);
 	}
-	xil_printf("INIT DONE");
-	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, 0xFFFFFFFF);
-	usleep(10);
-	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, 0);
+	xil_printf("INIT DONE\n\r");
+//	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, 0xFFFFFFFF);
+//	usleep(10);
+//	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, 0);
+
+
+	for(uint8_t sensor = ToF_0; sensor <= ToF_7; sensor++)
+		{
+			SendCommandToSensor(INIT_SENSOR, sensor);
+			ToF_no = sensor;
+			get_data_by_addr(&Dev);
+			SendCommandToSensor(INIT_FINISHED, sensor);
+		}
+	for(int i = 0; i < 8;i++){
+				for(int j = 0; j < 64;j++){
+					xil_printf("%4d ", visual[i][j]);
+				}
+				xil_printf("\n\r");
+			}
+			xil_printf("\n\r");
+			xil_printf("\n\r");
+			xil_printf("\n\r");
+			xil_printf("\n\r");
+			xil_printf("\n\r");
+			xil_printf("\n\r");
+			xil_printf("\n\r");
+			xil_printf("RDER");
 
 	while(1)
 	{
 //		get_data_by_polling(&Dev);
-		xil_printf("@Plane %d mm2\n\r", DATA_IP_mReadReg(DATA_IP_BASEADDR, PLANE_REG));
+//		xil_printf("@Plane %d mm2\n\r", DATA_IP_mReadReg(DATA_IP_BASEADDR, PLANE_REG));
+		for(uint8_t sensor = ToF_0; sensor <= ToF_7; sensor++)
+			{
+				SendCommandToSensor(INIT_SENSOR, sensor);
+				ToF_no = sensor;
+				get_data_by_addr(&Dev);
+				SendCommandToSensor(INIT_FINISHED, sensor);
+			}
+		for(int i = 0; i < 8;i++){
+					for(int j = 0; j < 64;j++){
+						xil_printf("%d ", visual[i][j]);
+					}
+					xil_printf("\n");
+				}
+		xil_printf("A");
 	}
 }
 
