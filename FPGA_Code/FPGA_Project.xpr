@@ -69,13 +69,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/ip/ila_0/ila_0.xci">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PPRDIR/Design_SRC/Common/I2C_ToF_Comm_Modules.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -169,6 +162,14 @@
       </File>
       <File Path="$PPRDIR/Block_Design/design_plane_calc/hdl/design_plane_calc_wrapper.v">
         <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/ip/ila_0/ila_0.xci">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -393,6 +394,7 @@
     <FileSet Name="fw_blk_mem_gen" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fw_blk_mem_gen">
       <File Path="$PPRDIR/Design_SRC/IP_Cores/fw_blk_mem_gen/fw_blk_mem_gen.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>

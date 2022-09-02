@@ -75,6 +75,20 @@ void __wait_and_clr()
 	while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
 }
 
+
+uint8_t CheckFrameReady()
+{
+	if((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 1)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+
 uint8_t RdByte(
 		VL53L5CX_Platform *p_platform,
 		uint16_t RegisterAdress,
@@ -89,6 +103,20 @@ uint8_t RdByte(
 
 	return 0;
 }
+
+
+uint8_t vl53l5cx_read_frame(
+		VL53L5CX_Platform *p_platform,
+		uint16_t StartRegisterAdress)
+{
+	DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, StartRegisterAdress);
+	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, DATA_ACQUISITION << (ToF_CMD_OUT_SHIFT * ToF_no));
+
+	__wait_and_clr();
+
+	return 0;
+}
+
 
 uint8_t WrByte(
 		VL53L5CX_Platform *p_platform,

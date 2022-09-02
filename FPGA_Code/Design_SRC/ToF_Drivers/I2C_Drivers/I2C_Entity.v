@@ -29,7 +29,7 @@ module I2C_Entity(
     input [6:0] slave_adress,
     input [15:0] register_address,
     input is_read,
-    input [16:0] nb_of_bytes,
+    input nb_of_bytes,
     input start,
     input reset,
     output reg [7:0] data_out,
@@ -61,7 +61,7 @@ initial
     state_clk <= IDLE;
     error_out <= 1'b0;
     receiving <= 1'b0;
-    data_out <= 15'h0000; //temp
+    data_out <= 8'h00; //temp
     SCL_en <= 1'b0;
     SCL_skip <= 1'b0;
     SDA_out <= 1'b1;
@@ -169,7 +169,7 @@ always @(posedge clock)
             SCL_skip <= 1'b0;
             SDA_t <= 1'b0; 
             is_read_flag <= 1'b0; 
-            if(counter == 10'h0 && nb_of_bytes == 17'h0) 
+            if(counter == 10'h0 && nb_of_bytes == 1'h0) 
                 begin
                 data_to_send <= data_in; //
                 state_clk <= EXPECTED_ACK;
@@ -225,7 +225,7 @@ always @(posedge clock)
             data_out <= data_out << 1;
             data_out[0] <= SDA_in;
             is_read_flag <= 1'b0;
-            if((counter == 10'h0) && (nb_of_bytes > 17'h0))
+            if((counter == 10'h0) && (nb_of_bytes > 1'h0))
                 begin
                 counter <= 10'h7;
                 nxt_state_clk <= READ_DATA;

@@ -119,6 +119,40 @@ void get_data_by_addr(VL53L5CX_Configuration *p_dev){
 	while(0);
 }
 
+void read_frame_by_addr(VL53L5CX_Configuration *p_dev, u8 ToF_nb){
+	do
+	{
+		status = vl53l5cx_check_data_ready(&Dev, &p_data_ready);
+		if(p_data_ready){
+			status = vl53l5cx_get_resolution(p_dev, &resolution);
+			status = vl53l5cx_read_frame(&(p_dev->platform), 0x400);
+
+		}else{
+			usleep(500000);
+		}
+	}
+	while(0);
+}
+
+void copy_frame(VL53L5CX_Configuration *p_dev, u8 ToF_nb){
+	do
+	{
+		u8 result1, result2;
+		u16 res;
+		if(CheckFrameReady() == 1){
+			for(int i = 0; i < 8;i++){
+				for(int j = 0; j < 8;j++){
+					res = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG0_OFFSET + ToF_nb*64+ VL53L5CX_NB_TARGET_PER_ZONE * (i * 8) + (j>>1))) >> ((j%2)*16) / 4;
+					Results.distance_mm[VL53L5CX_NB_TARGET_PER_ZONE * (i * 8) + j] = res;
+					visual[i][j+ToF_no*8] = res;
+				}
+			}
+
+		}
+	}
+	while(0);
+}
+
 int main(void)
 {
 	uint8_t isAlive;
@@ -182,17 +216,76 @@ int main(void)
 			xil_printf("\n\r");
 			xil_printf("RDER");
 
-	while(1)
-	{
-//		get_data_by_polling(&Dev);
-//		xil_printf("@Plane %d mm2\n\r", DATA_IP_mReadReg(DATA_IP_BASEADDR, PLANE_REG));
+//	while(1)
+//	{
+////		get_data_by_polling(&Dev);
+////		xil_printf("@Plane %d mm2\n\r", DATA_IP_mReadReg(DATA_IP_BASEADDR, PLANE_REG));
+//
+//		for(uint8_t sensor = ToF_0; sensor <= ToF_7; sensor++)
+//			{
+//				SendCommandToSensor(INIT_SENSOR, sensor);
+//				ToF_no = sensor;
+//				get_data_by_addr(&Dev);
+//				SendCommandToSensor(INIT_FINISHED, sensor);
+//			}
+//		for(int i = 0; i < 8;i++){
+//					for(int j = 0; j < 64;j++){
+//						xil_printf("%d ", visual[i][j]);
+//					}
+//					xil_printf("\n");
+//				}
+//		xil_printf("A");
+
+
+		// 1. copy frame data from register to object
+		// 2. start acquisition
+		// 3. send frame by uart
+
+//		for(uint8_t sensor = ToF_0; sensor <= ToF_7; sensor++)
+//			{
+//				SendCommandToSensor(INIT_SENSOR, sensor);
+//				ToF_no = sensor;
+//				read_frame_by_addr(&Dev, ToF_no);
+//				SendCommandToSensor(INIT_FINISHED, sensor);
+//			}
+//		for(uint8_t sensor = ToF_0; sensor <= ToF_7; sensor++)
+//			{
+//				copy_frame(&Dev, ToF_no);
+//			}
+//		for(int i = 0; i < 8;i++){
+//					for(int j = 0; j < 64;j++){
+//						xil_printf("%4d ", visual[i][j]);
+//					}
+//					xil_printf("\n\r");
+//				}
+//				xil_printf("\n\r");
+//				xil_printf("\n\r");
+//				xil_printf("\n\r");
+//				xil_printf("\n\r");
+//				xil_printf("\n\r");
+//				xil_printf("\n\r");
+//				xil_printf("\n\r");
+//				xil_printf("RDER");
+//
+		while(1)
+		{
 		for(uint8_t sensor = ToF_0; sensor <= ToF_7; sensor++)
 			{
 				SendCommandToSensor(INIT_SENSOR, sensor);
 				ToF_no = sensor;
-				get_data_by_addr(&Dev);
+				read_frame_by_addr(&Dev, ToF_no);
 				SendCommandToSensor(INIT_FINISHED, sensor);
 			}
+//		for(int j = 0; j < 2048;j++){
+//								xil_printf("%d\n\r", (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16);
+//							}
+		for(uint8_t sensor = ToF_0; sensor <= ToF_7; sensor++)
+					{
+						ToF_no = sensor;
+//						while(CheckFrameReady() != 1){}
+//						xil_printf("%d data ready\n", ToF_no);
+						copy_frame(&Dev, ToF_no);
+					}
 		for(int i = 0; i < 8;i++){
 					for(int j = 0; j < 64;j++){
 						xil_printf("%d ", visual[i][j]);

@@ -105,7 +105,8 @@ I2C_ToF_Comm_Modules I2C_Modules_entity
     .reset(reset),
     .data_out(ToF_Data),
     .ready_out(dr_ToF),
-    .i2c_data_read(i2c_data_read)
+    .i2c_data_read(i2c_data_read),
+    .distance_mm(distance_mm)
 );
 Mem_Write_FSM Mem_Write_cont
 (

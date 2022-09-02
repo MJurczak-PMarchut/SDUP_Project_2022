@@ -52,6 +52,8 @@
 # #########################################################
 
 
-create_clock -period 10 -name slowest_sync_clk [get_ports slowest_sync_clk]
+create_clock -period 12.800 -name i2c_scl_clk [get_ports i2c_scl_clk]
+
+create_clock -period 200 -name i2c_t8_clk [get_ports i2c_t8_clk]
 
 

@@ -35,7 +35,8 @@ module I2C_ToF_Comm_Modules(
     output [15:0] ToF_CMD_out,
     output [21:0] data_out,
     output [7:0] ready_out,
-    output [7:0] i2c_data_read
+    output [7:0] i2c_data_read,
+    output [511:0] [15:0] distance_mm
     );
 
 parameter NB_OF_SENSORS = 8;
@@ -50,7 +51,8 @@ initial
     slave_adress = 7'h29;
     end
 
-reg [7:0] data_status;
+//reg [7:0] data_status;
+//reg [8:0] distance_counter;
 
 wire SCL_out [0:7], SCL_in [0:7], SCL_t [0:7], SDA_t [0:7], SDA_in [0:7], SDA_out [0:7];
 wire [7:0] reg_value [7:0];
@@ -60,20 +62,20 @@ wire [7:0] i2c_data_out [7:0];
 wire [7:0] start;
 wire [7:0] read;
 wire [7:0] ready;
-wire [5:0] sensor_index [7:0];
+//wire [5:0] sensor_index [7:0];
 wire [15:0] distance_data [7:0];
-wire [16:0] nb_of_bytes [7:0];
+wire nb_of_bytes [7:0];
 wire [7:0] data_ready;
 reg [7:0] reg_data_ready;
-reg ena, wea;
-wire [7:0]  fw_counter [16:0];
-wire [15:0] fw_data, dina;
+//reg ena, wea;
+//wire [7:0]  fw_counter [16:0];
+//wire [15:0] fw_data, dina;
 
 initial
     begin 
-        data_status <= 8'h00;
-        ena <= 1'b1;
-        wea <= 1'b0;
+//        data_status <= 8'h00;
+//        ena <= 1'b1;
+//        wea <= 1'b0;
     end
 
 genvar i;
@@ -115,18 +117,19 @@ genvar i;
         .ToF_CMD_out(ToF_CMD_out[i*2+1:i*2]),
         .i2c_data(reg_value[i]),
         .i2c_data_in(i2c_data_out[i]),
-        .fw_data(fw_data),
+//        .fw_data(fw_data),
         .register_address_in(register_address_in),
         .i2c_data_to_send(i2c_data_to_send),
         .register_address(register_address[i]),
         .is_read(read[i]),
         .nb_of_bytes(nb_of_bytes[i]),
         .start(start[i]),
-        .distance_data(distance_data[i]),
-        .sensor_index(sensor_index[i]),
+//        .distance_data(distance_data[i]),
+//        .sensor_index(sensor_index[i]),
         .data_ready(data_ready[i]),
-        .fw_counter(fw_counter[i]),
-        .i2c_data_read(i2c_data_read_from_sensor[i])
+//        .fw_counter(fw_counter[i]),
+        .i2c_data_read(i2c_data_read_from_sensor[i]),
+        .distance_mm(distance_mm[i*64+63:i*64])
     );
     I2C_Entity i2c_entity(
         .data_in(reg_value[i]),
@@ -161,17 +164,17 @@ always @(posedge clk)
                 reg_data_ready[__dr_iter] <= 1'b0;
     end
 
-fw_blk_mem_gen fw(
-    .addra(fw_counter[0] | fw_counter[1] | fw_counter[2] | fw_counter[3]
-        | fw_counter[4] | fw_counter[5] | fw_counter[6] | fw_counter[7]),
-    .clka(clk),
-    .douta(fw_data),
-    .ena(ena)
-);
+//fw_blk_mem_gen fw(
+//    .addra(fw_counter[0] | fw_counter[1] | fw_counter[2] | fw_counter[3]
+//        | fw_counter[4] | fw_counter[5] | fw_counter[6] | fw_counter[7]),
+//    .clka(clk),
+//    .douta(fw_data),
+//    .ena(ena)
+//);
 
-assign data_out = {sensor_index[ToF_Index], distance_data[ToF_Index]};
+//assign data_out = {sensor_index[ToF_Index], distance_data[ToF_Index]};
 assign ready_out = reg_data_ready;
-assign dina = 16'b0;
+//assign dina = 16'b0;
 //assign i2c_data_read = (ToF_CMD_in & (32'h0F << 0) == INIT_SENSOR)? i2c_data_read_from_sensor[0]:
 //                       (ToF_CMD_in & (32'h0F << 4) == INIT_SENSOR)? i2c_data_read_from_sensor[1]:
 //                       (ToF_CMD_in & (32'h0F << 8) == INIT_SENSOR)? i2c_data_read_from_sensor[2]:

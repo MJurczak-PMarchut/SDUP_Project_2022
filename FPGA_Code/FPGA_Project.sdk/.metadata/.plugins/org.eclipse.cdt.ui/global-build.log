@@ -2936,3 +2936,2443 @@ make -j4 pre-build main-build
 a9-linaro-pre-build-step
 make: Nothing to be done for 'main-build'.
 ' '
+00:53:31 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../Platform/platform.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+'Finished building: ../Platform/platform.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 147268	   1544	  28392	 177204	  2b434	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+20:09:55 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+20:10:20 **** Auto Build of project lidar_app_bsp ****
+make all 
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/data_ip_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/data_ip_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v7_0/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling coresightps_dcc"
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/data_ip_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/data_ip_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling data_ip..."
+data_ip_selftest.c: In function 'DATA_IP_Reg_SelfTest':
+data_ip_selftest.c:52:56: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+    if ( DATA_IP_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                        ^~
+data_ip_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v7_0/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling standalone"
+In file included from usleep.c:56:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xil_sleeptimer.c:51:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xtime_l.c:49:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from sleep.c:53:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+20:10:52 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../Platform/platform.c'
+' '
+'Building file: ../main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'main':
+../main.c:126:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:125:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../Platform/platform.c'
+' '
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 147268	   1544	  28392	 177204	  2b434	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+21:24:35 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'read_frame_by_addr':
+../main.c:130:13: warning: implicit declaration of function 'vl53l5cx_read_frame'; did you mean 'vl53l5cx_dci_read_data'? [-Wimplicit-function-declaration]
+    status = vl53l5cx_read_frame(&(p_dev->platform), 0x400);
+             ^~~~~~~~~~~~~~~~~~~
+             vl53l5cx_dci_read_data
+../main.c:126:7: warning: unused variable 'res' [-Wunused-variable]
+   u16 res;
+       ^~~
+../main.c:125:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:125:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:152:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:151:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: ./main.o: in function `read_frame_by_addr':
+C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Debug/../main.c:130: undefined reference to `vl53l5cx_read_frame'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:42: lidar_app.elf] Error 1
+21:27:56 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../Platform/platform.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+In file included from ../Platform/platform.c:66:
+../Platform/platform.c: In function 'vl53l5cx_read_frame':
+../Platform/platform.c:98:48: error: 'RegisterAdress' undeclared (first use in this function); did you mean 'StartRegisterAdress'?
+  DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, RegisterAdress);
+                                                ^~~~~~~~~~~~~~
+../../lidar_app_bsp/ps7_cortexa9_0/include/data_ip.h:291:49: note: in definition of macro 'DATA_IP_mWriteReg'
+    Xil_Out32((BaseAddress) + (RegOffset), (u32)(Data))
+                                                 ^~~~
+../Platform/platform.c:98:48: note: each undeclared identifier is reported only once for each function it appears in
+  DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, RegisterAdress);
+                                                ^~~~~~~~~~~~~~
+../../lidar_app_bsp/ps7_cortexa9_0/include/data_ip.h:291:49: note: in definition of macro 'DATA_IP_mWriteReg'
+    Xil_Out32((BaseAddress) + (RegOffset), (u32)(Data))
+                                                 ^~~~
+../Platform/platform.c:103:3: error: 'p_value' undeclared (first use in this function); did you mean '_glue'?
+  *p_value = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
+   ^~~~~~~
+   _glue
+make: *** [Platform/subdir.mk:20: Platform/platform.o] Error 1
+21:28:24 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_api.c'
+' '
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_api.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_api.o" "../VL53L5CX_ULD_API/src/vl53l5cx_api.c"
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c'
+'Invoking: ARM v7 gcc compiler'
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c"
+../VL53L5CX_ULD_API/src/vl53l5cx_api.c: In function '_vl53l5cx_poll_for_answer':
+../VL53L5CX_ULD_API/src/vl53l5cx_api.c:92:4: warning: implicit declaration of function 'xil_printf' [-Wimplicit-function-declaration]
+    xil_printf("Poll VL53L5CX_STATUS_TIMEOUT_ERROR\n\r");
+    ^~~~~~~~~~
+../VL53L5CX_ULD_API/src/vl53l5cx_api.c: In function 'vl53l5cx_init':
+../VL53L5CX_ULD_API/src/vl53l5cx_api.c:377:2: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+  usleep(10000);
+  ^~~~~~
+'Finished building: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c'
+' '
+'Finished building: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c'
+'Finished building: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c'
+' '
+'Building file: ../Platform/platform.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+'Building file: ../main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from ../Platform/platform.c:66:
+../Platform/platform.c: In function 'vl53l5cx_read_frame':
+../Platform/platform.c:98:48: error: 'RegisterAdress' undeclared (first use in this function); did you mean 'StartRegisterAdress'?
+  DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, RegisterAdress);
+                                                ^~~~~~~~~~~~~~
+../../lidar_app_bsp/ps7_cortexa9_0/include/data_ip.h:291:49: note: in definition of macro 'DATA_IP_mWriteReg'
+    Xil_Out32((BaseAddress) + (RegOffset), (u32)(Data))
+                                                 ^~~~
+../Platform/platform.c:98:48: note: each undeclared identifier is reported only once for each function it appears in
+  DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, RegisterAdress);
+                                                ^~~~~~~~~~~~~~
+../../lidar_app_bsp/ps7_cortexa9_0/include/data_ip.h:291:49: note: in definition of macro 'DATA_IP_mWriteReg'
+    Xil_Out32((BaseAddress) + (RegOffset), (u32)(Data))
+                                                 ^~~~
+../Platform/platform.c:103:3: error: 'p_value' undeclared (first use in this function); did you mean '_glue'?
+  *p_value = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
+   ^~~~~~~
+   _glue
+make: *** [Platform/subdir.mk:20: Platform/platform.o] Error 1
+make: *** Waiting for unfinished jobs....
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'read_frame_by_addr':
+../main.c:126:7: warning: unused variable 'res' [-Wunused-variable]
+   u16 res;
+       ^~~
+../main.c:125:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:125:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:152:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:151:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Finished building: ../VL53L5CX_ULD_API/src/vl53l5cx_api.c'
+' '
+21:32:10 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../Platform/platform.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+../Platform/platform.c: In function 'vl53l5cx_read_frame':
+../Platform/platform.c:103:3: error: 'p_value' undeclared (first use in this function); did you mean '_glue'?
+  *p_value = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
+   ^~~~~~~
+   _glue
+../Platform/platform.c:103:3: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Platform/subdir.mk:20: Platform/platform.o] Error 1
+21:32:33 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../Platform/platform.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+'Finished building: ../Platform/platform.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 147588	   1544	  28392	 177524	  2b574	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+21:41:22 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../Platform/platform.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+'Finished building: ../Platform/platform.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 147588	   1544	  28392	 177524	  2b574	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+22:23:46 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'read_frame_by_addr':
+../main.c:126:7: warning: unused variable 'res' [-Wunused-variable]
+   u16 res;
+       ^~~
+../main.c:125:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:125:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:152:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:151:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 147588	   1544	  28392	 177524	  2b574	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+11:48:32 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+' '
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'read_frame_by_addr':
+../main.c:126:7: warning: unused variable 'res' [-Wunused-variable]
+   u16 res;
+       ^~~
+../main.c:125:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:125:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:152:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:151:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 147588	   1544	  28392	 177524	  2b574	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+12:55:54 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+18:03:57 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../Platform/platform.c'
+'Building file: ../main.c'
+'Invoking: ARM v7 gcc compiler'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+' '
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+../Platform/platform.c:65:10: fatal error: sleep.h: No such file or directory
+ #include "sleep.h"
+          ^~~~~~~~~
+compilation terminated.
+make: *** [Platform/subdir.mk:20: Platform/platform.o] Error 1
+make: *** Waiting for unfinished jobs....
+../main.c:9:10: fatal error: xil_printf.h: No such file or directory
+ #include "xil_printf.h"
+          ^~~~~~~~~~~~~~
+compilation terminated.
+make: *** [subdir.mk:20: main.o] Error 1
+18:04:08 **** Auto Build of project lidar_app_bsp ****
+make all 
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/data_ip_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/data_ip_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v7_0/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling coresightps_dcc"
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/data_ip_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/data_ip_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling data_ip..."
+data_ip_selftest.c: In function 'DATA_IP_Reg_SelfTest':
+data_ip_selftest.c:52:56: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+    if ( DATA_IP_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                        ^~
+data_ip_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v7_0/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling standalone"
+In file included from usleep.c:56:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xil_sleeptimer.c:51:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xtime_l.c:49:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from sleep.c:53:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+18:04:39 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../Platform/platform.c'
+' '
+'Building file: ../main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'read_frame_by_addr':
+../main.c:126:7: warning: unused variable 'res' [-Wunused-variable]
+   u16 res;
+       ^~~
+../main.c:125:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:125:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:152:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:151:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../Platform/platform.c'
+' '
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 147588	   1544	  28392	 177524	  2b574	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+18:16:37 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+' '
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'read_frame_by_addr':
+../main.c:126:7: warning: variable 'res' set but not used [-Wunused-but-set-variable]
+   u16 res;
+       ^~~
+../main.c: In function 'main':
+../main.c:153:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:152:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+../main.c: In function 'read_frame_by_addr':
+../main.c:136:46: warning: 'result2' may be used uninitialized in this function [-Wmaybe-uninitialized]
+      res = ((((u16)result1 << 8) & 0xFF00) + (u16)result2) / 4;
+                                              ^~~~~~~~~~~~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 147780	   1544	  28392	 177716	  2b634	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+18:22:15 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'read_frame_by_addr':
+../main.c:126:7: warning: variable 'res' set but not used [-Wunused-but-set-variable]
+   u16 res;
+       ^~~
+../main.c:125:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:125:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:150:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:149:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 147780	   1544	  28392	 177716	  2b634	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+18:23:01 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'read_frame_by_addr':
+../main.c:126:7: warning: variable 'res' set but not used [-Wunused-but-set-variable]
+   u16 res;
+       ^~~
+../main.c:125:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:125:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:150:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:149:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 147780	   1544	  28392	 177716	  2b634	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+18:23:53 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'read_frame_by_addr':
+../main.c:125:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:125:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:150:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:149:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 147908	   1544	  28392	 177844	  2b6b4	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+16:35:03 **** Auto Build of project lidar_app_bsp ****
+make all 
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/data_ip_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/data_ip_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v7_0/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling coresightps_dcc"
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/data_ip_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/data_ip_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling data_ip..."
+data_ip_selftest.c: In function 'DATA_IP_Reg_SelfTest':
+data_ip_selftest.c:52:56: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+    if ( DATA_IP_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                        ^~
+data_ip_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v7_0/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling standalone"
+In file included from usleep.c:56:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xil_sleeptimer.c:51:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xtime_l.c:49:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from sleep.c:53:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+16:35:37 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../Platform/platform.c'
+' '
+'Building file: ../main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'read_frame_by_addr':
+../main.c:125:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:125:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:150:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:149:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../Platform/platform.c'
+' '
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 147908	   1544	  28392	 177844	  2b6b4	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+00:30:30 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+' '
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:165:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:164:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148100	   1544	  28392	 178036	  2b774	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+00:33:25 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:157:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:156:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 147908	   1544	  28392	 177844	  2b6b4	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+00:39:25 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_api.c'
+' '
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c'
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c'
+'Invoking: ARM v7 gcc compiler'
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_api.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_api.o" "../VL53L5CX_ULD_API/src/vl53l5cx_api.c"
+'Invoking: ARM v7 gcc compiler'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c"
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c"
+../VL53L5CX_ULD_API/src/vl53l5cx_api.c: In function '_vl53l5cx_poll_for_answer':
+../VL53L5CX_ULD_API/src/vl53l5cx_api.c:92:4: warning: implicit declaration of function 'xil_printf' [-Wimplicit-function-declaration]
+    xil_printf("Poll VL53L5CX_STATUS_TIMEOUT_ERROR\n\r");
+    ^~~~~~~~~~
+../VL53L5CX_ULD_API/src/vl53l5cx_api.c: In function 'vl53l5cx_init':
+../VL53L5CX_ULD_API/src/vl53l5cx_api.c:377:2: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+  usleep(10000);
+  ^~~~~~
+'Finished building: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c'
+'Finished building: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c'
+' '
+' '
+'Finished building: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c'
+'Building file: ../Platform/platform.c'
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:157:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:156:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../Platform/platform.c'
+'Finished building: ../main.c'
+' '
+' '
+'Finished building: ../VL53L5CX_ULD_API/src/vl53l5cx_api.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 147908	   1544	  28392	 177844	  2b6b4	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+00:53:45 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'main':
+../main.c:156:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:155:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 147908	   1544	  28392	 177844	  2b6b4	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+00:54:22 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../Platform/platform.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+../Platform/platform.c:79:1: error: unknown type name 'bool'; did you mean '_Bool'?
+ bool CheckFrameReady()
+ ^~~~
+ _Bool
+../Platform/platform.c: In function 'CheckFrameReady':
+../Platform/platform.c:83:10: error: 'true' undeclared (first use in this function)
+   return true;
+          ^~~~
+../Platform/platform.c:83:10: note: each undeclared identifier is reported only once for each function it appears in
+../Platform/platform.c:87:10: error: 'false' undeclared (first use in this function); did you mean 'flsl'?
+   return false;
+          ^~~~~
+          flsl
+../Platform/platform.c:89:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [Platform/subdir.mk:20: Platform/platform.o] Error 1
+00:54:41 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../Platform/platform.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+../Platform/platform.c: In function 'CheckFrameReady':
+../Platform/platform.c:83:10: error: 'true' undeclared (first use in this function)
+   return true;
+          ^~~~
+../Platform/platform.c:83:10: note: each undeclared identifier is reported only once for each function it appears in
+../Platform/platform.c:87:10: error: 'false' undeclared (first use in this function); did you mean 'flsl'?
+   return false;
+          ^~~~~
+          flsl
+../Platform/platform.c:89:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [Platform/subdir.mk:20: Platform/platform.o] Error 1
+00:54:54 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../Platform/platform.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+../Platform/platform.c: In function 'CheckFrameReady':
+../Platform/platform.c:83:10: error: 'True' undeclared (first use in this function)
+   return True;
+          ^~~~
+../Platform/platform.c:83:10: note: each undeclared identifier is reported only once for each function it appears in
+../Platform/platform.c:87:10: error: 'false' undeclared (first use in this function); did you mean 'flsl'?
+   return false;
+          ^~~~~
+          flsl
+../Platform/platform.c:89:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [Platform/subdir.mk:20: Platform/platform.o] Error 1
+00:55:17 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../Platform/platform.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+'Finished building: ../Platform/platform.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148036	   1544	  28392	 177972	  2b734	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+00:56:11 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../Platform/platform.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+'Finished building: ../Platform/platform.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148036	   1544	  28392	 177972	  2b734	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+00:57:16 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_api.c'
+' '
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_api.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_api.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_api.o" "../VL53L5CX_ULD_API/src/vl53l5cx_api.c"
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c'
+'Invoking: ARM v7 gcc compiler'
+'Building file: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.d" -MT"VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" -o "VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o" "../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c"
+../VL53L5CX_ULD_API/src/vl53l5cx_api.c: In function '_vl53l5cx_poll_for_answer':
+../VL53L5CX_ULD_API/src/vl53l5cx_api.c:92:4: warning: implicit declaration of function 'xil_printf' [-Wimplicit-function-declaration]
+    xil_printf("Poll VL53L5CX_STATUS_TIMEOUT_ERROR\n\r");
+    ^~~~~~~~~~
+../VL53L5CX_ULD_API/src/vl53l5cx_api.c: In function 'vl53l5cx_init':
+../VL53L5CX_ULD_API/src/vl53l5cx_api.c:377:2: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+  usleep(10000);
+  ^~~~~~
+'Finished building: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.c'
+'Finished building: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.c'
+' '
+'Finished building: ../VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.c'
+' '
+'Building file: ../Platform/platform.c'
+' '
+'Building file: ../main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'main':
+../main.c:156:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:155:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../Platform/platform.c'
+'Finished building: ../main.c'
+' '
+' '
+'Finished building: ../VL53L5CX_ULD_API/src/vl53l5cx_api.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148036	   1544	  28392	 177972	  2b734	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+00:57:24 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../Platform/platform.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+'Finished building: ../Platform/platform.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148036	   1544	  28392	 177972	  2b734	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+00:58:03 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:142:6: error: expected expression before 'uint8_t'
+   if(uint8_t CheckFrameReady() == 1){
+      ^~~~~~~
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+make: *** [subdir.mk:20: main.o] Error 1
+00:58:15 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148036	   1544	  28392	 177972	  2b734	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+01:32:52 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148100	   1544	  28392	 178036	  2b774	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+22:47:12 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+22:53:59 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148100	   1544	  28392	 178036	  2b774	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+22:54:08 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+22:55:23 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148100	   1544	  28392	 178036	  2b774	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+22:57:39 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148164	   1544	  28392	 178100	  2b7b4	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+22:58:47 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+22:59:20 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+22:59:26 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+23:12:17 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148328	   1544	  28392	 178264	  2b858	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+23:12:55 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+23:13:42 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148328	   1544	  28392	 178264	  2b858	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+23:17:52 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+23:22:37 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148244	   1544	  28392	 178180	  2b804	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+23:23:06 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+23:25:28 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+00:01:09 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:280:34: error: 'i' undeclared (first use in this function)
+         xil_printf("%d ", visual[i][j]);
+                                  ^
+../main.c:280:34: note: each undeclared identifier is reported only once for each function it appears in
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+make: *** [subdir.mk:20: main.o] Error 1
+00:02:21 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148036	   1544	  28392	 177972	  2b734	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+00:04:35 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148036	   1544	  28392	 177972	  2b734	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+20:27:22 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../Platform/platform.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+'Building file: ../main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../Platform/platform.c:65:10: fatal error: sleep.h: No such file or directory
+ #include "sleep.h"
+          ^~~~~~~~~
+compilation terminated.
+make: *** [Platform/subdir.mk:20: Platform/platform.o] Error 1
+make: *** Waiting for unfinished jobs....
+../main.c:9:10: fatal error: xil_printf.h: No such file or directory
+ #include "xil_printf.h"
+          ^~~~~~~~~~~~~~
+compilation terminated.
+make: *** [subdir.mk:20: main.o] Error 1
+20:27:54 **** Auto Build of project lidar_app_bsp ****
+make all 
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/data_ip_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/data_ip_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v7_0/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling coresightps_dcc"
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/data_ip_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/data_ip_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling data_ip..."
+data_ip_selftest.c: In function 'DATA_IP_Reg_SelfTest':
+data_ip_selftest.c:52:56: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+    if ( DATA_IP_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                        ^~
+data_ip_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v7_0/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling standalone"
+In file included from usleep.c:56:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xil_sleeptimer.c:51:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xtime_l.c:49:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from sleep.c:53:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+20:28:27 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../Platform/platform.c'
+' '
+'Building file: ../main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"Platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"Platform/platform.d" -MT"Platform/platform.o" -o "Platform/platform.o" "../Platform/platform.c"
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../Platform/platform.c'
+' '
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148036	   1544	  28392	 177972	  2b734	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+20:28:32 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+20:42:22 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+20:48:01 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+../main.c: At top level:
+../main.c:297:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+make: *** [subdir.mk:20: main.o] Error 1
+20:48:36 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 147700	   1544	  28392	 177636	  2b5e4	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+20:48:44 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+21:01:21 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148036	   1544	  28392	 177972	  2b734	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+21:01:29 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+21:02:54 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+21:03:25 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+21:04:01 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+21:05:34 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 147716	   1544	  28392	 177652	  2b5f4	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+21:06:04 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148116	   1544	  28392	 178052	  2b784	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+21:06:11 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+21:19:53 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+21:20:24 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+21:21:02 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+21:21:58 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148036	   1544	  28392	 177972	  2b734	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+21:22:09 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+21:24:58 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+21:27:58 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+' '
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 147972	   1544	  28392	 177908	  2b6f4	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+21:28:28 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+22:45:46 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+22:46:56 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148044	   1544	  28392	 177980	  2b73c	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+22:47:24 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+22:48:22 **** Auto Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+'Building file: ../main.c'
+' '
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../lidar_app_bsp/ps7_cortexa9_0/include -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\VL53L5CX_ULD_API\inc" -I"C:\repo\SDUP_Project_2022\FPGA_Code\FPGA_Project.sdk\lidar_app\Platform" -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'SendCommandToSensor':
+../main.c:40:6: warning: unused variable 'status' [-Wunused-variable]
+  u32 status = 0;
+      ^~~~~~
+../main.c: In function 'copy_frame':
+../main.c:140:15: warning: unused variable 'result2' [-Wunused-variable]
+   u8 result1, result2;
+               ^~~~~~~
+../main.c:140:6: warning: unused variable 'result1' [-Wunused-variable]
+   u8 result1, result2;
+      ^~~~~~~
+../main.c: In function 'main':
+../main.c:160:10: warning: unused variable 'bt' [-Wunused-variable]
+  uint8_t bt[4] = {0};
+          ^~
+../main.c:159:10: warning: unused variable 'as' [-Wunused-variable]
+  uint8_t as[] = {0xE0,0,0xF0,0};
+          ^~
+'Finished building: ../main.c'
+' '
+'Building target: lidar_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lidar_app_bsp/ps7_cortexa9_0/lib -o "lidar_app.elf"  ./VL53L5CX_ULD_API/src/vl53l5cx_api.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_detection_thresholds.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_motion_indicator.o ./VL53L5CX_ULD_API/src/vl53l5cx_plugin_xtalk.o  ./Platform/platform.o  ./main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lidar_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lidar_app.elf  |tee "lidar_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 148100	   1544	  28392	 178036	  2b774	lidar_app.elf
+'Finished building: lidar_app.elf.size'
+' '
+22:48:38 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+23:08:53 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+23:46:38 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+23:47:04 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '
+23:48:01 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j4 pre-build main-build 
+a9-linaro-pre-build-step
+make: Nothing to be done for 'main-build'.
+' '

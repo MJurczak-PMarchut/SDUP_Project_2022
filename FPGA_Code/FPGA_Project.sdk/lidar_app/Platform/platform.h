@@ -107,6 +107,11 @@
 #define ToF_6_CMD_OUT				24
 #define ToF_7_CMD_OUT				28
 
+#define NONE                        0
+#define DONE                        1
+#define ACK                         2
+#define ERR                         3
+
 /**
  * @brief Structure VL53L5CX_Platform needs to be filled by the customer,
  * depending on his platform. At least, it contains the VL53L5CX I2C address.
@@ -252,5 +257,13 @@ void SwapBuffer(
 uint8_t WaitMs(
 		VL53L5CX_Platform *p_platform,
 		uint32_t TimeMs);
+
+
+uint8_t vl53l5cx_read_frame(
+		VL53L5CX_Platform *p_platform,
+		uint16_t StartRegisterAdress);
+
+
+uint8_t CheckFrameReady();
 
 #endif	// _PLATFORM_H_
