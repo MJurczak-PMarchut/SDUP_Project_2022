@@ -70,15 +70,15 @@ extern uint8_t ToF_no;
 void __wait_and_clr()
 {
 	usleep(1);
-	while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 0){}
+	while(((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) >> ToF_no*2) != 2){}
 	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, 0);
-	while((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no)))){}
+	while(((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) >> ToF_no*2) != 1){}
 }
 
 
 uint8_t CheckFrameReady()
 {
-	if((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) == 1)
+	if(((DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (ToF_CMD_IN_MASK << (ToF_CMD_IN_SHIFT * ToF_no))) >> ToF_no*2) == 1)
 	{
 		return 1;
 	}
@@ -98,7 +98,6 @@ uint8_t RdByte(
 	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
 
 	__wait_and_clr();
-//	xil_printf("rd : 0x%X\n\r", DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET));
 	*p_value = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
 
 	return 0;
@@ -180,15 +179,14 @@ uint8_t RdMulti(
 	if(size == 0) return 0;
 	if(size == 1)
 	{
-//		xil_printf("rd mult 1\n\r");
 		RdByte(0, RegisterAdress, p_values);
 	}
 	else if(size == 2)
 	{
-//		xil_printf("rd mult 2\n\r");
 		DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, RegisterAdress);
 		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
-		__wait_and_clr();		p_values[0] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
+		__wait_and_clr();
+		p_values[0] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
 
 		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_END << (ToF_CMD_OUT_SHIFT * ToF_no));
 		__wait_and_clr();
@@ -196,21 +194,6 @@ uint8_t RdMulti(
 
 	}
 	else{
-
-//		DATA_IP_mWriteReg(DATA_IP_BASEADDR, ADDR_REG, RegisterAdress);
-//		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
-//		__wait_and_clr();
-//		p_values[0] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
-//		for(msg_iter = 1; msg_iter < size - 1; msg_iter++)
-//		{
-//			DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_BYTE << (ToF_CMD_OUT_SHIFT * ToF_no));
-//			__wait_and_clr();
-//			p_values[msg_iter] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
-//		}
-//		DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, RECV_MULT_END << (ToF_CMD_OUT_SHIFT * ToF_no));
-//		__wait_and_clr();
-//		p_values[size - 1] = (DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG259_OFFSET) & (0xFF << 16))>>16;
-//
 
 		for(msg_iter = 0; msg_iter < size; msg_iter++)
 		{

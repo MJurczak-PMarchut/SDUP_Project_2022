@@ -28,12 +28,10 @@ module ToF_FSM(
     input ToF_INT,
     input [3:0] ToF_CMD_in,
     input [7:0] i2c_data_in,
-//    input [15:0] fw_data,
     input [15:0] register_address_in,
     input [7:0] i2c_data_to_send,
     
     output reg [7:0] i2c_data,
-//    output reg [7:0] i2c_data_out,
     output reg [1:0] ToF_CMD_out,
     output reg [15:0] register_address,
     output reg is_read,
@@ -42,16 +40,9 @@ module ToF_FSM(
 //    output reg [15:0] distance_data,
 //    output reg [5:0] sensor_index,
     output reg data_ready,
-//    output reg [16:0] fw_counter,
     output reg [7:0] i2c_data_read,
     output reg [63:0] [15:0] distance_mm
     );
-    
-// get distance
-// 0-27 data header
-// 28-155 distance in mm
-// 156-179 data footer
-
 
 parameter WAIT_FOR_DATA_READY = 5'h14, SAVE_DATA = 5'h15, 
             READ_REG = 5'h16, WRITE_REG = 5'h17, WAIT_FOR_DATA_READY_DOWN = 5'h18, WAIT_FOR_INTERRUPT = 5'h19;
@@ -67,20 +58,9 @@ reg [3:0] prev_cmd;
 reg [7:0] msg_counter;
 reg MSB;
 
-
-//reg [7:0] [7:0] [15:0] data_array;
 reg [6:0] data_index; // [6:4] hotizontal index, [3:1] vertical index, [0] 1=LSB/0=MSB
 reg [7:0] reg0, reg1;         
          
-// ila_0 your_instance_name (
-//	.clk(clk), // input wire clk
-
-
-//	.probe0(state), // input wire [4:0]  probe0  
-//	.probe1(ToF_CMD_in), // input wire [3:0]  probe1 
-//	.probe6(start), // input wire [0:0]  probe6 
-//	.probe7(ready) // input wire [0:0]  probe7
-//);
                                                     
 initial
     begin
@@ -90,7 +70,6 @@ initial
 //    sensor_index <= 6'h0;
     data_ready <= 1'b0;
     msg_counter <= 8'h0;
-//    fw_counter <= 17'h0_0000;
     nb_of_bytes <= 1'h0;
     ToF_CMD_out <= 2'b00;
     MSB <= 1'b1;
@@ -109,7 +88,6 @@ always @(posedge clk)
 //        sensor_index <= 6'h0;
         data_ready <= 1'b0;
         msg_counter <= 8'h0;
-//        fw_counter <= 17'h0_0000;
         nb_of_bytes <= 1'h0;
         ToF_CMD_out <= NONE;
         MSB <= 1'b1;
@@ -134,8 +112,8 @@ always @(posedge clk)
                         end
                     INIT_FINISHED: begin
                         state <= IDLE;
-                        ToF_CMD_out <= ACK;
-                        i2c_data_read <= 8'h0;
+//                        ToF_CMD_out <= ACK;
+//                        i2c_data_read <= 8'h0;
                         end
                     DATA_ACQUISITION: begin
                         state <= DATA_ACQUISITION;
@@ -144,8 +122,8 @@ always @(posedge clk)
                         msg_counter <= 8'h0;
                         end
                     DEFAULT: begin
-                        ToF_CMD_out <= NONE;
-                        state <= IDLE;
+//                        ToF_CMD_out <= NONE;
+                         state <= IDLE;
                         end
                 endcase
                 prev_cmd <= ToF_CMD_in;
@@ -157,7 +135,7 @@ always @(posedge clk)
                     if(ready == 1'b0)
                         begin
                         register_address <= register_address_in;
-                        nb_of_bytes <= 17'h0;
+                        nb_of_bytes <= 1'h0;
                         is_read <= 1'b0;
                         start <= 1'b1;
                         i2c_data <= i2c_data_to_send;
@@ -166,44 +144,72 @@ always @(posedge clk)
                         nxt_state <= INIT_SENSOR;
                         end
                     end
+                SEND_MULT_BYTE: begin
+                    if((ready == 1'b0) || ((nb_of_bytes != 1'h0) && (ready == 1'b1)))
+//                    if(ready == 1'b0)
+                        begin
+                        register_address <= register_address_in;
+                        nb_of_bytes <= 1'h1;
+                        is_read <= 1'b0;
+                        start <= 1'b1;
+                        i2c_data <= i2c_data_to_send;
+                        state <= WAIT_FOR_DATA_READY_DOWN;
+                        ToF_CMD_out <= ACK;
+                        nxt_state <= INIT_SENSOR;
+                        end
+                    end
+                END_MULT_SEND: begin
+                    if((ready == 1'b0) || ((nb_of_bytes != 1'h0) && (ready == 1'b1)))
+//                    if(ready == 1'b0)
+                        begin
+                        register_address <= register_address_in;
+                        nb_of_bytes <= 17'h0;
+                        is_read <= 1'b0;
+                        start <= 1'b0;
+                        i2c_data <= i2c_data_to_send;
+                        state <= WAIT_FOR_DATA_READY_DOWN;
+                        ToF_CMD_out <= ACK;
+                        nxt_state <= INIT_SENSOR;
+                        end
+                    end
                 RECV_BYTE: begin
                     if(ready == 1'b0)
                         begin
                         register_address <= register_address_in;
-                        nb_of_bytes <= 17'h0;
+                        nb_of_bytes <= 1'h0;
                         is_read <= 1'b1;
                         start <= 1'b1;
                         state <= WAIT_FOR_DATA_READY;
                         ToF_CMD_out <= ACK;
                         nxt_state <= INIT_SENSOR;
                         end
+                    end                
+                RECV_MULT_BYTE: begin
+                    if((ready == 1'b0) || ((nb_of_bytes != 1'h0) && (ready == 1'b1)))
+//                    if(ready == 1'b0)
+                        begin
+                        register_address <= register_address_in;
+                        nb_of_bytes <= 1'h1;
+                        is_read <= 1'b1;
+                        start <= 1'b1;
+                        state <= WAIT_FOR_DATA_READY_DOWN;
+                        ToF_CMD_out <= ACK;
+                        nxt_state <= INIT_SENSOR;
+                        end
                     end
-//                RECV_MULT_BYTE: begin
-//                    if((ready == 1'b0) || ((nb_of_bytes > 17'h0) && (ready == 1'b1)))
-////                    if(ready == 1'b0)
-//                        begin
-//                        register_address <= register_address_in;
-//                        nb_of_bytes <= 17'h1;
-//                        is_read <= 1'b1;
-//                        start <= 1'b1;
-//                        state <= WAIT_FOR_DATA_READY_DOWN;
-//                        ToF_CMD_out <= ACK;
-//                        nxt_state <= INIT_SENSOR;
-//                        end
-//                    end
-//                RECV_MULT_END: begin
-//                    if((ready == 1'b0) || ((nb_of_bytes > 17'h0) && (ready == 1'b1)))
-////                    if(ready == 1'b0)
-//                        begin
-//                        register_address <= register_address_in;
-//                        nb_of_bytes <= 17'h0;
-//                        is_read <= 1'b1;
-//                        start <= 1'b0;
-//                        state <= WAIT_FOR_DATA_READY_DOWN;
-//                        ToF_CMD_out <= ACK;
-//                        nxt_state <= INIT_SENSOR;
-//                        end
-//                    end
+                RECV_MULT_END: begin
+                    if((ready == 1'b0) || ((nb_of_bytes != 1'h0) && (ready == 1'b1)))
+//                    if(ready == 1'b0)
+                        begin
+                        register_address <= register_address_in;
+                        nb_of_bytes <= 17'h0;
+                        is_read <= 1'b1;
+                        start <= 1'b0;
+                        state <= WAIT_FOR_DATA_READY_DOWN;
+                        ToF_CMD_out <= ACK;
+                        nxt_state <= INIT_SENSOR;
+                        end
+                    end
 //                SEND_MULT_BYTE: begin
 //                    if((ready == 1'b0) || ((nb_of_bytes > 17'h0) && (ready == 1'b1)))
 ////                    if(ready == 1'b0)
@@ -242,11 +248,11 @@ always @(posedge clk)
                         end
                 INIT_FINISHED: begin
                     state <= IDLE;
-                    ToF_CMD_out <= ACK;
+//                    ToF_CMD_out <= ACK;
                     i2c_data_read <= 8'h0;
                     end
                 DEFAULT: begin
-                    ToF_CMD_out <= NONE;
+//                    ToF_CMD_out <= NONE;
                     state <= INIT_SENSOR;
                     end
             endcase
@@ -257,13 +263,14 @@ always @(posedge clk)
                     register_address <= DATA_START_ADDR + data_index;
                     start <= 1'b1;
                     state <= WAIT_FOR_DATA_READY;
-                    nxt_state <= (data_index == 7'h7F)? INIT_SENSOR:DATA_ACQUISITION;
+//                    nxt_state <= (data_index == 7'h7F)? INIT_SENSOR:DATA_ACQUISITION;
+                    nxt_state <= DATA_ACQUISITION;
                     end
                 end
         WAIT_FOR_DATA_READY: begin
             if(ready == 1'b1)
                 begin
-                ToF_CMD_out <= NONE;
+//                ToF_CMD_out <= NONE;
                 start <= 1'b0;
                 if(nxt_state == DATA_ACQUISITION)
                     begin
@@ -275,6 +282,7 @@ always @(posedge clk)
                         ToF_CMD_out <= DONE;
                         data_ready <= 1'b1;
                         data_index = 7'h00;
+                        state <= INIT_SENSOR;
 //                        sensor_index <= data_index[6:1];
 //                        distance_data[13:6] <= i2c_data_in;
                         end
@@ -285,33 +293,28 @@ always @(posedge clk)
 //                        sensor_index <= data_index[6:1];
                         data_ready <= 1'b0;
                         data_index = data_index + 7'h01;
+                        state <= nxt_state;
                         end
                     MSB = ~MSB;
                     end
                 else if(is_read == 1'b1)
                     begin
-//                    i2c_data_read <= i2c_data_in;
-                    ToF_CMD_out <= NONE;
+                    i2c_data_read <= i2c_data_in;
+                    state <= nxt_state;
+                    ToF_CMD_out <= DONE;
                     end
-                else ToF_CMD_out <= NONE;
-                state <= nxt_state;
+                else 
+                    begin
+                    ToF_CMD_out <= DONE;
+                    state <= nxt_state;
+                    end
+//                state <= nxt_state;
                 i2c_data_read <= i2c_data_in; // to be deleted
                 end
             end
-//        WAIT_FOR_DATA_READY_DOWN: begin
-//            if(ready == 1'b0) state <= WAIT_FOR_DATA_READY;
-//            end
-//        WAIT_FOR_INTERRUPT: begin
-//            if(ToF_INT == 1'b1)
-//                begin
-//                state <= DATA_ACQUISITION;
-////                nb_of_bytes <= 17'hB4;
-//                end
-//            end
-//        DOWNLOAD_DATA: begin
-//            state <= DATA_ACQUISITION;
-////            nb_of_bytes <= 17'hC0;
-//            end
+        WAIT_FOR_DATA_READY_DOWN: begin
+            if(ready == 1'b0) state <= WAIT_FOR_DATA_READY;
+            end
         DEFAULT: begin
             state <= IDLE;
             end
