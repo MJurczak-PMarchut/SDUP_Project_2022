@@ -67,6 +67,7 @@ module design_plane_calc_top_0_0 (
   ToF_CMD_out,
   plane_data,
   distance_mm,
+  je,
   i2c_data_read
 );
 
@@ -88,6 +89,7 @@ input wire [31 : 0] ToF_CMD_in;
 output wire [15 : 0] ToF_CMD_out;
 output wire [31 : 0] plane_data;
 output wire [8191 : 0] distance_mm;
+output wire [3 : 0] je;
 output wire [7 : 0] i2c_data_read;
 
   top inst (
@@ -103,6 +105,7 @@ output wire [7 : 0] i2c_data_read;
     .ToF_CMD_out(ToF_CMD_out),
     .plane_data(plane_data),
     .distance_mm(distance_mm),
+    .je(je),
     .i2c_data_read(i2c_data_read)
   );
 endmodule

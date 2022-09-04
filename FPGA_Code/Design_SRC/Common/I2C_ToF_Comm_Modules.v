@@ -150,15 +150,15 @@ always @(posedge clk)
                 reg_data_ready[__dr_iter] <= 1'b0;
     end
 
-//assign data_out = {sensor_index[ToF_Index], distance_data[ToF_Index]};
+assign data_out = {sensor_index[ToF_Index], distance_data[ToF_Index]};
 assign ready_out = reg_data_ready;
-assign ToF_Index = (data_ready[7])? 7:
-                   (data_ready[6])? 6:
-                   (data_ready[5])? 5:
-                   (data_ready[4])? 4:
-                   (data_ready[3])? 3:
-                   (data_ready[2])? 2:
-                   (data_ready[1])? 1:0;
+//assign ToF_Index = (data_ready[7])? 7:
+//                   (data_ready[6])? 6:
+//                   (data_ready[5])? 5:
+//                   (data_ready[4])? 4:
+//                   (data_ready[3])? 3:
+//                   (data_ready[2])? 2:
+//                   (data_ready[1])? 1:0;
 
 
 assign i2c_data_read = i2c_data_read_from_sensor[0] |

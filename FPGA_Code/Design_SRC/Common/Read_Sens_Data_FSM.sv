@@ -146,7 +146,7 @@ always @(posedge clk)
                 //Send data to AXI
                 begin
                     //TODO This!
-                    state <= WRITE_TO_AXI;
+                    state <= IDLE;
                 end
            
            default:

@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-//Date        : Sat Sep  3 15:20:28 2022
+//Date        : Sun Sep  4 23:04:28 2022
 //Host        : Joker running 64-bit major release  (build 9200)
 //Command     : generate_target design_plane_calc.bd
 //Design      : design_plane_calc
@@ -35,7 +35,8 @@ module design_plane_calc
     ToF_INT,
     ToF_SCL,
     ToF_SDA,
-    clk);
+    clk,
+    je);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR BA" *) inout [2:0]DDR_ba;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CAS_N" *) inout DDR_cas_n;
@@ -61,6 +62,7 @@ module design_plane_calc
   inout [0:7]ToF_SCL;
   inout [0:7]ToF_SDA;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, CLK_DOMAIN design_plane_calc_clk, FREQ_HZ 125000000, INSERT_VIP 0, PHASE 0.000" *) input clk;
+  output [3:0]je;
 
   wire [0:7]Net;
   wire [0:7]Net1;
@@ -155,10 +157,12 @@ module design_plane_calc
   wire [15:0]top_0_ToF_CMD_out;
   wire [8191:0]top_0_distance_mm;
   wire [7:0]top_0_i2c_data_read;
+  wire [3:0]top_0_je;
   wire [31:0]top_0_plane_data;
 
   assign ToF_INT_1 = ToF_INT[0:7];
   assign clk_1 = clk;
+  assign je[3:0] = top_0_je;
   design_plane_calc_clk_wiz_0_2 clk_wiz_0
        (.clk_i2c(clk_wiz_0_clk_i2c),
         .clk_in1(clk_1),
@@ -340,6 +344,7 @@ module design_plane_calc
         .i2c_data_to_send(data_ip_0_i2c_data_to_send),
         .i2c_scl_clk(clk_wiz_0_i2c_scl),
         .i2c_t8_clk(clk_wiz_0_clk_i2c),
+        .je(top_0_je),
         .plane_data(top_0_plane_data),
         .register_address_in(data_ip_0_register_address_in));
 endmodule

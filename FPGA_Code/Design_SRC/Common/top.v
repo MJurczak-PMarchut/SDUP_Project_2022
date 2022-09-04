@@ -33,6 +33,7 @@ module top(
     output wire [15:0] ToF_CMD_out,
     output wire [31:0] plane_data,
     output wire [511:0] [15:0] distance_mm,
+    output wire [3:0] je, // temp
     output wire [7:0] i2c_data_read
     );
 
@@ -173,5 +174,11 @@ plane_surf_calc plane_calc(
     .rdy(plane_calc_rdy),
     .surf(plane_data)
 );
+
+assign je[0] = plane_calc_rdy;
+assign je[1] = plane_rdy;
+assign je[2] = all_data_written_to_bram;
+assign je[3] = wea;
+
 
 endmodule

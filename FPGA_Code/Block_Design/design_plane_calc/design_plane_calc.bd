@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x7039DF6F6A1ADDD8",
+      "boundary_crc": "0x4DA822807F908A55",
       "device": "xc7z010clg400-1",
       "name": "design_plane_calc",
       "synth_flow_mode": "None",
@@ -122,6 +122,11 @@
             "value_src": "default"
           }
         }
+      },
+      "je": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
       }
     },
     "components": {
@@ -2066,16 +2071,16 @@
               }
             },
             "interface_nets": {
-              "s00_couplers_to_auto_pc": {
-                "interface_ports": [
-                  "S_AXI",
-                  "auto_pc/S_AXI"
-                ]
-              },
               "auto_pc_to_s00_couplers": {
                 "interface_ports": [
                   "M_AXI",
                   "auto_pc/M_AXI"
+                ]
+              },
+              "s00_couplers_to_auto_pc": {
+                "interface_ports": [
+                  "S_AXI",
+                  "auto_pc/S_AXI"
                 ]
               }
             },
@@ -2248,6 +2253,11 @@
             "left": "8191",
             "right": "0"
           },
+          "je": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
           "i2c_data_read": {
             "direction": "O",
             "left": "7",
@@ -2257,18 +2267,6 @@
       }
     },
     "interface_nets": {
-      "processing_system7_0_M_AXI_GP0": {
-        "interface_ports": [
-          "processing_system7_0/M_AXI_GP0",
-          "ps7_0_axi_periph/S00_AXI"
-        ]
-      },
-      "processing_system7_0_DDR": {
-        "interface_ports": [
-          "DDR",
-          "processing_system7_0/DDR"
-        ]
-      },
       "ps7_0_axi_periph_M00_AXI": {
         "interface_ports": [
           "ps7_0_axi_periph/M00_AXI",
@@ -2279,6 +2277,18 @@
         "interface_ports": [
           "FIXED_IO",
           "processing_system7_0/FIXED_IO"
+        ]
+      },
+      "processing_system7_0_M_AXI_GP0": {
+        "interface_ports": [
+          "processing_system7_0/M_AXI_GP0",
+          "ps7_0_axi_periph/S00_AXI"
+        ]
+      },
+      "processing_system7_0_DDR": {
+        "interface_ports": [
+          "DDR",
+          "processing_system7_0/DDR"
         ]
       }
     },
@@ -2386,6 +2396,12 @@
         "ports": [
           "top_0/i2c_data_read",
           "data_ip_0/i2c_data_read"
+        ]
+      },
+      "top_0_je": {
+        "ports": [
+          "top_0/je",
+          "je"
         ]
       }
     },

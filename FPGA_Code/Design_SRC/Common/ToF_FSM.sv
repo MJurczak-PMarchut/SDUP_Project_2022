@@ -239,14 +239,14 @@ always @(posedge clk)
                         distance_mm[data_index[6:1]][15:8] <= i2c_data_in;
                         distance_data[13:6] <= i2c_data_in;
                         sensor_index <= data_index[6:1];
-                        data_ready <= 1'b1;
+                        data_ready <= 1'b0;
                         end
                     else 
                         begin
                         distance_mm[data_index[6:1]][7:0] <= i2c_data_in;
                         distance_data[5:0] <= i2c_data_in[7:2];
                         sensor_index <= data_index[6:1];
-                        data_ready <= 1'b0;
+                        data_ready <= 1'b1;
                         end
                     if(data_index == 7'h7F)                   
                         begin

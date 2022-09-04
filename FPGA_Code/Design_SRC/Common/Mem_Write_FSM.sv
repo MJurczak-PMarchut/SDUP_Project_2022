@@ -33,7 +33,7 @@ reg [2:0] Data_Iter;
 reg [1:0] state;
 reg [1:0] nxt_state;
 reg [2:0] reg_ToF_Index;
-reg [9:0] readings_written;
+reg [8:0] readings_written;
 
 localparam IDLE = 2'h0;
 localparam WRITE = 2'h1;
@@ -43,14 +43,14 @@ initial
     begin
         Data_Iter <= 3'h0;
         reg_ToF_Index <= 3'h0;
-        readings_written <= 6'h0;
+        readings_written <= 9'h0;
     end
     
 always @*   
     case(state)
         IDLE:           nxt_state <= (ToF_dr[Data_Iter])?WRITE:IDLE;
         WRITE:          nxt_state <= WRITE_WAIT;
-        WRITE_WAIT:     nxt_state <= IDLE;
+        WRITE_WAIT:     nxt_state <= (ToF_dr[Data_Iter])?WRITE_WAIT:IDLE;
         default:        nxt_state <= IDLE;
     endcase 
 
@@ -64,7 +64,7 @@ always @(posedge clk)
     if(reset)
         begin
             Data_Iter <= 3'h0;
-            readings_written <= 6'h0;
+            readings_written <= 9'h0;
         end
     else
         case(state)
@@ -72,10 +72,11 @@ always @(posedge clk)
               if(ToF_dr[Data_Iter])
                 begin
                     reg_ToF_Index <= Data_Iter;
-                    readings_written <= readings_written + 1;
                 end
               else
                 Data_Iter <= Data_Iter + 1;
+            WRITE:
+                readings_written <= readings_written + 1;
         endcase
     
 assign wea =    (state == WRITE)? 1'h1:

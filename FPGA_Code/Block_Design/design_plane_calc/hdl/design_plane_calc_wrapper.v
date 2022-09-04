@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-//Date        : Sat Sep  3 15:20:28 2022
+//Date        : Sun Sep  4 23:04:28 2022
 //Host        : Joker running 64-bit major release  (build 9200)
 //Command     : generate_target design_plane_calc_wrapper.bd
 //Design      : design_plane_calc_wrapper
@@ -34,7 +34,8 @@ module design_plane_calc_wrapper
     ToF_INT,
     ToF_SCL,
     ToF_SDA,
-    clk);
+    clk,
+    je);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -60,6 +61,7 @@ module design_plane_calc_wrapper
   inout [0:7]ToF_SCL;
   inout [0:7]ToF_SDA;
   input clk;
+  output [3:0]je;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -86,6 +88,7 @@ module design_plane_calc_wrapper
   wire [0:7]ToF_SCL;
   wire [0:7]ToF_SDA;
   wire clk;
+  wire [3:0]je;
 
   design_plane_calc design_plane_calc_i
        (.DDR_addr(DDR_addr),
@@ -112,5 +115,6 @@ module design_plane_calc_wrapper
         .ToF_INT(ToF_INT),
         .ToF_SCL(ToF_SCL),
         .ToF_SDA(ToF_SDA),
-        .clk(clk));
+        .clk(clk),
+        .je(je));
 endmodule

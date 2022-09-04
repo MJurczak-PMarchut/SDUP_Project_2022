@@ -174,6 +174,7 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.FREQ_HZ {125000000} \
  ] $clk
+  set je [ create_bd_port -dir O -from 3 -to 0 je ]
 
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
@@ -1001,6 +1002,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net top_0_ToF_CMD_out [get_bd_pins data_ip_0/ToF_CMD_out] [get_bd_pins top_0/ToF_CMD_out]
   connect_bd_net -net top_0_distance_mm [get_bd_pins data_ip_0/distance_mm] [get_bd_pins top_0/distance_mm]
   connect_bd_net -net top_0_i2c_data_read [get_bd_pins data_ip_0/i2c_data_read] [get_bd_pins top_0/i2c_data_read]
+  connect_bd_net -net top_0_je [get_bd_ports je] [get_bd_pins top_0/je]
   connect_bd_net -net top_0_plane_data [get_bd_pins data_ip_0/plane_data] [get_bd_pins top_0/plane_data]
 
   # Create address segments
