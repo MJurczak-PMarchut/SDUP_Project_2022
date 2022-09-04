@@ -33,7 +33,7 @@ reg [2:0] Data_Iter;
 reg [1:0] state;
 reg [1:0] nxt_state;
 reg [2:0] reg_ToF_Index;
-reg [5:0] readings_written;
+reg [9:0] readings_written;
 
 localparam IDLE = 2'h0;
 localparam WRITE = 2'h1;
@@ -81,6 +81,6 @@ always @(posedge clk)
 assign wea =    (state == WRITE)? 1'h1:
                 (state == WRITE_WAIT)?1'h1:0;
                 
-assign all_data_written = (readings_written == 6'h3F)? 1'b1 : 1'b0;
+assign all_data_written = (readings_written == 9'h1FF)? 1'b1 : 1'b0;
 assign ToF_Index = reg_ToF_Index;
 endmodule
