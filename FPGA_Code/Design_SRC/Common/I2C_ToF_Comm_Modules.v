@@ -51,9 +51,6 @@ initial
     slave_adress = 7'h29;
     end
 
-//reg [7:0] data_status;
-//reg [8:0] distance_counter;
-
 wire SCL_out [0:7], SCL_in [0:7], SCL_t [0:7], SDA_t [0:7], SDA_in [0:7], SDA_out [0:7];
 wire [7:0] reg_value [7:0];
 wire [7:0] i2c_data_read_from_sensor [7:0];
@@ -62,21 +59,11 @@ wire [7:0] i2c_data_out [7:0];
 wire [7:0] start;
 wire [7:0] read;
 wire [7:0] ready;
-//wire [5:0] sensor_index [7:0];
+wire [5:0] sensor_index [7:0];
 wire [15:0] distance_data [7:0];
 wire nb_of_bytes [7:0];
 wire [7:0] data_ready;
 reg [7:0] reg_data_ready;
-//reg ena, wea;
-//wire [7:0]  fw_counter [16:0];
-//wire [15:0] fw_data, dina;
-
-initial
-    begin 
-//        data_status <= 8'h00;
-//        ena <= 1'b1;
-//        wea <= 1'b0;
-    end
 
 genvar i;
  generate
@@ -117,17 +104,15 @@ genvar i;
         .ToF_CMD_out(ToF_CMD_out[i*2+1:i*2]),
         .i2c_data(reg_value[i]),
         .i2c_data_in(i2c_data_out[i]),
-//        .fw_data(fw_data),
         .register_address_in(register_address_in),
         .i2c_data_to_send(i2c_data_to_send),
         .register_address(register_address[i]),
         .is_read(read[i]),
         .nb_of_bytes(nb_of_bytes[i]),
         .start(start[i]),
-//        .distance_data(distance_data[i]),
-//        .sensor_index(sensor_index[i]),
+        .distance_data(distance_data[i]),
+        .sensor_index(sensor_index[i]),
         .data_ready(data_ready[i]),
-//        .fw_counter(fw_counter[i]),
         .i2c_data_read(i2c_data_read_from_sensor[i]),
         .distance_mm(distance_mm[i*64+63:i*64])
     );
@@ -164,14 +149,6 @@ always @(posedge clk)
                 reg_data_ready[__dr_iter] <= 1'b0;
     end
 
-//fw_blk_mem_gen fw(
-//    .addra(fw_counter[0] | fw_counter[1] | fw_counter[2] | fw_counter[3]
-//        | fw_counter[4] | fw_counter[5] | fw_counter[6] | fw_counter[7]),
-//    .clka(clk),
-//    .douta(fw_data),
-//    .ena(ena)
-//);
-
 //assign data_out = {sensor_index[ToF_Index], distance_data[ToF_Index]};
 assign ready_out = reg_data_ready;
 assign ToF_Index = (data_ready[7])? 7:
@@ -181,16 +158,8 @@ assign ToF_Index = (data_ready[7])? 7:
                    (data_ready[3])? 3:
                    (data_ready[2])? 2:
                    (data_ready[1])? 1:0;
-//assign dina = 16'b0;
-//assign i2c_data_read = (ToF_CMD_in & (32'h0F << 0) == INIT_SENSOR)? i2c_data_read_from_sensor[0]:
-//                       (ToF_CMD_in & (32'h0F << 4) == INIT_SENSOR)? i2c_data_read_from_sensor[1]:
-//                       (ToF_CMD_in & (32'h0F << 8) == INIT_SENSOR)? i2c_data_read_from_sensor[2]:
-//                       (ToF_CMD_in & (32'h0F << 12) == INIT_SENSOR)? i2c_data_read_from_sensor[3]:
-//                       (ToF_CMD_in & (32'h0F << 16) == INIT_SENSOR)? i2c_data_read_from_sensor[4]:
-//                       (ToF_CMD_in & (32'h0F << 20) == INIT_SENSOR)? i2c_data_read_from_sensor[5]:
-//                       (ToF_CMD_in & (32'h0F << 24) == INIT_SENSOR)? i2c_data_read_from_sensor[6]:
-//                       (ToF_CMD_in & (32'h0F << 28) == INIT_SENSOR)? i2c_data_read_from_sensor[7]:
-//                        32'h0;
+
+
 assign i2c_data_read = i2c_data_read_from_sensor[0] |
                        i2c_data_read_from_sensor[1] |
                        i2c_data_read_from_sensor[2] |
