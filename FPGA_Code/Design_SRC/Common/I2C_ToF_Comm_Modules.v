@@ -32,6 +32,7 @@ module I2C_ToF_Comm_Modules(
     input [0:7] ToF_INT,
     input [31:0] ToF_CMD_in,
     input [2:0] ToF_Index,
+    input index_valid,
     output [15:0] ToF_CMD_out,
     output [21:0] data_out,
     output [7:0] ready_out,
@@ -145,7 +146,7 @@ always @(posedge clk)
         for(__dr_iter = 0; __dr_iter < 8; __dr_iter = __dr_iter + 1)
             if(data_ready[__dr_iter])
                 reg_data_ready[__dr_iter] <= 1'b1;
-            else if(__dr_iter == ToF_Index)
+            else if((__dr_iter == ToF_Index) && (index_valid))
                 reg_data_ready[__dr_iter] <= 1'b0;
     end
 
