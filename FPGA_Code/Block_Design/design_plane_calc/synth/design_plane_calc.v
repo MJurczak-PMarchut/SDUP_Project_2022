@@ -1,8 +1,8 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-//Date        : Sun Sep  4 23:04:28 2022
-//Host        : Joker running 64-bit major release  (build 9200)
+//Date        : Thu Sep  8 02:05:17 2022
+//Host        : STACJONARNY-PC running 64-bit major release  (build 9200)
 //Command     : generate_target design_plane_calc.bd
 //Design      : design_plane_calc
 //Purpose     : IP block netlist

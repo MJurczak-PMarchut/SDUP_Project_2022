@@ -200,13 +200,13 @@ int main(void)
 
 		while(1)
 		{
-		for(uint8_t sensor = ToF_0; sensor <= ToF_7; sensor++)
-			{
-				SendCommandToSensor(INIT_SENSOR, sensor);
-				ToF_no = sensor;
-				read_frame_by_addr(&Dev, ToF_no);
-				SendCommandToSensor(INIT_FINISHED, sensor);
-			}
+//		for(uint8_t sensor = ToF_0; sensor <= ToF_7; sensor++)
+//			{
+//				SendCommandToSensor(INIT_SENSOR, sensor);
+//				ToF_no = sensor;
+//				read_frame_by_addr(&Dev, ToF_no);
+//				SendCommandToSensor(INIT_FINISHED, sensor);
+//			}
 		for(uint8_t sensor = ToF_0; sensor <= ToF_7; sensor++)
 					{
 						ToF_no = sensor;
@@ -220,6 +220,7 @@ int main(void)
 					xil_printf("\n");
 				}
 		xil_printf("A");
+		xil_printf("\n\r%d\n\r", DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG258_OFFSET));
 	}
 }
 

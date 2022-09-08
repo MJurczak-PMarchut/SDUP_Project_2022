@@ -24,7 +24,10 @@ module ToF_FSM_tb();
 
 
 reg clock, reset, data_ready, ready;
-reg [7:0] reg_value;
+reg [7:0] dr_ToF;
+reg wea;
+wire [2:0] ToF_Index;
+wire all_data_written_to_bram;
 reg [15:0] register_address, i2c_data_out, distance_data;
 reg [9:0] nb_of_bytes;
 reg [2:0] ToF_INT, sensor_index;
@@ -32,24 +35,15 @@ reg [3:0] ToF_CMD_in;
 reg [1:0] ToF_CMD_out;
 wire error_out, start, read;
 
-ToF_FSM tof_fsm(
-        .clk(clock),
-        .reset(reset),
-        .ready(ready),
-        .error_in(error_out),
-        .ToF_INT(ToF_INT),
-        .ToF_CMD_in(ToF_CMD_in),
-        .ToF_CMD_out(ToF_CMD_out),
-        .i2c_data(reg_value),
-        .i2c_data_in(i2c_data_out),
-        .register_address(register_address),
-        .is_read(read),
-        .nb_of_bytes(nb_of_bytes),
-        .start(start),
-        .distance_data(distance_data),
-        .sensor_index(sensor_index),
-        .data_ready(data_ready)
-    );
+Mem_Write_FSM Mem_Write_cont
+(
+    .clk(clock),
+    .reset(reset),
+    .ToF_dr(dr_ToF),
+    .wea(wea),
+    .ToF_Index(ToF_Index),
+    .all_data_written(all_data_written_to_bram)
+);
     
 // clock signal    
 initial
@@ -61,8 +55,10 @@ always
 initial
     begin
     reset <= 1'b1;
-    ToF_CMD_in <= 4'h0;
     #10 reset <= 1'b0;
+    #10 dr_ToF <= 1;
+    #10 dr_ToF <= 3;
+    #10 dr_ToF <= 1;
     #5 ToF_CMD_in <= 4'h1;
     end 
 

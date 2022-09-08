@@ -42,13 +42,18 @@ module ToF_FSM(
     output reg data_ready,
     output reg [7:0] i2c_data_read,
     output reg [63:0] [15:0] distance_mm
+//    output reg ToF_read_en,
+//    output reg SensorReady,
+//    output reg SensorRead,
+//    output reg prev_int
+    
     );
 
 parameter WAIT_FOR_DATA_READY = 5'h14, SAVE_DATA = 5'h15, 
             READ_REG = 5'h16, WRITE_REG = 5'h17, WAIT_FOR_DATA_READY_DOWN = 5'h18, WAIT_FOR_INTERRUPT = 5'h19;
 parameter DEFAULT = 4'h0, INIT_SENSOR = 4'h1, INIT_FINISHED = 4'h2, SEND_BYTE = 4'h3, SEND_MULT_BYTE = 4'h4, RECV_BYTE = 4'h5,
         RECV_MULT_BYTE = 4'h6, SEND_MULT_CONT = 4'h7, INIT = 4'h8, END_MULT_SEND = 4'h9, RECV_MULT_CONT = 4'hA, RECV_MULT_END = 4'hB,
-        DOWNLOAD_DATA = 4'hC, START_RANGING = 4'hD, IDLE = 4'hE, DATA_ACQUISITION = 4'hF;
+        DOWNLOAD_DATA = 4'hC, WAIT_FOR_INTERRUPT_DOWN = 4'hD, IDLE = 4'hE, DATA_ACQUISITION = 4'hF;
 parameter NONE = 2'b00, DONE = 2'b01, ACK = 2'b10;
 
 parameter DATA_START_ADDR = 16'h400;
@@ -56,17 +61,26 @@ parameter DATA_START_ADDR = 16'h400;
 reg [4:0] state, nxt_state;
 reg [3:0] prev_cmd;    
 reg [7:0] msg_counter;
-reg MSB;
+reg MSB, SensorRead, SensorReady, prev_int;
 
 reg [6:0] data_index; // [6:4] hotizontal index, [3:1] vertical index, [0] 1=LSB/0=MSB         
          
-                                                    
+         
+always @(posedge clk)
+    begin
+        if((ToF_INT) && !(prev_int))
+            SensorRead <= 1;   
+        else 
+            SensorRead <= 0;
+        prev_int <= ToF_INT;
+    end
+                                                     
 initial
     begin
     state <= INIT;
     nxt_state <= INIT;
     start <= 1'b0;
-//    sensor_index <= 6'h0;
+    sensor_index <= 6'h0;
     data_ready <= 1'b0;
     msg_counter <= 8'h0;
     nb_of_bytes <= 1'h0;
@@ -75,6 +89,10 @@ initial
     prev_cmd <= INIT;
     i2c_data_read <= 8'h0;
     data_index <= 7'h00;
+//    ToF_read_en <= 1'h0;
+    SensorRead <= 0;
+    SensorReady <= 0;
+    prev_int <= 1;
     end
     
 always @(posedge clk)
@@ -84,7 +102,7 @@ always @(posedge clk)
         state <= INIT;
         nxt_state <= INIT;
         start <= 1'b0;
-//        sensor_index <= 6'h0;
+        sensor_index <= 6'h0;
         data_ready <= 1'b0;
         msg_counter <= 8'h0;
         nb_of_bytes <= 1'h0;
@@ -92,6 +110,7 @@ always @(posedge clk)
         MSB <= 1'b1;
         i2c_data_read <= 8'h0;
         data_index <= 7'h00;
+//        ToF_read_en <= 1'h0;
         end
     else
         begin
@@ -111,6 +130,7 @@ always @(posedge clk)
                         end
                     INIT_FINISHED: begin
                         state <= IDLE;
+                        SensorReady <= 1;
                         end
                     DATA_ACQUISITION: begin
                         state <= DATA_ACQUISITION;
@@ -122,7 +142,21 @@ always @(posedge clk)
                          state <= IDLE;
                         end
                 endcase
+                data_ready <= 1'b0;
                 prev_cmd <= ToF_CMD_in;
+                end
+            else
+                begin
+                    if(SensorReady && SensorRead)
+                        begin
+                            state <= DATA_ACQUISITION;
+                            ToF_CMD_out <= ACK;
+                            nb_of_bytes <= 17'h0;
+                            is_read <= 1'b1;
+                            i2c_data_read <= 8'h0;
+                            data_index <= 7'h00;
+                            data_ready <= 1'b0;
+                        end
                 end
             end
         INIT_SENSOR: begin
@@ -203,16 +237,19 @@ always @(posedge clk)
                         end
                     end
                 DATA_ACQUISITION: begin // resets and state set
-                        state <= DATA_ACQUISITION; // WAIT_FOR_DATA_READY
+//                        state <= WAIT_FOR_INTERRUPT_DOWN; // WAIT_FOR_DATA_READY
+                        state <= DATA_ACQUISITION;
                         ToF_CMD_out <= ACK;
                         nb_of_bytes <= 17'h0;
                         is_read <= 1'b1;
                         i2c_data_read <= 8'h0;
                         data_index <= 7'h00;
+                        data_ready <= 1'b0;
                         end
                 INIT_FINISHED: begin
                     state <= IDLE;
                     i2c_data_read <= 8'h0;
+                    SensorReady <=1;
                     end
                 DEFAULT: begin
                     state <= INIT_SENSOR;
@@ -226,6 +263,7 @@ always @(posedge clk)
                     start <= 1'b1;
                     state <= WAIT_FOR_DATA_READY;
                     nxt_state <= DATA_ACQUISITION;
+                    data_ready <= 1'b0;
                     end
                 end
         WAIT_FOR_DATA_READY: begin
@@ -252,7 +290,8 @@ always @(posedge clk)
                         begin
                         ToF_CMD_out <= DONE;
                         data_index = 7'h00;
-                        state <= INIT_SENSOR;                     
+                        state <= IDLE;
+//                        state <= WAIT_FOR_INTERRUPT_DOWN;                     
                         end
                     else 
                         begin
@@ -273,13 +312,38 @@ always @(posedge clk)
                     ToF_CMD_out <= DONE;
                     state <= nxt_state;
                     end
-//                i2c_data_read <= i2c_data_in; // to be deleted
                 end
             else data_ready <= 1'b0;
             end
         WAIT_FOR_DATA_READY_DOWN: begin
             if(ready == 1'b0) state <= WAIT_FOR_DATA_READY;
             end
+        WAIT_FOR_INTERRUPT: begin
+            if(ToF_INT == 1'b1)
+                begin
+                state <= DATA_ACQUISITION; // WAIT_FOR_DATA_READY
+                ToF_CMD_out <= ACK;
+                nb_of_bytes <= 17'h0;
+                is_read <= 1'b1;
+                i2c_data_read <= 8'h0;
+                data_index <= 7'h00;
+                data_ready <= 1'b0;
+                end
+            else state <= WAIT_FOR_INTERRUPT;
+            end
+        WAIT_FOR_INTERRUPT_DOWN:
+            begin
+            if(ToF_INT == 1'b0)
+                begin
+                state <= WAIT_FOR_INTERRUPT;
+//                ToF_read_en <= 1'b1;
+                end
+            else 
+                begin
+                state <= WAIT_FOR_INTERRUPT_DOWN;
+//                ToF_read_en <= 1'b0;
+                end
+            end  
         DEFAULT: begin
             state <= IDLE;
             end

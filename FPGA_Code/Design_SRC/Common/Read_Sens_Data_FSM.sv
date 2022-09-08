@@ -36,7 +36,8 @@ localparam Write_TO_SURF_IC_1 = 3'h2;
 localparam Write_TO_SURF_IC_2 = 3'h3;
 localparam Write_TO_SURF_IC_3 = 3'h4;
 localparam Write_TO_PLANE_IC = 3'h5;
-localparam WRITE_TO_AXI = 3'h7;
+localparam WRITE_TO_AXI = 3'h6;
+localparam WAIT_FOR_DATA_BRAM = 3'h7;
 
 
 
@@ -68,10 +69,14 @@ always @(posedge clk)
             IDLE: 
                 if(drdy)
                     begin
-                        state <= Write_TO_SURF_IC_0;
-                        row_iter <= 3'h0;
-                        col_iter <= 3'h0;
-                        sens_iter <= 3'h0;
+//                        state <= Write_TO_SURF_IC_0;
+//                        row_iter <= 3'h0;
+//                        col_iter <= 3'h0;
+//                        sens_iter <= 3'h0;
+                        row_iter <= PlaneRow;
+                        col_iter <= 0;
+                        sens_iter <= 0;
+                        state <= Write_TO_PLANE_IC;
                     end
                     
             Write_TO_SURF_IC_0:
@@ -146,7 +151,15 @@ always @(posedge clk)
                 //Send data to AXI
                 begin
                     //TODO This!
-                    state <= IDLE;
+                    state <= WAIT_FOR_DATA_BRAM;
+                end
+           WAIT_FOR_DATA_BRAM:
+                //Send data to AXI
+                begin
+                    if(drdy)
+                        state <= WAIT_FOR_DATA_BRAM;
+                    else
+                        state <= IDLE;
                 end
            
            default:

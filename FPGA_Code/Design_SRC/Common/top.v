@@ -53,6 +53,7 @@ wire [31:0] compl_surf;
 wire clk_i2c, clk_i2c_scl_rd;
 reg scl_ce, i2c_ce;
 reg [2:0] ce_delay;
+wire data_ready_tof0;
 
 
 initial
@@ -108,6 +109,7 @@ I2C_ToF_Comm_Modules I2C_Modules_entity
     .ready_out(dr_ToF),
     .i2c_data_read(i2c_data_read),
     .distance_mm(distance_mm),
+    .data_ready_tof0(data_ready_tof0),
     .index_valid(wea)
 );
 Mem_Write_FSM Mem_Write_cont
@@ -127,7 +129,8 @@ ToF_BRAM ToF_Data_BRAM (
   .dina(ToF_Data[15:0]),    // input wire [15 : 0] dina
   .clkb(clk),    // input wire clkb
   .addrb(addrb_ToF),  // input wire [5 : 0] addrb
-  .doutb(doutb)  // output wire [15 : 0] doutb
+  .doutb(doutb),  // output wire [15 : 0] doutb
+  .enb(1'b1)
 );
 
 //ToF_BRAM ToF_Surf_Data_BRAM (
@@ -175,9 +178,9 @@ plane_surf_calc plane_calc(
     .surf(plane_data)
 );
 
-assign je[0] = plane_calc_rdy;
+assign je[0] = clk;
 assign je[1] = plane_rdy;
-assign je[2] = all_data_written_to_bram;
+assign je[2] = plane_calc_rdy;
 assign je[3] = wea;
 
 

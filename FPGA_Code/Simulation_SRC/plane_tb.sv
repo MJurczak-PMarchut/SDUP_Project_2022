@@ -24,36 +24,25 @@ module plane_tb(
 
     );
     
-reg clk, reset, plane_rdy;
+reg clk, reset, plane_rdy, all_data_written_to_bram;
 reg [15:0] radia [8] = {271, 261, 255, 251, 251, 255, 261, 271};
-reg [2:0] iter;
-reg [6:0] iter2;
+wire [8:0] addrb_ToF;
 
-wire plane_calc_rdy;
+wire plane_calc_rdy, surf_rdy;
 wire [31:0] plane_data;
     
 always
     #5 clk <= ~clk;    
     
-always @(posedge clk)
-    begin
-        iter2 <= iter2+1;
-        if(iter2 == 5)
-            plane_rdy <= 1;
-        if(iter2 == 70)
-            plane_rdy <= 0;
-        if(plane_rdy)
-            iter <= iter + 1;
-    end
     
 initial
     begin
         clk <=0;
         reset <= 1;
-        plane_rdy <= 0;
-        iter <= 0;
-        iter2 <= 0;
         #10 reset <= 0;
+        #15 all_data_written_to_bram <= 1;
+        #1500 all_data_written_to_bram <= 0;
+        #30 all_data_written_to_bram <= 1;
 //        #15 plane_rdy <= 1;
     end
 
@@ -61,10 +50,20 @@ plane_surf_calc plane_calc(
     .clk(clk),
     .rst(reset),
     .en(plane_rdy), 
-    .radius(radia[iter]),
+    .radius(radia[addrb_ToF[2:0]]),
     .rdy(plane_calc_rdy),
     .surf(plane_data)
 );
+
+Read_Sens_Data_FSM Read_Sens_Data_cont(
+    .clk(clk),
+    .drdy(all_data_written_to_bram),
+    .rst(reset),
+    .surf_ready(surf_rdy),
+    .axi_read(),
+    .data_addr(addrb_ToF),
+    .plane_ready(plane_rdy)
+    );
     
     
 endmodule

@@ -33,6 +33,7 @@ module I2C_ToF_Comm_Modules(
     input [31:0] ToF_CMD_in,
     input [2:0] ToF_Index,
     input index_valid,
+    output data_ready_tof0,
     output [15:0] ToF_CMD_out,
     output [21:0] data_out,
     output [7:0] ready_out,
@@ -63,7 +64,7 @@ wire [7:0] ready;
 wire [5:0] sensor_index [7:0];
 wire [15:0] distance_data [7:0];
 wire nb_of_bytes [7:0];
-wire [7:0] data_ready;
+wire [7:0] data_ready, ToF_ready_to_read, ToF_read_en;
 reg [7:0] reg_data_ready;
 
 genvar i;
@@ -101,6 +102,7 @@ genvar i;
         .ready(ready[i]),
         .error_in(error_out[i]),
         .ToF_INT(ToF_INT[i]),
+//        .ToF_INT(ToF_ready_to_read[i]),
         .ToF_CMD_in(ToF_CMD_in[i*4+3:i*4]),
         .ToF_CMD_out(ToF_CMD_out[i*2+1:i*2]),
         .i2c_data(reg_value[i]),
@@ -116,6 +118,7 @@ genvar i;
         .data_ready(data_ready[i]),
         .i2c_data_read(i2c_data_read_from_sensor[i]),
         .distance_mm(distance_mm[i*64+63:i*64])
+//        .ToF_read_en(ToF_read_en[i])
     );
     I2C_Entity i2c_entity(
         .data_in(reg_value[i]),
@@ -144,10 +147,11 @@ integer __dr_iter;
 always @(posedge clk)
     begin
         for(__dr_iter = 0; __dr_iter < 8; __dr_iter = __dr_iter + 1)
-            if(data_ready[__dr_iter])
-                reg_data_ready[__dr_iter] <= 1'b1;
-            else if((__dr_iter == ToF_Index) && (index_valid))
+            if((__dr_iter == ToF_Index) && (index_valid) && (!data_ready[__dr_iter]))
                 reg_data_ready[__dr_iter] <= 1'b0;
+            else if(data_ready[__dr_iter])
+                reg_data_ready[__dr_iter] <= 1'b1;
+            
     end
 
 assign data_out = {sensor_index[ToF_Index], distance_data[ToF_Index]};
@@ -160,6 +164,16 @@ assign ready_out = reg_data_ready;
 //                   (data_ready[2])? 2:
 //                   (data_ready[1])? 1:0;
 
+//assign ToF_ready_to_read[0] = (ToF_INT[0] == 1'b0)? 0: (ToF_read_en[0] == 1'b0)? 0:1;
+//assign ToF_ready_to_read[1] = (ToF_INT[1] == 1'b0)? 0: (ToF_read_en[1] == 1'b0)? 0:1;
+//assign ToF_ready_to_read[2] = (ToF_INT[2] == 1'b0)? 0: (ToF_read_en[2] == 1'b0)? 0:1;
+//assign ToF_ready_to_read[3] = (ToF_INT[3] == 1'b0)? 0: (ToF_read_en[3] == 1'b0)? 0:1;
+//assign ToF_ready_to_read[4] = (ToF_INT[4] == 1'b0)? 0: (ToF_read_en[4] == 1'b0)? 0:1;
+//assign ToF_ready_to_read[5] = (ToF_INT[5] == 1'b0)? 0: (ToF_read_en[5] == 1'b0)? 0:1;
+//assign ToF_ready_to_read[6] = (ToF_INT[6] == 1'b0)? 0: (ToF_read_en[6] == 1'b0)? 0:1;
+//assign ToF_ready_to_read[7] = (ToF_INT[7] == 1'b0)? 0: (ToF_read_en[7] == 1'b0)? 0:1;
+
+
 
 assign i2c_data_read = i2c_data_read_from_sensor[0] |
                        i2c_data_read_from_sensor[1] |
@@ -169,5 +183,8 @@ assign i2c_data_read = i2c_data_read_from_sensor[0] |
                        i2c_data_read_from_sensor[5] |
                        i2c_data_read_from_sensor[6] |
                        i2c_data_read_from_sensor[7];
+
+//assign data_ready_tof0 = reg_data_ready[0];
+assign data_ready_tof0 = data_ready[0];
 
 endmodule
