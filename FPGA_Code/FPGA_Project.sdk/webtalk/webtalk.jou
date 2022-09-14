@@ -2,11 +2,11 @@
 # Webtalk v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # 
-# Start of session at: Mon Jun 27 18:51:04 2022
-# Process ID: 18136
-# Current directory: C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/webtalk
+# Start of session at: Tue Sep 13 20:41:51 2022
+# Process ID: 15996
+# Current directory: D:/FPGA/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/webtalk
 # Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
-# Log file: C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/webtalk/webtalk.log
-# Journal file: C:/repo/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/webtalk\webtalk.jou
+# Log file: D:/FPGA/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/webtalk/webtalk.log
+# Journal file: D:/FPGA/SDUP_Project_2022/FPGA_Code/FPGA_Project.sdk/webtalk\webtalk.jou
 #-----------------------------------------------------------
 source sdk_webtalk.tcl

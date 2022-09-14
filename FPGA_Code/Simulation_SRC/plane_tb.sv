@@ -25,7 +25,7 @@ module plane_tb(
     );
     
 reg clk, reset, plane_rdy, all_data_written_to_bram;
-reg [15:0] radia [8] = {271, 261, 255, 251, 251, 255, 261, 271};
+reg [15:0] radia [64] = {151, 153, 152, 157, 156, 156, 158, 161, 177, 168, 152, 139, 129, 119, 110, 101, 95, 96, 94, 95, 96, 95, 96, 96, 113, 111, 105, 96, 89, 86, 79, 73, 67, 71, 70, 68, 70, 69, 67, 67, 91, 102, 112, 125, 135, 137, 134, 122, 128, 125, 125, 123, 122, 122, 120, 120, 153, 167, 185, 192, 186, 178, 168, 158};
 wire [8:0] addrb_ToF;
 
 wire plane_calc_rdy, surf_rdy;
@@ -50,7 +50,7 @@ plane_surf_calc plane_calc(
     .clk(clk),
     .rst(reset),
     .en(plane_rdy), 
-    .radius(radia[addrb_ToF[2:0]]),
+    .radius(radia[{addrb_ToF[8:6], addrb_ToF[2:0]}]),
     .rdy(plane_calc_rdy),
     .surf(plane_data)
 );

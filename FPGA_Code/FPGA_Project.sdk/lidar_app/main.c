@@ -24,7 +24,7 @@
 
 
 VL53L5CX_Configuration 	Dev;
-uint8_t ToF_no;
+volatile uint8_t ToF_no;
 VL53L5CX_ResultsData 	Results;
 volatile int IntCount;
 uint8_t p_data_ready;
@@ -37,8 +37,6 @@ extern const uint8_t VL53L5CX_FIRMWARE[];
 
 void SendCommandToSensor(u8 Command, u8 ToF_nb)
 {
-	u32 status = 0;
-
 	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, Command << (ToF_CMD_OUT_SHIFT * ToF_nb));
 	usleep(10);
 	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, 0);
@@ -121,10 +119,9 @@ void read_frame_by_addr(VL53L5CX_Configuration *p_dev, u8 ToF_nb){
 	while(0);
 }
 
-void copy_frame(VL53L5CX_Configuration *p_dev){
+uint32_t copy_frame(VL53L5CX_Configuration *p_dev){
 	do
 	{
-		u8 result1, result2;
 		u16 res, offset;
 		u32 res32;
 			for(u32 i = 0; i < 8;i++){
@@ -138,13 +135,13 @@ void copy_frame(VL53L5CX_Configuration *p_dev){
 			}
 	}
 	while(0);
+	return DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG258_OFFSET);
 }
 
 int main(void)
 {
 	uint8_t isAlive;
-	uint8_t as[] = {0xE0,0,0xF0,0};
-	uint8_t bt[4] = {0};
+	uint32_t plane = 0;
 	DATA_IP_mWriteReg(DATA_IP_BASEADDR, CMD_REG, 0);
 	Dev.platform.address = VL53L5CX_DEFAULT_I2C_ADDRESS;
 
@@ -211,16 +208,16 @@ int main(void)
 					{
 						ToF_no = sensor;
 //						while(CheckFrameReady() != 1){}
-						copy_frame(&Dev);
+						plane = copy_frame(&Dev);
 					}
 		for(int i = 0; i < 8;i++){
 					for(int j = 0; j < 64;j++){
 						xil_printf("%d ", visual[i][j]);
 					}
+					xil_printf("%d", plane);
 					xil_printf("\n");
 				}
 		xil_printf("A");
-		xil_printf("\n\r%d\n\r", DATA_IP_mReadReg(DATA_IP_BASEADDR, DATA_IP_S00_AXI_SLV_REG258_OFFSET));
 	}
 }
 

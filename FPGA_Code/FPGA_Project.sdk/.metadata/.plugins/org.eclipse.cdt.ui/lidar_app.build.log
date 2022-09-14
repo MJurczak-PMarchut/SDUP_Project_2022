@@ -1,8 +1,8 @@
-23:48:01 **** Incremental Build of configuration Debug for project lidar_app ****
-make -j4 pre-build main-build 
+02:09:34 **** Incremental Build of configuration Debug for project lidar_app ****
+make -j16 pre-build main-build 
 a9-linaro-pre-build-step
 make: Nothing to be done for 'main-build'.
 ' '
 
-23:48:02 Build Finished (took 366ms)
+02:09:34 Build Finished (took 257ms)
 

@@ -172,6 +172,7 @@ assign surf_ready = (state == IDLE)? 1'b0 :
                     (state == Write_TO_SURF_IC_1)? 1'b1 :
                     (state == Write_TO_SURF_IC_2)? 1'b1 :
                     (state == Write_TO_SURF_IC_3)? 1'b1 : 1'b0;
-assign plane_ready = (state == Write_TO_PLANE_IC)? 1'b1 : 1'b0;
+assign plane_ready = (state == Write_TO_PLANE_IC)? 1'b1 :
+                     (state == WRITE_TO_AXI)? 1'b1 : 1'b0;
 assign axi_read = (state == WRITE_TO_AXI)? 1'b0 : 1'b1;
 endmodule
